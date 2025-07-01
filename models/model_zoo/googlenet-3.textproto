@@ -1,0 +1,7726 @@
+ir_version: 7
+producer_name: "onnx-caffe2"
+graph {
+  node {
+    input: "data_0"
+    input: "conv1/7x7_s2_w_0"
+    input: "conv1/7x7_s2_b_0"
+    output: "conv1/7x7_s2_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 3
+      ints: 3
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 7
+      ints: 7
+      type: INTS
+    }
+  }
+  node {
+    input: "conv1/7x7_s2_1"
+    output: "conv1/7x7_s2_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "conv1/7x7_s2_2"
+    output: "pool1/3x3_s2_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "pool1/3x3_s2_1"
+    output: "pool1/norm1_1"
+    op_type: "LRN"
+    attribute {
+      name: "size"
+      i: 5
+      type: INT
+    }
+    attribute {
+      name: "alpha"
+      f: 0.0001
+      type: FLOAT
+    }
+    attribute {
+      name: "beta"
+      f: 0.75
+      type: FLOAT
+    }
+    attribute {
+      name: "bias"
+      f: 1.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "pool1/norm1_1"
+    input: "conv2/3x3_reduce_w_0"
+    input: "conv2/3x3_reduce_b_0"
+    output: "conv2/3x3_reduce_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "conv2/3x3_reduce_1"
+    output: "conv2/3x3_reduce_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "conv2/3x3_reduce_2"
+    input: "conv2/3x3_w_0"
+    input: "conv2/3x3_b_0"
+    output: "conv2/3x3_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "conv2/3x3_1"
+    output: "conv2/3x3_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "conv2/3x3_2"
+    output: "conv2/norm2_1"
+    op_type: "LRN"
+    attribute {
+      name: "size"
+      i: 5
+      type: INT
+    }
+    attribute {
+      name: "alpha"
+      f: 0.0001
+      type: FLOAT
+    }
+    attribute {
+      name: "beta"
+      f: 0.75
+      type: FLOAT
+    }
+    attribute {
+      name: "bias"
+      f: 1.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "conv2/norm2_1"
+    output: "pool2/3x3_s2_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "pool2/3x3_s2_1"
+    input: "inception_3a/1x1_w_0"
+    input: "inception_3a/1x1_b_0"
+    output: "inception_3a/1x1_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_3a/1x1_1"
+    output: "inception_3a/1x1_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "pool2/3x3_s2_1"
+    input: "inception_3a/3x3_reduce_w_0"
+    input: "inception_3a/3x3_reduce_b_0"
+    output: "inception_3a/3x3_reduce_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_3a/3x3_reduce_1"
+    output: "inception_3a/3x3_reduce_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_3a/3x3_reduce_2"
+    input: "inception_3a/3x3_w_0"
+    input: "inception_3a/3x3_b_0"
+    output: "inception_3a/3x3_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_3a/3x3_1"
+    output: "inception_3a/3x3_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "pool2/3x3_s2_1"
+    input: "inception_3a/5x5_reduce_w_0"
+    input: "inception_3a/5x5_reduce_b_0"
+    output: "inception_3a/5x5_reduce_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_3a/5x5_reduce_1"
+    output: "inception_3a/5x5_reduce_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_3a/5x5_reduce_2"
+    input: "inception_3a/5x5_w_0"
+    input: "inception_3a/5x5_b_0"
+    output: "inception_3a/5x5_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_3a/5x5_1"
+    output: "inception_3a/5x5_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "pool2/3x3_s2_1"
+    output: "inception_3a/pool_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_3a/pool_1"
+    input: "inception_3a/pool_proj_w_0"
+    input: "inception_3a/pool_proj_b_0"
+    output: "inception_3a/pool_proj_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_3a/pool_proj_1"
+    output: "inception_3a/pool_proj_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_3a/1x1_2"
+    input: "inception_3a/3x3_2"
+    input: "inception_3a/5x5_2"
+    input: "inception_3a/pool_proj_2"
+    output: "inception_3a/output_1"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "inception_3a/output_1"
+    input: "inception_3b/1x1_w_0"
+    input: "inception_3b/1x1_b_0"
+    output: "inception_3b/1x1_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_3b/1x1_1"
+    output: "inception_3b/1x1_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_3a/output_1"
+    input: "inception_3b/3x3_reduce_w_0"
+    input: "inception_3b/3x3_reduce_b_0"
+    output: "inception_3b/3x3_reduce_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_3b/3x3_reduce_1"
+    output: "inception_3b/3x3_reduce_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_3b/3x3_reduce_2"
+    input: "inception_3b/3x3_w_0"
+    input: "inception_3b/3x3_b_0"
+    output: "inception_3b/3x3_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_3b/3x3_1"
+    output: "inception_3b/3x3_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_3a/output_1"
+    input: "inception_3b/5x5_reduce_w_0"
+    input: "inception_3b/5x5_reduce_b_0"
+    output: "inception_3b/5x5_reduce_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_3b/5x5_reduce_1"
+    output: "inception_3b/5x5_reduce_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_3b/5x5_reduce_2"
+    input: "inception_3b/5x5_w_0"
+    input: "inception_3b/5x5_b_0"
+    output: "inception_3b/5x5_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_3b/5x5_1"
+    output: "inception_3b/5x5_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_3a/output_1"
+    output: "inception_3b/pool_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_3b/pool_1"
+    input: "inception_3b/pool_proj_w_0"
+    input: "inception_3b/pool_proj_b_0"
+    output: "inception_3b/pool_proj_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_3b/pool_proj_1"
+    output: "inception_3b/pool_proj_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_3b/1x1_2"
+    input: "inception_3b/3x3_2"
+    input: "inception_3b/5x5_2"
+    input: "inception_3b/pool_proj_2"
+    output: "inception_3b/output_1"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "inception_3b/output_1"
+    output: "pool3/3x3_s2_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "pool3/3x3_s2_1"
+    input: "inception_4a/1x1_w_0"
+    input: "inception_4a/1x1_b_0"
+    output: "inception_4a/1x1_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4a/1x1_1"
+    output: "inception_4a/1x1_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "pool3/3x3_s2_1"
+    input: "inception_4a/3x3_reduce_w_0"
+    input: "inception_4a/3x3_reduce_b_0"
+    output: "inception_4a/3x3_reduce_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4a/3x3_reduce_1"
+    output: "inception_4a/3x3_reduce_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4a/3x3_reduce_2"
+    input: "inception_4a/3x3_w_0"
+    input: "inception_4a/3x3_b_0"
+    output: "inception_4a/3x3_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4a/3x3_1"
+    output: "inception_4a/3x3_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "pool3/3x3_s2_1"
+    input: "inception_4a/5x5_reduce_w_0"
+    input: "inception_4a/5x5_reduce_b_0"
+    output: "inception_4a/5x5_reduce_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4a/5x5_reduce_1"
+    output: "inception_4a/5x5_reduce_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4a/5x5_reduce_2"
+    input: "inception_4a/5x5_w_0"
+    input: "inception_4a/5x5_b_0"
+    output: "inception_4a/5x5_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4a/5x5_1"
+    output: "inception_4a/5x5_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "pool3/3x3_s2_1"
+    output: "inception_4a/pool_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4a/pool_1"
+    input: "inception_4a/pool_proj_w_0"
+    input: "inception_4a/pool_proj_b_0"
+    output: "inception_4a/pool_proj_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4a/pool_proj_1"
+    output: "inception_4a/pool_proj_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4a/1x1_2"
+    input: "inception_4a/3x3_2"
+    input: "inception_4a/5x5_2"
+    input: "inception_4a/pool_proj_2"
+    output: "inception_4a/output_1"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "inception_4a/output_1"
+    input: "inception_4b/1x1_w_0"
+    input: "inception_4b/1x1_b_0"
+    output: "inception_4b/1x1_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4b/1x1_1"
+    output: "inception_4b/1x1_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4a/output_1"
+    input: "inception_4b/3x3_reduce_w_0"
+    input: "inception_4b/3x3_reduce_b_0"
+    output: "inception_4b/3x3_reduce_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4b/3x3_reduce_1"
+    output: "inception_4b/3x3_reduce_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4b/3x3_reduce_2"
+    input: "inception_4b/3x3_w_0"
+    input: "inception_4b/3x3_b_0"
+    output: "inception_4b/3x3_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4b/3x3_1"
+    output: "inception_4b/3x3_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4a/output_1"
+    input: "inception_4b/5x5_reduce_w_0"
+    input: "inception_4b/5x5_reduce_b_0"
+    output: "inception_4b/5x5_reduce_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4b/5x5_reduce_1"
+    output: "inception_4b/5x5_reduce_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4b/5x5_reduce_2"
+    input: "inception_4b/5x5_w_0"
+    input: "inception_4b/5x5_b_0"
+    output: "inception_4b/5x5_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4b/5x5_1"
+    output: "inception_4b/5x5_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4a/output_1"
+    output: "inception_4b/pool_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4b/pool_1"
+    input: "inception_4b/pool_proj_w_0"
+    input: "inception_4b/pool_proj_b_0"
+    output: "inception_4b/pool_proj_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4b/pool_proj_1"
+    output: "inception_4b/pool_proj_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4b/1x1_2"
+    input: "inception_4b/3x3_2"
+    input: "inception_4b/5x5_2"
+    input: "inception_4b/pool_proj_2"
+    output: "inception_4b/output_1"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "inception_4b/output_1"
+    input: "inception_4c/1x1_w_0"
+    input: "inception_4c/1x1_b_0"
+    output: "inception_4c/1x1_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4c/1x1_1"
+    output: "inception_4c/1x1_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4b/output_1"
+    input: "inception_4c/3x3_reduce_w_0"
+    input: "inception_4c/3x3_reduce_b_0"
+    output: "inception_4c/3x3_reduce_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4c/3x3_reduce_1"
+    output: "inception_4c/3x3_reduce_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4c/3x3_reduce_2"
+    input: "inception_4c/3x3_w_0"
+    input: "inception_4c/3x3_b_0"
+    output: "inception_4c/3x3_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4c/3x3_1"
+    output: "inception_4c/3x3_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4b/output_1"
+    input: "inception_4c/5x5_reduce_w_0"
+    input: "inception_4c/5x5_reduce_b_0"
+    output: "inception_4c/5x5_reduce_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4c/5x5_reduce_1"
+    output: "inception_4c/5x5_reduce_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4c/5x5_reduce_2"
+    input: "inception_4c/5x5_w_0"
+    input: "inception_4c/5x5_b_0"
+    output: "inception_4c/5x5_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4c/5x5_1"
+    output: "inception_4c/5x5_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4b/output_1"
+    output: "inception_4c/pool_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4c/pool_1"
+    input: "inception_4c/pool_proj_w_0"
+    input: "inception_4c/pool_proj_b_0"
+    output: "inception_4c/pool_proj_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4c/pool_proj_1"
+    output: "inception_4c/pool_proj_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4c/1x1_2"
+    input: "inception_4c/3x3_2"
+    input: "inception_4c/5x5_2"
+    input: "inception_4c/pool_proj_2"
+    output: "inception_4c/output_1"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "inception_4c/output_1"
+    input: "inception_4d/1x1_w_0"
+    input: "inception_4d/1x1_b_0"
+    output: "inception_4d/1x1_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4d/1x1_1"
+    output: "inception_4d/1x1_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4c/output_1"
+    input: "inception_4d/3x3_reduce_w_0"
+    input: "inception_4d/3x3_reduce_b_0"
+    output: "inception_4d/3x3_reduce_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4d/3x3_reduce_1"
+    output: "inception_4d/3x3_reduce_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4d/3x3_reduce_2"
+    input: "inception_4d/3x3_w_0"
+    input: "inception_4d/3x3_b_0"
+    output: "inception_4d/3x3_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4d/3x3_1"
+    output: "inception_4d/3x3_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4c/output_1"
+    input: "inception_4d/5x5_reduce_w_0"
+    input: "inception_4d/5x5_reduce_b_0"
+    output: "inception_4d/5x5_reduce_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4d/5x5_reduce_1"
+    output: "inception_4d/5x5_reduce_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4d/5x5_reduce_2"
+    input: "inception_4d/5x5_w_0"
+    input: "inception_4d/5x5_b_0"
+    output: "inception_4d/5x5_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4d/5x5_1"
+    output: "inception_4d/5x5_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4c/output_1"
+    output: "inception_4d/pool_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4d/pool_1"
+    input: "inception_4d/pool_proj_w_0"
+    input: "inception_4d/pool_proj_b_0"
+    output: "inception_4d/pool_proj_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4d/pool_proj_1"
+    output: "inception_4d/pool_proj_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4d/1x1_2"
+    input: "inception_4d/3x3_2"
+    input: "inception_4d/5x5_2"
+    input: "inception_4d/pool_proj_2"
+    output: "inception_4d/output_1"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "inception_4d/output_1"
+    input: "inception_4e/1x1_w_0"
+    input: "inception_4e/1x1_b_0"
+    output: "inception_4e/1x1_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4e/1x1_1"
+    output: "inception_4e/1x1_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4d/output_1"
+    input: "inception_4e/3x3_reduce_w_0"
+    input: "inception_4e/3x3_reduce_b_0"
+    output: "inception_4e/3x3_reduce_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4e/3x3_reduce_1"
+    output: "inception_4e/3x3_reduce_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4e/3x3_reduce_2"
+    input: "inception_4e/3x3_w_0"
+    input: "inception_4e/3x3_b_0"
+    output: "inception_4e/3x3_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4e/3x3_1"
+    output: "inception_4e/3x3_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4d/output_1"
+    input: "inception_4e/5x5_reduce_w_0"
+    input: "inception_4e/5x5_reduce_b_0"
+    output: "inception_4e/5x5_reduce_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4e/5x5_reduce_1"
+    output: "inception_4e/5x5_reduce_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4e/5x5_reduce_2"
+    input: "inception_4e/5x5_w_0"
+    input: "inception_4e/5x5_b_0"
+    output: "inception_4e/5x5_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4e/5x5_1"
+    output: "inception_4e/5x5_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4d/output_1"
+    output: "inception_4e/pool_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4e/pool_1"
+    input: "inception_4e/pool_proj_w_0"
+    input: "inception_4e/pool_proj_b_0"
+    output: "inception_4e/pool_proj_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_4e/pool_proj_1"
+    output: "inception_4e/pool_proj_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_4e/1x1_2"
+    input: "inception_4e/3x3_2"
+    input: "inception_4e/5x5_2"
+    input: "inception_4e/pool_proj_2"
+    output: "inception_4e/output_1"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "inception_4e/output_1"
+    output: "pool4/3x3_s2_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "pool4/3x3_s2_1"
+    input: "inception_5a/1x1_w_0"
+    input: "inception_5a/1x1_b_0"
+    output: "inception_5a/1x1_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_5a/1x1_1"
+    output: "inception_5a/1x1_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "pool4/3x3_s2_1"
+    input: "inception_5a/3x3_reduce_w_0"
+    input: "inception_5a/3x3_reduce_b_0"
+    output: "inception_5a/3x3_reduce_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_5a/3x3_reduce_1"
+    output: "inception_5a/3x3_reduce_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_5a/3x3_reduce_2"
+    input: "inception_5a/3x3_w_0"
+    input: "inception_5a/3x3_b_0"
+    output: "inception_5a/3x3_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_5a/3x3_1"
+    output: "inception_5a/3x3_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "pool4/3x3_s2_1"
+    input: "inception_5a/5x5_reduce_w_0"
+    input: "inception_5a/5x5_reduce_b_0"
+    output: "inception_5a/5x5_reduce_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_5a/5x5_reduce_1"
+    output: "inception_5a/5x5_reduce_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_5a/5x5_reduce_2"
+    input: "inception_5a/5x5_w_0"
+    input: "inception_5a/5x5_b_0"
+    output: "inception_5a/5x5_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_5a/5x5_1"
+    output: "inception_5a/5x5_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "pool4/3x3_s2_1"
+    output: "inception_5a/pool_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_5a/pool_1"
+    input: "inception_5a/pool_proj_w_0"
+    input: "inception_5a/pool_proj_b_0"
+    output: "inception_5a/pool_proj_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_5a/pool_proj_1"
+    output: "inception_5a/pool_proj_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_5a/1x1_2"
+    input: "inception_5a/3x3_2"
+    input: "inception_5a/5x5_2"
+    input: "inception_5a/pool_proj_2"
+    output: "inception_5a/output_1"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "inception_5a/output_1"
+    input: "inception_5b/1x1_w_0"
+    input: "inception_5b/1x1_b_0"
+    output: "inception_5b/1x1_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_5b/1x1_1"
+    output: "inception_5b/1x1_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_5a/output_1"
+    input: "inception_5b/3x3_reduce_w_0"
+    input: "inception_5b/3x3_reduce_b_0"
+    output: "inception_5b/3x3_reduce_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_5b/3x3_reduce_1"
+    output: "inception_5b/3x3_reduce_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_5b/3x3_reduce_2"
+    input: "inception_5b/3x3_w_0"
+    input: "inception_5b/3x3_b_0"
+    output: "inception_5b/3x3_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_5b/3x3_1"
+    output: "inception_5b/3x3_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_5a/output_1"
+    input: "inception_5b/5x5_reduce_w_0"
+    input: "inception_5b/5x5_reduce_b_0"
+    output: "inception_5b/5x5_reduce_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_5b/5x5_reduce_1"
+    output: "inception_5b/5x5_reduce_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_5b/5x5_reduce_2"
+    input: "inception_5b/5x5_w_0"
+    input: "inception_5b/5x5_b_0"
+    output: "inception_5b/5x5_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_5b/5x5_1"
+    output: "inception_5b/5x5_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_5a/output_1"
+    output: "inception_5b/pool_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_5b/pool_1"
+    input: "inception_5b/pool_proj_w_0"
+    input: "inception_5b/pool_proj_b_0"
+    output: "inception_5b/pool_proj_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "inception_5b/pool_proj_1"
+    output: "inception_5b/pool_proj_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "inception_5b/1x1_2"
+    input: "inception_5b/3x3_2"
+    input: "inception_5b/5x5_2"
+    input: "inception_5b/pool_proj_2"
+    output: "inception_5b/output_1"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "inception_5b/output_1"
+    output: "pool5/7x7_s1_1"
+    op_type: "AveragePool"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 7
+      ints: 7
+      type: INTS
+    }
+  }
+  node {
+    input: "pool5/7x7_s1_1"
+    input: "264"
+    output: "pool5/7x7_s1_2"
+    output: "_pool5/7x7_s1_mask_1"
+    op_type: "Dropout"
+  }
+  node {
+    input: "pool5/7x7_s1_2"
+    input: "OC2_DUMMY_1"
+    output: "OC2_DUMMY_0"
+    op_type: "Reshape"
+  }
+  node {
+    input: "OC2_DUMMY_0"
+    input: "loss3/classifier_w_0"
+    input: "loss3/classifier_b_0"
+    output: "loss3/classifier_1"
+    op_type: "Gemm"
+    attribute {
+      name: "transB"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "loss3/classifier_1"
+    output: "prob_1"
+    op_type: "Softmax"
+  }
+  name: "bvlc_googlenet"
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "conv1/7x7_s2_b_0"
+    raw_data: "&\276!\300\307 =\277\"O\271\277vH9?j?\345?@\243\264=\350\034\345\277\260\345\033\300\023\017(@z|\273\277L\\}\277\210\\\031\300\213\263z\277\302\241\033\300\000\207\323\277\247Oh>j\354\215@\364\305\201\276\361+\202@t:\304\277\344\231\243@\225k\002\300vw\262\277\362\220j\300\"(\337\276\354b8\300\230\347H\300\201\320\204\300S;N\300Z0G\300<I>>j\210\000@\034\014\220@\231\330J@\223\025\236@\006\332\230\276\227\273\n\277\353@,@\202\205\215\277\340\356\022\300/\223\035\277\331\277\362\276a\350\013@)\353\276\277v6\316\277K\326\207\300`2)\300\004\014Q\300\340\267\271\300MV\305\300\327\010\207\300j\346o\300\377\260\216\300[\332g\300\336\266\003\300\320S\272?6\300Y@\356\250\034\300\367\277&\300\335Uq>o\010&\300r\277\252\300U\314\243\300\253d\377\300"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "conv2/3x3_reduce_b_0"
+    raw_data: "\240e\303>\305\n#=D\304;?\263c\033>[_\314?\242\227\037?\013p\"\276\203\350\307\276^\250\213\277\374\363\221>\365I\271\277E\217\\?\371\225\370?\355\252$?\222F\274>P\356M>@\373e\276\323\312\341=(\330p?\237\303\215\274\036\350\365\275\321\214\232=\201\250\006?g\321\377>I)\013\300\206\004\364\275+\034 =\022D\264\277_6:?\273u\020@g\022\020?C\244\204>\334x\304=\342\333<?\342\337\330><y\036\276\377\245U<\307\324\251?]3H\277@V^?\326\365\210?G\333n?\2433\'?\314b\'\276\231\326N?7\340l=/C->8\200\364\275\037\371\216\275\354`\375\276\214\r\303\276\201\3525\277\022{\216=\273\342\\\273\200\223<\276\"\327\214\274\231\247\237?\001\337\277\275\014\267\217?\2777Q?fI\010\277W@)?\311\003\213>MD\027\276"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "inception_3a/1x1_b_0"
+    raw_data: "\204\372\330\274s\241\225\276N\201)\276\201q\263\276z:-?\361\353\260>6\221G?LQ\300\2763\214\001?\241\226G>\026t\010?d\371\330\276\201\263h\276\363\253\n>\264\2450?E\275\262>\240y7\276\"\343\244>\2312\204?\227\251\212>,\007\366\275\217\312\242\276P\201\273\275\343\rI\276H@A?!\344\242?\272Y\224\274\230\323\247\276\205-O<\271\033\301=d\0306?\371\357\255\276\3017\202\277\333\203\016\277\037C\204\275\257!:\275 \272$\276\300\262\204\276\177!\007\276\365\2214>*\212\352\275\360x&\277G&)\277\325\317M\277\304~\\?&\0218>[\201\030?D\017\337\276\245\270\021?R\254m>\351\014\013?\232O\304>\225\263\303\275\032\341\024\277\224\210T?\256\253\033?>\373\312=\363\361\010;\314\371\325>\273\375\026>\'\316\215>u\302\314>\316\340i>\005\251{\276"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "inception_3a/5x5_b_0"
+    raw_data: ">\231\314\275\355 \010>K\337\013>\"\247\t>-\'\223\276\026\245\t?ORj=5\000d>\302\364\017>\025hG\276\237\3060\275\024HS=\230\336\217\274\335\235\007\276\2575,>\262)}\275\251XM>QE\021\276~\322\030>36\360<\304$\014?C|\364\2740d\\\275\366\223\263>B:h=N4v>^f\310\275q\026\346>-;\246>\202\035m\275N\'\'=+\242\201<"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "inception_3a/5x5_reduce_b_0"
+    raw_data: "\231I\250>\327\304#>@H7?f\007}=\332[X?\264\004\346>\t\344\320>)\332\021\276/\035\276\273?\'\233?C\314\333>\323\345A>\027&\023>\262\304\033?\342\264\016\276\234\375Z>"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "inception_3a/pool_proj_b_0"
+    raw_data: "S\302\372>\216%\343>\270@??\221\023>?\327\245\226>\271\342\354>\207\233\347>\000\017A?g\270\305>\207\"\253>!3\326>\241\031c>]\025\315>\361>\370>\250~o>q!\022?\206\314\351>\020r\240>\310\345\274>\236&\002?\316\035\362>\002\304\341><\360\376>4\\\275\275\257\007\354>\022\250\n?\255\016\304>$;X>\224\352\330>{\363\034>\037\201\t?3N\327>"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "inception_3b/5x5_reduce_b_0"
+    raw_data: "Q;U?O\024\023?b\251\345?\273\315\226?H\215\344?\331\342\037?\214\3335?\374\362\203?\372R\025>\265\335\023?\026\035\013?\372\220\342>\337\334\263<\211M\321>\275\326\004>Y\243\027?\033I\013?\205s\336>j\2237?`\263 >\232\270\230>JE\236=2\250$?Z;Y?Y\241L?\365g<??7{>t\201r?P\3558?N\320\204>\361\021\257=F;\203>"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "inception_3b/pool_proj_b_0"
+    raw_data: "E\240\215>!\231\276>\256\026\r>hP\203>\337v\251>:\242\344>\006\331f>T\235\333>-\301\027>\371\2535>\341\343\202>Rv\250>\364\276?>\264r\343=\323\001#>\264\304z>\231\027%>1\311\312=\253me>\235\035g>\227\263w\2754\303\006>b\302\231>\305\216\330>!0X>\242]\357>\330x\201=\314B\006?^\'u>\371;i?\'\305\264>\264\231\234>I\n\202>\373\242\267>\006>\367>K\032\264>\r\2022>{\313U=t\303\005>6\350\226>\307\022\242=g\206&>\017\n\251>\027v\367>(1\010>\005\000\030>\225~\231>v[/>\013Z\001>d/C>\305-6>3k!>m\310\231=\242\225\006>\242&\211>f\252\214>{\326\247>\274\300\373=\327\202\252=\317\303\000?\205A!>\203A\213>T\253s>\r\307\226>"
+  }
+  initializer {
+    dims: 48
+    data_type: 1
+    name: "inception_4a/5x5_b_0"
+    raw_data: "u\343\276=\r3\213>u\310.?\271G\t?:\316)>\361\255\334>p\355\315>WT\310>m\340]?\252,\014?\036f\232>\257:\227>E\322\t?\214E\257>\254Y\005>\342`\205>\220\263\221>\244E3?\376\177\201\274c\317\235>T\343\014?\237_\266>\355d%?\370y\227?\2672\017?\364\205\214>\354\230\034\275\031s\244>\222\313\324>K\242\336=\305V\353>\266\307\032>\341[\220>\377\273\257>\360\336\250>\233\220W?,\312\202>\200\200)?K\367\262>.!\373>\323\225x>T\003\273>\025\000\235>2\350\027?\234\253\035?tg\207>8\030\266>RK\034>"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "inception_4a/5x5_reduce_b_0"
+    raw_data: "9\242\370?5\014*?&\270\014@\217\227\357>\320p5?!\331\n@QzF?\001\367G?\350\261^>A\273C?{K\232?6k\221?\322\242\017?VF/?~\363\315>\nt\205?"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "inception_4a/pool_proj_b_0"
+    raw_data: "\231Y6>{\006\345>\267\020o<M\234\310=&_B?\274\206\036?\222\335\'?8\375\307>\221\027D>\250\252\243>1q\342>4o\230>\352\235\264>\317\276\014?E\362R?\326\264\377>\017\026\365>Rs\213>\304\300\211>X\203\337>\264\017\305>@\n9>\315=\315=\375\332\262>\203Z\027>\355\260H>\23771?\216t#>5\300\224>\034\220\350>v.\371>\313\235\230>\255lV>\352\033\217>\224\217\222> K\035>/D8?\327\220=?u\274\002?\333\263\276>G%8?\224\341\024>\271t\342=M\272\340>\240\326\327>\340/&>\2102\304>\215\266O?\213\2437>\273\022\214>\020\001\347>\031\353L>\033\330\246>\231\"8>u)\202>?l\303\275\246\267\034?j\033\337>\267\004\245>\r-\361>\202\035w>\222\201B=m\366\226>{t\351>"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "inception_4b/5x5_b_0"
+    raw_data: "O\022\024?Pj\245?D%\337>$\376b?\321\317p?\340\014\343>\3477\000?-\014\307>\243^\n?\271@\231=\213\301;@\006\210\031?f:$?\243\316\331?f\356\362?\216\t\n?%F\347>\263\233\021?\241f\370><\211<@\377\350\246>w?\266>}\340W?\035\006\235>\247\373\307>\006\r\010?|\217L\277r\022f>R\354\366>R|\002@\347\026Z>uO\211?wD\266?;\0076?\233\372\207?\035\217\022?d\025+>6\223B?\371\215#?5\340\322>\227|\233?\346\252J>\316\220\271?e\334t><\323I?\267JO?\321\262X?\256\221,?Z\227X?\254()@\212F\017?E`\227?~\027\032@\013\2317?4\205B<x\374\226\277?\014\320>\024\347l>\324->>X\3748?\230\275\364>\260i\035?0V\013\276\0355\250?"
+  }
+  initializer {
+    dims: 24
+    data_type: 1
+    name: "inception_4b/5x5_reduce_b_0"
+    raw_data: "\025}\357?;\026f?\312\037\212@\370x\342@\3627:@\'F\022@\237\261\366?\314(O\277]\rR@C\342\317?\253\223\300\277\032\263\213@i\3176@\232\202\030?\3202S@\302\r\363?\231\261%@\304K\023?\375I\261?t\324\376?\202\373\032@\247\307\237=\316\363m?\224\332G>"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "inception_4b/pool_proj_b_0"
+    raw_data: "\307\220\215=\336\331\256=\300\376g>\276\251\003?\223\004\301=\014G\260>\317q\360\275\031\213\037?z!\331>\271\342\212>\017\013\n>R\340\022>\267w\"?\301s\261>oj\016\276\343\263\345>\225\322\333\272Y_\251>q&\332>a\344\221>k\355b>\237\017Y?4L\205\275\010G\247>\016//>\207P\267>\250\252\300=d]\265=*\003\353=b\013\023?LZ\322>\272\271\017>6\243\347>\240\252\007?C\334\356>\314?\240?Aa\240>~\034q\276\027\207L>4\250\251=Q\033\326>\003\314\270>\253\\{>\251\035\356>\352^l?\273\"\365>\372\255U\276\337\215\310\275^\0271>\343\035\266\274j\230p>\264B\255>\226\271\243?\370\346\234?.\032\252>\333D\331>\321(\204\276\326\177+\276\004\322\024?3W(>B$\351=\223*\014?\030I\037>6mv>"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "inception_4c/5x5_b_0"
+    raw_data: "\010E\030<qab>\334\246\253?\027f\222?/]??\372\177\002?\214\n\235?\t{\256?\341\367\262?\321\256\312=V\014\001?P\330\005?\004UO?9\367\320>\301\232\352?\\\034Y?\020\254\211=\323\315\276<\021k\322?l\236\303?ox\235>\202q\257>\210\007J?\366\374\241?N\343\244?pD\036>x\323_?%\027\317>\272\311}?^i\216?\336c\034>\247\357\361>4\340\010?\336\202\220?\300\277\300>\200\331&?\034n\305?r\201\020??\353\372?\007\226l=\277N%?\032\032P?4\2244@XW\244>\022#w?\227\013\327>i\335(?\325\274\230\277\356\232E?\3653`>\017\262%>\331oj>\236\213\346\276\257Z\244>\344e\352>\360s\'?\177Q\245>A\257.@\241)\217?DO\206?q\2366>\321$\243>)-\200?4\342\341\276"
+  }
+  initializer {
+    dims: 24
+    data_type: 1
+    name: "inception_4c/5x5_reduce_b_0"
+    raw_data: ">\352V@\252\354`?\337\2365@\014:\017@_\230\010@\216S\037@\030\2664@\345\201\010@\304H\226>\344\'\021@lH\223?J\305\311?\320\245\260?WX\332?\246G\004\300\200\030\022\276x.\304=f\3763\275\016\210&@8\325\n@\273\360\237?\036\303*\277\001\312\245?y\345)@"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "inception_4c/pool_proj_b_0"
+    raw_data: "\315\253\376=\021\363\021?\003\343\004\276\210H??\300\344\027?\222:\204?\204\214\214=[\000o?\311\3253\275R\242\336=\3004\207>x\251\241?F\273\010>\3326\351>\211\\\232?\024\014G?j5\007> \362\274\276e\376U?>\034\037=6Z)?\221\307\037>v@h\276\254\360\313\276J\376\031?C\340\026>i\263\303>\371\222\006?\023[F?\336\256j?l\321\"?Q\327??\000+\350=\311#\313\276\215\371\002?\234\345\367>\275mZ?\006\254\252>\341\010F?\021\036\002?\202,\030?\366\347\005>\214J\241>\203\3776?xx\371>l\325\262?\373\002\343=\240\300\215\274\213<F?w\007\220=\313h\021\276\350D\203\274\366\032\267>\224\272\233?v\311\324>\200P\326>\236wc\276\202\330i?H|\003?:\357%?\216\213\243;!c\007?\354\365\034?\207\217?\276"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "inception_4d/5x5_b_0"
+    raw_data: "\355\267\241>&0\232?\001%X>\'I\025>\300+T?\000\000\244\275I]H>mA)?\205!\304\275\344&D@\242\020\207?\363Np\275\2745\017@\346\325\320>(\347\222?\227bY?<\3368>x\314\351>\274\035.?\260\335\313?\031W|>\025\322\226>S\'\036@qW\t?\220\"/?\266\2742?\252\351\331\276\007\346T>8\365\002?\000\254\003?\037\236\022?E\177\211?\237\014\224>\321k\271?\373\3009?h\177\212?\224+ @[\373\245\274\270\256\016?\264]\336?\275\177r?\304\377\342>\007\274\005?\324\357\321?g\020$@^\242\246\277c\307\304?\'\320\237?\275\320\237>\377\320\373>l\222\315?i\303\245?\264\342\270\277\205\030\266?C\322d?\375\312\235\276[/\301?!\007\220> \344\221?Y\320\001?\r\353\237\277[\333\266?\031\r4?\214\253\311>"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "inception_4d/5x5_reduce_b_0"
+    raw_data: "\214\0104@\373\204\035@\t\323\306\277*\217\236?\'\361%@\270\272\352?\032\246\344>\020\270\260?e\253\026@\266d\252?k\333A@\333\035\207?\252\260C@L\251q>\2630d?l\230\030@\333r\357?\230\255\277?\217n\353?\020\277\n@DA\025\3002\304Y\276\306\003G@\237\345\322?\344w\177@\206\244\007@A\266\337?wC`\275\236\001\351?\336\204\270?\22058>\350\177\253\277"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "inception_4d/pool_proj_b_0"
+    raw_data: "\333\\\321>\242;\277>\232\251\353>\030\004\037?\237mc\276a\3641?\314lR=\242ON>F\275C>\364\214\274>\347N\231\276Jl\002?j\372F>g\231\003?\301\344)\276i\362\330>\342\264\001?o\034r>U1\376>^\300\204?2\014\257>K_\217?\243\340\345>\234Y\240?\002\020g?\265\367\032\274t\277\251>9\242\n?</\377\275\255\346\007>\312N\203?e\374N?\242\274A\274\372\212\323\276\267\302+?\013\342\021\277J\345\304=*58?\270\350\335>r\253\364\274D\\\254?\014q\014>\201\224\032\277u\032\022>\3549x=\346f\316=\216\306\310\276\033\311m\276\212\370\t?\374oi?A\000\334? \021;?\336/\207>\327Z\211>\214\243h>\002\365s\276m\207\024>\273\310\343\276iy\276>YX\255?\315\r\360\276\204.\323\276.\212Y>R\"\375>"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "inception_4e/5x5_reduce_b_0"
+    raw_data: "^OO@oO\210?zpI@\321\363\247>\\\367p?\260k\216?\330\226\374?6\263\245?\300\307\n\300\035p\303?\360\026D?b\261c>\220\355\215@\365H\332?\021\361\022@\200\346\325\276,\2213?\360$\r>\001\341\325>P\032p?1\370\030?\3275\033@?\312\230?\360r\206@%\272\235?\231\257\002@\274\240\274?Try?\177\273\321\277\311\240w@\374\357\215?Kb\227?"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "inception_5a/5x5_reduce_b_0"
+    raw_data: "wG\305\277\226\013`?O\022\002\277\241\014\000A\260\035r?@\301\307\276\264\004+?\255$\243>\312@\253?d\326\002@\243\216x@`\027&\277}\205\310?j,\342\2779\210\033\277K\316\313=\264.u@\257(\001@j~ @y\352$@ \004\225@~\262P\300\006\305\375\276^\353;\300\272\246\325>\264\004\'@\001\233`=\320\236\256@\204\350\355?\342\226G@\201)\223\277\336OP?"
+  }
+  initializer {
+    dims: 48
+    data_type: 1
+    name: "inception_5b/5x5_reduce_b_0"
+    raw_data: "\306?\361\275WS)?\005\216\313>\204 y?\237\020\245?_\221\210?\264j\214?1\200\271?5\367\326?\353\321\312??\3604?JN\000\300\266\355t\300\215\221(?r^f?\224>\007?\266p\223\276\274d\363\277\225XM\277\34682?F\225L?\"M\223?\027\244\364<[\333\t\300C\375L?\317\327\344>}\332&\300\365\024Q>*\322\270?\342\322\341\277\354\241\303?\3467\235?b\324\314?i\201\236\275\036\022\351?\255\303\255=\260~\032@\376+\215?u|\313\275\312\027k\276j\360w>\232\033\223\274m\363\201?^\357\022>cl(?\357\277\363\276\244\375\262\277\252Y\335\275"
+  }
+  initializer {
+    dims: 2
+    data_type: 7
+    name: "OC2_DUMMY_1"
+    raw_data: "\001\000\000\000\000\000\000\000\000\004\000\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.4
+    name: "264"
+  }
+  input {
+    name: "data_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 224
+          }
+          dim {
+            dim_value: 224
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv1/7x7_s2_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv2/3x3_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv2/3x3_reduce_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv2/3x3_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_3a/1x1_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_3a/3x3_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_3a/3x3_reduce_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 96
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_3a/3x3_reduce_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_3a/3x3_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_3a/5x5_reduce_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_3a/5x5_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_3a/pool_proj_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_3b/1x1_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_3b/1x1_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_3b/3x3_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_3b/3x3_reduce_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_3b/3x3_reduce_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_3b/3x3_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_3b/5x5_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 96
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_3b/5x5_reduce_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_3b/5x5_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_3b/pool_proj_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4a/1x1_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4a/1x1_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 480
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4a/3x3_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 208
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4a/3x3_reduce_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 96
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4a/3x3_reduce_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 480
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4a/3x3_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 208
+          }
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4a/5x5_reduce_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 480
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4a/5x5_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 48
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4a/pool_proj_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 480
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4b/1x1_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4b/1x1_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4b/3x3_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 224
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4b/3x3_reduce_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 112
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4b/3x3_reduce_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 112
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4b/3x3_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 224
+          }
+          dim {
+            dim_value: 112
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4b/5x5_reduce_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 24
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4b/5x5_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 24
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4b/pool_proj_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4c/1x1_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4c/1x1_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4c/3x3_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4c/3x3_reduce_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4c/3x3_reduce_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4c/3x3_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4c/5x5_reduce_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 24
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4c/5x5_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 24
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4c/pool_proj_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4d/1x1_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 112
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4d/1x1_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 112
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4d/3x3_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 288
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4d/3x3_reduce_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 144
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4d/3x3_reduce_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 144
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4d/3x3_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 288
+          }
+          dim {
+            dim_value: 144
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4d/5x5_reduce_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4d/5x5_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4d/pool_proj_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4e/1x1_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4e/1x1_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 528
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4e/3x3_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 320
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4e/3x3_reduce_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4e/3x3_reduce_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 528
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4e/3x3_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 320
+          }
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4e/5x5_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4e/5x5_reduce_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 528
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4e/5x5_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4e/pool_proj_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_4e/pool_proj_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 528
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5a/1x1_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5a/1x1_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 832
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5a/3x3_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 320
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5a/3x3_reduce_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5a/3x3_reduce_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 832
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5a/3x3_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 320
+          }
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5a/5x5_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5a/5x5_reduce_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 832
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5a/5x5_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5a/pool_proj_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5a/pool_proj_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 832
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5b/1x1_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5b/1x1_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 832
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5b/3x3_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5b/3x3_reduce_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5b/3x3_reduce_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 832
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5b/3x3_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5b/5x5_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5b/5x5_reduce_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 48
+          }
+          dim {
+            dim_value: 832
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5b/5x5_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 48
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5b/pool_proj_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "inception_5b/pool_proj_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 832
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "loss3/classifier_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "loss3/classifier_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1000
+          }
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "prob_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "conv1/7x7_s2_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "conv2/3x3_reduce_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3a/1x1_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3a/5x5_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3a/5x5_reduce_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3a/pool_proj_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3b/5x5_reduce_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3b/pool_proj_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4a/5x5_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 48
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4a/5x5_reduce_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4a/pool_proj_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4b/5x5_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4b/5x5_reduce_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 24
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4b/pool_proj_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4c/5x5_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4c/5x5_reduce_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 24
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4c/pool_proj_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4d/5x5_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4d/5x5_reduce_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4d/pool_proj_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4e/5x5_reduce_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5a/5x5_reduce_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5b/5x5_reduce_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 48
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "OC2_DUMMY_1"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "264"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "conv1/7x7_s2_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 112
+          }
+          dim {
+            dim_value: 112
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "conv1/7x7_s2_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 112
+          }
+          dim {
+            dim_value: 112
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "pool1/3x3_s2_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 56
+          }
+          dim {
+            dim_value: 56
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "pool1/norm1_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 56
+          }
+          dim {
+            dim_value: 56
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "conv2/3x3_reduce_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 56
+          }
+          dim {
+            dim_value: 56
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "conv2/3x3_reduce_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 56
+          }
+          dim {
+            dim_value: 56
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "conv2/3x3_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 56
+          }
+          dim {
+            dim_value: 56
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "conv2/3x3_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 56
+          }
+          dim {
+            dim_value: 56
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "conv2/norm2_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 56
+          }
+          dim {
+            dim_value: 56
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "pool2/3x3_s2_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3a/1x1_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3a/1x1_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3a/3x3_reduce_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3a/3x3_reduce_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3a/3x3_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3a/3x3_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3a/5x5_reduce_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3a/5x5_reduce_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3a/5x5_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3a/5x5_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3a/pool_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3a/pool_proj_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3a/pool_proj_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3a/output_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3b/1x1_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3b/1x1_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3b/3x3_reduce_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3b/3x3_reduce_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3b/3x3_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3b/3x3_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3b/5x5_reduce_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3b/5x5_reduce_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3b/5x5_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3b/5x5_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3b/pool_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3b/pool_proj_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3b/pool_proj_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_3b/output_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 480
+          }
+          dim {
+            dim_value: 28
+          }
+          dim {
+            dim_value: 28
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "pool3/3x3_s2_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 480
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4a/1x1_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4a/1x1_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4a/3x3_reduce_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4a/3x3_reduce_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4a/3x3_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 208
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4a/3x3_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 208
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4a/5x5_reduce_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4a/5x5_reduce_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4a/5x5_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 48
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4a/5x5_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 48
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4a/pool_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 480
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4a/pool_proj_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4a/pool_proj_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4a/output_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4b/1x1_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4b/1x1_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4b/3x3_reduce_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 112
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4b/3x3_reduce_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 112
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4b/3x3_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 224
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4b/3x3_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 224
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4b/5x5_reduce_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 24
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4b/5x5_reduce_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 24
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4b/5x5_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4b/5x5_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4b/pool_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4b/pool_proj_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4b/pool_proj_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4b/output_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4c/1x1_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4c/1x1_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4c/3x3_reduce_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4c/3x3_reduce_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4c/3x3_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4c/3x3_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4c/5x5_reduce_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 24
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4c/5x5_reduce_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 24
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4c/5x5_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4c/5x5_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4c/pool_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4c/pool_proj_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4c/pool_proj_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4c/output_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4d/1x1_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 112
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4d/1x1_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 112
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4d/3x3_reduce_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 144
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4d/3x3_reduce_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 144
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4d/3x3_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 288
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4d/3x3_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 288
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4d/5x5_reduce_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4d/5x5_reduce_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4d/5x5_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4d/5x5_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4d/pool_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4d/pool_proj_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4d/pool_proj_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4d/output_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 528
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4e/1x1_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4e/1x1_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4e/3x3_reduce_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4e/3x3_reduce_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4e/3x3_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 320
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4e/3x3_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 320
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4e/5x5_reduce_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4e/5x5_reduce_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4e/5x5_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4e/5x5_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4e/pool_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 528
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4e/pool_proj_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4e/pool_proj_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_4e/output_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 832
+          }
+          dim {
+            dim_value: 14
+          }
+          dim {
+            dim_value: 14
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "pool4/3x3_s2_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 832
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5a/1x1_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5a/1x1_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5a/3x3_reduce_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5a/3x3_reduce_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5a/3x3_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 320
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5a/3x3_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 320
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5a/5x5_reduce_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5a/5x5_reduce_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5a/5x5_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5a/5x5_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5a/pool_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 832
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5a/pool_proj_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5a/pool_proj_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5a/output_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 832
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5b/1x1_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5b/1x1_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5b/3x3_reduce_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5b/3x3_reduce_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5b/3x3_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5b/3x3_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5b/5x5_reduce_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 48
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5b/5x5_reduce_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 48
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5b/5x5_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5b/5x5_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5b/pool_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 832
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5b/pool_proj_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5b/pool_proj_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "inception_5b/output_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "pool5/7x7_s1_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "pool5/7x7_s1_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "OC2_DUMMY_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "loss3/classifier_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+}
+opset_import {
+  domain: ""
+  version: 12
+}

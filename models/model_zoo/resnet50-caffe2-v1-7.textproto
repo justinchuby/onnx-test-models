@@ -1,0 +1,6702 @@
+ir_version: 3
+producer_name: "onnx-caffe2"
+graph {
+  node {
+    input: "gpu_0/data_0"
+    input: "gpu_0/conv1_w_0"
+    output: "gpu_0/conv1_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 3
+      ints: 3
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 7
+      ints: 7
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/conv1_1"
+    input: "gpu_0/res_conv1_bn_s_0"
+    input: "gpu_0/res_conv1_bn_b_0"
+    input: "gpu_0/res_conv1_bn_rm_0"
+    input: "gpu_0/res_conv1_bn_riv_0"
+    output: "gpu_0/res_conv1_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res_conv1_bn_1"
+    output: "gpu_0/res_conv1_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res_conv1_bn_2"
+    output: "gpu_0/pool1_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/pool1_1"
+    input: "gpu_0/res2_0_branch2a_w_0"
+    output: "gpu_0/res2_0_branch2a_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res2_0_branch2a_1"
+    input: "gpu_0/res2_0_branch2a_bn_s_0"
+    input: "gpu_0/res2_0_branch2a_bn_b_0"
+    input: "gpu_0/res2_0_branch2a_bn_rm_0"
+    input: "gpu_0/res2_0_branch2a_bn_riv_0"
+    output: "gpu_0/res2_0_branch2a_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res2_0_branch2a_bn_1"
+    output: "gpu_0/res2_0_branch2a_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res2_0_branch2a_bn_2"
+    input: "gpu_0/res2_0_branch2b_w_0"
+    output: "gpu_0/res2_0_branch2b_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res2_0_branch2b_1"
+    input: "gpu_0/res2_0_branch2b_bn_s_0"
+    input: "gpu_0/res2_0_branch2b_bn_b_0"
+    input: "gpu_0/res2_0_branch2b_bn_rm_0"
+    input: "gpu_0/res2_0_branch2b_bn_riv_0"
+    output: "gpu_0/res2_0_branch2b_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res2_0_branch2b_bn_1"
+    output: "gpu_0/res2_0_branch2b_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res2_0_branch2b_bn_2"
+    input: "gpu_0/res2_0_branch2c_w_0"
+    output: "gpu_0/res2_0_branch2c_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res2_0_branch2c_1"
+    input: "gpu_0/res2_0_branch2c_bn_s_0"
+    input: "gpu_0/res2_0_branch2c_bn_b_0"
+    input: "gpu_0/res2_0_branch2c_bn_rm_0"
+    input: "gpu_0/res2_0_branch2c_bn_riv_0"
+    output: "gpu_0/res2_0_branch2c_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/pool1_1"
+    input: "gpu_0/res2_0_branch1_w_0"
+    output: "gpu_0/res2_0_branch1_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res2_0_branch1_1"
+    input: "gpu_0/res2_0_branch1_bn_s_0"
+    input: "gpu_0/res2_0_branch1_bn_b_0"
+    input: "gpu_0/res2_0_branch1_bn_rm_0"
+    input: "gpu_0/res2_0_branch1_bn_riv_0"
+    output: "gpu_0/res2_0_branch1_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res2_0_branch2c_bn_1"
+    input: "gpu_0/res2_0_branch1_bn_1"
+    output: "gpu_0/res2_0_branch2c_bn_2"
+    op_type: "Sum"
+  }
+  node {
+    input: "gpu_0/res2_0_branch2c_bn_2"
+    output: "gpu_0/res2_0_branch2c_bn_3"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res2_0_branch2c_bn_3"
+    input: "gpu_0/res2_1_branch2a_w_0"
+    output: "gpu_0/res2_1_branch2a_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res2_1_branch2a_1"
+    input: "gpu_0/res2_1_branch2a_bn_s_0"
+    input: "gpu_0/res2_1_branch2a_bn_b_0"
+    input: "gpu_0/res2_1_branch2a_bn_rm_0"
+    input: "gpu_0/res2_1_branch2a_bn_riv_0"
+    output: "gpu_0/res2_1_branch2a_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res2_1_branch2a_bn_1"
+    output: "gpu_0/res2_1_branch2a_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res2_1_branch2a_bn_2"
+    input: "gpu_0/res2_1_branch2b_w_0"
+    output: "gpu_0/res2_1_branch2b_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res2_1_branch2b_1"
+    input: "gpu_0/res2_1_branch2b_bn_s_0"
+    input: "gpu_0/res2_1_branch2b_bn_b_0"
+    input: "gpu_0/res2_1_branch2b_bn_rm_0"
+    input: "gpu_0/res2_1_branch2b_bn_riv_0"
+    output: "gpu_0/res2_1_branch2b_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res2_1_branch2b_bn_1"
+    output: "gpu_0/res2_1_branch2b_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res2_1_branch2b_bn_2"
+    input: "gpu_0/res2_1_branch2c_w_0"
+    output: "gpu_0/res2_1_branch2c_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res2_1_branch2c_1"
+    input: "gpu_0/res2_1_branch2c_bn_s_0"
+    input: "gpu_0/res2_1_branch2c_bn_b_0"
+    input: "gpu_0/res2_1_branch2c_bn_rm_0"
+    input: "gpu_0/res2_1_branch2c_bn_riv_0"
+    output: "gpu_0/res2_1_branch2c_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res2_1_branch2c_bn_1"
+    input: "gpu_0/res2_0_branch2c_bn_3"
+    output: "gpu_0/res2_1_branch2c_bn_2"
+    op_type: "Sum"
+  }
+  node {
+    input: "gpu_0/res2_1_branch2c_bn_2"
+    output: "gpu_0/res2_1_branch2c_bn_3"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res2_1_branch2c_bn_3"
+    input: "gpu_0/res2_2_branch2a_w_0"
+    output: "gpu_0/res2_2_branch2a_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res2_2_branch2a_1"
+    input: "gpu_0/res2_2_branch2a_bn_s_0"
+    input: "gpu_0/res2_2_branch2a_bn_b_0"
+    input: "gpu_0/res2_2_branch2a_bn_rm_0"
+    input: "gpu_0/res2_2_branch2a_bn_riv_0"
+    output: "gpu_0/res2_2_branch2a_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res2_2_branch2a_bn_1"
+    output: "gpu_0/res2_2_branch2a_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res2_2_branch2a_bn_2"
+    input: "gpu_0/res2_2_branch2b_w_0"
+    output: "gpu_0/res2_2_branch2b_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res2_2_branch2b_1"
+    input: "gpu_0/res2_2_branch2b_bn_s_0"
+    input: "gpu_0/res2_2_branch2b_bn_b_0"
+    input: "gpu_0/res2_2_branch2b_bn_rm_0"
+    input: "gpu_0/res2_2_branch2b_bn_riv_0"
+    output: "gpu_0/res2_2_branch2b_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res2_2_branch2b_bn_1"
+    output: "gpu_0/res2_2_branch2b_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res2_2_branch2b_bn_2"
+    input: "gpu_0/res2_2_branch2c_w_0"
+    output: "gpu_0/res2_2_branch2c_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res2_2_branch2c_1"
+    input: "gpu_0/res2_2_branch2c_bn_s_0"
+    input: "gpu_0/res2_2_branch2c_bn_b_0"
+    input: "gpu_0/res2_2_branch2c_bn_rm_0"
+    input: "gpu_0/res2_2_branch2c_bn_riv_0"
+    output: "gpu_0/res2_2_branch2c_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res2_2_branch2c_bn_1"
+    input: "gpu_0/res2_1_branch2c_bn_3"
+    output: "gpu_0/res2_2_branch2c_bn_2"
+    op_type: "Sum"
+  }
+  node {
+    input: "gpu_0/res2_2_branch2c_bn_2"
+    output: "gpu_0/res2_2_branch2c_bn_3"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res2_2_branch2c_bn_3"
+    input: "gpu_0/res3_0_branch2a_w_0"
+    output: "gpu_0/res3_0_branch2a_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res3_0_branch2a_1"
+    input: "gpu_0/res3_0_branch2a_bn_s_0"
+    input: "gpu_0/res3_0_branch2a_bn_b_0"
+    input: "gpu_0/res3_0_branch2a_bn_rm_0"
+    input: "gpu_0/res3_0_branch2a_bn_riv_0"
+    output: "gpu_0/res3_0_branch2a_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res3_0_branch2a_bn_1"
+    output: "gpu_0/res3_0_branch2a_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res3_0_branch2a_bn_2"
+    input: "gpu_0/res3_0_branch2b_w_0"
+    output: "gpu_0/res3_0_branch2b_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res3_0_branch2b_1"
+    input: "gpu_0/res3_0_branch2b_bn_s_0"
+    input: "gpu_0/res3_0_branch2b_bn_b_0"
+    input: "gpu_0/res3_0_branch2b_bn_rm_0"
+    input: "gpu_0/res3_0_branch2b_bn_riv_0"
+    output: "gpu_0/res3_0_branch2b_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res3_0_branch2b_bn_1"
+    output: "gpu_0/res3_0_branch2b_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res3_0_branch2b_bn_2"
+    input: "gpu_0/res3_0_branch2c_w_0"
+    output: "gpu_0/res3_0_branch2c_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res3_0_branch2c_1"
+    input: "gpu_0/res3_0_branch2c_bn_s_0"
+    input: "gpu_0/res3_0_branch2c_bn_b_0"
+    input: "gpu_0/res3_0_branch2c_bn_rm_0"
+    input: "gpu_0/res3_0_branch2c_bn_riv_0"
+    output: "gpu_0/res3_0_branch2c_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res2_2_branch2c_bn_3"
+    input: "gpu_0/res3_0_branch1_w_0"
+    output: "gpu_0/res3_0_branch1_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res3_0_branch1_1"
+    input: "gpu_0/res3_0_branch1_bn_s_0"
+    input: "gpu_0/res3_0_branch1_bn_b_0"
+    input: "gpu_0/res3_0_branch1_bn_rm_0"
+    input: "gpu_0/res3_0_branch1_bn_riv_0"
+    output: "gpu_0/res3_0_branch1_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res3_0_branch2c_bn_1"
+    input: "gpu_0/res3_0_branch1_bn_1"
+    output: "gpu_0/res3_0_branch2c_bn_2"
+    op_type: "Sum"
+  }
+  node {
+    input: "gpu_0/res3_0_branch2c_bn_2"
+    output: "gpu_0/res3_0_branch2c_bn_3"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res3_0_branch2c_bn_3"
+    input: "gpu_0/res3_1_branch2a_w_0"
+    output: "gpu_0/res3_1_branch2a_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res3_1_branch2a_1"
+    input: "gpu_0/res3_1_branch2a_bn_s_0"
+    input: "gpu_0/res3_1_branch2a_bn_b_0"
+    input: "gpu_0/res3_1_branch2a_bn_rm_0"
+    input: "gpu_0/res3_1_branch2a_bn_riv_0"
+    output: "gpu_0/res3_1_branch2a_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res3_1_branch2a_bn_1"
+    output: "gpu_0/res3_1_branch2a_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res3_1_branch2a_bn_2"
+    input: "gpu_0/res3_1_branch2b_w_0"
+    output: "gpu_0/res3_1_branch2b_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res3_1_branch2b_1"
+    input: "gpu_0/res3_1_branch2b_bn_s_0"
+    input: "gpu_0/res3_1_branch2b_bn_b_0"
+    input: "gpu_0/res3_1_branch2b_bn_rm_0"
+    input: "gpu_0/res3_1_branch2b_bn_riv_0"
+    output: "gpu_0/res3_1_branch2b_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res3_1_branch2b_bn_1"
+    output: "gpu_0/res3_1_branch2b_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res3_1_branch2b_bn_2"
+    input: "gpu_0/res3_1_branch2c_w_0"
+    output: "gpu_0/res3_1_branch2c_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res3_1_branch2c_1"
+    input: "gpu_0/res3_1_branch2c_bn_s_0"
+    input: "gpu_0/res3_1_branch2c_bn_b_0"
+    input: "gpu_0/res3_1_branch2c_bn_rm_0"
+    input: "gpu_0/res3_1_branch2c_bn_riv_0"
+    output: "gpu_0/res3_1_branch2c_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res3_1_branch2c_bn_1"
+    input: "gpu_0/res3_0_branch2c_bn_3"
+    output: "gpu_0/res3_1_branch2c_bn_2"
+    op_type: "Sum"
+  }
+  node {
+    input: "gpu_0/res3_1_branch2c_bn_2"
+    output: "gpu_0/res3_1_branch2c_bn_3"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res3_1_branch2c_bn_3"
+    input: "gpu_0/res3_2_branch2a_w_0"
+    output: "gpu_0/res3_2_branch2a_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res3_2_branch2a_1"
+    input: "gpu_0/res3_2_branch2a_bn_s_0"
+    input: "gpu_0/res3_2_branch2a_bn_b_0"
+    input: "gpu_0/res3_2_branch2a_bn_rm_0"
+    input: "gpu_0/res3_2_branch2a_bn_riv_0"
+    output: "gpu_0/res3_2_branch2a_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res3_2_branch2a_bn_1"
+    output: "gpu_0/res3_2_branch2a_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res3_2_branch2a_bn_2"
+    input: "gpu_0/res3_2_branch2b_w_0"
+    output: "gpu_0/res3_2_branch2b_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res3_2_branch2b_1"
+    input: "gpu_0/res3_2_branch2b_bn_s_0"
+    input: "gpu_0/res3_2_branch2b_bn_b_0"
+    input: "gpu_0/res3_2_branch2b_bn_rm_0"
+    input: "gpu_0/res3_2_branch2b_bn_riv_0"
+    output: "gpu_0/res3_2_branch2b_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res3_2_branch2b_bn_1"
+    output: "gpu_0/res3_2_branch2b_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res3_2_branch2b_bn_2"
+    input: "gpu_0/res3_2_branch2c_w_0"
+    output: "gpu_0/res3_2_branch2c_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res3_2_branch2c_1"
+    input: "gpu_0/res3_2_branch2c_bn_s_0"
+    input: "gpu_0/res3_2_branch2c_bn_b_0"
+    input: "gpu_0/res3_2_branch2c_bn_rm_0"
+    input: "gpu_0/res3_2_branch2c_bn_riv_0"
+    output: "gpu_0/res3_2_branch2c_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res3_2_branch2c_bn_1"
+    input: "gpu_0/res3_1_branch2c_bn_3"
+    output: "gpu_0/res3_2_branch2c_bn_2"
+    op_type: "Sum"
+  }
+  node {
+    input: "gpu_0/res3_2_branch2c_bn_2"
+    output: "gpu_0/res3_2_branch2c_bn_3"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res3_2_branch2c_bn_3"
+    input: "gpu_0/res3_3_branch2a_w_0"
+    output: "gpu_0/res3_3_branch2a_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res3_3_branch2a_1"
+    input: "gpu_0/res3_3_branch2a_bn_s_0"
+    input: "gpu_0/res3_3_branch2a_bn_b_0"
+    input: "gpu_0/res3_3_branch2a_bn_rm_0"
+    input: "gpu_0/res3_3_branch2a_bn_riv_0"
+    output: "gpu_0/res3_3_branch2a_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res3_3_branch2a_bn_1"
+    output: "gpu_0/res3_3_branch2a_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res3_3_branch2a_bn_2"
+    input: "gpu_0/res3_3_branch2b_w_0"
+    output: "gpu_0/res3_3_branch2b_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res3_3_branch2b_1"
+    input: "gpu_0/res3_3_branch2b_bn_s_0"
+    input: "gpu_0/res3_3_branch2b_bn_b_0"
+    input: "gpu_0/res3_3_branch2b_bn_rm_0"
+    input: "gpu_0/res3_3_branch2b_bn_riv_0"
+    output: "gpu_0/res3_3_branch2b_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res3_3_branch2b_bn_1"
+    output: "gpu_0/res3_3_branch2b_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res3_3_branch2b_bn_2"
+    input: "gpu_0/res3_3_branch2c_w_0"
+    output: "gpu_0/res3_3_branch2c_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res3_3_branch2c_1"
+    input: "gpu_0/res3_3_branch2c_bn_s_0"
+    input: "gpu_0/res3_3_branch2c_bn_b_0"
+    input: "gpu_0/res3_3_branch2c_bn_rm_0"
+    input: "gpu_0/res3_3_branch2c_bn_riv_0"
+    output: "gpu_0/res3_3_branch2c_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res3_3_branch2c_bn_1"
+    input: "gpu_0/res3_2_branch2c_bn_3"
+    output: "gpu_0/res3_3_branch2c_bn_2"
+    op_type: "Sum"
+  }
+  node {
+    input: "gpu_0/res3_3_branch2c_bn_2"
+    output: "gpu_0/res3_3_branch2c_bn_3"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res3_3_branch2c_bn_3"
+    input: "gpu_0/res4_0_branch2a_w_0"
+    output: "gpu_0/res4_0_branch2a_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res4_0_branch2a_1"
+    input: "gpu_0/res4_0_branch2a_bn_s_0"
+    input: "gpu_0/res4_0_branch2a_bn_b_0"
+    input: "gpu_0/res4_0_branch2a_bn_rm_0"
+    input: "gpu_0/res4_0_branch2a_bn_riv_0"
+    output: "gpu_0/res4_0_branch2a_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res4_0_branch2a_bn_1"
+    output: "gpu_0/res4_0_branch2a_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res4_0_branch2a_bn_2"
+    input: "gpu_0/res4_0_branch2b_w_0"
+    output: "gpu_0/res4_0_branch2b_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res4_0_branch2b_1"
+    input: "gpu_0/res4_0_branch2b_bn_s_0"
+    input: "gpu_0/res4_0_branch2b_bn_b_0"
+    input: "gpu_0/res4_0_branch2b_bn_rm_0"
+    input: "gpu_0/res4_0_branch2b_bn_riv_0"
+    output: "gpu_0/res4_0_branch2b_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res4_0_branch2b_bn_1"
+    output: "gpu_0/res4_0_branch2b_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res4_0_branch2b_bn_2"
+    input: "gpu_0/res4_0_branch2c_w_0"
+    output: "gpu_0/res4_0_branch2c_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res4_0_branch2c_1"
+    input: "gpu_0/res4_0_branch2c_bn_s_0"
+    input: "gpu_0/res4_0_branch2c_bn_b_0"
+    input: "gpu_0/res4_0_branch2c_bn_rm_0"
+    input: "gpu_0/res4_0_branch2c_bn_riv_0"
+    output: "gpu_0/res4_0_branch2c_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res3_3_branch2c_bn_3"
+    input: "gpu_0/res4_0_branch1_w_0"
+    output: "gpu_0/res4_0_branch1_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res4_0_branch1_1"
+    input: "gpu_0/res4_0_branch1_bn_s_0"
+    input: "gpu_0/res4_0_branch1_bn_b_0"
+    input: "gpu_0/res4_0_branch1_bn_rm_0"
+    input: "gpu_0/res4_0_branch1_bn_riv_0"
+    output: "gpu_0/res4_0_branch1_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res4_0_branch2c_bn_1"
+    input: "gpu_0/res4_0_branch1_bn_1"
+    output: "gpu_0/res4_0_branch2c_bn_2"
+    op_type: "Sum"
+  }
+  node {
+    input: "gpu_0/res4_0_branch2c_bn_2"
+    output: "gpu_0/res4_0_branch2c_bn_3"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res4_0_branch2c_bn_3"
+    input: "gpu_0/res4_1_branch2a_w_0"
+    output: "gpu_0/res4_1_branch2a_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res4_1_branch2a_1"
+    input: "gpu_0/res4_1_branch2a_bn_s_0"
+    input: "gpu_0/res4_1_branch2a_bn_b_0"
+    input: "gpu_0/res4_1_branch2a_bn_rm_0"
+    input: "gpu_0/res4_1_branch2a_bn_riv_0"
+    output: "gpu_0/res4_1_branch2a_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res4_1_branch2a_bn_1"
+    output: "gpu_0/res4_1_branch2a_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res4_1_branch2a_bn_2"
+    input: "gpu_0/res4_1_branch2b_w_0"
+    output: "gpu_0/res4_1_branch2b_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res4_1_branch2b_1"
+    input: "gpu_0/res4_1_branch2b_bn_s_0"
+    input: "gpu_0/res4_1_branch2b_bn_b_0"
+    input: "gpu_0/res4_1_branch2b_bn_rm_0"
+    input: "gpu_0/res4_1_branch2b_bn_riv_0"
+    output: "gpu_0/res4_1_branch2b_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res4_1_branch2b_bn_1"
+    output: "gpu_0/res4_1_branch2b_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res4_1_branch2b_bn_2"
+    input: "gpu_0/res4_1_branch2c_w_0"
+    output: "gpu_0/res4_1_branch2c_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res4_1_branch2c_1"
+    input: "gpu_0/res4_1_branch2c_bn_s_0"
+    input: "gpu_0/res4_1_branch2c_bn_b_0"
+    input: "gpu_0/res4_1_branch2c_bn_rm_0"
+    input: "gpu_0/res4_1_branch2c_bn_riv_0"
+    output: "gpu_0/res4_1_branch2c_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res4_1_branch2c_bn_1"
+    input: "gpu_0/res4_0_branch2c_bn_3"
+    output: "gpu_0/res4_1_branch2c_bn_2"
+    op_type: "Sum"
+  }
+  node {
+    input: "gpu_0/res4_1_branch2c_bn_2"
+    output: "gpu_0/res4_1_branch2c_bn_3"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res4_1_branch2c_bn_3"
+    input: "gpu_0/res4_2_branch2a_w_0"
+    output: "gpu_0/res4_2_branch2a_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res4_2_branch2a_1"
+    input: "gpu_0/res4_2_branch2a_bn_s_0"
+    input: "gpu_0/res4_2_branch2a_bn_b_0"
+    input: "gpu_0/res4_2_branch2a_bn_rm_0"
+    input: "gpu_0/res4_2_branch2a_bn_riv_0"
+    output: "gpu_0/res4_2_branch2a_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res4_2_branch2a_bn_1"
+    output: "gpu_0/res4_2_branch2a_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res4_2_branch2a_bn_2"
+    input: "gpu_0/res4_2_branch2b_w_0"
+    output: "gpu_0/res4_2_branch2b_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res4_2_branch2b_1"
+    input: "gpu_0/res4_2_branch2b_bn_s_0"
+    input: "gpu_0/res4_2_branch2b_bn_b_0"
+    input: "gpu_0/res4_2_branch2b_bn_rm_0"
+    input: "gpu_0/res4_2_branch2b_bn_riv_0"
+    output: "gpu_0/res4_2_branch2b_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res4_2_branch2b_bn_1"
+    output: "gpu_0/res4_2_branch2b_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res4_2_branch2b_bn_2"
+    input: "gpu_0/res4_2_branch2c_w_0"
+    output: "gpu_0/res4_2_branch2c_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res4_2_branch2c_1"
+    input: "gpu_0/res4_2_branch2c_bn_s_0"
+    input: "gpu_0/res4_2_branch2c_bn_b_0"
+    input: "gpu_0/res4_2_branch2c_bn_rm_0"
+    input: "gpu_0/res4_2_branch2c_bn_riv_0"
+    output: "gpu_0/res4_2_branch2c_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res4_2_branch2c_bn_1"
+    input: "gpu_0/res4_1_branch2c_bn_3"
+    output: "gpu_0/res4_2_branch2c_bn_2"
+    op_type: "Sum"
+  }
+  node {
+    input: "gpu_0/res4_2_branch2c_bn_2"
+    output: "gpu_0/res4_2_branch2c_bn_3"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res4_2_branch2c_bn_3"
+    input: "gpu_0/res4_3_branch2a_w_0"
+    output: "gpu_0/res4_3_branch2a_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res4_3_branch2a_1"
+    input: "gpu_0/res4_3_branch2a_bn_s_0"
+    input: "gpu_0/res4_3_branch2a_bn_b_0"
+    input: "gpu_0/res4_3_branch2a_bn_rm_0"
+    input: "gpu_0/res4_3_branch2a_bn_riv_0"
+    output: "gpu_0/res4_3_branch2a_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res4_3_branch2a_bn_1"
+    output: "gpu_0/res4_3_branch2a_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res4_3_branch2a_bn_2"
+    input: "gpu_0/res4_3_branch2b_w_0"
+    output: "gpu_0/res4_3_branch2b_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res4_3_branch2b_1"
+    input: "gpu_0/res4_3_branch2b_bn_s_0"
+    input: "gpu_0/res4_3_branch2b_bn_b_0"
+    input: "gpu_0/res4_3_branch2b_bn_rm_0"
+    input: "gpu_0/res4_3_branch2b_bn_riv_0"
+    output: "gpu_0/res4_3_branch2b_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res4_3_branch2b_bn_1"
+    output: "gpu_0/res4_3_branch2b_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res4_3_branch2b_bn_2"
+    input: "gpu_0/res4_3_branch2c_w_0"
+    output: "gpu_0/res4_3_branch2c_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res4_3_branch2c_1"
+    input: "gpu_0/res4_3_branch2c_bn_s_0"
+    input: "gpu_0/res4_3_branch2c_bn_b_0"
+    input: "gpu_0/res4_3_branch2c_bn_rm_0"
+    input: "gpu_0/res4_3_branch2c_bn_riv_0"
+    output: "gpu_0/res4_3_branch2c_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res4_3_branch2c_bn_1"
+    input: "gpu_0/res4_2_branch2c_bn_3"
+    output: "gpu_0/res4_3_branch2c_bn_2"
+    op_type: "Sum"
+  }
+  node {
+    input: "gpu_0/res4_3_branch2c_bn_2"
+    output: "gpu_0/res4_3_branch2c_bn_3"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res4_3_branch2c_bn_3"
+    input: "gpu_0/res4_4_branch2a_w_0"
+    output: "gpu_0/res4_4_branch2a_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res4_4_branch2a_1"
+    input: "gpu_0/res4_4_branch2a_bn_s_0"
+    input: "gpu_0/res4_4_branch2a_bn_b_0"
+    input: "gpu_0/res4_4_branch2a_bn_rm_0"
+    input: "gpu_0/res4_4_branch2a_bn_riv_0"
+    output: "gpu_0/res4_4_branch2a_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res4_4_branch2a_bn_1"
+    output: "gpu_0/res4_4_branch2a_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res4_4_branch2a_bn_2"
+    input: "gpu_0/res4_4_branch2b_w_0"
+    output: "gpu_0/res4_4_branch2b_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res4_4_branch2b_1"
+    input: "gpu_0/res4_4_branch2b_bn_s_0"
+    input: "gpu_0/res4_4_branch2b_bn_b_0"
+    input: "gpu_0/res4_4_branch2b_bn_rm_0"
+    input: "gpu_0/res4_4_branch2b_bn_riv_0"
+    output: "gpu_0/res4_4_branch2b_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res4_4_branch2b_bn_1"
+    output: "gpu_0/res4_4_branch2b_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res4_4_branch2b_bn_2"
+    input: "gpu_0/res4_4_branch2c_w_0"
+    output: "gpu_0/res4_4_branch2c_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res4_4_branch2c_1"
+    input: "gpu_0/res4_4_branch2c_bn_s_0"
+    input: "gpu_0/res4_4_branch2c_bn_b_0"
+    input: "gpu_0/res4_4_branch2c_bn_rm_0"
+    input: "gpu_0/res4_4_branch2c_bn_riv_0"
+    output: "gpu_0/res4_4_branch2c_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res4_4_branch2c_bn_1"
+    input: "gpu_0/res4_3_branch2c_bn_3"
+    output: "gpu_0/res4_4_branch2c_bn_2"
+    op_type: "Sum"
+  }
+  node {
+    input: "gpu_0/res4_4_branch2c_bn_2"
+    output: "gpu_0/res4_4_branch2c_bn_3"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res4_4_branch2c_bn_3"
+    input: "gpu_0/res4_5_branch2a_w_0"
+    output: "gpu_0/res4_5_branch2a_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res4_5_branch2a_1"
+    input: "gpu_0/res4_5_branch2a_bn_s_0"
+    input: "gpu_0/res4_5_branch2a_bn_b_0"
+    input: "gpu_0/res4_5_branch2a_bn_rm_0"
+    input: "gpu_0/res4_5_branch2a_bn_riv_0"
+    output: "gpu_0/res4_5_branch2a_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res4_5_branch2a_bn_1"
+    output: "gpu_0/res4_5_branch2a_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res4_5_branch2a_bn_2"
+    input: "gpu_0/res4_5_branch2b_w_0"
+    output: "gpu_0/res4_5_branch2b_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res4_5_branch2b_1"
+    input: "gpu_0/res4_5_branch2b_bn_s_0"
+    input: "gpu_0/res4_5_branch2b_bn_b_0"
+    input: "gpu_0/res4_5_branch2b_bn_rm_0"
+    input: "gpu_0/res4_5_branch2b_bn_riv_0"
+    output: "gpu_0/res4_5_branch2b_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res4_5_branch2b_bn_1"
+    output: "gpu_0/res4_5_branch2b_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res4_5_branch2b_bn_2"
+    input: "gpu_0/res4_5_branch2c_w_0"
+    output: "gpu_0/res4_5_branch2c_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res4_5_branch2c_1"
+    input: "gpu_0/res4_5_branch2c_bn_s_0"
+    input: "gpu_0/res4_5_branch2c_bn_b_0"
+    input: "gpu_0/res4_5_branch2c_bn_rm_0"
+    input: "gpu_0/res4_5_branch2c_bn_riv_0"
+    output: "gpu_0/res4_5_branch2c_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res4_5_branch2c_bn_1"
+    input: "gpu_0/res4_4_branch2c_bn_3"
+    output: "gpu_0/res4_5_branch2c_bn_2"
+    op_type: "Sum"
+  }
+  node {
+    input: "gpu_0/res4_5_branch2c_bn_2"
+    output: "gpu_0/res4_5_branch2c_bn_3"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res4_5_branch2c_bn_3"
+    input: "gpu_0/res5_0_branch2a_w_0"
+    output: "gpu_0/res5_0_branch2a_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res5_0_branch2a_1"
+    input: "gpu_0/res5_0_branch2a_bn_s_0"
+    input: "gpu_0/res5_0_branch2a_bn_b_0"
+    input: "gpu_0/res5_0_branch2a_bn_rm_0"
+    input: "gpu_0/res5_0_branch2a_bn_riv_0"
+    output: "gpu_0/res5_0_branch2a_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res5_0_branch2a_bn_1"
+    output: "gpu_0/res5_0_branch2a_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res5_0_branch2a_bn_2"
+    input: "gpu_0/res5_0_branch2b_w_0"
+    output: "gpu_0/res5_0_branch2b_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res5_0_branch2b_1"
+    input: "gpu_0/res5_0_branch2b_bn_s_0"
+    input: "gpu_0/res5_0_branch2b_bn_b_0"
+    input: "gpu_0/res5_0_branch2b_bn_rm_0"
+    input: "gpu_0/res5_0_branch2b_bn_riv_0"
+    output: "gpu_0/res5_0_branch2b_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res5_0_branch2b_bn_1"
+    output: "gpu_0/res5_0_branch2b_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res5_0_branch2b_bn_2"
+    input: "gpu_0/res5_0_branch2c_w_0"
+    output: "gpu_0/res5_0_branch2c_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res5_0_branch2c_1"
+    input: "gpu_0/res5_0_branch2c_bn_s_0"
+    input: "gpu_0/res5_0_branch2c_bn_b_0"
+    input: "gpu_0/res5_0_branch2c_bn_rm_0"
+    input: "gpu_0/res5_0_branch2c_bn_riv_0"
+    output: "gpu_0/res5_0_branch2c_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res4_5_branch2c_bn_3"
+    input: "gpu_0/res5_0_branch1_w_0"
+    output: "gpu_0/res5_0_branch1_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res5_0_branch1_1"
+    input: "gpu_0/res5_0_branch1_bn_s_0"
+    input: "gpu_0/res5_0_branch1_bn_b_0"
+    input: "gpu_0/res5_0_branch1_bn_rm_0"
+    input: "gpu_0/res5_0_branch1_bn_riv_0"
+    output: "gpu_0/res5_0_branch1_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res5_0_branch2c_bn_1"
+    input: "gpu_0/res5_0_branch1_bn_1"
+    output: "gpu_0/res5_0_branch2c_bn_2"
+    op_type: "Sum"
+  }
+  node {
+    input: "gpu_0/res5_0_branch2c_bn_2"
+    output: "gpu_0/res5_0_branch2c_bn_3"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res5_0_branch2c_bn_3"
+    input: "gpu_0/res5_1_branch2a_w_0"
+    output: "gpu_0/res5_1_branch2a_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res5_1_branch2a_1"
+    input: "gpu_0/res5_1_branch2a_bn_s_0"
+    input: "gpu_0/res5_1_branch2a_bn_b_0"
+    input: "gpu_0/res5_1_branch2a_bn_rm_0"
+    input: "gpu_0/res5_1_branch2a_bn_riv_0"
+    output: "gpu_0/res5_1_branch2a_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res5_1_branch2a_bn_1"
+    output: "gpu_0/res5_1_branch2a_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res5_1_branch2a_bn_2"
+    input: "gpu_0/res5_1_branch2b_w_0"
+    output: "gpu_0/res5_1_branch2b_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res5_1_branch2b_1"
+    input: "gpu_0/res5_1_branch2b_bn_s_0"
+    input: "gpu_0/res5_1_branch2b_bn_b_0"
+    input: "gpu_0/res5_1_branch2b_bn_rm_0"
+    input: "gpu_0/res5_1_branch2b_bn_riv_0"
+    output: "gpu_0/res5_1_branch2b_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res5_1_branch2b_bn_1"
+    output: "gpu_0/res5_1_branch2b_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res5_1_branch2b_bn_2"
+    input: "gpu_0/res5_1_branch2c_w_0"
+    output: "gpu_0/res5_1_branch2c_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res5_1_branch2c_1"
+    input: "gpu_0/res5_1_branch2c_bn_s_0"
+    input: "gpu_0/res5_1_branch2c_bn_b_0"
+    input: "gpu_0/res5_1_branch2c_bn_rm_0"
+    input: "gpu_0/res5_1_branch2c_bn_riv_0"
+    output: "gpu_0/res5_1_branch2c_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res5_1_branch2c_bn_1"
+    input: "gpu_0/res5_0_branch2c_bn_3"
+    output: "gpu_0/res5_1_branch2c_bn_2"
+    op_type: "Sum"
+  }
+  node {
+    input: "gpu_0/res5_1_branch2c_bn_2"
+    output: "gpu_0/res5_1_branch2c_bn_3"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res5_1_branch2c_bn_3"
+    input: "gpu_0/res5_2_branch2a_w_0"
+    output: "gpu_0/res5_2_branch2a_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res5_2_branch2a_1"
+    input: "gpu_0/res5_2_branch2a_bn_s_0"
+    input: "gpu_0/res5_2_branch2a_bn_b_0"
+    input: "gpu_0/res5_2_branch2a_bn_rm_0"
+    input: "gpu_0/res5_2_branch2a_bn_riv_0"
+    output: "gpu_0/res5_2_branch2a_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res5_2_branch2a_bn_1"
+    output: "gpu_0/res5_2_branch2a_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res5_2_branch2a_bn_2"
+    input: "gpu_0/res5_2_branch2b_w_0"
+    output: "gpu_0/res5_2_branch2b_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res5_2_branch2b_1"
+    input: "gpu_0/res5_2_branch2b_bn_s_0"
+    input: "gpu_0/res5_2_branch2b_bn_b_0"
+    input: "gpu_0/res5_2_branch2b_bn_rm_0"
+    input: "gpu_0/res5_2_branch2b_bn_riv_0"
+    output: "gpu_0/res5_2_branch2b_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res5_2_branch2b_bn_1"
+    output: "gpu_0/res5_2_branch2b_bn_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res5_2_branch2b_bn_2"
+    input: "gpu_0/res5_2_branch2c_w_0"
+    output: "gpu_0/res5_2_branch2c_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/res5_2_branch2c_1"
+    input: "gpu_0/res5_2_branch2c_bn_s_0"
+    input: "gpu_0/res5_2_branch2c_bn_b_0"
+    input: "gpu_0/res5_2_branch2c_bn_rm_0"
+    input: "gpu_0/res5_2_branch2c_bn_riv_0"
+    output: "gpu_0/res5_2_branch2c_bn_1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1.0000001e-05
+      type: FLOAT
+    }
+  }
+  node {
+    input: "gpu_0/res5_2_branch2c_bn_1"
+    input: "gpu_0/res5_1_branch2c_bn_3"
+    output: "gpu_0/res5_2_branch2c_bn_2"
+    op_type: "Sum"
+  }
+  node {
+    input: "gpu_0/res5_2_branch2c_bn_2"
+    output: "gpu_0/res5_2_branch2c_bn_3"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/res5_2_branch2c_bn_3"
+    output: "gpu_0/pool5_1"
+    op_type: "AveragePool"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 7
+      ints: 7
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/pool5_1"
+    input: "OC2_DUMMY_1"
+    output: "OC2_DUMMY_0"
+    op_type: "Reshape"
+  }
+  node {
+    input: "OC2_DUMMY_0"
+    input: "gpu_0/pred_w_0"
+    input: "gpu_0/pred_b_0"
+    output: "gpu_0/pred_1"
+    op_type: "Gemm"
+    attribute {
+      name: "transB"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "gpu_0/pred_1"
+    output: "gpu_0/softmax_1"
+    op_type: "Softmax"
+  }
+  name: "resnet50"
+  initializer {
+    dims: 1
+    dims: 1
+    data_type: 1
+    name: "gpu_0/imagenet1k_blobs_queue_f22e83c9-22cd-4a8b-a66d-113af6b832b4_0"
+    raw_data: "\000\000\000\000"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_0_branch2a_bn_b_0"
+    raw_data: "\242\353\242\276\355\206\232?\026`\373>\016u*\277$_^?\223\254R?\240o\223@\256\203*\275\\\331$\277{\276\326>\3243\033\273J\337\t\2771\242\315>\311\215W@\275\371\037?k\267\271\276\323~m=\206\271\357?\244\212s?S\341\266\276\216j.?\222\362\036?\307\344\346>\357h\343>\343g\374\275~Bf?4\372\261\277}\315|\276\205\020%\276\332@)>c\217*?cI\025\277~{=?\032\264\'\277\204\343*\276\226\233\025?\363\2011@\006\210\001@\365nF>\200\366\265>\236u\202\2763d\272>\367P\002?\261&\201?\031\260&?\372\324\336\276\346Rq\274\301\007\221\276\300\215T?\314\302{@\252\313\363>Vgk\277\332\002\r=4\266|\276\345\374\306=q\263K\277\347j\'\276\361F\247?\203+\317?9Ug?>\020\346\277\343\346\226>4w\220\277\376\366\301>"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_0_branch2a_bn_riv_0"
+    raw_data: "\260\205\214?\251\347\366?\257\000\016?\353\r\356?\r\024\267>\241q\342?c\227wA\3524A?3\364\305?v\360\035?X\267\322?\301F\256?\r\372\006?\313\021\235@%\365\275>c\213\303?b\200\273><\022]?\236G\004?8\255\251=f\253A?\361\313-?\3031\227>D\0016?\020\273\305?\215\n+?!\030\252?g\3561?\210\355\237?^\247i?\351\014\300>^\337\003@\202)\004@\223\025\343?\263\320Z?\330\211\300?\367+\300@\356\364\377@\356%\303?\200\306\200?,\216\227?\035E\335>p\271\t?\375\324\203>%w\034>\366\271$>\377\213;?|N\350>\241\313\014?.\177\325@\33675?\340\302\275>\346|\235?\215\014\245?\312\326\341?H\304@?\325V\033?\314HQ?ah\245?\007\253\322?\to\204?\370kS?>q\026?\245M\364>"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_0_branch2a_bn_rm_0"
+    raw_data: "\372\003\377\277\264\343\254@?*\027?\026\347\361\277\372\343(\277\2342\'\300\201\341\021\277\022\211\005\300|\241.\300\220\316y?i\354\202?^0\r\300\001\344\355?{\037Y\277\275\207\207\276 [<\300\322\037\306\277\312\034\222\300\272\351\010=\251V*?\350\364\001\300W\r(\300\007\202!\300U\305|\277g\276\'\3008{\t?\222\303\374=d\273\256\277.\026\035\300\345\255\317\277\000\313\221\277\t\313\000\300\307\255\000\276Z\334\371\277\204i>\300\335\275\264\277&\013s>Rm;AoA\017\300\255\240i\277\327\361)\300\314\227\362?\341Xz\277\375S\013=\242\316\260\277Y\261\335>\261\022\013\300\313c\326\277\217\013\350\277\222\367\223@-\230\016\300R\215\237?%\035\365\277}\002\036\300B\377\220\300\215\214 \300\364#\303\2775\373\036\300*C<\275\230\341\353\277;,\000?0I7\300l_\275\277\313]\263?"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_0_branch2a_bn_s_0"
+    raw_data: "\277\021\240?\'\314A?*\327P?\356\311\353?\275L\021?\352\364\242?Y\372\010@\214D\211?\216\373\326?\030\376??\364g\222?\346\336\323?\326\005J?\277\037\244?\177-2?l\316\260?\267\013\350>\0331#?\366HJ?Se\000?B\'G?C2G?c\014Q?0|o?\217\317\264?f\334t?M \321?\365\357\212?y\241\230?cY\232?\212\036O?\013*\355?\373\367\233?\270\346\351?\201\346\212?CW\220?\236\027\252?\247G\267?\014{\230?\177\223\205?\262\233\236?\35039?\206PC?\222\2261?\021\246*?\375\0261?0\005i?Ux\213?\343\177f?\314<\276?\331L3?\357\001u?p\336\237?\356\205\235?t\020\242?m\221\302?\n\023\222?\215\332)?v7G?sK\231?\260\247\362?\034fv?\306\034\315?\313w:?"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_0_branch2b_bn_b_0"
+    raw_data: "\351\326\"@a\343\277>Md\262\277\251\242~@w\224\257?\336\007\252>\374\357(@\022\214\030\276\352\3471\276\377B3\277\217D_@[\255\227>\270\207\234\276\000\356\274>\006\021\365=?\017\324=\025\242B>\n \214@\240\301\364\276S\202\275\275r*j>R\347\263>\021o\276=\205\330!\277\217\346\227?(\317\323?\204_\372?\364\215\204;\266\240\210>\305\016\220>\032\272\315>\227\016\246\277\357L\300?J\177\210?\255\351\245>)\323\225\277n\340\003\277f\230\007?W?\310\277\'\t\227?a\'t\276\326\217\270>v\311\022?OlN?\234\274\274?\303\036\243\277\203\213\342>\234\234\234\277\376\322\335>\321\327\356\275\300\027G@\332\237\364>F\0039@\267x\265?\0311\327>\334a/\275dY\201>\3237\353>\201^\376\276\2157\377?\364\010 \277\354\030\210@\2674\331>\261\326\315>"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_0_branch2b_bn_riv_0"
+    raw_data: "Z>\262?z\013\230?\223\023\033?a\211FA\227\372m@\330\000\367>A.I@*N\327>\024n\213?G\364\021>\216\033}A\243\241\217>\272\002\334>^\256\356@S\336w?_.A?\270\332C?\031\227XA\025\246\220>0\016\013?y\372\344?=AM@\177s\034?\017\036\247>\036\003\353?f\0209@\312\207\243@\347P\204>\311\347\032?\321\034\270?\250M5@\232U\023?\253\204\301>_\333\n?\201\307\301@\317\321\241>\207\247\315>\252\013\242?:\026\347>\210\217\201?I\200\006?\336!~@\343\357\316?\333zk?\327(,?K\254%?\213\371\226@#b\343>\032\233\253@#\316\306>(\326\266@4\322\225?\037D\326@\251l\361?\022\271;@\344\2259?f7\307?\213\360\272?\314\262\313>X9j?\246k\035?\2160\002A\236\331\232>\262\001\362?"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_0_branch2b_bn_rm_0"
+    raw_data: "\263>\032>\004`\020\276\321\'l\300\250>/@\031\021V\2763\005\034\277\267t\303\275Y2\021\277Z\365\343\275)\223\363\275\n\267<@\017\032a?\331\245*?\322!\340?\005\274\010\275\307\030\210?&J\335>\227O\006@6YY>]7Q\276\212O#@\211\2044@\376\225\237?\221$\n\277\222\306\373>Go\316?f\001\251?\332\255\246\275\247\270\270\277\313=\327?%\362\305?\340gm\300b\267(>)\001\202\276v\363\334? ^j\277\033\014^>ZQ\251?M\201\335\277\204i\r?\346c\021?\024B\362?x\345\235?|\332]\277\317a=\276s\223\253<\345\032\370?\021\rG@BB#@\341\262 ?\021\220\244\276\021-\205?`T\237?v\364\243>\256\245\212?n\010\276\277Uab?%\350k>2\356\305\277\304b\213\2760O\224\277e\260\200\275uZ0?\031\324\344?"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_0_branch2b_bn_s_0"
+    raw_data: "<\242f?B\312\363>\262\275\214?p\210\340?\242-\\?\241c\377>\353\034z?\302\250\030?%eC?9\2243?\230c\331?y\310\315>&\356=?J\375\222?bw!?d\311\016?\301\374\364>t\347\375?\342\302^?p\332+?\t\313\'?\n9\\?\033w\013?&\243*?\256\022!?g\376A?\247\260\247?\376X\344>\014\320\004?\243)\022?L\221O?\270jy?\305u\014?Q\327\343>6v\211?\260V\202?#E=?j\256\017?\251Nt?ZYX?zXW?\265\216~?ZS0?\001H\022?%\304\003?\310\031\243?Q<z?\250\303\201?\0014\200?\252\244\'?\212.\234?\300>\036?\177=\204?\344J\032?\306\036L?\031v\355>ee;?\017M!?!hR?\270\006Q?\023\205^?4\253\242?\346\331\267>\035#3?"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_1_branch2a_bn_b_0"
+    raw_data: "\233\367/\277\202\355\005\277\266f\253\277\016\353O\277\000\315\210\277\'\243\235\276\000\243\271\277:\335\251\275\310`\373?\324\217E?ZJ\302\276\347\2538?c\223\034\277*2\307=\206\025:?\307\025e<\217C\014?\201\002\313\277WVs\277v\312\353>s6U\277\250\312\275\277\246\242G?\303\005\210\277\225\240\305>jo\252\277n\264\361>\275O~\276\244\260\275?\326-\216\277\305\245l>\231\251\371\276X\\\026>_\250\034\277\226\271\330?\352\323\n?\222\350\220?`\356\234\277\247\rQ?3Lx\277~\322\332\276J\353\212\277\277\231o\276\335.\360>\261u\350?\034^\225\277\376\226\r?=#{\277\305\206O\277\271|\214\275+1\211\277!l\323\277\353\263\241\277R\222\300>r\372h\277\262\326\006>\262\221\221\276\331\3030?\025\245O\277\327(\236\277D*2?\337\312,?/\365\204=\373\336\363\275"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_1_branch2a_bn_riv_0"
+    raw_data: "\332\346\026?\002M\331?\272\307\363?O\376\001?\004>\302>\231@\\?\244\210~>=\211\264?b\037q?\247\272|?Zz\003?\223q\345>0\363\257?\323\355\010?\374\003y?\234\006u?Y\177+?\027\203\321?\201\303\263?\320:d?%\264\304>\326\275w?dAy?~\213\207?\214\231\333>rP\004@\337\024\211>\244\334\355?\003\240\346>|@\234>\272\327\021?\271c\267>.\251\244>\320\231\206?=\241\265?o\010*?s\241\200?\342q\363?\246NG?\n\033\300>W\321{?\235\341\203?>\353 ?\021W\'?Z-\r?\00046?\257`e?D>\304?|\305\361>2\350\200?\202\265\217?5\343\007@$\037\370?\371r\245>3\253\027?\371Y\250?xM\017?=\323\020?y\275v?u\037L>Q\2367?\222\346h?\302-z>\256N\315>"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_1_branch2a_bn_rm_0"
+    raw_data: "Y\240\262<\253\313\030?\224\276\356>\265\rw>\371L\327>\341Z\337>\243\246\263\276_\241\317\276[\253%?\014F<\276\017\033\323\275`\376\205\276\346\256_>\232@\037\276\336#j\277\310Vv?s\005\004\277g\222\013?\0309\365> \277\327\277\366[L\277W\241P?\206\214\205\277(\r\257>\231\232\221\276\340\230\020?\207\352\325:\217\212\027?d:\020?,\037<>\313\005\213\276\360\366\360>\000\312\">/\370\205>\205\316\223?\027\376\206\276\300\233s?\226\rU?C\214\305>3\274)\276N \250>j\343\244?\003\3656\276\245\376\323>\366B\246>\345-\355>\362w\303\277\351uV\276\262\312[=\222\372\335\275\213\006\231? \027\300?\272\325\376>\235\226\004?\302\273X\275\255\314\217?\253\020\301\276(\"\030\277nZ\023?\n\302\251=\224\367h>\371B\341\277$\312\247;\210m%?"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_1_branch2a_bn_s_0"
+    raw_data: "\243I\254?vN\310?(#\003@Z\r\227?*\014\234?n\271\256?rA\245?\200\343\256?w\200/?*\350,?\"\345\217?\373\2003?\301\272\322?\354\rw?N\004\\?k\202\220?\220\225??$\"\006@?\346\317?\202\263Y?\231J\220?\327v\350?\336\337E?\023t\306?\037\366O?;\n\367?lk=?\206m\312?Ls\037?\346L\230?\026u[?\321\016q?$\376U?Q\317\240?y\303*?\364G`?\201\225\022?\274t\343?]\330B?<\212\224?\366\204\270?:Q\314?@?\203?\362\303%?\277p\016?\347[\266?B\323C?\305\t\353?\203\320\232?\354\275\221?9\266\320?\342\025\013@\213\243\362?O\365??\321\264\236?\323f\217?_<k?p\352>?s\252\273?F\310\212?\340q6?\372\233D?\211oA?\341 [?"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_1_branch2b_bn_b_0"
+    raw_data: "H\216\236>\034\267\335>.\270<\277\346\317\017\277\270\033\016@@K\367\276F\356\247\277\350\325K\277[\246T\275\373\244u\276\023a\346?T\257\231>\031\243\225\276\023{\236\274\346Gy\277\002\234\237>\357}\260=\010\200v?\374!\326?\023Q\037\277\366\361\342\273H\252}>{\376\"\277i\336\311\275\257F\013?\360\377\210?\276\310\230<k\212\t\300\232\355\r\277\213,\033>7\364\251?:\177\271?\373K\005@+\264\220>i\3320?\232\016\250\276\302\3569\276\245\266\017@M\003)?Gn\207\277U\024.>\013=\251>\366M=\277\2070\002\276I\022\313\276H\0351>\005F\216\276v\205\220\277\024\303%\277\273\0250\277\267\353\204\277{s\304?[\232W\274\375\216\371\276\002\326\217\276\003\247=\300\302\313\004>\372C\300?k\220\005\277b\307\347\2763A\255>\201\273_?\013\272\266>\223cL?"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_1_branch2b_bn_riv_0"
+    raw_data: "k\3303?\267d\210?]\250\016?X7\007?;\006r?\324\222\n?!\010^>|j;?(\240\326>\327[\253>\002P\010?1V\"?\303]\030?UXE?\304\263\213>\230\032\004?\270\212\026?\355\316\221?\254W\365>\032u\010?\205\307P?6\001\264>\236y\332>M\261\023?\264\336P?\311\245\344>\354i\317>\225G\263>JG\016?\240\031=?\262\3558?S\236X?\240\205\373>TM5?\374\224\204?\206&-?\236&\026?\312 \222?\003C\006?;/@?\261\243S?\307F\223?\317><?\370S\034?\345\262\356>\351p\026?\27734?\312\204\304>\273X\230>%a\221>\223W\245>F\n\010?-(\202?:\306\263?W\037:?E\307\314>\315V\016?\302\273\305>T\023\362>\355@\002?\347\355\004?\210\024\340>R\364\004?\2366\364>"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_1_branch2b_bn_rm_0"
+    raw_data: "n\276\350=l\234\202\277\265\224C>\352\303\222>\333H\261?\276\361O\277\252n\033?X\331\204\277\210\036\204\276>0\203>\005\350\360\275\325\255\022=\262\035\010\276\326\007\260>\320\t\035?t\344f\277\274,\341\276U`W?\240\266\031>\031d\316?\376\314\017??\260\223>\"\354\213>\200\333D?\211\327x?\327\271c?h\330\226\276\211\221\230>\251i\240?\320\376F\300\rP\255>\246Kr\274\376\246\255\277\335\316\312=\257\360\352\276\331\234\246\275a\030\035?&u\371\276vO\233?\375u\031?\342\312\233=\271\220\375>v\211\352\276\373\337q<h\367\352>p\314\236\277$5\205\275\326P7?\"\337Q>\250b\327\276\004\213\271\274\356\014D\277\362\262\000\2774\035\\\277\321M\265\276\3000\010\300AZ\277\277\nU\303\277\002\253\220>h=\034>\"\342\005>\367\370\334\275\234\272d\276\336<~\277"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_1_branch2b_bn_s_0"
+    raw_data: "\373\000\214?\\pe?\230\030\304?=\363\263?\206\307A?\257\214\244?+\221\233?c\230\245?\316bm?\\\004\216?\355\3636?G\022\223?>x\231?\021P\267?S\265\213?m\237F?/\250\226?\333\013\212?\204f9?z-\247?\346\346\270?q\310W?\000\013\262?\317\227\266?\026\216\222?M\326O?\314\010c?\010\366\372?}\377\241?PG\213?`\227Q?\327e??\325y=?+\"\227?#\214\226?\324\037\207?}\367\301?4\273e?\257\006b?L\301\325?P\227\255?F\352\244?\311\324\235?!6{?\014\317\212?\274\201d?\304\202\214?\353\020\252?\034\311\210?\215\250\223?\350L\250?\334/N?\364\310\251?\321\366\274?\277|\250?0U\010@3hV?F\3050?\317\215\226?\253d\214?\232\037\207?\306\334??\317\332\205?&\241_?"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_2_branch2a_bn_b_0"
+    raw_data: "\254\0332\277\310\225\210\277\252\033U>\n\352\205\276\020\271\265\277{\270\234\276\372\362X?6\367X=\256p\315>\372]\333\275p\031\017>}f=\277\225\320!\276\177q\232=\027\265\034\276\260\246\004?\221^\264\277\031\nu>\240=\257\277\206\370\244=!~\225>\010\217\321=\034\235\017\276\376\014t\277i\211\251\276\243\244\027?N\242w?\305[\224?\360\374\327>A\336\'\276\241\365\303\276\237A\357>\256;\262>\327Vs?\026b\226\276f\303\017\275\222Yv\277H\034\314>\025)\240?\240\003\273=\244\221\304\274\\\352m?QRJ\274\352\013\r\276n\304\207\277\236\220\022>G\177=\276\303\363\277>LS\336\2765\223\333\276\257\263\324\276$\257m\2775\351!\277\026\000)\277\371\230\030>\205\364\234\275\366\314\230\276\203e*?\232\341\201>S\323r><x\236?\331S\204\275h\2449>wv&>"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_2_branch2a_bn_riv_0"
+    raw_data: "\360c[?\3572\023?f\303j?\315\024\251>\337J\010?\275D\000?b\3113?jV\013?\030\214\327>\361\'\036?\242E!?\376?\213>\231\243=?j\215:?\351\331\022?\334Q\324>\370\245\341>K\007\363>U\365\313>Rg\341>S\302\177?Cx\203?fV#?\314\373\310>\250\242\t?b\367\324>\313p\330>uh5?\033*\270?r9\n?\353I\364>Zj\017?\250\371\231?o\306\312>J\313\265>3\"K?,4\325>\321S\007?;.\253>\321\205E?h_\350>\341b\031?\204\317;?3\017x?\302\270\n?W\354\255?\372\246\202?\262\316V?{a\016?0\366\226>i\243\317>\362\246\247>\035\300\222>T\233X>\277\314\020?\016ii?\354\364\002?\007\366k?\023\204\330>\220\0178?\tx!?\r\002G?\221\002Q?\030\311\'?"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_2_branch2a_bn_rm_0"
+    raw_data: "\221U\236?\304?T\277\233%p\277\303\357+>_J\257\276Q\241\253>\374\267\261?.S\343>\320\211\311<\024?0\277\215\243\202\277\230\003\212\275\rhn<{-\256\275\274\2038?\360\027\251>hy\215\277\"\343*\277\024\244\317\276\037t\026\277\035\253\032\277\235\236\265\276\004\357\241?g\200\r\277\375J\035\276t\261\350=\300Z\">\230\0377?\367\365J>\220\361f\277\351\276(?\203\220\310\275=z^\276\347\205\264=8\272\325\277f\035\317\276[\312p\276\303\373U\277\024\214|\277\214\323\265>\374q\314\276Y2\355>\346\313j\277\360\216\323>=\355\340\276b\202=\2771\323A\277\314\247/>@\362P\277j\242\317\276\265&\027\277\357\274<\276\315\022\261\2767\217\'\300\211c\023\276\363\367\201\274\254\311\217\277w\3756=<\326\263>\006\266\251\277\250\001\256>\303\357+\277\206O\222\277\360o\365\276"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_2_branch2a_bn_s_0"
+    raw_data: "\357E\317?\0309\265?\311\371\211?\350\370\211?\374O\274?\223\347\245?\356z\207?\307\317\177?\210\356U?\254\306\222?[DO?\355\333\247?a\363\214?\013\240\217?\210\347\215?iX|?T\346\310?`\376s?\221\215\273?+\264\211?\350\305\221?\202,\262?%\356\235?\021o\230?\031]\216?\345\022\232?\347\035\235?\263\014\216?\233\365\267?\205k\240?X\234\207?ZG{?{U\226?&L:?\2660\203?\215\210\234?\302\370\242?@\003H?F\331F?0f\212?\210M\211?\3306]?\230\r\235?\320\316\265?\257(\264?\331v\301?\340-\246?~\311\215?\350\244\251?u\355\213?v\304\224?B\306\300?NT\235?a\363\252?\271=\200?G\334/?:y\251?\343>|?\013\242~?\362h\242?f\227\215?cw\231?`\345\226?\022\267\244?"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_2_branch2b_bn_b_0"
+    raw_data: "<\350G\277,\214b\277d\333\262>\312\343\273\276S\367\316\276\026eG\277\022\315\272?\273\251\233?\241;F\277\000\2135\277t\307c\277\323$1\277\361m\217\277\301\177%\277\224\026t\275H\014\274\275\267\001\260?0\026V?V\240.\277\246\304\247>KI\330\276\374\317\214\277\255\215X\274o\232\224\277N\212B\2775\344\n\277\252Z\226\272\232)\204?\252\001\331>TH/\2773\244\356?\205\342+?w\367\306>w\346\336>\236\225\247\276T\033)\274\036=\177\277\201\024D=H\340\006\277,\263N\276\264\300g\277\314O\207\277\323\002V\277K^\224?,%\234\277\351[j\277_\t\007?\030\223p\277\372\024\030\277a=\357\276g\034L\277\275\300\373\276,\302\271\276\033\3549\277E\261\347>\352\036\217\277\276\267\321\2760-\203\276\371\337j>{\340$\277\3449M\277[;\354>\217\232\372>\220d\t?"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_2_branch2b_bn_riv_0"
+    raw_data: "\364\375\215?KD\013?\324\345\272?\257\333\031?\"e+?\272\243/?\354\321Z?-D\256??}9?\302\201\246?\314?\201?\313\226c?\225k+?\374%??\017hn?\206\007O?`3T?:,\"?\274\350:?\r\302|?\356\037a?\346\340\035?m=|?\257h\202?+R\276?N\215>?\356\264q?\016\365u?\005\377\302?\202\331\037?\314q\210?\220\314\226?\\\301\276?\332w\246?O\311\t?\224\344e?\031\267\017@\"\246\346>\240\267\r?\334G\021?\264\342`?I\312R?!\312Q?2YJ?\36647?\375\325h?\345\321\256?\351\252F?\030\257\251?\'\025g?0\346K?\r\366\315>\352\177U?<\254\224?\373\210\216?\321\314.?\227\t\236?zw\023?\r\205\207?\251\036\"@\235\365=?\333 \323>t\335)?T\301\336?"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_2_branch2b_bn_rm_0"
+    raw_data: "\036\002\034\277\302z\256\277p\312\032\276d+b\277\223\021\301\276S/*\276Y# \277N\002y?\314\342\013\277\235\276[\274\205\235\320\276\267\326\330\276\007\276*\277\376\034\205\277\016\354M\276\301U\233\277\263V)\277}\3142\277\355:\277=\315\253\336\276\363H\233\276r\344v\277\3352\344\276\236\373\213\276wU\316\276(\372\006\277,\211\205\276\230=\371\276\240\300\306=y\206\340\276@\215_\276a\021j\276v\211\014>\023\007#\276,\216\210\277\370_\033\277\335\025\303\277\353F[\276\001&\r\277\226\246G?\025\324\202\276\240\301(\277\037Q\250\276O<\337\274\212x\307\276\256\016,\277\322\233\274\276\215\261.\277\277\331\320\276\317\225\036\277\264~\002\277T\rL\277bBp\276ja\323\276\212\026\031\275\273&\357\276&2\316>\312\365\275\276\323L\340\276\211\332\230\277\301\023\030\277\370A\345\276)HH\277\342\313E?"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res2_2_branch2b_bn_s_0"
+    raw_data: "8\360\310?\310\313\222?\247\245\211?7\240\215?f\246\232?\006\301\235?\320\312D?\227\202v?y\235\274?\340\335\313?\303\237\324?\373\216\315?\243\301\325?\256e\264?\032\026\235?\016\375\212?]\374.?\236\2162?o^\254?\030\303|?\257\272\244?E\205\306?x\352\207?l\214\352?L\371\306?\256\201\251?\016\324\201?\203\210I?OU\211?\270\\\244?~Pa?\025cp?\301\234\201?\267\334\203?U\230\200?\274\325\205?\223\326\327?\347\034h?\235\254\242?\370Z}?\010\032\326?\243I\332?\363\273\303?j\0032?\224\013\354?d=\340?\361i7?\235\303\305?\301\320\257?*\272\266?A\331\266?\t\334q?<\254\220?\256d\270?\230>l?F\202\342?-\254\276?/\375\212?z\316\216?\006\317\273?\031\304\327?\t\2712?^\300B?\275)\213?"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res_conv1_bn_b_0"
+    raw_data: "G\354\t@\r\303\352?\373?\213\277\227\252\340?\tY\231?\366\n0\277w5\237\277\240\225\034@\322\342\241@\254\024t\277\327\235\337?\013\255\216@\207\357\202\277)m\271=\022\037D@\276\030\243?~\204\262>\267\275\344?\315H\205?\255+\221\277\325\212\364?I\353\341?\344\230\326?\317\000%@\201\342\016\300\215\333\275@\327\353u?/\232}?\006~*@@\007\003@\243\357\331?10\023@\200\343\272?+\033\375?p\031\335?\252`\222?\014\350\332?\216\335\324?\372x\303?\232\243\332?\017m\233?]~\215?\230!\024\300w\032\232\277\250\272\252\277\266\302\330?\037y\004\300\274d\336?W\371\017?\252\230\227?\306\342O?X\306\342@{\371\023@\335\234\275?\337\314\206\277\315U\371?\357\016\330?\355\362\226?\235\344\366>\266W\265?x\3756@:h\365?\376\246e@9\331\324?"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res_conv1_bn_riv_0"
+    raw_data: "l\032\002?hYl?\261\t\272?\331\017w?\372\005H@o\226j>\346S.@S\214\037@\220\351$A\023\242t> \031]?\266\222K@vv\000?\036\'6@Y\177c@\311ht@\262\t\240@\027\200@?\033 \340?\254\326 ?\375}4?\031oo>.\260Q?+&1?(HO?\3436)B\363v\231@\224\266\223@\nh\334@\267\277\204>\357~:?\354n8@b8\371?\322%B?\315\364\250?\210\321\020@\215,w?\355\320\314?=\333\322>\245.\206?\355&1@\244u\251@8\2503?\314\235\025@\003\315+@\016\210\r@\243nz@\354\3424?6\352h@T\204\250@\354\007\214@\261\245\350A2\300\205?[G\333?\020j\265>Xd\210?\275\022\211?\244\025\311@&L\264?h\373}?\271\311N@YSU?WLM@Y&7?"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res_conv1_bn_rm_0"
+    raw_data: "\036\240\206;\363eo9#\334\007=2\222\2479\024%6<f\300E<\270JB=\205\331\216\274\201T\255\275\343\220\225\273\212\351\244;wc\026=\342\354\256;`\032b<_\233\n\275\205\302J=%\032E;\336#\223\273\355\324\325\273w\361\250\273\2153\213;\201\366\255:\271\240\205;\367\266\337;.\325\3079\331\354=\276\352J`\273\030\241}<\331=\371<<:6:Y\332H;+\312\362\274[\023\214\272\227\035\206;\\\\x\273T2\035<\375\250\216;BSH<}\261\352\271M6\004<\t\242.\274\032\252\235;\250E\265\274\245\347\036=\324E$=\002\253\206;3\243\330:\204\314z\273\372d\232\274\310\264\217\274\235.N<F5\035>m*\355;\026\031a;\333\221I\274\375\203+<\313 \025;\355\363\032<F\306M\273q\034\214\273\025\373\256<~\253\250\270`\304\020=<i\035;"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "gpu_0/res_conv1_bn_s_0"
+    raw_data: "\373\213Z?\237d\223?\274Pj?\0200u?\035}\210?Ki\016?\327\271\231?Cz\230?K\304\020@\306d\037?m\265\216?\211\376\276?5Je?\273\225\204?\006.\267?\003\234\304?.\034\240?@\344^?\227\324\240?\277:Z?\275\224q?\3461@?\272\377d?I\225o?\001\316\353?,\347C@\266\376\247?i\237\233?qf\262?\\%I?<\217d?\362\360\246?p\370\201?\237\300d?n\252\200?\357\361\245?OM\216?k\220\210?\037\327i?X\327m?\250\365\205?B&\220?\241A\272?\004\243\351?\210\341\373?\3244\215?O\267\024@Y\031b?\276\202\216?\t/\225?\030\241\242?C\263#@>Ss?\330\247\205?\276\357\207?\311\022n?\223 \233?\261\262\247?\221\2145?\222\206\177?\320\223\253?\241\301v?@\370\253?Aql?"
+  }
+  initializer {
+    dims: 2
+    data_type: 7
+    name: "OC2_DUMMY_1"
+    raw_data: "\001\000\000\000\000\000\000\000\000\010\000\000\000\000\000\000"
+  }
+  input {
+    name: "gpu_0/data_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_param: "N"
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 224
+          }
+          dim {
+            dim_value: 224
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/conv1_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res_conv1_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res_conv1_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_0_branch2a_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_0_branch2a_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_0_branch2a_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_0_branch2b_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_0_branch2b_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_0_branch2b_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_0_branch2c_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_0_branch2c_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_0_branch2c_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_0_branch1_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_0_branch1_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_0_branch1_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_1_branch2a_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_1_branch2a_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_1_branch2a_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_1_branch2b_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_1_branch2b_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_1_branch2b_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_1_branch2c_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_1_branch2c_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_1_branch2c_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_2_branch2a_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_2_branch2a_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_2_branch2a_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_2_branch2b_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_2_branch2b_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_2_branch2b_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_2_branch2c_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_2_branch2c_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_2_branch2c_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_0_branch2a_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_0_branch2a_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_0_branch2a_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_0_branch2b_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_0_branch2b_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_0_branch2b_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_0_branch2c_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_0_branch2c_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_0_branch2c_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_0_branch1_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_0_branch1_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_0_branch1_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_1_branch2a_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_1_branch2a_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_1_branch2a_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_1_branch2b_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_1_branch2b_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_1_branch2b_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_1_branch2c_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_1_branch2c_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_1_branch2c_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_2_branch2a_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_2_branch2a_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_2_branch2a_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_2_branch2b_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_2_branch2b_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_2_branch2b_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_2_branch2c_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_2_branch2c_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_2_branch2c_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_3_branch2a_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_3_branch2a_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_3_branch2a_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_3_branch2b_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_3_branch2b_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_3_branch2b_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_3_branch2c_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_3_branch2c_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_3_branch2c_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_0_branch2a_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_0_branch2a_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_0_branch2a_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_0_branch2b_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_0_branch2b_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_0_branch2b_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_0_branch2c_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_0_branch2c_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_0_branch2c_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_0_branch1_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_0_branch1_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_0_branch1_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_1_branch2a_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_1_branch2a_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_1_branch2a_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_1_branch2b_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_1_branch2b_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_1_branch2b_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_1_branch2c_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_1_branch2c_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_1_branch2c_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_2_branch2a_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_2_branch2a_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_2_branch2a_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_2_branch2b_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_2_branch2b_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_2_branch2b_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_2_branch2c_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_2_branch2c_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_2_branch2c_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_3_branch2a_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_3_branch2a_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_3_branch2a_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_3_branch2b_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_3_branch2b_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_3_branch2b_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_3_branch2c_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_3_branch2c_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_3_branch2c_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_4_branch2a_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_4_branch2a_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_4_branch2a_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_4_branch2b_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_4_branch2b_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_4_branch2b_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_4_branch2c_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_4_branch2c_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_4_branch2c_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_5_branch2a_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_5_branch2a_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_5_branch2a_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_5_branch2b_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_5_branch2b_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_5_branch2b_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_5_branch2c_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_5_branch2c_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_5_branch2c_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_0_branch2a_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_0_branch2a_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_0_branch2a_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_0_branch2b_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_0_branch2b_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_0_branch2b_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_0_branch2c_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_0_branch2c_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_0_branch2c_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_0_branch1_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_0_branch1_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_0_branch1_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_1_branch2a_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 2048
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_1_branch2a_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_1_branch2a_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_1_branch2b_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_1_branch2b_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_1_branch2b_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_1_branch2c_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_1_branch2c_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_1_branch2c_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_2_branch2a_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 2048
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_2_branch2a_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_2_branch2a_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_2_branch2b_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_2_branch2b_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_2_branch2b_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_2_branch2c_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_2_branch2c_bn_s_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_2_branch2c_bn_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/pred_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1000
+          }
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/pred_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res_conv1_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res_conv1_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_0_branch2a_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_0_branch2a_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_0_branch2b_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_0_branch2b_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_0_branch2c_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_0_branch2c_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_0_branch1_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_0_branch1_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_1_branch2a_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_1_branch2a_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_1_branch2b_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_1_branch2b_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_1_branch2c_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_1_branch2c_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_2_branch2a_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_2_branch2a_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_2_branch2b_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_2_branch2b_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_2_branch2c_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res2_2_branch2c_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_0_branch2a_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_0_branch2a_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_0_branch2b_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_0_branch2b_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_0_branch2c_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_0_branch2c_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_0_branch1_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_0_branch1_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_1_branch2a_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_1_branch2a_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_1_branch2b_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_1_branch2b_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_1_branch2c_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_1_branch2c_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_2_branch2a_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_2_branch2a_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_2_branch2b_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_2_branch2b_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_2_branch2c_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_2_branch2c_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_3_branch2a_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_3_branch2a_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_3_branch2b_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_3_branch2b_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_3_branch2c_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res3_3_branch2c_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_0_branch2a_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_0_branch2a_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_0_branch2b_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_0_branch2b_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_0_branch2c_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_0_branch2c_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_0_branch1_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_0_branch1_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_1_branch2a_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_1_branch2a_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_1_branch2b_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_1_branch2b_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_1_branch2c_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_1_branch2c_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_2_branch2a_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_2_branch2a_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_2_branch2b_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_2_branch2b_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_2_branch2c_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_2_branch2c_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_3_branch2a_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_3_branch2a_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_3_branch2b_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_3_branch2b_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_3_branch2c_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_3_branch2c_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_4_branch2a_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_4_branch2a_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_4_branch2b_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_4_branch2b_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_4_branch2c_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_4_branch2c_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_5_branch2a_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_5_branch2a_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_5_branch2b_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_5_branch2b_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_5_branch2c_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res4_5_branch2c_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_0_branch2a_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_0_branch2a_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_0_branch2b_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_0_branch2b_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_0_branch2c_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_0_branch2c_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_0_branch1_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_0_branch1_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_1_branch2a_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_1_branch2a_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_1_branch2b_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_1_branch2b_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_1_branch2c_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_1_branch2c_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_2_branch2a_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_2_branch2a_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_2_branch2b_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_2_branch2b_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_2_branch2c_bn_rm_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/res5_2_branch2c_bn_riv_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/imagenet1k_blobs_queue_f22e83c9-22cd-4a8b-a66d-113af6b832b4_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "OC2_DUMMY_1"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "gpu_0/softmax_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_param: "N"
+          }
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+}
+opset_import {
+  domain: ""
+  version: 9
+}

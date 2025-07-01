@@ -1,0 +1,3130 @@
+ir_version: 3
+graph {
+  node {
+    input: "data"
+    input: "vgg0_conv0_weight"
+    input: "vgg0_conv0_bias"
+    output: "vgg0_conv0_fwd"
+    name: "vgg0_conv0_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv0_fwd"
+    input: "vgg0_batchnorm0_gamma"
+    input: "vgg0_batchnorm0_beta"
+    input: "vgg0_batchnorm0_running_mean"
+    input: "vgg0_batchnorm0_running_var"
+    output: "vgg0_batchnorm0_fwd"
+    name: "vgg0_batchnorm0_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "vgg0_batchnorm0_fwd"
+    output: "vgg0_relu0_fwd"
+    name: "vgg0_relu0_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu0_fwd"
+    input: "vgg0_conv1_weight"
+    input: "vgg0_conv1_bias"
+    output: "vgg0_conv1_fwd"
+    name: "vgg0_conv1_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv1_fwd"
+    input: "vgg0_batchnorm1_gamma"
+    input: "vgg0_batchnorm1_beta"
+    input: "vgg0_batchnorm1_running_mean"
+    input: "vgg0_batchnorm1_running_var"
+    output: "vgg0_batchnorm1_fwd"
+    name: "vgg0_batchnorm1_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "vgg0_batchnorm1_fwd"
+    output: "vgg0_relu1_fwd"
+    name: "vgg0_relu1_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu1_fwd"
+    output: "vgg0_pool0_fwd"
+    name: "vgg0_pool0_fwd"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_pool0_fwd"
+    input: "vgg0_conv2_weight"
+    input: "vgg0_conv2_bias"
+    output: "vgg0_conv2_fwd"
+    name: "vgg0_conv2_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv2_fwd"
+    input: "vgg0_batchnorm2_gamma"
+    input: "vgg0_batchnorm2_beta"
+    input: "vgg0_batchnorm2_running_mean"
+    input: "vgg0_batchnorm2_running_var"
+    output: "vgg0_batchnorm2_fwd"
+    name: "vgg0_batchnorm2_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "vgg0_batchnorm2_fwd"
+    output: "vgg0_relu2_fwd"
+    name: "vgg0_relu2_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu2_fwd"
+    input: "vgg0_conv3_weight"
+    input: "vgg0_conv3_bias"
+    output: "vgg0_conv3_fwd"
+    name: "vgg0_conv3_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv3_fwd"
+    input: "vgg0_batchnorm3_gamma"
+    input: "vgg0_batchnorm3_beta"
+    input: "vgg0_batchnorm3_running_mean"
+    input: "vgg0_batchnorm3_running_var"
+    output: "vgg0_batchnorm3_fwd"
+    name: "vgg0_batchnorm3_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "vgg0_batchnorm3_fwd"
+    output: "vgg0_relu3_fwd"
+    name: "vgg0_relu3_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu3_fwd"
+    output: "vgg0_pool1_fwd"
+    name: "vgg0_pool1_fwd"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_pool1_fwd"
+    input: "vgg0_conv4_weight"
+    input: "vgg0_conv4_bias"
+    output: "vgg0_conv4_fwd"
+    name: "vgg0_conv4_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv4_fwd"
+    input: "vgg0_batchnorm4_gamma"
+    input: "vgg0_batchnorm4_beta"
+    input: "vgg0_batchnorm4_running_mean"
+    input: "vgg0_batchnorm4_running_var"
+    output: "vgg0_batchnorm4_fwd"
+    name: "vgg0_batchnorm4_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "vgg0_batchnorm4_fwd"
+    output: "vgg0_relu4_fwd"
+    name: "vgg0_relu4_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu4_fwd"
+    input: "vgg0_conv5_weight"
+    input: "vgg0_conv5_bias"
+    output: "vgg0_conv5_fwd"
+    name: "vgg0_conv5_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv5_fwd"
+    input: "vgg0_batchnorm5_gamma"
+    input: "vgg0_batchnorm5_beta"
+    input: "vgg0_batchnorm5_running_mean"
+    input: "vgg0_batchnorm5_running_var"
+    output: "vgg0_batchnorm5_fwd"
+    name: "vgg0_batchnorm5_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "vgg0_batchnorm5_fwd"
+    output: "vgg0_relu5_fwd"
+    name: "vgg0_relu5_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu5_fwd"
+    input: "vgg0_conv6_weight"
+    input: "vgg0_conv6_bias"
+    output: "vgg0_conv6_fwd"
+    name: "vgg0_conv6_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv6_fwd"
+    input: "vgg0_batchnorm6_gamma"
+    input: "vgg0_batchnorm6_beta"
+    input: "vgg0_batchnorm6_running_mean"
+    input: "vgg0_batchnorm6_running_var"
+    output: "vgg0_batchnorm6_fwd"
+    name: "vgg0_batchnorm6_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "vgg0_batchnorm6_fwd"
+    output: "vgg0_relu6_fwd"
+    name: "vgg0_relu6_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu6_fwd"
+    output: "vgg0_pool2_fwd"
+    name: "vgg0_pool2_fwd"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_pool2_fwd"
+    input: "vgg0_conv7_weight"
+    input: "vgg0_conv7_bias"
+    output: "vgg0_conv7_fwd"
+    name: "vgg0_conv7_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv7_fwd"
+    input: "vgg0_batchnorm7_gamma"
+    input: "vgg0_batchnorm7_beta"
+    input: "vgg0_batchnorm7_running_mean"
+    input: "vgg0_batchnorm7_running_var"
+    output: "vgg0_batchnorm7_fwd"
+    name: "vgg0_batchnorm7_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "vgg0_batchnorm7_fwd"
+    output: "vgg0_relu7_fwd"
+    name: "vgg0_relu7_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu7_fwd"
+    input: "vgg0_conv8_weight"
+    input: "vgg0_conv8_bias"
+    output: "vgg0_conv8_fwd"
+    name: "vgg0_conv8_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv8_fwd"
+    input: "vgg0_batchnorm8_gamma"
+    input: "vgg0_batchnorm8_beta"
+    input: "vgg0_batchnorm8_running_mean"
+    input: "vgg0_batchnorm8_running_var"
+    output: "vgg0_batchnorm8_fwd"
+    name: "vgg0_batchnorm8_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "vgg0_batchnorm8_fwd"
+    output: "vgg0_relu8_fwd"
+    name: "vgg0_relu8_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu8_fwd"
+    input: "vgg0_conv9_weight"
+    input: "vgg0_conv9_bias"
+    output: "vgg0_conv9_fwd"
+    name: "vgg0_conv9_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv9_fwd"
+    input: "vgg0_batchnorm9_gamma"
+    input: "vgg0_batchnorm9_beta"
+    input: "vgg0_batchnorm9_running_mean"
+    input: "vgg0_batchnorm9_running_var"
+    output: "vgg0_batchnorm9_fwd"
+    name: "vgg0_batchnorm9_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "vgg0_batchnorm9_fwd"
+    output: "vgg0_relu9_fwd"
+    name: "vgg0_relu9_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu9_fwd"
+    output: "vgg0_pool3_fwd"
+    name: "vgg0_pool3_fwd"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_pool3_fwd"
+    input: "vgg0_conv10_weight"
+    input: "vgg0_conv10_bias"
+    output: "vgg0_conv10_fwd"
+    name: "vgg0_conv10_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv10_fwd"
+    input: "vgg0_batchnorm10_gamma"
+    input: "vgg0_batchnorm10_beta"
+    input: "vgg0_batchnorm10_running_mean"
+    input: "vgg0_batchnorm10_running_var"
+    output: "vgg0_batchnorm10_fwd"
+    name: "vgg0_batchnorm10_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "vgg0_batchnorm10_fwd"
+    output: "vgg0_relu10_fwd"
+    name: "vgg0_relu10_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu10_fwd"
+    input: "vgg0_conv11_weight"
+    input: "vgg0_conv11_bias"
+    output: "vgg0_conv11_fwd"
+    name: "vgg0_conv11_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv11_fwd"
+    input: "vgg0_batchnorm11_gamma"
+    input: "vgg0_batchnorm11_beta"
+    input: "vgg0_batchnorm11_running_mean"
+    input: "vgg0_batchnorm11_running_var"
+    output: "vgg0_batchnorm11_fwd"
+    name: "vgg0_batchnorm11_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "vgg0_batchnorm11_fwd"
+    output: "vgg0_relu11_fwd"
+    name: "vgg0_relu11_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu11_fwd"
+    input: "vgg0_conv12_weight"
+    input: "vgg0_conv12_bias"
+    output: "vgg0_conv12_fwd"
+    name: "vgg0_conv12_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv12_fwd"
+    input: "vgg0_batchnorm12_gamma"
+    input: "vgg0_batchnorm12_beta"
+    input: "vgg0_batchnorm12_running_mean"
+    input: "vgg0_batchnorm12_running_var"
+    output: "vgg0_batchnorm12_fwd"
+    name: "vgg0_batchnorm12_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "vgg0_batchnorm12_fwd"
+    output: "vgg0_relu12_fwd"
+    name: "vgg0_relu12_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu12_fwd"
+    output: "vgg0_pool4_fwd"
+    name: "vgg0_pool4_fwd"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_pool4_fwd"
+    output: "flatten_125"
+    name: "flatten_125"
+    op_type: "Flatten"
+  }
+  node {
+    input: "flatten_125"
+    input: "vgg0_dense0_weight"
+    input: "vgg0_dense0_bias"
+    output: "vgg0_dense0_fwd"
+    name: "vgg0_dense0_fwd"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "beta"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "transA"
+      i: 0
+      type: INT
+    }
+    attribute {
+      name: "transB"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "vgg0_dense0_fwd"
+    output: "vgg0_dense0_relu_fwd"
+    name: "vgg0_dense0_relu_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_dense0_relu_fwd"
+    output: "vgg0_dropout0_fwd"
+    name: "vgg0_dropout0_fwd"
+    op_type: "Dropout"
+    attribute {
+      name: "ratio"
+      f: 0.5
+      type: FLOAT
+    }
+  }
+  node {
+    input: "vgg0_dropout0_fwd"
+    output: "flatten_130"
+    name: "flatten_130"
+    op_type: "Flatten"
+  }
+  node {
+    input: "flatten_130"
+    input: "vgg0_dense1_weight"
+    input: "vgg0_dense1_bias"
+    output: "vgg0_dense1_fwd"
+    name: "vgg0_dense1_fwd"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "beta"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "transA"
+      i: 0
+      type: INT
+    }
+    attribute {
+      name: "transB"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "vgg0_dense1_fwd"
+    output: "vgg0_dense1_relu_fwd"
+    name: "vgg0_dense1_relu_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_dense1_relu_fwd"
+    output: "vgg0_dropout1_fwd"
+    name: "vgg0_dropout1_fwd"
+    op_type: "Dropout"
+    attribute {
+      name: "ratio"
+      f: 0.5
+      type: FLOAT
+    }
+  }
+  node {
+    input: "vgg0_dropout1_fwd"
+    output: "flatten_135"
+    name: "flatten_135"
+    op_type: "Flatten"
+  }
+  node {
+    input: "flatten_135"
+    input: "vgg0_dense2_weight"
+    input: "vgg0_dense2_bias"
+    output: "vgg0_dense2_fwd"
+    name: "vgg0_dense2_fwd"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "beta"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "transA"
+      i: 0
+      type: INT
+    }
+    attribute {
+      name: "transB"
+      i: 1
+      type: INT
+    }
+  }
+  name: "mxnet_converted_model"
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 5.366164e-06
+    float_data: -1.7110497e-06
+    float_data: 9.942888e-07
+    float_data: 7.6360953e-07
+    float_data: -1.6203046e-06
+    float_data: -5.8674283e-07
+    float_data: 8.904502e-06
+    float_data: 3.9411466e-06
+    float_data: -1.0746234e-06
+    float_data: 2.934262e-07
+    float_data: -7.5512384e-07
+    float_data: -1.0572966e-06
+    float_data: 2.3206228e-06
+    float_data: -7.284693e-07
+    float_data: -1.4199778e-06
+    float_data: -5.927621e-07
+    float_data: 2.8997167e-07
+    float_data: 3.2692492e-06
+    float_data: -3.5185026e-06
+    float_data: -3.7599477e-07
+    float_data: 1.557002e-06
+    float_data: 3.8947724e-06
+    float_data: 7.9437e-06
+    float_data: -3.0151185e-07
+    float_data: 2.9693726e-07
+    float_data: -6.0842734e-07
+    float_data: -1.8878346e-06
+    float_data: 6.967441e-07
+    float_data: 6.5240874e-07
+    float_data: 1.7067794e-06
+    float_data: -2.89289e-07
+    float_data: 1.4699752e-07
+    float_data: 3.1706688e-07
+    float_data: -7.582822e-07
+    float_data: 1.2210575e-07
+    float_data: 3.9864638e-08
+    float_data: -1.1753042e-06
+    float_data: 6.0738744e-06
+    float_data: 4.9592285e-07
+    float_data: 1.4318225e-06
+    float_data: 5.85122e-07
+    float_data: -3.4511235e-08
+    float_data: -5.751872e-07
+    float_data: 7.6987357e-07
+    float_data: 9.4503923e-07
+    float_data: -1.5798106e-06
+    float_data: 8.48114e-06
+    float_data: -3.5017158e-07
+    float_data: 1.6316598e-06
+    float_data: 1.328366e-06
+    float_data: -2.2875759e-07
+    float_data: 5.432266e-07
+    float_data: 2.6900705e-06
+    float_data: 8.482962e-07
+    float_data: 1.6838694e-06
+    float_data: 6.370943e-07
+    float_data: 4.508111e-06
+    float_data: -4.3853646e-07
+    float_data: 4.019025e-06
+    float_data: 4.338975e-06
+    float_data: 1.3073885e-06
+    float_data: 6.9484565e-07
+    float_data: 5.472904e-07
+    float_data: 8.336093e-07
+    name: "vgg0_conv0_bias"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.26206398
+    float_data: 0.20563981
+    float_data: 0.09154755
+    float_data: 0.5988341
+    float_data: 0.27061343
+    float_data: 0.15832765
+    float_data: 0.26435766
+    float_data: 0.1935067
+    float_data: 0.36355874
+    float_data: 0.23661067
+    float_data: 0.34589672
+    float_data: 0.27909565
+    float_data: 0.3952635
+    float_data: 0.32650945
+    float_data: 0.47565076
+    float_data: 0.3025612
+    float_data: 0.5863958
+    float_data: 0.31509185
+    float_data: 0.21451591
+    float_data: 0.115847245
+    float_data: 0.49294537
+    float_data: 0.28192756
+    float_data: 0.24495064
+    float_data: 0.24344149
+    float_data: 0.23592988
+    float_data: 0.4553303
+    float_data: 0.4121606
+    float_data: 0.09932165
+    float_data: 0.3627833
+    float_data: 0.5067139
+    float_data: 0.13208191
+    float_data: 0.19558288
+    float_data: 0.33921224
+    float_data: 0.19710016
+    float_data: 0.12513866
+    float_data: 0.27610782
+    float_data: 0.18782607
+    float_data: 0.23380354
+    float_data: 0.4496053
+    float_data: 0.23228814
+    float_data: 0.35609883
+    float_data: 0.17196193
+    float_data: 0.22172557
+    float_data: 0.25624087
+    float_data: 0.104160674
+    float_data: 0.39221594
+    float_data: 0.53113407
+    float_data: 0.21991478
+    float_data: 0.5489254
+    float_data: 0.14262532
+    float_data: 0.20408772
+    float_data: 0.08609782
+    float_data: 0.2132313
+    float_data: 0.3043171
+    float_data: 0.21579671
+    float_data: 0.3205525
+    float_data: 0.29067227
+    float_data: 0.14507692
+    float_data: 0.17407653
+    float_data: 0.37660548
+    float_data: 0.11248618
+    float_data: 0.48094156
+    float_data: 0.4436126
+    float_data: 0.6338603
+    name: "vgg0_batchnorm0_gamma"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.43392947
+    float_data: 0.08776254
+    float_data: -0.107862
+    float_data: -0.3126249
+    float_data: -0.20486271
+    float_data: 0.08036662
+    float_data: -0.0021958873
+    float_data: -0.079006486
+    float_data: -0.32306722
+    float_data: 0.035983045
+    float_data: -0.06717191
+    float_data: 0.30104473
+    float_data: -0.34091637
+    float_data: 0.23075055
+    float_data: -0.63441664
+    float_data: 0.26158044
+    float_data: 0.32293677
+    float_data: -0.23486415
+    float_data: 0.057661537
+    float_data: 0.16852981
+    float_data: 0.13192391
+    float_data: 0.35400766
+    float_data: 0.12357461
+    float_data: -0.035482213
+    float_data: 0.11336904
+    float_data: 0.11133938
+    float_data: -0.26941875
+    float_data: -0.13561054
+    float_data: 0.10131956
+    float_data: 0.32698905
+    float_data: 0.022456225
+    float_data: 0.15203442
+    float_data: -0.25191358
+    float_data: 0.044939075
+    float_data: 0.111544915
+    float_data: 0.44460535
+    float_data: 0.15438716
+    float_data: -0.31931743
+    float_data: -0.47721666
+    float_data: -0.1378868
+    float_data: 0.074204035
+    float_data: 0.18408813
+    float_data: 0.17433347
+    float_data: 0.032410946
+    float_data: 0.14141047
+    float_data: 0.11314432
+    float_data: 0.4639457
+    float_data: 0.11860694
+    float_data: 0.19038323
+    float_data: 0.19911951
+    float_data: -0.007813373
+    float_data: -0.09731836
+    float_data: -0.10376371
+    float_data: 0.13891697
+    float_data: -0.08913266
+    float_data: 0.26141155
+    float_data: -0.39298123
+    float_data: 0.025387764
+    float_data: -0.1896126
+    float_data: 0.49003336
+    float_data: -0.050797336
+    float_data: 0.09442239
+    float_data: 0.096446864
+    float_data: -0.6894894
+    name: "vgg0_batchnorm0_beta"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.0012808547
+    float_data: 0.014545968
+    float_data: 0.012847577
+    float_data: 0.0036282386
+    float_data: 0.006163032
+    float_data: 0.0066582793
+    float_data: 0.008078203
+    float_data: 0.038048808
+    float_data: 0.053869754
+    float_data: 0.0033210868
+    float_data: 0.02351595
+    float_data: 0.0010893935
+    float_data: 0.0010947353
+    float_data: -0.0033267825
+    float_data: 0.06528583
+    float_data: -0.00834371
+    float_data: -0.0036718596
+    float_data: 0.04045679
+    float_data: 0.021362916
+    float_data: -0.036676515
+    float_data: -0.000647562
+    float_data: -0.0005711608
+    float_data: -0.0018192659
+    float_data: 0.02055614
+    float_data: 0.0011935297
+    float_data: 0.003275075
+    float_data: 0.0005352123
+    float_data: 0.023594
+    float_data: 0.0013384033
+    float_data: -0.0014443463
+    float_data: -0.0015742905
+    float_data: -0.016093008
+    float_data: 0.051884696
+    float_data: -0.001673013
+    float_data: -0.009487558
+    float_data: -0.004615339
+    float_data: -0.020102445
+    float_data: -0.009863439
+    float_data: 0.07080435
+    float_data: -0.016435686
+    float_data: 0.003256369
+    float_data: -0.023262747
+    float_data: -0.013217229
+    float_data: 0.00393598
+    float_data: 0.019831076
+    float_data: -0.006272505
+    float_data: 0.002505851
+    float_data: -0.0029337679
+    float_data: 0.0025247324
+    float_data: 0.057801157
+    float_data: 0.029072296
+    float_data: 0.010733745
+    float_data: 0.047207884
+    float_data: 0.004469731
+    float_data: -0.019484466
+    float_data: -0.0016776621
+    float_data: -0.035708886
+    float_data: 0.06624537
+    float_data: -0.015797177
+    float_data: -0.001851795
+    float_data: -0.041148942
+    float_data: -0.0008869057
+    float_data: -0.0030825124
+    float_data: 0.08457635
+    name: "vgg0_batchnorm0_running_mean"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.04491167
+    float_data: 0.619872
+    float_data: 0.016294207
+    float_data: 0.18572648
+    float_data: 0.07713431
+    float_data: 0.603131
+    float_data: 0.04814683
+    float_data: 0.20652412
+    float_data: 0.2987375
+    float_data: 0.581819
+    float_data: 0.2843331
+    float_data: 0.078123584
+    float_data: 0.17362307
+    float_data: 1.6121584
+    float_data: 0.41211087
+    float_data: 1.5945269
+    float_data: 0.34185547
+    float_data: 0.29853684
+    float_data: 0.8292195
+    float_data: 0.3988054
+    float_data: 4.5384307
+    float_data: 0.13639155
+    float_data: 0.054319613
+    float_data: 0.29070497
+    float_data: 0.77062035
+    float_data: 3.9027662
+    float_data: 0.075940445
+    float_data: 0.057025697
+    float_data: 2.4267955
+    float_data: 0.27149287
+    float_data: 0.30987373
+    float_data: 0.91246545
+    float_data: 0.36201212
+    float_data: 0.87238765
+    float_data: 0.8504276
+    float_data: 0.06367358
+    float_data: 0.870202
+    float_data: 0.013526028
+    float_data: 0.5749167
+    float_data: 0.11427843
+    float_data: 2.2643929
+    float_data: 1.2144407
+    float_data: 0.647463
+    float_data: 0.7104833
+    float_data: 0.39715806
+    float_data: 2.855567
+    float_data: 0.2650128
+    float_data: 0.61291903
+    float_data: 0.2890383
+    float_data: 0.6903714
+    float_data: 1.0876688
+    float_data: 0.012711711
+    float_data: 0.35375938
+    float_data: 0.60762584
+    float_data: 0.10862561
+    float_data: 0.65072876
+    float_data: 0.13288091
+    float_data: 0.9813922
+    float_data: 0.043009166
+    float_data: 0.13078809
+    float_data: 0.15585484
+    float_data: 4.050664
+    float_data: 3.6078072
+    float_data: 0.95045817
+    name: "vgg0_batchnorm0_running_var"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: -6.097069e-07
+    float_data: -8.094031e-06
+    float_data: 1.5056591e-05
+    float_data: -5.6206027e-06
+    float_data: 1.5666835e-06
+    float_data: -5.4604866e-06
+    float_data: -6.1167e-06
+    float_data: -4.252646e-06
+    float_data: -4.115262e-06
+    float_data: -2.1895232e-06
+    float_data: 7.241257e-07
+    float_data: -1.8848376e-06
+    float_data: -9.150762e-06
+    float_data: -4.6405077e-08
+    float_data: -2.0791433e-06
+    float_data: 8.498013e-06
+    float_data: -5.3226436e-06
+    float_data: -1.2997372e-05
+    float_data: 1.5526633e-05
+    float_data: 2.0191567e-06
+    float_data: -5.9504746e-06
+    float_data: 9.497263e-06
+    float_data: 8.271473e-08
+    float_data: -2.1036997e-06
+    float_data: -2.2117258e-06
+    float_data: 4.482863e-06
+    float_data: -4.9679147e-06
+    float_data: 6.4706987e-06
+    float_data: 7.439653e-06
+    float_data: 1.2294681e-06
+    float_data: 5.3436786e-08
+    float_data: -1.8773366e-05
+    float_data: 7.165225e-06
+    float_data: -4.893067e-06
+    float_data: 9.275834e-06
+    float_data: -9.755612e-06
+    float_data: -1.7288104e-06
+    float_data: -1.8135942e-06
+    float_data: -1.4452098e-06
+    float_data: -1.0472717e-05
+    float_data: 6.8545155e-06
+    float_data: -3.7599314e-06
+    float_data: -5.897123e-06
+    float_data: -1.7148179e-06
+    float_data: 6.4148594e-07
+    float_data: -1.3052879e-06
+    float_data: 7.2982575e-06
+    float_data: 1.3336301e-05
+    float_data: -1.6563282e-06
+    float_data: -1.2484001e-05
+    float_data: -1.5733776e-05
+    float_data: -2.4765306e-05
+    float_data: 7.9046464e-07
+    float_data: -5.179643e-07
+    float_data: 1.6592728e-06
+    float_data: -1.8340224e-06
+    float_data: -3.993122e-06
+    float_data: -9.527001e-06
+    float_data: -5.525723e-06
+    float_data: 5.0378076e-06
+    float_data: 4.630574e-06
+    float_data: -1.3776602e-05
+    float_data: -2.7254578e-06
+    float_data: 6.348896e-07
+    name: "vgg0_conv1_bias"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.3615262
+    float_data: 0.3554831
+    float_data: 0.5506542
+    float_data: 0.27748087
+    float_data: 0.26189998
+    float_data: 0.4429974
+    float_data: 0.34628108
+    float_data: 0.34316614
+    float_data: 0.3302873
+    float_data: 0.21667956
+    float_data: 0.27267182
+    float_data: 0.29482305
+    float_data: 0.58297974
+    float_data: 0.23531674
+    float_data: 0.44520283
+    float_data: 0.3656739
+    float_data: 0.33968472
+    float_data: 0.41412777
+    float_data: 0.35546067
+    float_data: 0.3304701
+    float_data: 0.26102114
+    float_data: 0.3965638
+    float_data: 0.21347764
+    float_data: 0.38511947
+    float_data: 0.39992934
+    float_data: 0.2857344
+    float_data: 0.29699352
+    float_data: 0.4618075
+    float_data: 0.36242908
+    float_data: 0.2849641
+    float_data: 0.35275367
+    float_data: 0.433444
+    float_data: 0.3877916
+    float_data: 0.51747173
+    float_data: 0.6077309
+    float_data: 0.6742254
+    float_data: 0.3780205
+    float_data: 0.28918687
+    float_data: 0.4370666
+    float_data: 0.39573163
+    float_data: 0.398648
+    float_data: 0.3575825
+    float_data: 0.48843142
+    float_data: 0.23784684
+    float_data: 0.21119414
+    float_data: 0.21916172
+    float_data: 0.35970858
+    float_data: 0.56103855
+    float_data: 0.33180347
+    float_data: 0.6040726
+    float_data: 0.6525584
+    float_data: 0.29332352
+    float_data: 0.29010165
+    float_data: 0.3992027
+    float_data: 0.23857746
+    float_data: 0.2920793
+    float_data: 0.28674814
+    float_data: 0.36345565
+    float_data: 0.33215693
+    float_data: 0.2643412
+    float_data: 0.3958828
+    float_data: 0.4308555
+    float_data: 0.29433885
+    float_data: 0.29753533
+    name: "vgg0_batchnorm1_gamma"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: -0.0908439
+    float_data: 0.011756719
+    float_data: -0.04539691
+    float_data: 0.030277966
+    float_data: -0.12088727
+    float_data: -0.0680918
+    float_data: -0.10150318
+    float_data: 0.15876164
+    float_data: -0.07350283
+    float_data: 0.026413277
+    float_data: 0.025170265
+    float_data: 0.4578331
+    float_data: -0.11050987
+    float_data: -0.21454263
+    float_data: -0.07488937
+    float_data: 0.07398873
+    float_data: -0.021135882
+    float_data: -0.10881035
+    float_data: -0.10862749
+    float_data: -0.09916811
+    float_data: 0.14372425
+    float_data: -0.082650565
+    float_data: -0.07993332
+    float_data: -0.088341825
+    float_data: 0.073043555
+    float_data: 0.1845267
+    float_data: 0.03637224
+    float_data: -0.024516927
+    float_data: -0.08933032
+    float_data: 0.23445211
+    float_data: -0.121671446
+    float_data: 0.18636285
+    float_data: -0.037463743
+    float_data: -0.06651635
+    float_data: -0.11420512
+    float_data: -0.14127837
+    float_data: -0.082085304
+    float_data: 0.064323895
+    float_data: -0.053392287
+    float_data: 0.06931365
+    float_data: 0.17446293
+    float_data: -0.015510558
+    float_data: -0.047453288
+    float_data: 0.30195978
+    float_data: -0.021690236
+    float_data: 0.021228686
+    float_data: -0.048111346
+    float_data: -0.12648584
+    float_data: -0.016085617
+    float_data: -0.098112285
+    float_data: -0.14837755
+    float_data: -0.5954514
+    float_data: -0.07058573
+    float_data: -0.15271366
+    float_data: -0.040594567
+    float_data: 0.21588193
+    float_data: -0.079379916
+    float_data: -0.03286848
+    float_data: -0.019627282
+    float_data: 0.29875347
+    float_data: 0.06882859
+    float_data: 0.0135617545
+    float_data: 0.14740573
+    float_data: -0.13156189
+    name: "vgg0_batchnorm1_beta"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: -0.5157625
+    float_data: -0.7017158
+    float_data: -0.23236308
+    float_data: -0.3489857
+    float_data: 0.15685132
+    float_data: -0.46766105
+    float_data: -0.17798765
+    float_data: -0.92776024
+    float_data: -0.42408752
+    float_data: -0.44818404
+    float_data: 0.06322842
+    float_data: -0.7385976
+    float_data: -0.6755398
+    float_data: 0.8621648
+    float_data: -0.66203606
+    float_data: -0.66966945
+    float_data: -0.5274372
+    float_data: -0.74056983
+    float_data: -0.2850175
+    float_data: -0.33843246
+    float_data: -0.42615822
+    float_data: -0.3665473
+    float_data: 0.23098195
+    float_data: -0.3453843
+    float_data: -0.76750475
+    float_data: 0.32782447
+    float_data: -0.33125782
+    float_data: -0.97715724
+    float_data: -0.23526466
+    float_data: 0.24097379
+    float_data: -0.3002517
+    float_data: -2.1658936
+    float_data: -0.4455143
+    float_data: -0.8306779
+    float_data: -1.0932702
+    float_data: -0.89651674
+    float_data: -0.40981832
+    float_data: -0.933728
+    float_data: -0.6879427
+    float_data: -0.5380969
+    float_data: -0.5811426
+    float_data: -0.14297044
+    float_data: -0.69269574
+    float_data: -0.40363628
+    float_data: -0.10435212
+    float_data: -0.30108458
+    float_data: -0.8167065
+    float_data: -0.8986078
+    float_data: -0.3327989
+    float_data: -0.82055414
+    float_data: -0.6651163
+    float_data: -0.031745285
+    float_data: -0.47865868
+    float_data: -0.48978698
+    float_data: -0.25755328
+    float_data: -0.3837834
+    float_data: -0.5529283
+    float_data: -0.30802745
+    float_data: 0.3796315
+    float_data: -0.5075583
+    float_data: -0.42599112
+    float_data: -0.90309644
+    float_data: -0.096282944
+    float_data: -0.060593687
+    name: "vgg0_batchnorm1_running_mean"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.24103585
+    float_data: 0.5052056
+    float_data: 0.89206964
+    float_data: 0.13475771
+    float_data: 0.12300026
+    float_data: 0.65027416
+    float_data: 0.14301933
+    float_data: 0.34886122
+    float_data: 0.18894869
+    float_data: 0.18145117
+    float_data: 0.50372994
+    float_data: 0.44993103
+    float_data: 1.1298817
+    float_data: 0.057337876
+    float_data: 0.40887427
+    float_data: 0.66170704
+    float_data: 1.3602946
+    float_data: 0.5531609
+    float_data: 0.13976818
+    float_data: 0.102293745
+    float_data: 0.31945026
+    float_data: 0.27812323
+    float_data: 0.10893541
+    float_data: 0.38054505
+    float_data: 0.61664
+    float_data: 0.50188345
+    float_data: 0.15185472
+    float_data: 0.3816308
+    float_data: 0.31782073
+    float_data: 0.70111036
+    float_data: 0.31223917
+    float_data: 0.62195945
+    float_data: 0.60491985
+    float_data: 1.1389369
+    float_data: 0.92611766
+    float_data: 0.8116733
+    float_data: 0.19668244
+    float_data: 0.34739754
+    float_data: 0.9084398
+    float_data: 0.5603957
+    float_data: 0.5756378
+    float_data: 1.4356648
+    float_data: 0.6931867
+    float_data: 0.38305366
+    float_data: 0.117196314
+    float_data: 0.19170326
+    float_data: 0.6184759
+    float_data: 0.82837987
+    float_data: 0.7651697
+    float_data: 1.2501113
+    float_data: 0.6686274
+    float_data: 0.024823597
+    float_data: 0.3004424
+    float_data: 0.11544036
+    float_data: 0.1315468
+    float_data: 0.31407285
+    float_data: 0.11633814
+    float_data: 0.39726445
+    float_data: 0.40132803
+    float_data: 0.35439608
+    float_data: 0.6468155
+    float_data: 0.7019507
+    float_data: 0.61728096
+    float_data: 0.05493693
+    name: "vgg0_batchnorm1_running_var"
+  }
+  input {
+    name: "data"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 224
+          }
+          dim {
+            dim_value: 224
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv0_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv0_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm0_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm0_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm0_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm0_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv1_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv1_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm1_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm1_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm1_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm1_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv2_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv2_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm2_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm2_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm2_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm2_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv3_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv3_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm3_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm3_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm3_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm3_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv4_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv4_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm4_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm4_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm4_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm4_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv5_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv5_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm5_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm5_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm5_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm5_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv6_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv6_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm6_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm6_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm6_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm6_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv7_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv7_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm7_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm7_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm7_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm7_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv8_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv8_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm8_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm8_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm8_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm8_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv9_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv9_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm9_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm9_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm9_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm9_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv10_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv10_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm10_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm10_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm10_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm10_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv11_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv11_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm11_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm11_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm11_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm11_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv12_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv12_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm12_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm12_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm12_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_batchnorm12_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_dense0_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 4096
+          }
+          dim {
+            dim_value: 25088
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_dense0_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 4096
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_dense1_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 4096
+          }
+          dim {
+            dim_value: 4096
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_dense1_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 4096
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_dense2_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1000
+          }
+          dim {
+            dim_value: 4096
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_dense2_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "vgg0_dense2_fwd"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+}
+opset_import {
+  domain: ""
+  version: 8
+}

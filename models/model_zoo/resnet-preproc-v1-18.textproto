@@ -1,0 +1,276 @@
+ir_version: 8
+graph {
+  node {
+    input: "images"
+    output: "preproc_data"
+    op_type: "preprocess"
+    domain: "local"
+  }
+  name: "resnet_preproc_g"
+  input {
+    name: "images"
+    type {
+      sequence_type {
+        elem_type {
+          tensor_type {
+            elem_type: 2
+            shape {
+              dim {
+              }
+              dim {
+              }
+              dim {
+                dim_value: 3
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "preproc_data"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_param: "B"
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 224
+          }
+          dim {
+            dim_value: 224
+          }
+        }
+      }
+    }
+  }
+}
+opset_import {
+  domain: ""
+  version: 18
+}
+opset_import {
+  domain: "local"
+  version: 1
+}
+metadata_props {
+  key: "preprocessing_fn"
+  value: "local.preprocess"
+}
+functions {
+  name: "preprocess"
+  input: "input_batch"
+  output: "output_tensor"
+  node {
+    input: "input_batch"
+    output: "tmp_seq"
+    op_type: "SequenceMap"
+    attribute {
+      name: "body"
+      g {
+        node {
+          output: "target_size"
+          op_type: "Constant"
+          attribute {
+            name: "value"
+            t {
+              dims: 2
+              data_type: 7
+              int64_data: 256
+              int64_data: 256
+              name: ""
+            }
+            type: TENSOR
+          }
+        }
+        node {
+          input: "sample_in"
+          input: ""
+          input: ""
+          input: "target_size"
+          output: "image_resized"
+          op_type: "Resize"
+          attribute {
+            name: "mode"
+            s: "linear"
+            type: STRING
+          }
+          attribute {
+            name: "antialias"
+            i: 1
+            type: INT
+          }
+          attribute {
+            name: "axes"
+            ints: 0
+            ints: 1
+            type: INTS
+          }
+          attribute {
+            name: "keep_aspect_ratio_policy"
+            s: "not_smaller"
+            type: STRING
+          }
+        }
+        node {
+          output: "target_crop"
+          op_type: "Constant"
+          attribute {
+            name: "value"
+            t {
+              dims: 2
+              data_type: 7
+              int64_data: 224
+              int64_data: 224
+              name: ""
+            }
+            type: TENSOR
+          }
+        }
+        node {
+          input: "image_resized"
+          input: "target_crop"
+          output: "image_sliced"
+          op_type: "CenterCropPad"
+          attribute {
+            name: "axes"
+            ints: 0
+            ints: 1
+            type: INTS
+          }
+        }
+        node {
+          output: "kMean"
+          op_type: "Constant"
+          attribute {
+            name: "value"
+            t {
+              dims: 3
+              data_type: 1
+              float_data: 123.675
+              float_data: 116.28
+              float_data: 103.53
+              name: ""
+            }
+            type: TENSOR
+          }
+        }
+        node {
+          output: "kStddev"
+          op_type: "Constant"
+          attribute {
+            name: "value"
+            t {
+              dims: 3
+              data_type: 1
+              float_data: 58.395
+              float_data: 57.12
+              float_data: 57.375
+              name: ""
+            }
+            type: TENSOR
+          }
+        }
+        node {
+          input: "image_sliced"
+          output: "im_norm_tmp1"
+          op_type: "Cast"
+          attribute {
+            name: "to"
+            i: 1
+            type: INT
+          }
+        }
+        node {
+          input: "im_norm_tmp1"
+          input: "kMean"
+          output: "im_norm_tmp2"
+          op_type: "Sub"
+        }
+        node {
+          input: "im_norm_tmp2"
+          input: "kStddev"
+          output: "im_norm"
+          op_type: "Div"
+        }
+        node {
+          input: "im_norm"
+          output: "sample_out"
+          op_type: "Transpose"
+          attribute {
+            name: "perm"
+            ints: 2
+            ints: 0
+            ints: 1
+            type: INTS
+          }
+        }
+        name: "sample_preprocessing"
+        input {
+          name: "sample_in"
+          type {
+            tensor_type {
+              elem_type: 2
+              shape {
+                dim {
+                }
+                dim {
+                }
+                dim {
+                  dim_value: 3
+                }
+              }
+            }
+          }
+        }
+        output {
+          name: "sample_out"
+          type {
+            tensor_type {
+              elem_type: 1
+              shape {
+                dim {
+                  dim_value: 3
+                }
+                dim {
+                  dim_value: 224
+                }
+                dim {
+                  dim_value: 224
+                }
+              }
+            }
+          }
+        }
+      }
+      type: GRAPH
+    }
+  }
+  node {
+    input: "tmp_seq"
+    output: "output_tensor"
+    op_type: "ConcatFromSequence"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+    attribute {
+      name: "new_axis"
+      i: 1
+      type: INT
+    }
+  }
+  doc_string: "Preprocessing function."
+  opset_import {
+    domain: ""
+    version: 18
+  }
+  domain: "local"
+}

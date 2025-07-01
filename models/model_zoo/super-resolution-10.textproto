@@ -1,0 +1,438 @@
+ir_version: 4
+producer_name: "pytorch"
+producer_version: "1.1"
+graph {
+  node {
+    input: "input"
+    input: "conv1.weight"
+    input: "conv1.bias"
+    output: "9"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "9"
+    output: "10"
+    op_type: "Relu"
+  }
+  node {
+    input: "10"
+    input: "conv2.weight"
+    input: "conv2.bias"
+    output: "11"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "11"
+    output: "12"
+    op_type: "Relu"
+  }
+  node {
+    input: "12"
+    input: "conv3.weight"
+    input: "conv3.bias"
+    output: "13"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "13"
+    output: "14"
+    op_type: "Relu"
+  }
+  node {
+    input: "14"
+    input: "conv4.weight"
+    input: "conv4.bias"
+    output: "15"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    output: "16"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 6
+        data_type: 7
+        raw_data: "\377\377\377\377\377\377\377\377\001\000\000\000\000\000\000\000\003\000\000\000\000\000\000\000\003\000\000\000\000\000\000\000\340\000\000\000\000\000\000\000\340\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "15"
+    input: "16"
+    output: "17"
+    op_type: "Reshape"
+  }
+  node {
+    input: "17"
+    output: "18"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 0
+      ints: 1
+      ints: 4
+      ints: 2
+      ints: 5
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    output: "19"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 4
+        data_type: 7
+        raw_data: "\377\377\377\377\377\377\377\377\001\000\000\000\000\000\000\000\240\002\000\000\000\000\000\000\240\002\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "18"
+    input: "19"
+    output: "output"
+    op_type: "Reshape"
+  }
+  name: "torch-jit-export"
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "conv1.bias"
+    raw_data: "\230\374Q<\004\020\247=\\\250\273<\373Y\337;\033\247I\2767\202\253\274t\'\363=~\251\013>\370f&>\341U\243\274>\304\201<\035\217\226=\360\255\303\275\362/s\275\016\214B>\004G\336=\376\006Y\275\035\214\376\275\227_\230=\322\3464\276\030\375\217=\315\373\234\275\331\016\003\275\034\272(>/\215\266\272*\004F\275\014\2079>\227\340\311=\340z\004\276\224\255\n\275V\371=\274\250\021\313<og\321\275;\001r\275\277~\316\274\241\376\377\275h\265&>\265f>>s\316h\275\267\235\376\274p\030\017\2762\241E\275lX\365\275\r%`=,H\r>\212at\275\002\"?>\253\303\346\274v\315\213=Ia\272=\3158\315=\335\370\361=\321\2041\276\026\2156>:\222\252=\035\341C\276\240S \275do;>J %>\377U\372\275\330\361\245\274\335\211,>\375\\0>r\341@="
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "conv2.bias"
+    raw_data: ".m\207\274Z\266\026\275\030\373\311\2677\300\r=\\a\326<!!\265\274Y\333\263<T>\232<f9\370\2742~1;\245(0\274d\377\234<z_\030\275\276\256A;F\017A\275\002\005\340<\004x\232<\033\261\307\274\247\362\215;\341Y\351\274\236\346\022=\3319\342\274\032\355\233<\345\035\234\274&\023R;d\271\2779v^Y<\233\243\013=\3522\356\274\227\031\221<\335\2021\272\227&8\275%\357\222\274\006-\312<\251\373\366\274\006\376\270\274\003\322\000\275\356c\033=|\366\001=\370!\245<\034t;\275\324\312e:IX\277\274p\341\342\274GD\314<\250>\302<\373\266\013=\370Z[\274\234\325\260<K\306\243;a\207\r=oI\354<S\r\264<\243\344_;\022s\313<\263\023\324<0\376s<\227\220A9L\242\251\274\251d\274\271l\230\324\274x\324f;d\357\255\274\256\323\036="
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "conv3.bias"
+    raw_data: "\006\347\256<9j\r<\000\351\211<|a\336<\232u\027\275\014i\317=xI\222\274\027\305\t\275\255\200\245<\265\241\242<\300\200\004\274\273i\024\275\220\216\210<*\311\217;\314;_<Y\237\232<\304\340\315\274\374\307\347\274\207+\005=\266\267\304<qod=m\264\254<(WP\274\366z\356\274\240r\330<\247^6\274W~\003\275\254\327\001\275\226\215\213\274\237\315\373\274\273:\350<\005f\225\274"
+  }
+  initializer {
+    dims: 9
+    data_type: 1
+    name: "conv4.bias"
+    raw_data: "\351\202w\274&_\234\274\205n\024\275\344\344\267\274\273\\`=?S8<\217\333X=\016]\323<\335\317\223\274"
+  }
+  input {
+    name: "input"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_param: "batch_size"
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 224
+          }
+          dim {
+            dim_value: 224
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv1.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv1.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv2.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv2.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv3.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv3.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv4.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 9
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv4.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 9
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "output"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_param: "batch_size"
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 672
+          }
+          dim {
+            dim_value: 672
+          }
+        }
+      }
+    }
+  }
+}
+opset_import {
+  domain: ""
+  version: 10
+}

@@ -1,0 +1,4736 @@
+ir_version: 6
+producer_name: "pytorch"
+producer_version: "1.8"
+graph {
+  node {
+    input: "input"
+    input: "475"
+    input: "476"
+    output: "474"
+    name: "Conv_0"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "474"
+    output: "317"
+    name: "Clip_1"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "317"
+    input: "478"
+    input: "479"
+    output: "477"
+    name: "Conv_2"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 32
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "477"
+    output: "320"
+    name: "Clip_3"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "320"
+    input: "481"
+    input: "482"
+    output: "480"
+    name: "Conv_4"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "480"
+    input: "484"
+    input: "485"
+    output: "483"
+    name: "Conv_5"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "483"
+    output: "325"
+    name: "Clip_6"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "325"
+    input: "487"
+    input: "488"
+    output: "486"
+    name: "Conv_7"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 96
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "486"
+    output: "328"
+    name: "Clip_8"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "328"
+    input: "490"
+    input: "491"
+    output: "489"
+    name: "Conv_9"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "489"
+    input: "493"
+    input: "494"
+    output: "492"
+    name: "Conv_10"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "492"
+    output: "333"
+    name: "Clip_11"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "333"
+    input: "496"
+    input: "497"
+    output: "495"
+    name: "Conv_12"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 144
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "495"
+    output: "336"
+    name: "Clip_13"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "336"
+    input: "499"
+    input: "500"
+    output: "498"
+    name: "Conv_14"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "489"
+    input: "498"
+    output: "339"
+    name: "Add_15"
+    op_type: "Add"
+  }
+  node {
+    input: "339"
+    input: "502"
+    input: "503"
+    output: "501"
+    name: "Conv_16"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "501"
+    output: "342"
+    name: "Clip_17"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "342"
+    input: "505"
+    input: "506"
+    output: "504"
+    name: "Conv_18"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 144
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "504"
+    output: "345"
+    name: "Clip_19"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "345"
+    input: "508"
+    input: "509"
+    output: "507"
+    name: "Conv_20"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "507"
+    input: "511"
+    input: "512"
+    output: "510"
+    name: "Conv_21"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "510"
+    output: "350"
+    name: "Clip_22"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "350"
+    input: "514"
+    input: "515"
+    output: "513"
+    name: "Conv_23"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 192
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "513"
+    output: "353"
+    name: "Clip_24"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "353"
+    input: "517"
+    input: "518"
+    output: "516"
+    name: "Conv_25"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "507"
+    input: "516"
+    output: "356"
+    name: "Add_26"
+    op_type: "Add"
+  }
+  node {
+    input: "356"
+    input: "520"
+    input: "521"
+    output: "519"
+    name: "Conv_27"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "519"
+    output: "359"
+    name: "Clip_28"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "359"
+    input: "523"
+    input: "524"
+    output: "522"
+    name: "Conv_29"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 192
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "522"
+    output: "362"
+    name: "Clip_30"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "362"
+    input: "526"
+    input: "527"
+    output: "525"
+    name: "Conv_31"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "356"
+    input: "525"
+    output: "365"
+    name: "Add_32"
+    op_type: "Add"
+  }
+  node {
+    input: "365"
+    input: "529"
+    input: "530"
+    output: "528"
+    name: "Conv_33"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "528"
+    output: "368"
+    name: "Clip_34"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "368"
+    input: "532"
+    input: "533"
+    output: "531"
+    name: "Conv_35"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 192
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "531"
+    output: "371"
+    name: "Clip_36"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "371"
+    input: "535"
+    input: "536"
+    output: "534"
+    name: "Conv_37"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "534"
+    input: "538"
+    input: "539"
+    output: "537"
+    name: "Conv_38"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "537"
+    output: "376"
+    name: "Clip_39"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "376"
+    input: "541"
+    input: "542"
+    output: "540"
+    name: "Conv_40"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 384
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "540"
+    output: "379"
+    name: "Clip_41"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "379"
+    input: "544"
+    input: "545"
+    output: "543"
+    name: "Conv_42"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "534"
+    input: "543"
+    output: "382"
+    name: "Add_43"
+    op_type: "Add"
+  }
+  node {
+    input: "382"
+    input: "547"
+    input: "548"
+    output: "546"
+    name: "Conv_44"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "546"
+    output: "385"
+    name: "Clip_45"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "385"
+    input: "550"
+    input: "551"
+    output: "549"
+    name: "Conv_46"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 384
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "549"
+    output: "388"
+    name: "Clip_47"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "388"
+    input: "553"
+    input: "554"
+    output: "552"
+    name: "Conv_48"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "382"
+    input: "552"
+    output: "391"
+    name: "Add_49"
+    op_type: "Add"
+  }
+  node {
+    input: "391"
+    input: "556"
+    input: "557"
+    output: "555"
+    name: "Conv_50"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "555"
+    output: "394"
+    name: "Clip_51"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "394"
+    input: "559"
+    input: "560"
+    output: "558"
+    name: "Conv_52"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 384
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "558"
+    output: "397"
+    name: "Clip_53"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "397"
+    input: "562"
+    input: "563"
+    output: "561"
+    name: "Conv_54"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "391"
+    input: "561"
+    output: "400"
+    name: "Add_55"
+    op_type: "Add"
+  }
+  node {
+    input: "400"
+    input: "565"
+    input: "566"
+    output: "564"
+    name: "Conv_56"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "564"
+    output: "403"
+    name: "Clip_57"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "403"
+    input: "568"
+    input: "569"
+    output: "567"
+    name: "Conv_58"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 384
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "567"
+    output: "406"
+    name: "Clip_59"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "406"
+    input: "571"
+    input: "572"
+    output: "570"
+    name: "Conv_60"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "570"
+    input: "574"
+    input: "575"
+    output: "573"
+    name: "Conv_61"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "573"
+    output: "411"
+    name: "Clip_62"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "411"
+    input: "577"
+    input: "578"
+    output: "576"
+    name: "Conv_63"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 576
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "576"
+    output: "414"
+    name: "Clip_64"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "414"
+    input: "580"
+    input: "581"
+    output: "579"
+    name: "Conv_65"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "570"
+    input: "579"
+    output: "417"
+    name: "Add_66"
+    op_type: "Add"
+  }
+  node {
+    input: "417"
+    input: "583"
+    input: "584"
+    output: "582"
+    name: "Conv_67"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "582"
+    output: "420"
+    name: "Clip_68"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "420"
+    input: "586"
+    input: "587"
+    output: "585"
+    name: "Conv_69"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 576
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "585"
+    output: "423"
+    name: "Clip_70"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "423"
+    input: "589"
+    input: "590"
+    output: "588"
+    name: "Conv_71"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "417"
+    input: "588"
+    output: "426"
+    name: "Add_72"
+    op_type: "Add"
+  }
+  node {
+    input: "426"
+    input: "592"
+    input: "593"
+    output: "591"
+    name: "Conv_73"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "591"
+    output: "429"
+    name: "Clip_74"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "429"
+    input: "595"
+    input: "596"
+    output: "594"
+    name: "Conv_75"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 576
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "594"
+    output: "432"
+    name: "Clip_76"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "432"
+    input: "598"
+    input: "599"
+    output: "597"
+    name: "Conv_77"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "597"
+    input: "601"
+    input: "602"
+    output: "600"
+    name: "Conv_78"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "600"
+    output: "437"
+    name: "Clip_79"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "437"
+    input: "604"
+    input: "605"
+    output: "603"
+    name: "Conv_80"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 960
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "603"
+    output: "440"
+    name: "Clip_81"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "440"
+    input: "607"
+    input: "608"
+    output: "606"
+    name: "Conv_82"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "597"
+    input: "606"
+    output: "443"
+    name: "Add_83"
+    op_type: "Add"
+  }
+  node {
+    input: "443"
+    input: "610"
+    input: "611"
+    output: "609"
+    name: "Conv_84"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "609"
+    output: "446"
+    name: "Clip_85"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "446"
+    input: "613"
+    input: "614"
+    output: "612"
+    name: "Conv_86"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 960
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "612"
+    output: "449"
+    name: "Clip_87"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "449"
+    input: "616"
+    input: "617"
+    output: "615"
+    name: "Conv_88"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "443"
+    input: "615"
+    output: "452"
+    name: "Add_89"
+    op_type: "Add"
+  }
+  node {
+    input: "452"
+    input: "619"
+    input: "620"
+    output: "618"
+    name: "Conv_90"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "618"
+    output: "455"
+    name: "Clip_91"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "455"
+    input: "622"
+    input: "623"
+    output: "621"
+    name: "Conv_92"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 960
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "621"
+    output: "458"
+    name: "Clip_93"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "458"
+    input: "625"
+    input: "626"
+    output: "624"
+    name: "Conv_94"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "624"
+    input: "628"
+    input: "629"
+    output: "627"
+    name: "Conv_95"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "627"
+    output: "463"
+    name: "Clip_96"
+    op_type: "Clip"
+    attribute {
+      name: "max"
+      f: 6.0
+      type: FLOAT
+    }
+    attribute {
+      name: "min"
+      f: 0.0
+      type: FLOAT
+    }
+  }
+  node {
+    input: "463"
+    output: "464"
+    name: "GlobalAveragePool_97"
+    op_type: "GlobalAveragePool"
+  }
+  node {
+    input: "463"
+    output: "465"
+    name: "Shape_98"
+    op_type: "Shape"
+  }
+  node {
+    output: "466"
+    name: "Constant_99"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\000\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "465"
+    input: "466"
+    output: "467"
+    name: "Gather_100"
+    op_type: "Gather"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "467"
+    output: "469"
+    name: "Unsqueeze_101"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "469"
+    input: "630"
+    output: "471"
+    name: "Concat_102"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "464"
+    input: "471"
+    output: "472"
+    name: "Reshape_103"
+    op_type: "Reshape"
+  }
+  node {
+    input: "472"
+    input: "classifier.1.weight"
+    input: "classifier.1.bias"
+    output: "output"
+    name: "Gemm_104"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "beta"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "transB"
+      i: 1
+      type: INT
+    }
+  }
+  name: "torch-jit-export"
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "476"
+    raw_data: "Z\037\260\275\035w\017?\025\247\262>\027\337\220>\254\276w?\031\r\'?\006z\375>\212\246\021?3#\036?\264@\3508\345\002\254\276\225Mu?{b\344>\303\020\276\276\334c\260\271\215\206\317;\037\010*\275\261l\224\274\220\227\256>\000\314\315=\264z\207\276\341\302\376>\252\337\323>/f|\2749\212\371\276\222\305\002? \340\232\2769\250#?&\204\371\275(\035\216\275;&\311>k\211\212>"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "479"
+    raw_data: "\360\350B\274\275\333n?\0008\035<\341!\326>)\256\205>\256mV?L\243_?@\203\321>\253\320n@\211\376\230\273\222\263\252>!!\247>\376\373N?\013\035\323\276\264\325\271\273\016&\265\273\274|\010<C\366^<\360\361\000<\215\260\237=\315F\223\276\004\020\310?H\005a?T\200\240:[nB?4f\217\276\017#\273\276\212,a?\341x,?\024\204\244>\255bx?.\331O\276"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "482"
+    raw_data: "\360\n\t\300@\317\332>\013\033\244\277/\202\204?\377H\317\275\t\317\354\276\275F)\277\211\315\345\277\220\275V\277\253\r\324\277\210\211\316?jy\332\276[\0268\277\330$/\276U\215\321?Wt\265?"
+  }
+  initializer {
+    dims: 24
+    data_type: 1
+    name: "491"
+    raw_data: "\037=\225\277\3132\002?\364d3\277\327cE\276Es\312\275\326\376:\277\336i\331\276\347\004>>\206\177H\276\346>\230;\325\302\302<\022<\320>\362\366\014>\324\265\346?A\037\247?U\023R?\266HL>M\223F\276\316P\370\276\0019\006><\273\260>\365\331\217>s\"\031>\336*\003>"
+  }
+  initializer {
+    dims: 24
+    data_type: 1
+    name: "500"
+    raw_data: "p\253\263\277\360,\206\277~\244\264=4\276<\276\277\"\240\277\204\006\207?|\260K?\317\020\267=\354e\311=\342A\247\275\322\002\017\300\241\254!\277\315K\037?`j\231\277E\264\030>\201\353\257\276=\026\277>\262B\013\2777\340\002\277\334V\260>\264\340p?\334\246X?R;\002\300\273j\244?"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "509"
+    raw_data: "\323\332Z?\nN\013?\253\007\026\277\001\2108?\326S\001>\030\261\301\277\247\254\203\276!sH\276\003\245\014=\310\374\327\277&c<?\251\314\256?\347\007 ?N;^?\271Es=\034\244\010\277\324[.??C\315\275\3167\020?\252\002\230\276K\311%\276l\021\321>\336\276\010\277l\275\310>,\251E\277\372\220\177?:\3212\276t\335\221\277?\210\216>:\312t\277\256\362#\277\260<1\276"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "518"
+    raw_data: "\321\016\220==m`>^9\320\276\243i,?\243\364u\276\261\321F\275\367\340#>1B\276\276\r[\004\277\365\240\305=R}\327=\222\253I\276\315\t\327\276\311\273\006\277<\217\224<<\334\275\276\023\202\304>S\005<\276h7\021>w\302\361>\202\037D?0\245\266\276I-b>\267D\367\276\006\202\310=\363\002\"\276\217\271\347\276GH\001?\333\231\005?\033;(\276\233\354k\276F\223->"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "527"
+    raw_data: "\005\333\313\276\2617j=\230\322\204\276Xwc>V\236\206>\345N\225>\223\220\306\276\264#\\>\201\030\316\274\205,\031?\016_l>\363\254\026>\304J->\267\273v>\002\363\214>\326\035\016\277\003\215\034\277{\226\002\277\224\245\266=\3605K?uU\242>\317cJ>\213\247\221\275\374<p>\341\201\255\275\207\212\036\277\233\243\276\276\316T\312>\312\242\235\276\\J\375\276\315^\370>\305\233\247\276"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "536"
+    raw_data: "6\245\360\276\340\302\021\276\377\314Q\277N\342\214\275k\270\030\277k\025\304\275\203k\363=\351\277]\277A\2018\275\331$\362?\230v\253\277\033#\217?\311\367\205=\027\367\372\276\207\270\317>0>\356=_j[\276]\203\233\276@\220\033\276\252\270\225\276\377\234E\275\001\256l\277b\2166?\227\226\337>\377n\377=\352\311\037\276\347\201B?\355\327A\277\031\200B>\312\265\203\277YQ\032>x\345\211>_\273\215?\215\224\354>v5\230>{\352\303\275\034\277\314\275\203\223\017\275\240\345\221\277\360T\031\276\202\350\217?E3T?\215\0237\277\303\033U\277\r\237<\277}\246\247\274\024eP>\212\221\307\276$E:?k\205\304>D\343\r?\226\233=>\201\254\237?\357\317\010?i+h?\377mc\274\312\263s?\031d\221\277\372\227_>\375\200\220\276\027L\202\276\253\205\t?kg\201?\215\3253\276"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "545"
+    raw_data: "\320|\236\276/\240 \276+\000\271=\204\'x>\373\312\027\276\004\033\030<\262\031\307<\277/\001\277S\352\233\276b&\371<\203\222\211\276\003h\006>\253\321\255=QS\236\275\247\'\210=t\276\204>\317\342\212>ym\233=F(\237>\005{\207\276\206\0304\276\223\214\004\277zI\001<\364\036\361>`s\020>2\312v\276CQx?\314\245!\276\276\0340>@\006\341=\222\"\306>6\\.?]\216\344\275S\233\032>u\207\222\277(w\355\276v\256\024?y\236L\275K\r\010>\334v\213\276R)\315\2757I\251\276[\210\214>\035&\275\275?\214\003?\225J\010>\230x*<\027\256B?\224=3>%\202,>\001\352\277\275\'\314\221>\267\327\022>b\342^\2764\341\260\276]\360\331>\262+\310>\314\337\247\275\277\022\211>h\233I?\336\305Q?L\023\033\277\226\005i\271@I\217\276"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "554"
+    raw_data: "\366w\227>\347\307\014>\356(\250\276\210n\031\2765\365\223\276`q\220\276\006\305\205>|\272\236=wK\340\276Q\034\245=1\361%>g\316\206\276Ty\330\275\222m\234\276\020{\224=\356\363\225>\217G#>H\346\235\276:\021\263>\374\335r=nD\223>\310M\356>\231\335\217>\246<7\275\177I[>\371B\324\275\022\244(>\370\352\252\274\026\322\333<\331W/<Y\214K<\211H\244\275\322E\355\274\252\346\326\276\211\360\">\034Xc\276\017\332E\276^\253\333\276$s\375=\331\227\253>L\363.\276\0147t\276\013\232?>\014\336F>m\263->\210\016K>E8\231\275\241\004\254>\266\244d\276H\203\004<\t\366>=\\\247\311\276\241J\231\276\313$\243\275G\364\361\274{\332\221<\251\303X<\203\305N=>\246M\276U\320t\276\247{q?\360y\277>R\271x>\277\037>\276"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "563"
+    raw_data: "\267}\213\276\253\220!\276\332\355\002>0\235\003\277\253o\010?\377p\001\276\223\341\016\276\374\232}>\001\n;\277p\267\022?\2208\205\275\241\031\360\276\243>\005\277=\261\365\276\0207\316\276T\264\206\276j\000c>\307;*\276\271/\217>\312,+>\337\353\235=\314\205B>J6\022\277\027\013\034>\332\341\324\274\262\036\265\275-\243\226>\312z\345=\\h(\276\246zi\2766\264\373\274\034\256\032\277v\2331\277\263\233j>\270\363\233>\004\360X=c=\211\275\307L\024\276/\021\002\276\245/F>\211\222\350>\326\226\002<Z\324\365:\003\033\306=&\252\262\275\241\307\027\276\340\263|\276}\375\260\276?6j>C\333\243\276\264\373\013\275\002\244\345\274\256\300\263\276\033\331\227>\027\327\351<\215\316\221\275\351\273K>\346\337\232\276$\267Q\277\3249\252\276\357\020`=\177O\240\276\300\333/\275\020\0342>"
+  }
+  initializer {
+    dims: 1
+    data_type: 7
+    name: "630"
+    raw_data: "\377\377\377\377\377\377\377\377"
+  }
+  input {
+    name: "input"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_param: "batch_size"
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 224
+          }
+          dim {
+            dim_value: 224
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "475"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "478"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "481"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "484"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "485"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 96
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "487"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "488"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 96
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "490"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 24
+          }
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "493"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 144
+          }
+          dim {
+            dim_value: 24
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "494"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 144
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "496"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 144
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "497"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 144
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "499"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 24
+          }
+          dim {
+            dim_value: 144
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "502"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 144
+          }
+          dim {
+            dim_value: 24
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "503"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 144
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "505"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 144
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "506"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 144
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "508"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 144
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "511"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "512"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "514"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "515"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "517"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "520"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "521"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "523"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "524"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "526"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "529"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "530"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "532"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "533"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "535"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "538"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "539"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "541"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "542"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "544"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "547"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "548"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "550"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "551"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "553"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "556"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "557"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "559"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "560"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "562"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "565"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "566"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "568"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "569"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "571"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "572"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 96
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "574"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 576
+          }
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "575"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 576
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "577"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 576
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "578"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 576
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "580"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 576
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "581"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 96
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "583"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 576
+          }
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "584"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 576
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "586"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 576
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "587"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 576
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "589"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 576
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "590"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 96
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "592"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 576
+          }
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "593"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 576
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "595"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 576
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "596"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 576
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "598"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 576
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "599"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "601"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "602"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "604"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "605"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "607"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "608"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "610"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "611"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "613"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "614"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "616"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "617"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "619"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "620"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "622"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "623"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "625"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 320
+          }
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "626"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 320
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "628"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1280
+          }
+          dim {
+            dim_value: 320
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "629"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1280
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "classifier.1.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "classifier.1.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1000
+          }
+          dim {
+            dim_value: 1280
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "output"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_param: "batch_size"
+          }
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "476"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "479"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "482"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "491"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 24
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "500"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 24
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "509"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "518"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "527"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "536"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "545"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "554"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "563"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "630"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+}
+opset_import {
+  domain: ""
+  version: 10
+}

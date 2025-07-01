@@ -1,0 +1,1119 @@
+ir_version: 7
+producer_name: "onnx-caffe2"
+graph {
+  node {
+    input: "gpu_0/data_0"
+    input: "gpu_0/conv1_w_0"
+    input: "gpu_0/conv1_b_0"
+    output: "gpu_0/conv1_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 7
+      ints: 7
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/conv1_1"
+    output: "gpu_0/conv1_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/conv1_2"
+    output: "gpu_0/norm1_1"
+    op_type: "LRN"
+    attribute {
+      name: "beta"
+      f: 0.75
+      type: FLOAT
+    }
+    attribute {
+      name: "bias"
+      f: 2.0
+      type: FLOAT
+    }
+    attribute {
+      name: "alpha"
+      f: 0.0005
+      type: FLOAT
+    }
+    attribute {
+      name: "size"
+      i: 5
+      type: INT
+    }
+  }
+  node {
+    input: "gpu_0/norm1_1"
+    output: "gpu_0/pool1_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/pool1_1"
+    input: "gpu_0/conv2_w_0"
+    input: "gpu_0/conv2_b_0"
+    output: "gpu_0/conv2_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/conv2_1"
+    output: "gpu_0/conv2_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/conv2_2"
+    output: "gpu_0/norm2_1"
+    op_type: "LRN"
+    attribute {
+      name: "beta"
+      f: 0.75
+      type: FLOAT
+    }
+    attribute {
+      name: "bias"
+      f: 2.0
+      type: FLOAT
+    }
+    attribute {
+      name: "alpha"
+      f: 0.0005
+      type: FLOAT
+    }
+    attribute {
+      name: "size"
+      i: 5
+      type: INT
+    }
+  }
+  node {
+    input: "gpu_0/norm2_1"
+    output: "gpu_0/pool2_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/pool2_1"
+    input: "gpu_0/conv3_w_0"
+    input: "gpu_0/conv3_b_0"
+    output: "gpu_0/conv3_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/conv3_1"
+    output: "gpu_0/conv3_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/conv3_2"
+    input: "gpu_0/conv4_w_0"
+    input: "gpu_0/conv4_b_0"
+    output: "gpu_0/conv4_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/conv4_1"
+    output: "gpu_0/conv4_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/conv4_2"
+    input: "gpu_0/conv5_w_0"
+    input: "gpu_0/conv5_b_0"
+    output: "gpu_0/conv5_1"
+    op_type: "Conv"
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/conv5_1"
+    output: "gpu_0/conv5_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/conv5_2"
+    output: "gpu_0/pool5_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "gpu_0/pool5_1"
+    input: "OC2_DUMMY_1"
+    output: "OC2_DUMMY_0"
+    op_type: "Reshape"
+  }
+  node {
+    input: "OC2_DUMMY_0"
+    input: "gpu_0/fc6_w_0"
+    input: "gpu_0/fc6_b_0"
+    output: "gpu_0/fc6_1"
+    op_type: "Gemm"
+    attribute {
+      name: "transB"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "gpu_0/fc6_1"
+    output: "gpu_0/fc6_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/fc6_2"
+    input: "gpu_0/fc7_w_0"
+    input: "gpu_0/fc7_b_0"
+    output: "gpu_0/fc7_1"
+    op_type: "Gemm"
+    attribute {
+      name: "transB"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "gpu_0/fc7_1"
+    output: "gpu_0/fc7_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "gpu_0/fc7_2"
+    input: "gpu_0/fc8_w_0"
+    input: "gpu_0/fc8_b_0"
+    output: "gpu_0/pred_1"
+    op_type: "Gemm"
+    attribute {
+      name: "transB"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "gpu_0/pred_1"
+    output: "gpu_0/softmax_1"
+    op_type: "Softmax"
+  }
+  name: "zfnet512"
+  initializer {
+    dims: 1
+    dims: 1
+    data_type: 1
+    name: "gpu_0/imagenet1k_blobs_queue_e24a6638-b332-4e67-a127-91f5e17e2e11_0"
+    raw_data: "\000\000\000\000"
+  }
+  initializer {
+    dims: 2
+    data_type: 7
+    name: "OC2_DUMMY_1"
+    raw_data: "\001\000\000\000\000\000\000\000\000H\000\000\000\000\000\000"
+  }
+  input {
+    name: "gpu_0/data_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 224
+          }
+          dim {
+            dim_value: 224
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/conv1_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 96
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/conv1_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/conv2_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/conv2_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/conv3_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/conv3_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/conv4_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/conv4_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/conv5_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/conv5_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/fc6_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 4096
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/fc6_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 4096
+          }
+          dim {
+            dim_value: 18432
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/fc7_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/fc7_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 4096
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/fc8_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "gpu_0/fc8_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1000
+          }
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "gpu_0/softmax_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "gpu_0/imagenet1k_blobs_queue_e24a6638-b332-4e67-a127-91f5e17e2e11_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "OC2_DUMMY_1"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "gpu_0/conv1_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 109
+          }
+          dim {
+            dim_value: 109
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "gpu_0/conv1_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 109
+          }
+          dim {
+            dim_value: 109
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "gpu_0/norm1_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 109
+          }
+          dim {
+            dim_value: 109
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "gpu_0/pool1_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 54
+          }
+          dim {
+            dim_value: 54
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "gpu_0/conv2_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 25
+          }
+          dim {
+            dim_value: 25
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "gpu_0/conv2_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 25
+          }
+          dim {
+            dim_value: 25
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "gpu_0/norm2_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 25
+          }
+          dim {
+            dim_value: 25
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "gpu_0/pool2_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 12
+          }
+          dim {
+            dim_value: 12
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "gpu_0/conv3_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 12
+          }
+          dim {
+            dim_value: 12
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "gpu_0/conv3_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 12
+          }
+          dim {
+            dim_value: 12
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "gpu_0/conv4_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 12
+          }
+          dim {
+            dim_value: 12
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "gpu_0/conv4_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 12
+          }
+          dim {
+            dim_value: 12
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "gpu_0/conv5_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 12
+          }
+          dim {
+            dim_value: 12
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "gpu_0/conv5_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 12
+          }
+          dim {
+            dim_value: 12
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "gpu_0/pool5_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 6
+          }
+          dim {
+            dim_value: 6
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "OC2_DUMMY_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 18432
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "gpu_0/fc6_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 4096
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "gpu_0/fc6_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 4096
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "gpu_0/fc7_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "gpu_0/fc7_2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "gpu_0/pred_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+}
+opset_import {
+  domain: ""
+  version: 12
+}

@@ -1,0 +1,3887 @@
+ir_version: 4
+producer_name: "pytorch"
+producer_version: "1.3"
+graph {
+  node {
+    input: "input.1"
+    input: "models.0.conv1.weight"
+    output: "135"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "135"
+    input: "models.0.bn1.weight"
+    input: "models.0.bn1.bias"
+    input: "models.0.bn1.running_mean"
+    input: "models.0.bn1.running_var"
+    output: "136"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "136"
+    output: "137"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "137"
+    output: "138"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "138"
+    input: "models.2.conv2.weight"
+    output: "139"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "139"
+    input: "models.2.bn2.weight"
+    input: "models.2.bn2.bias"
+    input: "models.2.bn2.running_mean"
+    input: "models.2.bn2.running_var"
+    output: "140"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "140"
+    output: "141"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "141"
+    output: "142"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "142"
+    input: "models.4.conv3.weight"
+    output: "143"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "143"
+    input: "models.4.bn3.weight"
+    input: "models.4.bn3.bias"
+    input: "models.4.bn3.running_mean"
+    input: "models.4.bn3.running_var"
+    output: "144"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "144"
+    output: "145"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "145"
+    input: "models.5.conv4.weight"
+    output: "146"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "146"
+    input: "models.5.bn4.weight"
+    input: "models.5.bn4.bias"
+    input: "models.5.bn4.running_mean"
+    input: "models.5.bn4.running_var"
+    output: "147"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "147"
+    output: "148"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "148"
+    input: "models.6.conv5.weight"
+    output: "149"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "149"
+    input: "models.6.bn5.weight"
+    input: "models.6.bn5.bias"
+    input: "models.6.bn5.running_mean"
+    input: "models.6.bn5.running_var"
+    output: "150"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "150"
+    output: "151"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "151"
+    output: "152"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "152"
+    input: "models.8.conv6.weight"
+    output: "153"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "153"
+    input: "models.8.bn6.weight"
+    input: "models.8.bn6.bias"
+    input: "models.8.bn6.running_mean"
+    input: "models.8.bn6.running_var"
+    output: "154"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "154"
+    output: "155"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "155"
+    input: "models.9.conv7.weight"
+    output: "156"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "156"
+    input: "models.9.bn7.weight"
+    input: "models.9.bn7.bias"
+    input: "models.9.bn7.running_mean"
+    input: "models.9.bn7.running_var"
+    output: "157"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "157"
+    output: "158"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "158"
+    input: "models.10.conv8.weight"
+    output: "159"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "159"
+    input: "models.10.bn8.weight"
+    input: "models.10.bn8.bias"
+    input: "models.10.bn8.running_mean"
+    input: "models.10.bn8.running_var"
+    output: "160"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "160"
+    output: "161"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "161"
+    output: "162"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "162"
+    input: "models.12.conv9.weight"
+    output: "163"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "163"
+    input: "models.12.bn9.weight"
+    input: "models.12.bn9.bias"
+    input: "models.12.bn9.running_mean"
+    input: "models.12.bn9.running_var"
+    output: "164"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "164"
+    output: "165"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "165"
+    input: "models.13.conv10.weight"
+    output: "166"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "166"
+    input: "models.13.bn10.weight"
+    input: "models.13.bn10.bias"
+    input: "models.13.bn10.running_mean"
+    input: "models.13.bn10.running_var"
+    output: "167"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "167"
+    output: "168"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "168"
+    input: "models.14.conv11.weight"
+    output: "169"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "169"
+    input: "models.14.bn11.weight"
+    input: "models.14.bn11.bias"
+    input: "models.14.bn11.running_mean"
+    input: "models.14.bn11.running_var"
+    output: "170"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "170"
+    output: "171"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "171"
+    input: "models.15.conv12.weight"
+    output: "172"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "172"
+    input: "models.15.bn12.weight"
+    input: "models.15.bn12.bias"
+    input: "models.15.bn12.running_mean"
+    input: "models.15.bn12.running_var"
+    output: "173"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "173"
+    output: "174"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "174"
+    input: "models.16.conv13.weight"
+    output: "175"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "175"
+    input: "models.16.bn13.weight"
+    input: "models.16.bn13.bias"
+    input: "models.16.bn13.running_mean"
+    input: "models.16.bn13.running_var"
+    output: "176"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "176"
+    output: "177"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "177"
+    output: "178"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "178"
+    input: "models.18.conv14.weight"
+    output: "179"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "179"
+    input: "models.18.bn14.weight"
+    input: "models.18.bn14.bias"
+    input: "models.18.bn14.running_mean"
+    input: "models.18.bn14.running_var"
+    output: "180"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "180"
+    output: "181"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "181"
+    input: "models.19.conv15.weight"
+    output: "182"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "182"
+    input: "models.19.bn15.weight"
+    input: "models.19.bn15.bias"
+    input: "models.19.bn15.running_mean"
+    input: "models.19.bn15.running_var"
+    output: "183"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "183"
+    output: "184"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "184"
+    input: "models.20.conv16.weight"
+    output: "185"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "185"
+    input: "models.20.bn16.weight"
+    input: "models.20.bn16.bias"
+    input: "models.20.bn16.running_mean"
+    input: "models.20.bn16.running_var"
+    output: "186"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "186"
+    output: "187"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "187"
+    input: "models.21.conv17.weight"
+    output: "188"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "188"
+    input: "models.21.bn17.weight"
+    input: "models.21.bn17.bias"
+    input: "models.21.bn17.running_mean"
+    input: "models.21.bn17.running_var"
+    output: "189"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "189"
+    output: "190"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "190"
+    input: "models.22.conv18.weight"
+    output: "191"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "191"
+    input: "models.22.bn18.weight"
+    input: "models.22.bn18.bias"
+    input: "models.22.bn18.running_mean"
+    input: "models.22.bn18.running_var"
+    output: "192"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "192"
+    output: "193"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "193"
+    input: "models.23.conv19.weight"
+    output: "194"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "194"
+    input: "models.23.bn19.weight"
+    input: "models.23.bn19.bias"
+    input: "models.23.bn19.running_mean"
+    input: "models.23.bn19.running_var"
+    output: "195"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "195"
+    output: "196"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "196"
+    input: "models.24.conv20.weight"
+    output: "197"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "197"
+    input: "models.24.bn20.weight"
+    input: "models.24.bn20.bias"
+    input: "models.24.bn20.running_mean"
+    input: "models.24.bn20.running_var"
+    output: "198"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "198"
+    output: "199"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "177"
+    input: "models.26.conv21.weight"
+    output: "200"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "200"
+    input: "models.26.bn21.weight"
+    input: "models.26.bn21.bias"
+    input: "models.26.bn21.running_mean"
+    input: "models.26.bn21.running_var"
+    output: "201"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "201"
+    output: "202"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    output: "203"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 6
+        data_type: 7
+        raw_data: "\001\000\000\000\000\000\000\000@\000\000\000\000\000\000\000\r\000\000\000\000\000\000\000\002\000\000\000\000\000\000\000\r\000\000\000\000\000\000\000\002\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "202"
+    input: "203"
+    output: "204"
+    op_type: "Reshape"
+  }
+  node {
+    input: "204"
+    output: "205"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 0
+      ints: 1
+      ints: 2
+      ints: 4
+      ints: 3
+      ints: 5
+      type: INTS
+    }
+  }
+  node {
+    output: "206"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 4
+        data_type: 7
+        raw_data: "\001\000\000\000\000\000\000\000@\000\000\000\000\000\000\000\251\000\000\000\000\000\000\000\004\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "205"
+    input: "206"
+    output: "207"
+    op_type: "Reshape"
+  }
+  node {
+    input: "207"
+    output: "208"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 0
+      ints: 1
+      ints: 3
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    output: "209"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 5
+        data_type: 7
+        raw_data: "\001\000\000\000\000\000\000\000@\000\000\000\000\000\000\000\004\000\000\000\000\000\000\000\r\000\000\000\000\000\000\000\r\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "208"
+    input: "209"
+    output: "210"
+    op_type: "Reshape"
+  }
+  node {
+    input: "210"
+    output: "211"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 0
+      ints: 2
+      ints: 1
+      ints: 3
+      ints: 4
+      type: INTS
+    }
+  }
+  node {
+    output: "212"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 4
+        data_type: 7
+        raw_data: "\001\000\000\000\000\000\000\000\000\001\000\000\000\000\000\000\r\000\000\000\000\000\000\000\r\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "211"
+    input: "212"
+    output: "213"
+    op_type: "Reshape"
+  }
+  node {
+    input: "213"
+    input: "199"
+    output: "214"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "214"
+    input: "models.29.conv22.weight"
+    output: "215"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "215"
+    input: "models.29.bn22.weight"
+    input: "models.29.bn22.bias"
+    input: "models.29.bn22.running_mean"
+    input: "models.29.bn22.running_var"
+    output: "216"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "216"
+    output: "217"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "217"
+    input: "models.30.conv23.weight"
+    input: "models.30.conv23.bias"
+    output: "218"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  name: "torch-jit-export"
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "models.0.bn1.bias"
+    raw_data: "\215\t2\301\230Y\014>\343R/?\234_\230\300\"1\014\3008U\236=\261r\220\3005\357\333\277kpr?\343\251\312\300pA9\277Zd\236?\022\305\226?\230\004\366> \372\251\276A\323s\300\222\216\304>z;\245?\305\310h\2779\217c\300 \375\016\300\340`!?)7m\300\000\032O? S\010\300\315\212\265\277\306\365U?\201\026\035?\241\247,?m\333\302\300t\013\211?B\034t\300"
+  }
+  initializer {
+    data_type: 7
+    name: "models.0.bn1.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "models.0.bn1.running_mean"
+    raw_data: "YL:\277\010\232\344<\245h\233\275\013{f>\233\224a\2771\n)<\020\240J\277\224j%\275;\354{=\014\376D\277\314-;\276\2752\227\275\"\347R=Z\265\022=U\3278\273ve\307<\212\316G\276\353\310{>*r\332\276\214\207M\277\310\264\307\276\005\311Q=ok\301>2\237\213=s1\253\274)z\343\275\3578\234=4s\033\276\026\267\345\275\207u\315\276\031\255V\276\0068\331>"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "models.0.bn1.running_var"
+    raw_data: "v\322\001>\264\227\312<^\257\365=|w]<\267\003O>J1\005<\0074(>a\336\037=\264\210F>\\ \022>\032\246E<\251\303\000>{\307\217>\'\336\310=v\361\255;,g\";%\275\235>\t\377\217=\037\211Z=\250J@>O\324\032=()\030>z,\014=\200\274\025>Iy\363<\005\t_;K\231\206>\030\0273>\022\301\254=\350VR=\247\007\255=Q\006L="
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "models.0.bn1.weight"
+    raw_data: "n\252\225@s\"O?\244\367\267?.\3426@\312|\014@\252\216a?\300zV@\267\005\316?p\363\276?\215m\177@\350\n\213?\0140\301?k\013\302?\364\033\242?\025R}?\272@\005@\0365\003@\200\355\224?F\010\262?JK;@e\361\236?kn\260?A\370\331?\362\036\272?\3012\314?u\3177?\004E\224?\313W\252?\372\\\235?\322\352)@\021\020\231?Dx,@"
+  }
+  initializer {
+    data_type: 7
+    name: "models.10.bn8.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "models.12.bn9.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "models.13.bn10.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "models.14.bn11.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "models.15.bn12.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "models.16.bn13.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "models.18.bn14.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "models.19.bn15.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "models.2.bn2.bias"
+    raw_data: "\327\364\340=\302\223L?\266\007\255\277\362\254\314?\330N\262\277\303F/?-\272\032@X\207s\277O\033\005\276\362\204\345\277#\0277\276,W\311\276\334\305/>bQ\215>\\B8@9\305\036?>\335%\276\031\317\037<\224\261\231\276\310\325\t<ut\347\275\377cC\276nR:>\336No\277\030\353\371\277pi\256\276\333\333\232?\353d\001@qA\210\276\3204\326?r\371\025\277Rv\330\277M\324\367?\226\374\266<\017\341\244? \321\231<\010-\344\276@\326\033\277\340_\266?f\341\375\276_\240\231\300\234\010.\277\264\354\234\276\323\227\014\277 K\024\277\272cp\300\353\365\202=5\014H>v\247\326\275\212\010\267\277\2211G@.\326\224\276i\207\357\276]\323\375>\n\301\266\276o\313e\277\260\3209>V\231F?\321\242\255>\031\'\211@N\242U?\214\277L\2778%\337>\343\037-\277"
+  }
+  initializer {
+    data_type: 7
+    name: "models.2.bn2.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "models.2.bn2.running_mean"
+    raw_data: "\242J\220\276%\206\302\277\321u\316\277>\375\205\300\341\225S\300\025{\025@B\305\326\277\323=\262?>\344\250\277:\2706@\2422\337\277\r\'W\300\320\0301>\004\'r\300\224\336\311@\025\371-\277pJ\020\300Pb\030\277=\273g\300S[n\276\353\032\010\300T\363\335\277\032\304&\300\254\255\264\3002\024\r\300\341\332k\277\220=\236>\207\320\016\300\037\265z\300u\377\006@k\023@\300\370\261\241\300\252\361\250@\206cn\277\037\315\221\300\t\375\'\300~\232K\300\002h\256\277\025v\036\301\371RQ\300\3128\250\277\032\2317\300\330B\377\277YP\035\300\360\254:\301\206\214\357\277\006\352\177\300\200\032\225\300\353\317\033\300\033\320c>\273\332\210\300\200z\240\277\246\337O\300?,\355\277y#.\300~\r\331\277\017\266:\2753:C\277\022\275\014\300\335\003t@\224\210\223\300\307\275\360\277l8U\300\360^\317\276"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "models.2.bn2.running_var"
+    raw_data: "\223\373\201@\250j\353@\301r\233@^\361\005A\237\224\002Ao\352\351@\032`\336@\252e:@\026+\017A\373\220\247@\323\"\351@\334u\025Ay\241w@\313ry@\021\233\016A#N\033A\003C\377@\001\224o@}\354PA\334\347|@dZ$A\353\223\367@v\331\016A\210`dAY\310`@\306\350\267@\2566IA6\354\213@g?\306A\030\342XAo\313\311@\246\3672A\003\312\275@\225a/A\206Q\205@\340\\~A\337\r\000Aa\373\352@L\373\335A\204Z2A\246{\211@\236\315\364@\301\3207A\2135\tA?(\010B\004\374\344?(JmA\371\330xA\3632\"A:vS@\303\366RA\227\331\337@h+\334@\026\010 A\377) A\"\271*A*&\221@\206\025NA\216y\210@\347\316\211A\263T\rA\"\274\275@\231U\200@Uh?@"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "models.2.bn2.weight"
+    raw_data: "\\\030\250?\030\227\014@\357\014;@\317\002\234?\260\303<@\246\306[?\262\302r?\250G\212?\351\341\312?\235f\230?B\217\347?\252&\004@\370\247\227?\266\370\332? g\200?\236\346\234?\237\201\r@\206C\246?M6\t@ve\256?\377)\031@\214!\005@\274\244\007@\244n/@\212\214\336?9\374\354?\244\242\257?O\374d?\224\rY@\026\264\216?L\250\016@\224w\020@HN}?*\242\375?\013\000k?\222\353\343?\262\317\031@\216P\351?Yz\364?\t\340%@\027\266\000@\016\315\037@\014\257\017@c\260\021@J\277[@wg\311?G\375\r@\031\2664@\\Q\021@py\322?\2541\222?\263j\t@\334\306\t@\305\032\'@\376\367\r@\332\261\031@:$\272?\346!\231?Y%\342?\317\367\222?\252a\030@4\310\007@/k\331?0\370\217?"
+  }
+  initializer {
+    data_type: 7
+    name: "models.20.bn16.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "models.21.bn17.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "models.22.bn18.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "models.23.bn19.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "models.24.bn20.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "models.26.bn21.bias"
+    raw_data: "!r\374=}M\374=D\nw>\352`\364>~\021\224>\n\265\207>\350\001\307>\017\245.>Fz\363>\322\353\310>6\003\375=R\324\\>\027\240\202\276D\374\272>\036\365\364<\362\332\317=C\332;>\327\005\233\275\n+T>\333i\217>\304Kv=q\337\227=\220v\272=\000`\240\276`\315\301<\311\332\031>\253v\236=\377C9\274Y\220]>\304\tw\275S\215\336>v\352z>\254kE>*\021m>_-\005?\372\005S>a\376\234>\032sq>0g\335>\371\262\033>\312;x>?\364\353=\215n\230\276\215\377\245\276\377\366H=&\314i>D\322\276>\242\357\272\276g\315{>N\370\334>\305\322\260>\240\310\333=\262\267\301>\321\316x>\374\346p>)\317\237>[\372\201>&\277\326>MO\227=\204#\252>\351\007\315>\3168R>\331\362\321=\377\371\274\275"
+  }
+  initializer {
+    data_type: 7
+    name: "models.26.bn21.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "models.26.bn21.running_mean"
+    raw_data: "\036\375\027\275Y{_\276UlF\273\354\213\221>\311\342\367=\036\264\365=\203_\021>\226\177\013>\350\224\215>\323\034 >\347\3557>+6<>q\241v\276H+\236\274\206\203\253\276\360\371\315;\250\255\210\276\016\034A\276\205\331&\276\233\202\263>\241\002\206\276\014\310\223\275\327\310G>y\323\020\276\020\343\262\275\250\000\255>\000\273R\274#0\245>X\n\210>\303`P>\302]\274\276uH\341\276E+T>\030z\242\276\367\3155>\310\357\213>\342X\211\276.o[>rJ\275\276\310\227\350\275\321b\243=\330\271\247>\324Fc\276\030\234\327>\026\016\346\276v8\006\277\025\254\030\274f\035\233\2768c\271\274\263\246\262>W{\032\276=\250\246;\223Eq\276\313\226\344\274\360>\324<\325\223\372=\n\006\223=FV_\275bc\264>/\022.\276%\271\310\275\031\252&<^\021\225\276\016/\016\277"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "models.26.bn21.running_var"
+    raw_data: "g\357w>>\270\251>\353\364\322>\216\350\204>\343\240Z>\336~f>\033\300\212>rI.>\206\272\343>\020M\251>5\370\014?+$s>l\232\273>X\225?>(\350\243>\t\367[>:\312`> \013\262>\023\305\240>\256]C>\316\035s>5\363\201>\231j\231>j(\266>n\376\236>\220\240\213>*n\241>.\215\224>\235\302\267>\242\003R>\3241z>[\220w>D\236i>\007\251\213>\332\223\014?f\232T>\205]]>\262 \252>\257\217Q>K/\234>\\aQ>\020\264\211>\356w\370>L-\302>\223\342f>rP\257>\226%\210>]\234\245>_3\230>\021}F>\010\336\220>Da\200>\370Nf>\262\376\200>0\350>>\314\177t>L\216i>%zD>\363\336\364>J\206[>\264b\214>\035\235\217>xd`>J\'\274>"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "models.26.bn21.weight"
+    raw_data: "\372\356\037?HYH?\033\305\007?D\000 ?\336\304#?z\276$?7\233.?`]&?\010\372 ?\n\266;?;\311l?|\246,?\213\240]?)\367\025?\032\324_?\243\341 ?\r\341.?\026\251C?\202\t/?\332\326*?\232\235\"?\344\030I?\330\003L?/-x?\242(=?\001\277<?b\037;?\277\216P?\305\021<?\210F<?\332\343$?\023T\021?\216\340\024?\301*\032?C\3765?\356\'\026?\023\271\032?\220{<?\017\347\027?JM\023?\350\2375?H\274\026?sL]?`\373}?\214\002+?\240\265\'?3\2130?\'\260a?|\207&?nK\n?(\3450?\004\251??\370w\010?\264\362\037?\024\364.?\025_,?^\262\037?\372\262#?\036U\375>z\220\034?\261o\030?Z\376\032?\010\313\035?\261o\024?"
+  }
+  initializer {
+    data_type: 7
+    name: "models.29.bn22.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "models.4.bn3.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "models.5.bn4.bias"
+    raw_data: "\027\220\002@\345\357N?\346d\316\276Al\323=\0170\004@3\0343\300\315\214\230?\337\257Z?z\014\033@\367U\205?vOT=\022K\357\2764\315\026@\007=\333\277Z\211\267?\364\332\035\277\004V\004@\270\336\214>\007\347\247\276\222^\304\277\034;\355?b(\372?nU\343?\263\315\265\277\016\035\225=\\s+?\357\037\357\276\207j\260\277\310\267\347\276sd\303>\216\372#@\203\245\235>\354h\223?\335\216`>\002z\200\277\235\257\\\276p\344\022\277\2541v?Y\363q\277\316\026\205\277\n\216\255?l+\210\277Z\330\311\2774\355\203?\330D\256?\350h ?y\331\226>\335\354Z\277-Q\362?\350\226\007@\300\312\211\277\233\016X?3|L?\013\036\007\277T!\247?`\246\323?\315}\025\276FB\226?\333\346\002@)l\240\276lu\r>\304\211\274?\337\'\303?\272\270\035?"
+  }
+  initializer {
+    data_type: 7
+    name: "models.5.bn4.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "models.5.bn4.running_mean"
+    raw_data: "Tg\323\277L\311=\277\266\n\337\277\223B\377?\204ke\277\377\215\224>\341\306N\277\327^&\277\010\222\337\277r\343-?\373\275\322\277B+\033\3000\351\302\277U\216\367\277\010\333\n\300\313\3408\300\277\027\312\2776\363\241\277\351\331\217\277o\360p:\371\224\'\300\243hH\277\346Cj?\277\352#@\321\246\025\277\253\263\221\277?\360\001\300\257\354[\277\245\362\255\277\327\255\301\277\255\222\313\277+\"8?o\265\253\277\224\013\205\277\206\244l\277f#`\277\031\257)\300\262i\353\277\216{\230\277\035\203x\277[\005\271>M\326\376\277\314\332E\277\245E\201\277\r%\260\277\327\n\315\277],7>:\0178@JP\027\300\376\237\"\300\350>e\276\237\267\035?\372#\257\277\230\177\014\300\021\256\263\277\226\305\371=K\220\017@\222\306\325\2772\006\210\276\340[I\277\367\002\'\276\304\345\004?\375\016\237>B*\327\276"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "models.5.bn4.running_var"
+    raw_data: "%\210g?\342r\334?\204%\231?\301\026\331?71\323?\376\'n?k\250o?\010p\261?$k\345?bv\230?\3501\377?\"C\216?\274\340\344?6N\261?\331\220*@\220\317!@M?\007@\213y\341?\200v\211?\327\r\021?\260n\361??\033\376?Wb,@\321\351!?\203\035\017@h\227\367?\241\252\223?1C\237?WK\256?0Y\326?c\026\316?\375H\004@e\316\221@\314\250\205?Mz\275?\234\336\370?5\264?@\354\206\273?d\234\257?\204\350:?Hkc@)BX?\206\256\225>G\321\253?\257a\230?\323\332\033@\224\254r?P\036\205?\377\210\340?\020Y\352?3\356\206?\257\000\273?\355\372e?\014\222\376?]\217I@~p\231?\2639\240?\000\354\265?\241\371\364?\300\205\254?\270\370\347?\022\307\305?V\333\023@u\322\360?"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "models.5.bn4.weight"
+    raw_data: "&\231\314?p\274\026@~j\006@\333&\351?e>\351?)\245\020@@*\007@] \027@\300\036\364?D\234\356?\210\215\016@|\327\001@\352(\316?\334\371\032@\307e\006@l\3775@\251@\331?z\313\006@\"x\334?Q&\302?(}\340?\237\363\n@\352\006\031@\243,\366?\342\373\262?Y\244\216?\207\022\343? \031\375?\202\245\t@\235\204\"@\355\363\200?\255\003\213?G@(@\312\372\367?*w0@\345\376\016@,\245;@\333J\026@v\307\375?w8\314?\217\340:@j1\322?\374\304\340?h\221h?\022b`?\300w\020@\177\\\223?\305\235\312?@\260\t@\025d\340?\263\034\002@\265\303\217?\2256\014@\014H\261?S\374$@\225\226d?n\353\326?\302\320\035@^b\000@o/\001@HW\310?\220\204\017@7\251\034@\006\355\315?"
+  }
+  initializer {
+    data_type: 7
+    name: "models.6.bn5.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "models.8.bn6.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "models.9.bn7.num_batches_tracked"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  input {
+    name: "input.1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 416
+          }
+          dim {
+            dim_value: 416
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.0.conv1.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.10.bn8.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.10.bn8.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.10.bn8.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.10.bn8.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.10.conv8.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.12.bn9.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.12.bn9.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.12.bn9.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.12.bn9.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.12.conv9.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.13.bn10.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.13.bn10.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.13.bn10.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.13.bn10.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.13.conv10.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.14.bn11.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.14.bn11.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.14.bn11.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.14.bn11.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.14.conv11.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.15.bn12.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.15.bn12.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.15.bn12.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.15.bn12.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.15.conv12.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.16.bn13.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.16.bn13.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.16.bn13.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.16.bn13.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.16.conv13.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.18.bn14.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.18.bn14.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.18.bn14.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.18.bn14.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.18.conv14.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.19.bn15.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.19.bn15.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.19.bn15.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.19.bn15.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.19.conv15.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.2.conv2.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.20.bn16.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.20.bn16.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.20.bn16.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.20.bn16.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.20.conv16.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.21.bn17.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.21.bn17.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.21.bn17.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.21.bn17.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.21.conv17.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.22.bn18.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.22.bn18.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.22.bn18.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.22.bn18.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.22.conv18.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.23.bn19.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.23.bn19.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.23.bn19.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.23.bn19.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.23.conv19.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.24.bn20.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.24.bn20.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.24.bn20.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.24.bn20.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.24.conv20.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.26.conv21.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.29.bn22.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.29.bn22.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.29.bn22.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.29.bn22.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.29.conv22.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1280
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.30.conv23.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 425
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.30.conv23.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 425
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.4.bn3.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.4.bn3.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.4.bn3.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.4.bn3.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.4.conv3.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.5.conv4.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.6.bn5.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.6.bn5.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.6.bn5.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.6.bn5.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.6.conv5.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.8.bn6.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.8.bn6.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.8.bn6.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.8.bn6.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.8.conv6.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.9.bn7.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.9.bn7.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.9.bn7.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.9.bn7.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "models.9.conv7.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "218"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 425
+          }
+          dim {
+            dim_value: 13
+          }
+          dim {
+            dim_value: 13
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.0.bn1.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.0.bn1.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.0.bn1.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.0.bn1.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.0.bn1.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.10.bn8.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.12.bn9.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.13.bn10.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.14.bn11.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.15.bn12.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.16.bn13.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.18.bn14.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.19.bn15.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.2.bn2.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.2.bn2.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.2.bn2.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.2.bn2.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.2.bn2.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.20.bn16.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.21.bn17.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.22.bn18.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.23.bn19.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.24.bn20.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.26.bn21.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.26.bn21.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.26.bn21.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.26.bn21.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.26.bn21.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.29.bn22.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.4.bn3.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.5.bn4.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.5.bn4.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.5.bn4.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.5.bn4.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.5.bn4.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.6.bn5.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.8.bn6.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "models.9.bn7.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+}
+opset_import {
+  domain: ""
+  version: 9
+}

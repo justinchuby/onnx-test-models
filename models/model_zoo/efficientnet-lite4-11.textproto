@@ -1,0 +1,7692 @@
+ir_version: 6
+producer_name: "tf2onnx"
+producer_version: "1.7.0"
+graph {
+  node {
+    input: "images:0"
+    output: "efficientnet-lite4/model/stem/conv2d/Conv2D__5:0"
+    name: "efficientnet-lite4/model/stem/conv2d/Conv2D__5"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 0
+      ints: 3
+      ints: 1
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/stem/conv2d/Conv2D__5:0"
+    input: "efficientnet-lite4/model/stem/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/stem/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/stem/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/stem/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/stem/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/stem/Relu6:0"
+    name: "efficientnet-lite4/model/stem/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/stem/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_0/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_0/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_0/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_0/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 32
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_0/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_0/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_0/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_0/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_0/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_0/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_0/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_0/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_0/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_1/conv2d/Conv2D/ReadVariableOp:0"
+    output: "efficientnet-lite4/model/blocks_1/conv2d/Conv2D:0"
+    name: "efficientnet-lite4/model/blocks_1/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_1/conv2d/Conv2D:0"
+    input: "efficientnet-lite4/model/blocks_1/tpu_batch_normalization/ReadVariableOp:0"
+    input: "efficientnet-lite4/model/blocks_1/tpu_batch_normalization/ReadVariableOp_1:0"
+    input: "efficientnet-lite4/model/blocks_1/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp:0"
+    input: "efficientnet-lite4/model/blocks_1/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp_1:0"
+    output: "efficientnet-lite4/model/blocks_1/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_1/tpu_batch_normalization/FusedBatchNormV3"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 0.001
+      type: FLOAT
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_1/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_1/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_1/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_1/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_1/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_1/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_1/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_1/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 144
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_1/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_1/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_1/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_1/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_1/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_1/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_1/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_1/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_1/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_2/conv2d/Conv2D/ReadVariableOp:0"
+    output: "efficientnet-lite4/model/blocks_2/conv2d/Conv2D:0"
+    name: "efficientnet-lite4/model/blocks_2/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_2/conv2d/Conv2D:0"
+    input: "efficientnet-lite4/model/blocks_2/tpu_batch_normalization/ReadVariableOp:0"
+    input: "efficientnet-lite4/model/blocks_2/tpu_batch_normalization/ReadVariableOp_1:0"
+    input: "efficientnet-lite4/model/blocks_2/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp:0"
+    input: "efficientnet-lite4/model/blocks_2/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp_1:0"
+    output: "efficientnet-lite4/model/blocks_2/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_2/tpu_batch_normalization/FusedBatchNormV3"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 0.001
+      type: FLOAT
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_2/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_2/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_2/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_2/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_2/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_2/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_2/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_2/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 192
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_2/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_2/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_2/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_2/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_2/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_2/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_2/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_2/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_2/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_1/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    output: "efficientnet-lite4/model/blocks_2/Add:0"
+    name: "efficientnet-lite4/model/blocks_2/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_2/Add:0"
+    input: "efficientnet-lite4/model/blocks_3/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_3/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_3/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_3/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_3/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_3/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_3/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_3/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_3/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_3/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_3/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_3/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 192
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_3/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_3/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_3/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_3/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_3/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_3/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_3/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_3/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_3/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_2/Add:0"
+    output: "efficientnet-lite4/model/blocks_3/Add:0"
+    name: "efficientnet-lite4/model/blocks_3/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_3/Add:0"
+    input: "efficientnet-lite4/model/blocks_4/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_4/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_4/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_4/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_4/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_4/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_4/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_4/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_4/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_4/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_4/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_4/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 192
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_4/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_4/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_4/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_4/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_4/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_4/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_4/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_4/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_4/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_3/Add:0"
+    output: "efficientnet-lite4/model/blocks_4/Add:0"
+    name: "efficientnet-lite4/model/blocks_4/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_4/Add:0"
+    input: "efficientnet-lite4/model/blocks_5/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_5/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_5/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_5/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_5/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_5/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_5/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_5/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_5/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_5/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_5/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_5/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 192
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_5/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_5/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_5/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_5/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_5/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_5/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_5/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_5/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_5/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_6/conv2d/Conv2D/ReadVariableOp:0"
+    output: "efficientnet-lite4/model/blocks_6/conv2d/Conv2D:0"
+    name: "efficientnet-lite4/model/blocks_6/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_6/conv2d/Conv2D:0"
+    input: "efficientnet-lite4/model/blocks_6/tpu_batch_normalization/ReadVariableOp:0"
+    input: "efficientnet-lite4/model/blocks_6/tpu_batch_normalization/ReadVariableOp_1:0"
+    input: "efficientnet-lite4/model/blocks_6/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp:0"
+    input: "efficientnet-lite4/model/blocks_6/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp_1:0"
+    output: "efficientnet-lite4/model/blocks_6/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_6/tpu_batch_normalization/FusedBatchNormV3"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 0.001
+      type: FLOAT
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_6/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_6/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_6/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_6/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_6/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_6/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_6/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_6/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 336
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_6/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_6/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_6/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_6/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_6/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_6/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_6/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_6/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_6/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_5/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    output: "efficientnet-lite4/model/blocks_6/Add:0"
+    name: "efficientnet-lite4/model/blocks_6/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_6/Add:0"
+    input: "efficientnet-lite4/model/blocks_7/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_7/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_7/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_7/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_7/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_7/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_7/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_7/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_7/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_7/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_7/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_7/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 336
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_7/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_7/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_7/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_7/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_7/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_7/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_7/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_7/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_7/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_6/Add:0"
+    output: "efficientnet-lite4/model/blocks_7/Add:0"
+    name: "efficientnet-lite4/model/blocks_7/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_7/Add:0"
+    input: "efficientnet-lite4/model/blocks_8/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_8/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_8/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_8/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_8/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_8/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_8/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_8/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_8/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_8/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_8/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_8/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 336
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_8/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_8/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_8/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_8/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_8/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_8/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_8/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_8/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_8/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_7/Add:0"
+    output: "efficientnet-lite4/model/blocks_8/Add:0"
+    name: "efficientnet-lite4/model/blocks_8/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_8/Add:0"
+    input: "efficientnet-lite4/model/blocks_9/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_9/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_9/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_9/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_9/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_9/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_9/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_9/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_9/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_9/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_9/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_9/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 336
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_9/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_9/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_9/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_9/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_9/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_9/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_9/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_9/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_9/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_10/conv2d/Conv2D/ReadVariableOp:0"
+    output: "efficientnet-lite4/model/blocks_10/conv2d/Conv2D:0"
+    name: "efficientnet-lite4/model/blocks_10/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_10/conv2d/Conv2D:0"
+    input: "efficientnet-lite4/model/blocks_10/tpu_batch_normalization/ReadVariableOp:0"
+    input: "efficientnet-lite4/model/blocks_10/tpu_batch_normalization/ReadVariableOp_1:0"
+    input: "efficientnet-lite4/model/blocks_10/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp:0"
+    input: "efficientnet-lite4/model/blocks_10/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp_1:0"
+    output: "efficientnet-lite4/model/blocks_10/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_10/tpu_batch_normalization/FusedBatchNormV3"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 0.001
+      type: FLOAT
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_10/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_10/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_10/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_10/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_10/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_10/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_10/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_10/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 672
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_10/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_10/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_10/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_10/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_10/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_10/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_10/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_10/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_10/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_9/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    output: "efficientnet-lite4/model/blocks_10/Add:0"
+    name: "efficientnet-lite4/model/blocks_10/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_10/Add:0"
+    input: "efficientnet-lite4/model/blocks_11/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_11/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_11/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_11/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_11/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_11/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_11/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_11/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_11/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_11/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_11/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_11/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 672
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_11/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_11/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_11/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_11/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_11/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_11/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_11/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_11/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_11/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_10/Add:0"
+    output: "efficientnet-lite4/model/blocks_11/Add:0"
+    name: "efficientnet-lite4/model/blocks_11/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_11/Add:0"
+    input: "efficientnet-lite4/model/blocks_12/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_12/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_12/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_12/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_12/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_12/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_12/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_12/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_12/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_12/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_12/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_12/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 672
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_12/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_12/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_12/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_12/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_12/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_12/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_12/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_12/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_12/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_11/Add:0"
+    output: "efficientnet-lite4/model/blocks_12/Add:0"
+    name: "efficientnet-lite4/model/blocks_12/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_12/Add:0"
+    input: "efficientnet-lite4/model/blocks_13/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_13/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_13/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_13/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_13/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_13/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_13/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_13/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_13/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_13/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_13/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_13/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 672
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_13/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_13/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_13/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_13/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_13/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_13/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_13/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_13/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_13/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_12/Add:0"
+    output: "efficientnet-lite4/model/blocks_13/Add:0"
+    name: "efficientnet-lite4/model/blocks_13/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_13/Add:0"
+    input: "efficientnet-lite4/model/blocks_14/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_14/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_14/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_14/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_14/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_14/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_14/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_14/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_14/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_14/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_14/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_14/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 672
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_14/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_14/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_14/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_14/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_14/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_14/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_14/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_14/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_14/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_13/Add:0"
+    output: "efficientnet-lite4/model/blocks_14/Add:0"
+    name: "efficientnet-lite4/model/blocks_14/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_14/Add:0"
+    input: "efficientnet-lite4/model/blocks_15/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_15/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_15/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_15/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_15/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_15/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_15/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_15/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_15/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_15/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_15/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_15/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 672
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_15/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_15/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_15/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_15/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_15/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_15/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_15/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_15/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_15/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_16/conv2d/Conv2D/ReadVariableOp:0"
+    output: "efficientnet-lite4/model/blocks_16/conv2d/Conv2D:0"
+    name: "efficientnet-lite4/model/blocks_16/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_16/conv2d/Conv2D:0"
+    input: "efficientnet-lite4/model/blocks_16/tpu_batch_normalization/ReadVariableOp:0"
+    input: "efficientnet-lite4/model/blocks_16/tpu_batch_normalization/ReadVariableOp_1:0"
+    input: "efficientnet-lite4/model/blocks_16/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp:0"
+    input: "efficientnet-lite4/model/blocks_16/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp_1:0"
+    output: "efficientnet-lite4/model/blocks_16/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_16/tpu_batch_normalization/FusedBatchNormV3"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 0.001
+      type: FLOAT
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_16/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_16/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_16/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_16/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_16/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_16/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_16/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_16/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 960
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_16/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_16/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_16/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_16/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_16/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_16/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_16/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_16/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_16/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_15/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    output: "efficientnet-lite4/model/blocks_16/Add:0"
+    name: "efficientnet-lite4/model/blocks_16/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_16/Add:0"
+    input: "efficientnet-lite4/model/blocks_17/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_17/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_17/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_17/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_17/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_17/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_17/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_17/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_17/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_17/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_17/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_17/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 960
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_17/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_17/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_17/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_17/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_17/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_17/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_17/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_17/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_17/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_16/Add:0"
+    output: "efficientnet-lite4/model/blocks_17/Add:0"
+    name: "efficientnet-lite4/model/blocks_17/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_17/Add:0"
+    input: "efficientnet-lite4/model/blocks_18/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_18/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_18/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_18/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_18/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_18/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_18/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_18/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_18/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_18/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_18/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_18/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 960
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_18/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_18/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_18/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_18/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_18/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_18/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_18/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_18/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_18/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_17/Add:0"
+    output: "efficientnet-lite4/model/blocks_18/Add:0"
+    name: "efficientnet-lite4/model/blocks_18/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_18/Add:0"
+    input: "efficientnet-lite4/model/blocks_19/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_19/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_19/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_19/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_19/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_19/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_19/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_19/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_19/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_19/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_19/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_19/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 960
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_19/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_19/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_19/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_19/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_19/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_19/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_19/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_19/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_18/Add:0"
+    output: "efficientnet-lite4/model/blocks_19/Add:0"
+    name: "efficientnet-lite4/model/blocks_19/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_19/Add:0"
+    input: "efficientnet-lite4/model/blocks_20/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_20/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_20/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_20/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_20/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_20/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_20/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_20/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_20/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_20/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_20/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_20/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 960
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_20/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_20/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_20/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_20/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_20/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_20/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_20/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_20/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_20/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_19/Add:0"
+    output: "efficientnet-lite4/model/blocks_20/Add:0"
+    name: "efficientnet-lite4/model/blocks_20/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_20/Add:0"
+    input: "efficientnet-lite4/model/blocks_21/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_21/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_21/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_21/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_21/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_21/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_21/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_21/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_21/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_21/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_21/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_21/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 960
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_21/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_21/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_21/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_21/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_21/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_21/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_21/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_21/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_21/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_22/conv2d/Conv2D/ReadVariableOp:0"
+    output: "efficientnet-lite4/model/blocks_22/conv2d/Conv2D:0"
+    name: "efficientnet-lite4/model/blocks_22/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_22/conv2d/Conv2D:0"
+    input: "efficientnet-lite4/model/blocks_22/tpu_batch_normalization/ReadVariableOp:0"
+    input: "efficientnet-lite4/model/blocks_22/tpu_batch_normalization/ReadVariableOp_1:0"
+    input: "efficientnet-lite4/model/blocks_22/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp:0"
+    input: "efficientnet-lite4/model/blocks_22/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp_1:0"
+    output: "efficientnet-lite4/model/blocks_22/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_22/tpu_batch_normalization/FusedBatchNormV3"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 0.001
+      type: FLOAT
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_22/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_22/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_22/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_22/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_22/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_22/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_22/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_22/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1632
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_22/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_22/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_22/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_22/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_22/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_22/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_22/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_22/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_22/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_21/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    output: "efficientnet-lite4/model/blocks_22/Add:0"
+    name: "efficientnet-lite4/model/blocks_22/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_22/Add:0"
+    input: "efficientnet-lite4/model/blocks_23/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_23/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_23/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_23/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_23/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_23/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_23/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_23/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_23/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_23/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_23/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_23/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1632
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_23/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_23/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_23/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_23/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_23/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_23/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_23/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_23/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_23/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_22/Add:0"
+    output: "efficientnet-lite4/model/blocks_23/Add:0"
+    name: "efficientnet-lite4/model/blocks_23/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_23/Add:0"
+    input: "efficientnet-lite4/model/blocks_24/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_24/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_24/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_24/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_24/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_24/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_24/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_24/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_24/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_24/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_24/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_24/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1632
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_24/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_24/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_24/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_24/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_24/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_24/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_24/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_24/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_24/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_23/Add:0"
+    output: "efficientnet-lite4/model/blocks_24/Add:0"
+    name: "efficientnet-lite4/model/blocks_24/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_24/Add:0"
+    input: "efficientnet-lite4/model/blocks_25/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_25/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_25/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_25/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_25/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_25/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_25/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_25/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_25/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_25/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_25/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_25/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1632
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_25/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_25/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_25/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_25/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_25/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_25/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_25/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_25/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_25/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_24/Add:0"
+    output: "efficientnet-lite4/model/blocks_25/Add:0"
+    name: "efficientnet-lite4/model/blocks_25/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_25/Add:0"
+    input: "efficientnet-lite4/model/blocks_26/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_26/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_26/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_26/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_26/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_26/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_26/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_26/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_26/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_26/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_26/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_26/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1632
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_26/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_26/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_26/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_26/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_26/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_26/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_26/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_26/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_26/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_25/Add:0"
+    output: "efficientnet-lite4/model/blocks_26/Add:0"
+    name: "efficientnet-lite4/model/blocks_26/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_26/Add:0"
+    input: "efficientnet-lite4/model/blocks_27/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_27/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_27/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_27/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_27/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_27/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_27/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_27/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_27/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_27/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_27/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_27/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1632
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_27/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_27/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_27/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_27/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_27/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_27/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_27/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_27/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_27/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_26/Add:0"
+    output: "efficientnet-lite4/model/blocks_27/Add:0"
+    name: "efficientnet-lite4/model/blocks_27/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_27/Add:0"
+    input: "efficientnet-lite4/model/blocks_28/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_28/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_28/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_28/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_28/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_28/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_28/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_28/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_28/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_28/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_28/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_28/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1632
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_28/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_28/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_28/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_28/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_28/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_28/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_28/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_28/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_28/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_27/Add:0"
+    output: "efficientnet-lite4/model/blocks_28/Add:0"
+    name: "efficientnet-lite4/model/blocks_28/Add"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_28/Add:0"
+    input: "efficientnet-lite4/model/blocks_29/conv2d/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_29/conv2d/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_29/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_29/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_29/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_29/Relu6:0"
+    name: "efficientnet-lite4/model/blocks_29/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_29/Relu6:0"
+    input: "efficientnet-lite4/model/blocks_29/depthwise_conv2d/depthwise_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_29/depthwise_conv2d/depthwise_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_29/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_29/depthwise_conv2d/depthwise"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1632
+      type: INT
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_29/tpu_batch_normalization_1/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/blocks_29/Relu6_1:0"
+    name: "efficientnet-lite4/model/blocks_29/Relu6_1"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1:0"
+    input: "efficientnet-lite4/model/blocks_29/conv2d_1/Conv2D_weights_fused_bn"
+    input: "efficientnet-lite4/model/blocks_29/conv2d_1/Conv2D_bias_fused_bn"
+    output: "efficientnet-lite4/model/blocks_29/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/blocks_29/conv2d_1/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/blocks_29/tpu_batch_normalization_2/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/head/conv2d/Conv2D/ReadVariableOp:0"
+    output: "efficientnet-lite4/model/head/conv2d/Conv2D:0"
+    name: "efficientnet-lite4/model/head/conv2d/Conv2D"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/head/conv2d/Conv2D:0"
+    input: "efficientnet-lite4/model/head/tpu_batch_normalization/ReadVariableOp:0"
+    input: "efficientnet-lite4/model/head/tpu_batch_normalization/ReadVariableOp_1:0"
+    input: "efficientnet-lite4/model/head/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp:0"
+    input: "efficientnet-lite4/model/head/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp_1:0"
+    output: "efficientnet-lite4/model/head/tpu_batch_normalization/FusedBatchNormV3:0"
+    name: "efficientnet-lite4/model/head/tpu_batch_normalization/FusedBatchNormV3"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 0.001
+      type: FLOAT
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/head/tpu_batch_normalization/FusedBatchNormV3:0"
+    input: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    input: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    output: "efficientnet-lite4/model/head/Relu6:0"
+    name: "efficientnet-lite4/model/head/Relu6"
+    op_type: "Clip"
+  }
+  node {
+    input: "efficientnet-lite4/model/head/Relu6:0"
+    output: "efficientnet-lite4/model/head/AvgPool:0"
+    name: "efficientnet-lite4/model/head/AvgPool"
+    op_type: "AveragePool"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 7
+      ints: 7
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/head/AvgPool:0"
+    output: "efficientnet-lite4/model/head/Squeeze:0"
+    name: "efficientnet-lite4/model/head/Squeeze"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 2
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "efficientnet-lite4/model/head/Squeeze:0"
+    input: "efficientnet-lite4/model/head/dense/MatMul/ReadVariableOp:0"
+    output: "efficientnet-lite4/model/head/dense/MatMul:0"
+    name: "efficientnet-lite4/model/head/dense/MatMul"
+    op_type: "MatMul"
+  }
+  node {
+    input: "efficientnet-lite4/model/head/dense/MatMul:0"
+    input: "efficientnet-lite4/model/head/dense/BiasAdd/ReadVariableOp:0"
+    output: "efficientnet-lite4/model/head/dense/BiasAdd:0"
+    name: "efficientnet-lite4/model/head/dense/BiasAdd"
+    op_type: "Add"
+  }
+  node {
+    input: "efficientnet-lite4/model/head/dense/BiasAdd:0"
+    output: "Softmax:0"
+    name: "Softmax"
+    op_type: "Softmax"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  name: "tf2onnx"
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "efficientnet-lite4/model/stem/conv2d/Conv2D_bias_fused_bn"
+    raw_data: "\240E1@50*@\314Y\000?\237\372@@\0264\032@7p6@\352\275H@~\271\256\277\020\026\226\300\020\361\276\300&\301\250\300\277\277\316\300pY\013\300\002f\362?\342\315:@\307\356\"\301\316\r@@\244\263\254>\316\3226@m\2178@\334\002\035@\020\376\034?H\223\277\300Tqb>\272\353\003\300\230\321\237>\256\363C@\322^p>t\032\034@\376#A@\336\205\037@bWV\300"
+  }
+  initializer {
+    dims: 56
+    data_type: 1
+    name: "efficientnet-lite4/model/blocks_8/conv2d_1/Conv2D_bias_fused_bn"
+    raw_data: "\314\006S?\353?\236\300ZQ\316?up\262?i$\n\300l\364\274>-\023k\276*]\035\277\214\257\326\277ut:\300\237\217\010@\033\235\034\277j\035x\277\243%\306?\316\265\250?m\325\201@v\301I\277\271]+A\374\226\326>\313\\\021\300\223\367\236>\214V\313\277\3650H?$\314I@\226\r\\\277\241\316\017@\237\222\016\277\350\334\214?\234\304\355\277\246ND\300\363\271\350\277\344\004\177\277n\362\225\300\320\354\000@^&\037@Z20@\305(l\277\007b9\277\020\255\214\277![$?\014\362L\300\375\224D\277\354\021\211?\340\024\037\300\235?\021\3000DU\277_\344E\277,\223\021@1\2150A[e$?\244\271\317?G\022u?\333\220\004?\276]\224@\265\250\223\300[ \244\277"
+  }
+  initializer {
+    dims: 56
+    data_type: 1
+    name: "efficientnet-lite4/model/blocks_7/conv2d_1/Conv2D_bias_fused_bn"
+    raw_data: "\007\367\272?`4\350@\036\244A@TP\366\276\272\005\016?CL\265\300\240z\330\277\0211\342>\r\311\337?\326\320\330\277U\331\224\300\234\002\013>\304\007\022\300\206KP\300\004\350\322\277\355\017\314\277t\351\226\276\341\010\027?\344Z\225>\252\265\237\300%+\364?\232\227/@!#\223?\366W\224?>\344U@\236\3118\300\260\343.\300v\365#@\204b\310\277\225\014P\300B*\021\300\010\264\220\300\2168\261\277\376l\310?\000q\301\277S\362z?\024\300\313?\324i\345?:\255\203\276\2612J\277fi\201@\027o5\300\221\')?\234\243\364\300\357ru?\242\330n?\267\034\021?\242V\234\277\017\024\352\277\n\3079\300E?\261\277\200\264\350?{\320\270\277\272\243t@\225z\036\300\263g\227?"
+  }
+  initializer {
+    dims: 56
+    data_type: 1
+    name: "efficientnet-lite4/model/blocks_6/conv2d_1/Conv2D_bias_fused_bn"
+    raw_data: "\236q\334>\264a\237\277l\247\373?n\356\207\2778\236\200\300P?\020A\261\317\313?\030\374^?v>\005\301\263\000\r@\2068\341>^tn\300g\347E?\234%H@\365%\231\277x\020\345?\013\262\002@\341\236\357?`\223\312>\241N!\300\202\336\305?%h\026\300\347:*@\233;;@L\374\353\276\301 \007\301\234m\317?<]p\277\372~E?\277\027\031?\313X\270\277\366Ld@d\272:\300\220\255\243>\n\373\316?\000\325\376\277\302:\200\277\203\311\254\277\240\223\201<\340\334\000\277\305\\`\300\010>\031\277\351:\221?\272\313\203@\241\'\026\300Z+\007A\020\372\234?\300\313b\274a$\317@\270m\211>`gp=U\347Y\277\\\245\215?j\204?@!A\226\300\256\322\313\277"
+  }
+  initializer {
+    dims: 56
+    data_type: 1
+    name: "efficientnet-lite4/model/blocks_5/conv2d_1/Conv2D_bias_fused_bn"
+    raw_data: "a\013TAE\210`\277\034\t/A\002\004\000A\225\224\226@\247\262\240@\027\272\277\277\330\363\302A\036\372e\276\2778\003\300\243\256\213\301\000a\247@\234\260\002AC\010\032A@\372>\276(o\311@\304\331\264\277v4\244@\"\311~\301\366a\003\302q\220\367@83\342@a\026tA\013\313*A\021W\307\300{\240\266\300L\016CA\030\322\321\300(v\013A\251\214\213A\004\253\rA\212\024\201\301\271\0376A\320\007m\300\327+\240\301?J\177A$<\254\300\022H\016\301\327\037\036\301y\tB\301u\333\264@\252\213\246@qm_@N\001P\301\360\014\271\300\270Z\002A%W\326\300\034\234y\276i\017S\301\350y\273Amj\252?i?\367\300\345\347\217A\262B\207\277\233\241\362\300\277\333\000\301"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "efficientnet-lite4/model/blocks_4/conv2d_1/Conv2D_bias_fused_bn"
+    raw_data: "\000\245U;\270zj\300\343\301\361@\236\342\203\276t\345\030\301\245G0\300e%\375\277Xg\206\276\270\271\n\300\214Ej?\344!\277\300\340\264\244\301\230\366l\300\3723?\300\\\0131?\024?$AE\265\005\301\310\325\266\277%\251\337\276P\273A@@\310T@\376\320Z?\346\213~\301p-\256\300\204\377\212@\034wC\301\350\016\023A\252n\251\277R\261\006?\016\273w\301s\373\241@#B3\301"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "efficientnet-lite4/model/blocks_3/conv2d_1/Conv2D_bias_fused_bn"
+    raw_data: "C\254,?\\A\211\300\272\277\230@\244v\201\300>@\321\300\226V\356?(\251y\277\031\335\252\300[R\262@|\216\242>@f\301\275}\332\202\300G\344\307\277\300\245\246>\340Ei=\310)\201@(\364c?h\212\032\276\312\365\325?\227T\255@P\2266\300 \371\366\277:\311\242\277D4&\300*\335E@ek\021\300\004\302.\300TK\356?\2039\216?}/\216@\240\230\356=\320}\227\300"
+  }
+  initializer {
+    data_type: 1
+    name: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    raw_data: "\000\000\000\000"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "efficientnet-lite4/model/blocks_2/conv2d_1/Conv2D_bias_fused_bn"
+    raw_data: "\315\236\242\300E\214\037\300\322^\014\300\356\312\327\300\306\342\272\300\340A\312\276\024\023\235\300\177\362\357\300\n\357\360@k\247\002?\206\370\260\300\351S\004\300\027\n=\300\352\235\352\276\271\371!@8t\036AHrS?\324D\325\277.\276e@\372\265\205@\262\004\302@\317l\223\300\002\3106\300\035\206\255?U\222\243@\245aB\300\r}\357@\306\246\237\276\306Jj\277\313x<\301\350\226\252@<\243\006\301"
+  }
+  initializer {
+    data_type: 1
+    name: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    raw_data: "\000\000\300@"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "efficientnet-lite4/model/blocks_1/conv2d_1/Conv2D_bias_fused_bn"
+    raw_data: "*\317\234@<\237\306@t;\206AO\247\017\301\2644\320\273\346\364\264@\250H\022\300\272\352\020\300\224\035\337?d\247\232\301\255L\343@\216\025\035?\215\353\300?2\314\007\277R\334\221\300\353\302\350@\362\266\260@]\217\324\300\220\247\375@\0147\336\2771\302T\277qt\331@\362\"Y>\374W \301\234\035\022A\200\354\006\276\347\200\207\300\372\2119\301\221\206\341?\027di?\347\340\304@F\333=\301"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "efficientnet-lite4/model/blocks_0/depthwise_conv2d/depthwise_bias_fused_bn"
+    raw_data: "8\356\301@\307+,@\000 \3319P\256=@\206b\215@^\2578@o~\300@hL\366\276\337\177\227\277\364\337\037\277~/\275\275\210]\265\274\244\246\302\276X<\346>T\360\016?\177>\323?\373}\213?H&\t\275\370#\214?X5<?S\364\257@\000\356\020<\217\231g\277\252\026$\277\020}U\277x\300M\277R\250>@ \366\223\274\316]\226@\370\250Y?\256\341L@BTQ@"
+  }
+  initializer {
+    dims: 24
+    data_type: 1
+    name: "efficientnet-lite4/model/blocks_0/conv2d/Conv2D_bias_fused_bn"
+    raw_data: "k\016M\301\257\033c\301G=:\301L\267\250AS+\034A\354p\033A\347\264\014@\3275.A\332\375\020Bc\375\236@S\263\255\277\033\372E\300a\022v@\3558\332@\367\213\215A\257\275\225@AC\267\301:\373K\300,s\023A\255\002.\301Q\267}A\303\241|\301x,\010\301\272<\352\300"
+  }
+  doc_string: "converted from saved_model_lite"
+  input {
+    name: "images:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 224
+          }
+          dim {
+            dim_value: 224
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/stem/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/head/tpu_batch_normalization/ReadVariableOp_1:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1280
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/head/tpu_batch_normalization/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1280
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/head/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp_1:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1280
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/head/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1280
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/head/dense/MatMul/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1280
+          }
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/head/dense/BiasAdd/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/head/conv2d/Conv2D/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1280
+          }
+          dim {
+            dim_value: 448
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_9/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 336
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_9/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 336
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_9/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 112
+          }
+          dim {
+            dim_value: 336
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_9/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 112
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_9/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 336
+          }
+          dim {
+            dim_value: 56
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_9/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 336
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_8/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 336
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_8/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 336
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_8/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 56
+          }
+          dim {
+            dim_value: 336
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_8/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 336
+          }
+          dim {
+            dim_value: 56
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_8/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 336
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_7/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 336
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_7/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 336
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_7/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 56
+          }
+          dim {
+            dim_value: 336
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_7/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 336
+          }
+          dim {
+            dim_value: 56
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_7/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 336
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_6/tpu_batch_normalization/ReadVariableOp_1:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 336
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_6/tpu_batch_normalization/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 336
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_6/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp_1:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 336
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_6/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 336
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_6/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 336
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_6/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 336
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_6/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 56
+          }
+          dim {
+            dim_value: 336
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_6/conv2d/Conv2D/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 336
+          }
+          dim {
+            dim_value: 56
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_5/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_5/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_5/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 56
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_5/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_5/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_4/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_4/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_4/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_4/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_4/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_3/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_3/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_3/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_3/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_3/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_29/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_29/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_29/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 448
+          }
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_29/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 448
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_29/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 272
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_29/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_28/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_28/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_28/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 272
+          }
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_28/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 272
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_28/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 272
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_28/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_27/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_27/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_27/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 272
+          }
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_27/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 272
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_27/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 272
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_27/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_26/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_26/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_26/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 272
+          }
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_26/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 272
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_26/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 272
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_26/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_25/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_25/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_25/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 272
+          }
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_25/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 272
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_25/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 272
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_25/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_24/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_24/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_24/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 272
+          }
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_24/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 272
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_24/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 272
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_24/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_23/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_23/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_23/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 272
+          }
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_23/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 272
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_23/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 272
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_23/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_22/tpu_batch_normalization/ReadVariableOp_1:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_22/tpu_batch_normalization/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_22/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp_1:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_22/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_22/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_22/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_22/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 272
+          }
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_22/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 272
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_22/conv2d/Conv2D/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1632
+          }
+          dim {
+            dim_value: 272
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_21/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_21/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_21/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 272
+          }
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_21/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 272
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_21/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_21/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_20/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_20/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_20/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_20/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_20/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_20/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_2/tpu_batch_normalization/ReadVariableOp_1:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_2/tpu_batch_normalization/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_2/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp_1:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_2/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_2/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_2/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_2/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_2/conv2d/Conv2D/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_19/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_19/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_19/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_19/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_19/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_19/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_18/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_18/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_18/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_18/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_18/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_18/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_17/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_17/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_17/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_17/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_17/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_17/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_16/tpu_batch_normalization/ReadVariableOp_1:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_16/tpu_batch_normalization/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_16/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp_1:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_16/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_16/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_16/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_16/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_16/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_16/conv2d/Conv2D/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 960
+          }
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_15/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_15/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_15/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+          dim {
+            dim_value: 672
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_15/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 160
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_15/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+          dim {
+            dim_value: 112
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_15/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_14/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_14/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_14/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 112
+          }
+          dim {
+            dim_value: 672
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_14/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 112
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_14/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+          dim {
+            dim_value: 112
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_14/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_13/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_13/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_13/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 112
+          }
+          dim {
+            dim_value: 672
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_13/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 112
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_13/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+          dim {
+            dim_value: 112
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_13/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_12/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_12/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_12/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 112
+          }
+          dim {
+            dim_value: 672
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_12/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 112
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_12/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+          dim {
+            dim_value: 112
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_12/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_11/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_11/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_11/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 112
+          }
+          dim {
+            dim_value: 672
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_11/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 112
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_11/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+          dim {
+            dim_value: 112
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_11/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_10/tpu_batch_normalization/ReadVariableOp_1:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_10/tpu_batch_normalization/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_10/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp_1:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_10/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_10/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_10/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_10/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 112
+          }
+          dim {
+            dim_value: 672
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_10/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 112
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_10/conv2d/Conv2D/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 672
+          }
+          dim {
+            dim_value: 112
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_1/tpu_batch_normalization/ReadVariableOp_1:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 144
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_1/tpu_batch_normalization/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 144
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_1/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp_1:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 144
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_1/tpu_batch_normalization/FusedBatchNormV3/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 144
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_1/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 144
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_1/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 144
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_1/conv2d_1/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 144
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_1/conv2d/Conv2D/ReadVariableOp:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 144
+          }
+          dim {
+            dim_value: 24
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_0/depthwise_conv2d/depthwise_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "efficientnet-lite4/model/blocks_0/conv2d/Conv2D_weights_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 24
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "Softmax:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "efficientnet-lite4/model/stem/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "efficientnet-lite4/model/blocks_8/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 56
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "efficientnet-lite4/model/blocks_7/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 56
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "efficientnet-lite4/model/blocks_6/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 56
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "efficientnet-lite4/model/blocks_5/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 56
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "efficientnet-lite4/model/blocks_4/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "efficientnet-lite4/model/blocks_3/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "efficientnet-lite4/model/blocks_29/Relu6_1_min__569"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "efficientnet-lite4/model/blocks_2/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "efficientnet-lite4/model/blocks_19/Relu6_1_max__380"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "efficientnet-lite4/model/blocks_1/conv2d_1/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "efficientnet-lite4/model/blocks_0/depthwise_conv2d/depthwise_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "efficientnet-lite4/model/blocks_0/conv2d/Conv2D_bias_fused_bn"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 24
+          }
+        }
+      }
+    }
+  }
+}
+opset_import {
+  domain: ""
+  version: 11
+}

@@ -1,0 +1,1577 @@
+ir_version: 3
+graph {
+  node {
+    input: "data"
+    input: "vgg0_conv0_weight"
+    input: "vgg0_conv0_bias"
+    output: "vgg0_conv0_fwd"
+    name: "vgg0_conv0_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv0_fwd"
+    output: "vgg0_relu0_fwd"
+    name: "vgg0_relu0_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu0_fwd"
+    input: "vgg0_conv1_weight"
+    input: "vgg0_conv1_bias"
+    output: "vgg0_conv1_fwd"
+    name: "vgg0_conv1_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv1_fwd"
+    output: "vgg0_relu1_fwd"
+    name: "vgg0_relu1_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu1_fwd"
+    output: "vgg0_pool0_fwd"
+    name: "vgg0_pool0_fwd"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_pool0_fwd"
+    input: "vgg0_conv2_weight"
+    input: "vgg0_conv2_bias"
+    output: "vgg0_conv2_fwd"
+    name: "vgg0_conv2_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv2_fwd"
+    output: "vgg0_relu2_fwd"
+    name: "vgg0_relu2_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu2_fwd"
+    input: "vgg0_conv3_weight"
+    input: "vgg0_conv3_bias"
+    output: "vgg0_conv3_fwd"
+    name: "vgg0_conv3_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv3_fwd"
+    output: "vgg0_relu3_fwd"
+    name: "vgg0_relu3_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu3_fwd"
+    output: "vgg0_pool1_fwd"
+    name: "vgg0_pool1_fwd"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_pool1_fwd"
+    input: "vgg0_conv4_weight"
+    input: "vgg0_conv4_bias"
+    output: "vgg0_conv4_fwd"
+    name: "vgg0_conv4_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv4_fwd"
+    output: "vgg0_relu4_fwd"
+    name: "vgg0_relu4_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu4_fwd"
+    input: "vgg0_conv5_weight"
+    input: "vgg0_conv5_bias"
+    output: "vgg0_conv5_fwd"
+    name: "vgg0_conv5_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv5_fwd"
+    output: "vgg0_relu5_fwd"
+    name: "vgg0_relu5_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu5_fwd"
+    input: "vgg0_conv6_weight"
+    input: "vgg0_conv6_bias"
+    output: "vgg0_conv6_fwd"
+    name: "vgg0_conv6_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv6_fwd"
+    output: "vgg0_relu6_fwd"
+    name: "vgg0_relu6_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu6_fwd"
+    output: "vgg0_pool2_fwd"
+    name: "vgg0_pool2_fwd"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_pool2_fwd"
+    input: "vgg0_conv7_weight"
+    input: "vgg0_conv7_bias"
+    output: "vgg0_conv7_fwd"
+    name: "vgg0_conv7_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv7_fwd"
+    output: "vgg0_relu7_fwd"
+    name: "vgg0_relu7_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu7_fwd"
+    input: "vgg0_conv8_weight"
+    input: "vgg0_conv8_bias"
+    output: "vgg0_conv8_fwd"
+    name: "vgg0_conv8_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv8_fwd"
+    output: "vgg0_relu8_fwd"
+    name: "vgg0_relu8_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu8_fwd"
+    input: "vgg0_conv9_weight"
+    input: "vgg0_conv9_bias"
+    output: "vgg0_conv9_fwd"
+    name: "vgg0_conv9_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv9_fwd"
+    output: "vgg0_relu9_fwd"
+    name: "vgg0_relu9_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu9_fwd"
+    output: "vgg0_pool3_fwd"
+    name: "vgg0_pool3_fwd"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_pool3_fwd"
+    input: "vgg0_conv10_weight"
+    input: "vgg0_conv10_bias"
+    output: "vgg0_conv10_fwd"
+    name: "vgg0_conv10_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv10_fwd"
+    output: "vgg0_relu10_fwd"
+    name: "vgg0_relu10_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu10_fwd"
+    input: "vgg0_conv11_weight"
+    input: "vgg0_conv11_bias"
+    output: "vgg0_conv11_fwd"
+    name: "vgg0_conv11_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv11_fwd"
+    output: "vgg0_relu11_fwd"
+    name: "vgg0_relu11_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu11_fwd"
+    input: "vgg0_conv12_weight"
+    input: "vgg0_conv12_bias"
+    output: "vgg0_conv12_fwd"
+    name: "vgg0_conv12_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_conv12_fwd"
+    output: "vgg0_relu12_fwd"
+    name: "vgg0_relu12_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_relu12_fwd"
+    output: "vgg0_pool4_fwd"
+    name: "vgg0_pool4_fwd"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "vgg0_pool4_fwd"
+    output: "flatten_60"
+    name: "flatten_60"
+    op_type: "Flatten"
+  }
+  node {
+    input: "flatten_60"
+    input: "vgg0_dense0_weight"
+    input: "vgg0_dense0_bias"
+    output: "vgg0_dense0_fwd"
+    name: "vgg0_dense0_fwd"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "beta"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "transA"
+      i: 0
+      type: INT
+    }
+    attribute {
+      name: "transB"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "vgg0_dense0_fwd"
+    output: "vgg0_dense0_relu_fwd"
+    name: "vgg0_dense0_relu_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_dense0_relu_fwd"
+    output: "vgg0_dropout0_fwd"
+    name: "vgg0_dropout0_fwd"
+    op_type: "Dropout"
+    attribute {
+      name: "ratio"
+      f: 0.5
+      type: FLOAT
+    }
+  }
+  node {
+    input: "vgg0_dropout0_fwd"
+    output: "flatten_65"
+    name: "flatten_65"
+    op_type: "Flatten"
+  }
+  node {
+    input: "flatten_65"
+    input: "vgg0_dense1_weight"
+    input: "vgg0_dense1_bias"
+    output: "vgg0_dense1_fwd"
+    name: "vgg0_dense1_fwd"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "beta"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "transA"
+      i: 0
+      type: INT
+    }
+    attribute {
+      name: "transB"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "vgg0_dense1_fwd"
+    output: "vgg0_dense1_relu_fwd"
+    name: "vgg0_dense1_relu_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "vgg0_dense1_relu_fwd"
+    output: "vgg0_dropout1_fwd"
+    name: "vgg0_dropout1_fwd"
+    op_type: "Dropout"
+    attribute {
+      name: "ratio"
+      f: 0.5
+      type: FLOAT
+    }
+  }
+  node {
+    input: "vgg0_dropout1_fwd"
+    output: "flatten_70"
+    name: "flatten_70"
+    op_type: "Flatten"
+  }
+  node {
+    input: "flatten_70"
+    input: "vgg0_dense2_weight"
+    input: "vgg0_dense2_bias"
+    output: "vgg0_dense2_fwd"
+    name: "vgg0_dense2_fwd"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "beta"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "transA"
+      i: 0
+      type: INT
+    }
+    attribute {
+      name: "transB"
+      i: 1
+      type: INT
+    }
+  }
+  name: "mxnet_converted_model"
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: -0.39543006
+    float_data: 0.29213735
+    float_data: -0.32670045
+    float_data: 0.29140303
+    float_data: 0.06606992
+    float_data: 0.23585509
+    float_data: -0.1295235
+    float_data: 0.12798466
+    float_data: 0.56852156
+    float_data: 0.3500428
+    float_data: 0.36337993
+    float_data: -0.81117624
+    float_data: 0.03933296
+    float_data: 0.16133709
+    float_data: -0.017473923
+    float_data: -0.71169704
+    float_data: 0.24000584
+    float_data: 0.5941004
+    float_data: -0.84466267
+    float_data: 0.44244888
+    float_data: 0.36720917
+    float_data: -0.72263384
+    float_data: 0.3299122
+    float_data: 0.2818897
+    float_data: 0.22366764
+    float_data: 0.3472514
+    float_data: 0.35742542
+    float_data: 0.3454344
+    float_data: -0.457941
+    float_data: 0.066170685
+    float_data: -0.6325794
+    float_data: -0.16511633
+    float_data: 0.20389155
+    float_data: -0.3128053
+    float_data: -0.8722988
+    float_data: 0.29327142
+    float_data: 0.097761504
+    float_data: 0.23846056
+    float_data: 0.3259443
+    float_data: -0.019488225
+    float_data: 0.38931036
+    float_data: 0.34333614
+    float_data: -0.59201473
+    float_data: 0.069008045
+    float_data: 0.39502785
+    float_data: 0.38500735
+    float_data: 0.2418622
+    float_data: 0.09253956
+    float_data: 0.018464623
+    float_data: -1.1151608
+    float_data: 0.022168115
+    float_data: -1.266534
+    float_data: -0.8397475
+    float_data: -0.62259406
+    float_data: -0.10641074
+    float_data: 0.55418235
+    float_data: -0.27728721
+    float_data: 0.28587785
+    float_data: 0.49001077
+    float_data: -0.28464448
+    float_data: -0.68687356
+    float_data: 0.19116956
+    float_data: 0.23881651
+    float_data: 0.312935
+    name: "vgg0_conv0_bias"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.6350997
+    float_data: -0.46705076
+    float_data: -0.11948581
+    float_data: -0.2155769
+    float_data: 0.08827783
+    float_data: 0.16156751
+    float_data: -0.22211996
+    float_data: 0.0687842
+    float_data: 0.5327882
+    float_data: 0.09660806
+    float_data: -0.1359769
+    float_data: 0.08013752
+    float_data: 0.0757477
+    float_data: 0.19393669
+    float_data: 0.071061485
+    float_data: 0.23599088
+    float_data: 0.21067192
+    float_data: -0.08963394
+    float_data: 0.0027918087
+    float_data: -0.00097201264
+    float_data: 0.18578407
+    float_data: 0.13951266
+    float_data: 0.14865267
+    float_data: 0.21147992
+    float_data: 0.058964346
+    float_data: 0.24036875
+    float_data: 0.13330583
+    float_data: 0.056404047
+    float_data: 0.035638537
+    float_data: 0.31448305
+    float_data: 0.0101180365
+    float_data: -0.61137325
+    float_data: 0.08396173
+    float_data: -0.02817306
+    float_data: -0.18781939
+    float_data: 0.0850641
+    float_data: 0.14606684
+    float_data: -0.033596884
+    float_data: 0.6024247
+    float_data: 0.110672966
+    float_data: 0.28131175
+    float_data: 0.32739273
+    float_data: 0.30885354
+    float_data: 0.037879404
+    float_data: 0.3673017
+    float_data: 0.095916025
+    float_data: 0.020091979
+    float_data: -0.027334359
+    float_data: 0.1239105
+    float_data: 0.24312446
+    float_data: 0.45023724
+    float_data: 0.1285436
+    float_data: 0.30017626
+    float_data: 0.17108463
+    float_data: 0.31362784
+    float_data: -0.29378757
+    float_data: 0.33990163
+    float_data: 0.0965916
+    float_data: -0.38561484
+    float_data: -0.0019553574
+    float_data: -0.20643269
+    float_data: 0.41056842
+    float_data: 0.11457211
+    float_data: -0.042464674
+    name: "vgg0_conv1_bias"
+  }
+  input {
+    name: "data"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 224
+          }
+          dim {
+            dim_value: 224
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv0_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv0_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv1_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv1_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv2_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv2_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv3_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv3_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv4_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv4_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv5_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv5_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv6_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv6_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv7_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv7_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv8_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv8_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv9_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv9_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv10_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv10_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv11_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv11_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv12_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_conv12_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_dense0_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 4096
+          }
+          dim {
+            dim_value: 25088
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_dense0_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 4096
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_dense1_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 4096
+          }
+          dim {
+            dim_value: 4096
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_dense1_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 4096
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_dense2_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1000
+          }
+          dim {
+            dim_value: 4096
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "vgg0_dense2_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "vgg0_dense2_fwd"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+}
+opset_import {
+  domain: ""
+  version: 8
+}

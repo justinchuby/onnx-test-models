@@ -1,0 +1,1817 @@
+ir_version: 7
+producer_name: "onnx.quantize"
+producer_version: "0.1.0"
+graph {
+  node {
+    input: "data_0"
+    input: "data_0_scale"
+    input: "data_0_zero_point"
+    output: "data_0_quantized"
+    name: "data_0_QuantizeLinear"
+    op_type: "QuantizeLinear"
+  }
+  node {
+    input: "data_0_quantized"
+    input: "data_0_scale"
+    input: "data_0_zero_point"
+    input: "conv1_w_0_quantized"
+    input: "conv1_w_0_scale"
+    input: "conv1_w_0_zero_point"
+    input: "conv1_1_scale"
+    input: "conv1_1_zero_point"
+    input: "conv1_b_0_quantized"
+    output: "conv1_1_quantized"
+    name: "Conv_nc_rename_0_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 11
+      ints: 11
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 4
+      ints: 4
+      type: INTS
+    }
+  }
+  node {
+    input: "conv1_1_quantized"
+    output: "pool1_1_quantized"
+    name: "MaxPool_nc_rename_2_quant"
+    op_type: "MaxPool"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "storage_order"
+      i: 0
+      type: INT
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "ceil_mode"
+      i: 0
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "pool1_1_quantized"
+    input: "conv1_1_scale"
+    input: "conv1_1_zero_point"
+    output: "pool1_1"
+    name: "pool1_1_DequantizeLinear"
+    op_type: "DequantizeLinear"
+  }
+  node {
+    input: "pool1_1"
+    output: "norm1_1"
+    name: "LRN_nc_rename_3"
+    op_type: "LRN"
+    attribute {
+      name: "beta"
+      f: 0.75
+      type: FLOAT
+    }
+    attribute {
+      name: "alpha"
+      f: 0.0001
+      type: FLOAT
+    }
+    attribute {
+      name: "bias"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "size"
+      i: 5
+      type: INT
+    }
+  }
+  node {
+    input: "norm1_1"
+    input: "norm1_1_scale"
+    input: "norm1_1_zero_point"
+    output: "norm1_1_quantized"
+    name: "norm1_1_QuantizeLinear"
+    op_type: "QuantizeLinear"
+  }
+  node {
+    input: "norm1_1_quantized"
+    input: "norm1_1_scale"
+    input: "norm1_1_zero_point"
+    input: "conv2_w_0_quantized"
+    input: "conv2_w_0_scale"
+    input: "conv2_w_0_zero_point"
+    input: "conv2_1_scale"
+    input: "conv2_1_zero_point"
+    input: "conv2_b_0_quantized"
+    output: "conv2_1_quantized"
+    name: "Conv_nc_rename_4_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "group"
+      i: 2
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "conv2_1_quantized"
+    output: "pool2_1_quantized"
+    name: "MaxPool_nc_rename_6_quant"
+    op_type: "MaxPool"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "storage_order"
+      i: 0
+      type: INT
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "ceil_mode"
+      i: 0
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "pool2_1_quantized"
+    input: "conv2_1_scale"
+    input: "conv2_1_zero_point"
+    output: "pool2_1"
+    name: "pool2_1_DequantizeLinear"
+    op_type: "DequantizeLinear"
+  }
+  node {
+    input: "pool2_1"
+    output: "norm2_1"
+    name: "LRN_nc_rename_7"
+    op_type: "LRN"
+    attribute {
+      name: "beta"
+      f: 0.75
+      type: FLOAT
+    }
+    attribute {
+      name: "alpha"
+      f: 0.0001
+      type: FLOAT
+    }
+    attribute {
+      name: "bias"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "size"
+      i: 5
+      type: INT
+    }
+  }
+  node {
+    input: "norm2_1"
+    input: "norm2_1_scale"
+    input: "norm2_1_zero_point"
+    output: "norm2_1_quantized"
+    name: "norm2_1_QuantizeLinear"
+    op_type: "QuantizeLinear"
+  }
+  node {
+    input: "norm2_1_quantized"
+    input: "norm2_1_scale"
+    input: "norm2_1_zero_point"
+    input: "conv3_w_0_quantized"
+    input: "conv3_w_0_scale"
+    input: "conv3_w_0_zero_point"
+    input: "conv3_1_scale"
+    input: "conv3_1_zero_point"
+    input: "conv3_b_0_quantized"
+    output: "conv3_1_quantized"
+    name: "Conv_nc_rename_8_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "conv3_1_quantized"
+    input: "conv3_1_scale"
+    input: "conv3_1_zero_point"
+    input: "conv4_w_0_quantized"
+    input: "conv4_w_0_scale"
+    input: "conv4_w_0_zero_point"
+    input: "conv4_1_scale"
+    input: "conv4_1_zero_point"
+    input: "conv4_b_0_quantized"
+    output: "conv4_1_quantized"
+    name: "Conv_nc_rename_10_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "group"
+      i: 2
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "conv4_1_quantized"
+    input: "conv4_1_scale"
+    input: "conv4_1_zero_point"
+    input: "conv5_w_0_quantized"
+    input: "conv5_w_0_scale"
+    input: "conv5_w_0_zero_point"
+    input: "conv5_1_scale"
+    input: "conv5_1_zero_point"
+    input: "conv5_b_0_quantized"
+    output: "conv5_1_quantized"
+    name: "Conv_nc_rename_12_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "group"
+      i: 2
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "conv5_1_quantized"
+    output: "pool5_1_quantized"
+    name: "MaxPool_nc_rename_14_quant"
+    op_type: "MaxPool"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "storage_order"
+      i: 0
+      type: INT
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "ceil_mode"
+      i: 0
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "pool5_1_quantized"
+    input: "conv5_1_scale"
+    input: "conv5_1_zero_point"
+    output: "pool5_1"
+    name: "pool5_1_DequantizeLinear"
+    op_type: "DequantizeLinear"
+  }
+  node {
+    input: "pool5_1"
+    input: "OC2_DUMMY_1"
+    output: "OC2_DUMMY_0"
+    name: "Reshape_nc_rename_15"
+    op_type: "Reshape"
+  }
+  node {
+    input: "OC2_DUMMY_0"
+    input: "OC2_DUMMY_0_scale"
+    input: "OC2_DUMMY_0_zero_point"
+    output: "OC2_DUMMY_0_quantized"
+    name: "OC2_DUMMY_0_QuantizeLinear"
+    op_type: "QuantizeLinear"
+  }
+  node {
+    input: "OC2_DUMMY_0_quantized"
+    input: "OC2_DUMMY_0_scale"
+    input: "OC2_DUMMY_0_zero_point"
+    input: "fc6_w_0_quantized"
+    input: "fc6_w_0_scale"
+    input: "fc6_w_0_zero_point"
+    input: "fc6_1_MatMul_scale"
+    input: "fc6_1_MatMul_zero_point"
+    output: "fc6_1_MatMul_quantized"
+    name: "MatMul_nc_rename_16_quant"
+    op_type: "QLinearMatMul"
+  }
+  node {
+    input: "fc6_1_MatMul_quantized"
+    input: "fc6_1_MatMul_scale"
+    input: "fc6_1_MatMul_zero_point"
+    input: "fc6_b_0_quantized"
+    input: "fc6_b_0_scale"
+    input: "fc6_b_0_zero_point"
+    input: "fc6_1_scale"
+    input: "fc6_1_zero_point"
+    output: "fc6_1_quantized"
+    name: "Add_nc_rename_17_quant"
+    op_type: "QLinearAdd"
+    domain: "com.microsoft"
+  }
+  node {
+    input: "fc6_1_quantized"
+    input: "fc6_1_scale"
+    input: "fc6_1_zero_point"
+    input: "fc7_w_0_quantized"
+    input: "fc7_w_0_scale"
+    input: "fc7_w_0_zero_point"
+    input: "fc7_1_MatMul_scale"
+    input: "fc7_1_MatMul_zero_point"
+    output: "fc7_1_MatMul_quantized"
+    name: "MatMul_nc_rename_19_quant"
+    op_type: "QLinearMatMul"
+  }
+  node {
+    input: "fc7_1_MatMul_quantized"
+    input: "fc7_1_MatMul_scale"
+    input: "fc7_1_MatMul_zero_point"
+    input: "fc7_b_0_quantized"
+    input: "fc7_b_0_scale"
+    input: "fc7_b_0_zero_point"
+    input: "fc7_1_scale"
+    input: "fc7_1_zero_point"
+    output: "fc7_1_quantized"
+    name: "Add_nc_rename_20_quant"
+    op_type: "QLinearAdd"
+    domain: "com.microsoft"
+  }
+  node {
+    input: "fc7_1_quantized"
+    input: "fc7_1_scale"
+    input: "fc7_1_zero_point"
+    input: "fc8_w_0_quantized"
+    input: "fc8_w_0_scale"
+    input: "fc8_w_0_zero_point"
+    input: "fc8_1_MatMul_scale"
+    input: "fc8_1_MatMul_zero_point"
+    output: "fc8_1_MatMul_quantized"
+    name: "MatMul_nc_rename_22_quant"
+    op_type: "QLinearMatMul"
+  }
+  node {
+    input: "fc8_1_MatMul_quantized"
+    input: "fc8_1_MatMul_scale"
+    input: "fc8_1_MatMul_zero_point"
+    input: "fc8_b_0_quantized"
+    input: "fc8_b_0_scale"
+    input: "fc8_b_0_zero_point"
+    input: "fc8_1_scale"
+    input: "fc8_1_zero_point"
+    output: "fc8_1_quantized"
+    name: "Add_nc_rename_23_quant"
+    op_type: "QLinearAdd"
+    domain: "com.microsoft"
+  }
+  node {
+    input: "fc8_1_quantized"
+    input: "fc8_1_scale"
+    input: "fc8_1_zero_point"
+    output: "fc8_1"
+    name: "fc8_1_DequantizeLinear"
+    op_type: "DequantizeLinear"
+  }
+  node {
+    input: "fc8_1"
+    output: "prob_1"
+    name: "Softmax_nc_rename_24"
+    op_type: "Softmax"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  name: "bvlc_reference_caffenet"
+  initializer {
+    dims: 2
+    data_type: 7
+    name: "OC2_DUMMY_1"
+    raw_data: "\001\000\000\000\000\000\000\000\000$\000\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 115
+    name: "data_0_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 1.0774157
+    name: "data_0_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "conv1_1_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 12.237324
+    name: "conv1_1_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "norm1_1_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.5440139
+    name: "norm1_1_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "conv2_1_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 1.9229704
+    name: "conv2_1_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "norm2_1_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.54402155
+    name: "norm2_1_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "conv3_1_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 1.4572867
+    name: "conv3_1_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "conv4_1_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 1.1924216
+    name: "conv4_1_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "conv5_1_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.82673
+    name: "conv5_1_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "OC2_DUMMY_0_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.82673
+    name: "OC2_DUMMY_0_scale"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.00075673807
+    name: "fc6_w_0_scale"
+  }
+  initializer {
+    data_type: 3
+    int32_data: 0
+    name: "fc6_w_0_zero_point"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 155
+    name: "fc6_1_MatMul_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.70886624
+    name: "fc6_1_MatMul_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "fc6_1_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.28229782
+    name: "fc6_1_scale"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.008322343
+    name: "fc6_b_0_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "fc6_b_0_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.0008145995
+    name: "fc7_w_0_scale"
+  }
+  initializer {
+    data_type: 3
+    int32_data: 0
+    name: "fc7_w_0_zero_point"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 155
+    name: "fc7_1_MatMul_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.16540997
+    name: "fc7_1_MatMul_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "fc7_1_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.068406284
+    name: "fc7_1_scale"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.009924602
+    name: "fc7_b_0_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "fc7_b_0_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.0010531457
+    name: "fc8_w_0_scale"
+  }
+  initializer {
+    data_type: 3
+    int32_data: 0
+    name: "fc8_w_0_zero_point"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 54
+    name: "fc8_1_MatMul_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.187507
+    name: "fc8_1_MatMul_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 53
+    name: "fc8_1_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.18617083
+    name: "fc8_1_scale"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.00611208
+    name: "fc8_b_0_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 57
+    name: "fc8_b_0_zero_point"
+  }
+  input {
+    name: "data_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 224
+          }
+          dim {
+            dim_value: 224
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv1_w_0_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 11
+          }
+          dim {
+            dim_value: 11
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv1_w_0_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 96
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv1_w_0_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 96
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv1_b_0_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 96
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv2_w_0_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 48
+          }
+          dim {
+            dim_value: 5
+          }
+          dim {
+            dim_value: 5
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv2_w_0_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv2_w_0_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv2_b_0_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv3_w_0_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv3_w_0_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv3_w_0_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 384
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv3_b_0_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 384
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv4_w_0_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv4_w_0_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 384
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv4_w_0_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 384
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv4_b_0_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 384
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv5_w_0_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv5_w_0_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv5_w_0_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv5_b_0_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "fc6_w_0_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 9216
+          }
+          dim {
+            dim_value: 4096
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "fc6_b_0_quantized"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+          dim {
+            dim_value: 4096
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "fc7_w_0_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 4096
+          }
+          dim {
+            dim_value: 4096
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "fc7_b_0_quantized"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+          dim {
+            dim_value: 4096
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "fc8_w_0_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 4096
+          }
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "fc8_b_0_quantized"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "prob_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "OC2_DUMMY_1"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "data_0_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "data_0_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "conv1_1_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "conv1_1_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "norm1_1_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "norm1_1_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "conv2_1_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "conv2_1_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "norm2_1_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "norm2_1_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "conv3_1_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "conv3_1_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "conv4_1_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "conv4_1_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "conv5_1_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "conv5_1_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "OC2_DUMMY_0_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "OC2_DUMMY_0_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc6_w_0_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc6_w_0_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc6_1_MatMul_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc6_1_MatMul_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc6_1_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc6_1_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc6_b_0_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc6_b_0_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc7_w_0_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc7_w_0_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc7_1_MatMul_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc7_1_MatMul_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc7_1_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc7_1_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc7_b_0_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc7_b_0_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc8_w_0_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc8_w_0_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc8_1_MatMul_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc8_1_MatMul_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc8_1_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc8_1_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc8_b_0_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc8_b_0_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "pool1_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 27
+          }
+          dim {
+            dim_value: 27
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "norm1_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 96
+          }
+          dim {
+            dim_value: 27
+          }
+          dim {
+            dim_value: 27
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "pool2_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 13
+          }
+          dim {
+            dim_value: 13
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "norm2_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 13
+          }
+          dim {
+            dim_value: 13
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "pool5_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 6
+          }
+          dim {
+            dim_value: 6
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "OC2_DUMMY_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 9216
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "fc8_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+}
+opset_import {
+  domain: ""
+  version: 12
+}
+opset_import {
+  domain: "com.microsoft"
+  version: 1
+}
+opset_import {
+  domain: "com.microsoft.mlfeaturizers"
+  version: 1
+}
+opset_import {
+  domain: "com.microsoft.nchwc"
+  version: 1
+}
+opset_import {
+  domain: "ai.onnx.training"
+  version: 1
+}
+opset_import {
+  domain: "ai.onnx.preview.training"
+  version: 1
+}
+opset_import {
+  domain: "com.microsoft.experimental"
+  version: 1
+}
+opset_import {
+  domain: "ai.onnx.ml"
+  version: 2
+}
