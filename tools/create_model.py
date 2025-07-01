@@ -1,3 +1,4 @@
+import pathlib
 import onnx_ir as ir
 import onnx_ir.passes.common as common_passes
 import onnxscript.version_converter
@@ -64,6 +65,8 @@ def create_model(
         out_path: Path to save the processed ONNX model.
     """
     model = process_model(model, target_version)
+    out_dir = pathlib.Path(out_path).parent
+    out_dir.mkdir(parents=True, exist_ok=True)
     ir.save(model, out_path)
     print(f"Processed model saved to {out_path}")
 
