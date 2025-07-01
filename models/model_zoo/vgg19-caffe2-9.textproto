@@ -1,0 +1,1441 @@
+ir_version: 3
+producer_name: "onnx-caffe2"
+graph {
+  node {
+    input: "data_0"
+    input: "conv1_1_w_0"
+    input: "conv1_1_b_0"
+    output: "conv1_1_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "conv1_1_1"
+    output: "conv1_1_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "conv1_1_2"
+    input: "conv1_2_w_0"
+    input: "conv1_2_b_0"
+    output: "conv1_2_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "conv1_2_1"
+    output: "conv1_2_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "conv1_2_2"
+    output: "pool1_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "pool1_1"
+    input: "conv2_1_w_0"
+    input: "conv2_1_b_0"
+    output: "conv2_1_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "conv2_1_1"
+    output: "conv2_1_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "conv2_1_2"
+    input: "conv2_2_w_0"
+    input: "conv2_2_b_0"
+    output: "conv2_2_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "conv2_2_1"
+    output: "conv2_2_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "conv2_2_2"
+    output: "pool2_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "pool2_1"
+    input: "conv3_1_w_0"
+    input: "conv3_1_b_0"
+    output: "conv3_1_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "conv3_1_1"
+    output: "conv3_1_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "conv3_1_2"
+    input: "conv3_2_w_0"
+    input: "conv3_2_b_0"
+    output: "conv3_2_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "conv3_2_1"
+    output: "conv3_2_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "conv3_2_2"
+    input: "conv3_3_w_0"
+    input: "conv3_3_b_0"
+    output: "conv3_3_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "conv3_3_1"
+    output: "conv3_3_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "conv3_3_2"
+    input: "conv3_4_w_0"
+    input: "conv3_4_b_0"
+    output: "conv3_4_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "conv3_4_1"
+    output: "conv3_4_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "conv3_4_2"
+    output: "pool3_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "pool3_1"
+    input: "conv4_1_w_0"
+    input: "conv4_1_b_0"
+    output: "conv4_1_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "conv4_1_1"
+    output: "conv4_1_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "conv4_1_2"
+    input: "conv4_2_w_0"
+    input: "conv4_2_b_0"
+    output: "conv4_2_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "conv4_2_1"
+    output: "conv4_2_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "conv4_2_2"
+    input: "conv4_3_w_0"
+    input: "conv4_3_b_0"
+    output: "conv4_3_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "conv4_3_1"
+    output: "conv4_3_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "conv4_3_2"
+    input: "conv4_4_w_0"
+    input: "conv4_4_b_0"
+    output: "conv4_4_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "conv4_4_1"
+    output: "conv4_4_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "conv4_4_2"
+    output: "pool4_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "pool4_1"
+    input: "conv5_1_w_0"
+    input: "conv5_1_b_0"
+    output: "conv5_1_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "conv5_1_1"
+    output: "conv5_1_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "conv5_1_2"
+    input: "conv5_2_w_0"
+    input: "conv5_2_b_0"
+    output: "conv5_2_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "conv5_2_1"
+    output: "conv5_2_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "conv5_2_2"
+    input: "conv5_3_w_0"
+    input: "conv5_3_b_0"
+    output: "conv5_3_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "conv5_3_1"
+    output: "conv5_3_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "conv5_3_2"
+    input: "conv5_4_w_0"
+    input: "conv5_4_b_0"
+    output: "conv5_4_1"
+    op_type: "Conv"
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+  }
+  node {
+    input: "conv5_4_1"
+    output: "conv5_4_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "conv5_4_2"
+    output: "pool5_1"
+    op_type: "MaxPool"
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "pool5_1"
+    input: "OC2_DUMMY_1"
+    output: "OC2_DUMMY_0"
+    op_type: "Reshape"
+  }
+  node {
+    input: "OC2_DUMMY_0"
+    input: "fc6_w_0"
+    input: "fc6_b_0"
+    output: "fc6_1"
+    op_type: "Gemm"
+    attribute {
+      name: "transB"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "fc6_1"
+    output: "fc6_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "fc6_2"
+    output: "fc6_3"
+    output: "_fc6_mask_1"
+    op_type: "Dropout"
+    attribute {
+      name: "ratio"
+      f: 0.5
+      type: FLOAT
+    }
+  }
+  node {
+    input: "fc6_3"
+    input: "fc7_w_0"
+    input: "fc7_b_0"
+    output: "fc7_1"
+    op_type: "Gemm"
+    attribute {
+      name: "transB"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "fc7_1"
+    output: "fc7_2"
+    op_type: "Relu"
+  }
+  node {
+    input: "fc7_2"
+    output: "fc7_3"
+    output: "_fc7_mask_1"
+    op_type: "Dropout"
+    attribute {
+      name: "ratio"
+      f: 0.5
+      type: FLOAT
+    }
+  }
+  node {
+    input: "fc7_3"
+    input: "fc8_w_0"
+    input: "fc8_b_0"
+    output: "fc8_1"
+    op_type: "Gemm"
+    attribute {
+      name: "transB"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "fc8_1"
+    output: "prob_1"
+    op_type: "Softmax"
+  }
+  name: "vgg19"
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "conv1_1_b_0"
+    raw_data: "\353\354:?Q\375\204=\021r\014=DwS?\276\376\203>\021v\014?\010\313K\274\340\037\262>\013\024\r?-\367\200=\274c\033?Q\270\210>\377?&?\220\325.>\234W\364>\317\327\303>5n\355>\317\036\\>\220/\360>\017\372s>dL\363>\242\3004?MG\212>\270~/?\375\277\003=T?\032?\344`\263>\265\302\344>\265\364E?\201\370\024?\003\033\310>k?\340?\264B)?\t\262\232>-\325\007?nh-?\341[\252>\310\210\373>6\356\207>\302\221@><\314\227=\202\326\215?0\202\220>\332\027^?\030\344F>\353qO?\216\243\270>\343\327\001?Pu\331>\201\036\376>\216\315\032>DgK?\256}\253>\024\030\362>\217\277\324>\271\377\255=\357I\302>\304\305\031?\200\210\361>\316&P?|\021\351>\356j\213?h\204\364>\036~\320>"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "conv1_2_b_0"
+    raw_data: "\222\377\225\276\352\366\255>\311\223#>\001A)=O\305F?i\331!=\246\243\314<\267\315Z\276U\364\017\277\330\255\026>\357I\254\276\312\0209>+\210\320>P\301\371=K\004\262=\336\243\332=\342|u\277\3447\\=\361\314\210=C\364n>\267\301/\277=\214\025>\261\366%\277\010X\026=\335\213\306=\356\365\203>K\345\230>$I\207>\257\311\266>\247\374\342\276\376\204\003=\243\356p=\313\215\254=\272\250\014?^K\241>\2010\347=\326\364h\276\304\233\212>\t\277\272>\016=\027>\316\001\364\2759\352\202>s|w=A\247\376<h\376\237\275)\276[>+\262u>\316\262\337=\211\211\260\276h\272\336=\356h\005\277\271\361\343>\007\304\333\275\026\247\215>?\006A>\275\310\005>1ZD>A\2406>\206QP\276\203\026\342<\246o\207>\216\313T=\333\335\250<\221x\005\277"
+  }
+  initializer {
+    dims: 2
+    data_type: 7
+    name: "OC2_DUMMY_1"
+    raw_data: "\001\000\000\000\000\000\000\000\000b\000\000\000\000\000\000"
+  }
+  input {
+    name: "conv1_1_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv1_1_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv1_2_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv1_2_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv2_1_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv2_1_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv2_2_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv2_2_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv3_1_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv3_1_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv3_2_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv3_2_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv3_3_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv3_3_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv3_4_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv3_4_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv4_1_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv4_1_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv4_2_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv4_2_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv4_3_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv4_3_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv4_4_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv4_4_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv5_1_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv5_1_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv5_2_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv5_2_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv5_3_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv5_3_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv5_4_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "conv5_4_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "fc6_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 4096
+          }
+          dim {
+            dim_value: 25088
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "fc6_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 4096
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "fc7_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 4096
+          }
+          dim {
+            dim_value: 4096
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "fc7_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 4096
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "fc8_w_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1000
+          }
+          dim {
+            dim_value: 4096
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "fc8_b_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "data_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 224
+          }
+          dim {
+            dim_value: 224
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "OC2_DUMMY_1"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "prob_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+}
+opset_import {
+  domain: ""
+  version: 9
+}

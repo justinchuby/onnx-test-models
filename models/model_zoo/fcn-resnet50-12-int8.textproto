@@ -1,0 +1,10480 @@
+ir_version: 7
+producer_name: "onnx.quantize"
+producer_version: "0.1.0"
+graph {
+  node {
+    input: "input"
+    input: "input_scale"
+    input: "input_zero_point"
+    output: "input_quantized"
+    name: "input_QuantizeLinear"
+    op_type: "QuantizeLinear"
+  }
+  node {
+    input: "input_quantized"
+    input: "input_scale"
+    input: "input_zero_point"
+    input: "548_quantized"
+    input: "548_scale"
+    input: "548_zero_point"
+    input: "343_scale"
+    input: "343_zero_point"
+    input: "549_quantized"
+    output: "343_quantized"
+    name: "fused Conv_6_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 7
+      ints: 7
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 3
+      ints: 3
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "343_quantized"
+    output: "344_quantized"
+    name: "MaxPool_8_quant"
+    op_type: "MaxPool"
+    attribute {
+      name: "storage_order"
+      i: 0
+      type: INT
+    }
+    attribute {
+      name: "ceil_mode"
+      i: 0
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "344_quantized"
+    input: "343_scale"
+    input: "343_zero_point"
+    input: "560_quantized"
+    input: "560_scale"
+    input: "560_zero_point"
+    input: "559_scale"
+    input: "559_zero_point"
+    input: "561_quantized"
+    output: "559_quantized"
+    name: "Conv_14_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "344_quantized"
+    input: "343_scale"
+    input: "343_zero_point"
+    input: "551_quantized"
+    input: "551_scale"
+    input: "551_zero_point"
+    input: "347_scale"
+    input: "347_zero_point"
+    input: "552_quantized"
+    output: "347_quantized"
+    name: "fused Conv_9_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "347_quantized"
+    input: "347_scale"
+    input: "347_zero_point"
+    input: "554_quantized"
+    input: "554_scale"
+    input: "554_zero_point"
+    input: "350_scale"
+    input: "350_zero_point"
+    input: "555_quantized"
+    output: "350_quantized"
+    name: "fused Conv_11_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "350_quantized"
+    input: "350_scale"
+    input: "350_zero_point"
+    input: "557_quantized"
+    input: "557_scale"
+    input: "557_zero_point"
+    input: "556_scale"
+    input: "556_zero_point"
+    input: "558_quantized"
+    output: "556_quantized"
+    name: "Conv_13_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "556_quantized"
+    input: "556_scale"
+    input: "556_zero_point"
+    input: "559_quantized"
+    input: "559_scale"
+    input: "559_zero_point"
+    input: "355_scale"
+    input: "355_zero_point"
+    output: "355_quantized"
+    name: "Add_15_quant"
+    op_type: "QLinearAdd"
+    domain: "com.microsoft"
+  }
+  node {
+    input: "355_quantized"
+    input: "355_scale"
+    input: "355_zero_point"
+    input: "563_quantized"
+    input: "563_scale"
+    input: "563_zero_point"
+    input: "359_scale"
+    input: "359_zero_point"
+    input: "564_quantized"
+    output: "359_quantized"
+    name: "fused Conv_17_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "359_quantized"
+    input: "359_scale"
+    input: "359_zero_point"
+    input: "566_quantized"
+    input: "566_scale"
+    input: "566_zero_point"
+    input: "362_scale"
+    input: "362_zero_point"
+    input: "567_quantized"
+    output: "362_quantized"
+    name: "fused Conv_19_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "362_quantized"
+    input: "362_scale"
+    input: "362_zero_point"
+    input: "569_quantized"
+    input: "569_scale"
+    input: "569_zero_point"
+    input: "568_scale"
+    input: "568_zero_point"
+    input: "570_quantized"
+    output: "568_quantized"
+    name: "Conv_21_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "568_quantized"
+    input: "568_scale"
+    input: "568_zero_point"
+    input: "355_quantized"
+    input: "355_scale"
+    input: "355_zero_point"
+    input: "365_scale"
+    input: "365_zero_point"
+    output: "365_quantized"
+    name: "Add_22_quant"
+    op_type: "QLinearAdd"
+    domain: "com.microsoft"
+  }
+  node {
+    input: "365_quantized"
+    input: "365_scale"
+    input: "365_zero_point"
+    input: "572_quantized"
+    input: "572_scale"
+    input: "572_zero_point"
+    input: "369_scale"
+    input: "369_zero_point"
+    input: "573_quantized"
+    output: "369_quantized"
+    name: "fused Conv_24_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "369_quantized"
+    input: "369_scale"
+    input: "369_zero_point"
+    input: "575_quantized"
+    input: "575_scale"
+    input: "575_zero_point"
+    input: "372_scale"
+    input: "372_zero_point"
+    input: "576_quantized"
+    output: "372_quantized"
+    name: "fused Conv_26_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "372_quantized"
+    input: "372_scale"
+    input: "372_zero_point"
+    input: "578_quantized"
+    input: "578_scale"
+    input: "578_zero_point"
+    input: "577_scale"
+    input: "577_zero_point"
+    input: "579_quantized"
+    output: "577_quantized"
+    name: "Conv_28_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "577_quantized"
+    input: "577_scale"
+    input: "577_zero_point"
+    input: "365_quantized"
+    input: "365_scale"
+    input: "365_zero_point"
+    input: "375_scale"
+    input: "375_zero_point"
+    output: "375_quantized"
+    name: "Add_29_quant"
+    op_type: "QLinearAdd"
+    domain: "com.microsoft"
+  }
+  node {
+    input: "375_quantized"
+    input: "375_scale"
+    input: "375_zero_point"
+    input: "590_quantized"
+    input: "590_scale"
+    input: "590_zero_point"
+    input: "589_scale"
+    input: "589_zero_point"
+    input: "591_quantized"
+    output: "589_quantized"
+    name: "Conv_36_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "375_quantized"
+    input: "375_scale"
+    input: "375_zero_point"
+    input: "581_quantized"
+    input: "581_scale"
+    input: "581_zero_point"
+    input: "379_scale"
+    input: "379_zero_point"
+    input: "582_quantized"
+    output: "379_quantized"
+    name: "fused Conv_31_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "379_quantized"
+    input: "379_scale"
+    input: "379_zero_point"
+    input: "584_quantized"
+    input: "584_scale"
+    input: "584_zero_point"
+    input: "382_scale"
+    input: "382_zero_point"
+    input: "585_quantized"
+    output: "382_quantized"
+    name: "fused Conv_33_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "382_quantized"
+    input: "382_scale"
+    input: "382_zero_point"
+    input: "587_quantized"
+    input: "587_scale"
+    input: "587_zero_point"
+    input: "586_scale"
+    input: "586_zero_point"
+    input: "588_quantized"
+    output: "586_quantized"
+    name: "Conv_35_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "586_quantized"
+    input: "586_scale"
+    input: "586_zero_point"
+    input: "589_quantized"
+    input: "589_scale"
+    input: "589_zero_point"
+    input: "387_scale"
+    input: "387_zero_point"
+    output: "387_quantized"
+    name: "Add_37_quant"
+    op_type: "QLinearAdd"
+    domain: "com.microsoft"
+  }
+  node {
+    input: "387_quantized"
+    input: "387_scale"
+    input: "387_zero_point"
+    input: "593_quantized"
+    input: "593_scale"
+    input: "593_zero_point"
+    input: "391_scale"
+    input: "391_zero_point"
+    input: "594_quantized"
+    output: "391_quantized"
+    name: "fused Conv_39_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "391_quantized"
+    input: "391_scale"
+    input: "391_zero_point"
+    input: "596_quantized"
+    input: "596_scale"
+    input: "596_zero_point"
+    input: "394_scale"
+    input: "394_zero_point"
+    input: "597_quantized"
+    output: "394_quantized"
+    name: "fused Conv_41_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "394_quantized"
+    input: "394_scale"
+    input: "394_zero_point"
+    input: "599_quantized"
+    input: "599_scale"
+    input: "599_zero_point"
+    input: "598_scale"
+    input: "598_zero_point"
+    input: "600_quantized"
+    output: "598_quantized"
+    name: "Conv_43_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "598_quantized"
+    input: "598_scale"
+    input: "598_zero_point"
+    input: "387_quantized"
+    input: "387_scale"
+    input: "387_zero_point"
+    input: "397_scale"
+    input: "397_zero_point"
+    output: "397_quantized"
+    name: "Add_44_quant"
+    op_type: "QLinearAdd"
+    domain: "com.microsoft"
+  }
+  node {
+    input: "397_quantized"
+    input: "397_scale"
+    input: "397_zero_point"
+    input: "602_quantized"
+    input: "602_scale"
+    input: "602_zero_point"
+    input: "401_scale"
+    input: "401_zero_point"
+    input: "603_quantized"
+    output: "401_quantized"
+    name: "fused Conv_46_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "401_quantized"
+    input: "401_scale"
+    input: "401_zero_point"
+    input: "605_quantized"
+    input: "605_scale"
+    input: "605_zero_point"
+    input: "404_scale"
+    input: "404_zero_point"
+    input: "606_quantized"
+    output: "404_quantized"
+    name: "fused Conv_48_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "404_quantized"
+    input: "404_scale"
+    input: "404_zero_point"
+    input: "608_quantized"
+    input: "608_scale"
+    input: "608_zero_point"
+    input: "607_scale"
+    input: "607_zero_point"
+    input: "609_quantized"
+    output: "607_quantized"
+    name: "Conv_50_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "607_quantized"
+    input: "607_scale"
+    input: "607_zero_point"
+    input: "397_quantized"
+    input: "397_scale"
+    input: "397_zero_point"
+    input: "407_scale"
+    input: "407_zero_point"
+    output: "407_quantized"
+    name: "Add_51_quant"
+    op_type: "QLinearAdd"
+    domain: "com.microsoft"
+  }
+  node {
+    input: "407_quantized"
+    input: "407_scale"
+    input: "407_zero_point"
+    input: "611_quantized"
+    input: "611_scale"
+    input: "611_zero_point"
+    input: "411_scale"
+    input: "411_zero_point"
+    input: "612_quantized"
+    output: "411_quantized"
+    name: "fused Conv_53_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "411_quantized"
+    input: "411_scale"
+    input: "411_zero_point"
+    input: "614_quantized"
+    input: "614_scale"
+    input: "614_zero_point"
+    input: "414_scale"
+    input: "414_zero_point"
+    input: "615_quantized"
+    output: "414_quantized"
+    name: "fused Conv_55_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "414_quantized"
+    input: "414_scale"
+    input: "414_zero_point"
+    input: "617_quantized"
+    input: "617_scale"
+    input: "617_zero_point"
+    input: "616_scale"
+    input: "616_zero_point"
+    input: "618_quantized"
+    output: "616_quantized"
+    name: "Conv_57_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "616_quantized"
+    input: "616_scale"
+    input: "616_zero_point"
+    input: "407_quantized"
+    input: "407_scale"
+    input: "407_zero_point"
+    input: "417_scale"
+    input: "417_zero_point"
+    output: "417_quantized"
+    name: "Add_58_quant"
+    op_type: "QLinearAdd"
+    domain: "com.microsoft"
+  }
+  node {
+    input: "417_quantized"
+    input: "417_scale"
+    input: "417_zero_point"
+    input: "629_quantized"
+    input: "629_scale"
+    input: "629_zero_point"
+    input: "628_scale"
+    input: "628_zero_point"
+    input: "630_quantized"
+    output: "628_quantized"
+    name: "Conv_65_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "417_quantized"
+    input: "417_scale"
+    input: "417_zero_point"
+    input: "620_quantized"
+    input: "620_scale"
+    input: "620_zero_point"
+    input: "421_scale"
+    input: "421_zero_point"
+    input: "621_quantized"
+    output: "421_quantized"
+    name: "fused Conv_60_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "421_quantized"
+    input: "421_scale"
+    input: "421_zero_point"
+    input: "623_quantized"
+    input: "623_scale"
+    input: "623_zero_point"
+    input: "424_scale"
+    input: "424_zero_point"
+    input: "624_quantized"
+    output: "424_quantized"
+    name: "fused Conv_62_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "424_quantized"
+    input: "424_scale"
+    input: "424_zero_point"
+    input: "626_quantized"
+    input: "626_scale"
+    input: "626_zero_point"
+    input: "625_scale"
+    input: "625_zero_point"
+    input: "627_quantized"
+    output: "625_quantized"
+    name: "Conv_64_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "625_quantized"
+    input: "625_scale"
+    input: "625_zero_point"
+    input: "628_quantized"
+    input: "628_scale"
+    input: "628_zero_point"
+    input: "429_scale"
+    input: "429_zero_point"
+    output: "429_quantized"
+    name: "Add_66_quant"
+    op_type: "QLinearAdd"
+    domain: "com.microsoft"
+  }
+  node {
+    input: "429_quantized"
+    input: "429_scale"
+    input: "429_zero_point"
+    input: "632_quantized"
+    input: "632_scale"
+    input: "632_zero_point"
+    input: "433_scale"
+    input: "433_zero_point"
+    input: "633_quantized"
+    output: "433_quantized"
+    name: "fused Conv_68_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "433_quantized"
+    input: "433_scale"
+    input: "433_zero_point"
+    input: "635_quantized"
+    input: "635_scale"
+    input: "635_zero_point"
+    input: "436_scale"
+    input: "436_zero_point"
+    input: "636_quantized"
+    output: "436_quantized"
+    name: "fused Conv_70_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "436_quantized"
+    input: "436_scale"
+    input: "436_zero_point"
+    input: "638_quantized"
+    input: "638_scale"
+    input: "638_zero_point"
+    input: "637_scale"
+    input: "637_zero_point"
+    input: "639_quantized"
+    output: "637_quantized"
+    name: "Conv_72_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "637_quantized"
+    input: "637_scale"
+    input: "637_zero_point"
+    input: "429_quantized"
+    input: "429_scale"
+    input: "429_zero_point"
+    input: "439_scale"
+    input: "439_zero_point"
+    output: "439_quantized"
+    name: "Add_73_quant"
+    op_type: "QLinearAdd"
+    domain: "com.microsoft"
+  }
+  node {
+    input: "439_quantized"
+    input: "439_scale"
+    input: "439_zero_point"
+    input: "641_quantized"
+    input: "641_scale"
+    input: "641_zero_point"
+    input: "443_scale"
+    input: "443_zero_point"
+    input: "642_quantized"
+    output: "443_quantized"
+    name: "fused Conv_75_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "443_quantized"
+    input: "443_scale"
+    input: "443_zero_point"
+    input: "644_quantized"
+    input: "644_scale"
+    input: "644_zero_point"
+    input: "446_scale"
+    input: "446_zero_point"
+    input: "645_quantized"
+    output: "446_quantized"
+    name: "fused Conv_77_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "446_quantized"
+    input: "446_scale"
+    input: "446_zero_point"
+    input: "647_quantized"
+    input: "647_scale"
+    input: "647_zero_point"
+    input: "646_scale"
+    input: "646_zero_point"
+    input: "648_quantized"
+    output: "646_quantized"
+    name: "Conv_79_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "646_quantized"
+    input: "646_scale"
+    input: "646_zero_point"
+    input: "439_quantized"
+    input: "439_scale"
+    input: "439_zero_point"
+    input: "449_scale"
+    input: "449_zero_point"
+    output: "449_quantized"
+    name: "Add_80_quant"
+    op_type: "QLinearAdd"
+    domain: "com.microsoft"
+  }
+  node {
+    input: "449_quantized"
+    input: "449_scale"
+    input: "449_zero_point"
+    input: "650_quantized"
+    input: "650_scale"
+    input: "650_zero_point"
+    input: "453_scale"
+    input: "453_zero_point"
+    input: "651_quantized"
+    output: "453_quantized"
+    name: "fused Conv_82_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "453_quantized"
+    input: "453_scale"
+    input: "453_zero_point"
+    input: "653_quantized"
+    input: "653_scale"
+    input: "653_zero_point"
+    input: "456_scale"
+    input: "456_zero_point"
+    input: "654_quantized"
+    output: "456_quantized"
+    name: "fused Conv_84_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "456_quantized"
+    input: "456_scale"
+    input: "456_zero_point"
+    input: "656_quantized"
+    input: "656_scale"
+    input: "656_zero_point"
+    input: "655_scale"
+    input: "655_zero_point"
+    input: "657_quantized"
+    output: "655_quantized"
+    name: "Conv_86_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "655_quantized"
+    input: "655_scale"
+    input: "655_zero_point"
+    input: "449_quantized"
+    input: "449_scale"
+    input: "449_zero_point"
+    input: "459_scale"
+    input: "459_zero_point"
+    output: "459_quantized"
+    name: "Add_87_quant"
+    op_type: "QLinearAdd"
+    domain: "com.microsoft"
+  }
+  node {
+    input: "459_quantized"
+    input: "459_scale"
+    input: "459_zero_point"
+    input: "659_quantized"
+    input: "659_scale"
+    input: "659_zero_point"
+    input: "463_scale"
+    input: "463_zero_point"
+    input: "660_quantized"
+    output: "463_quantized"
+    name: "fused Conv_89_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "463_quantized"
+    input: "463_scale"
+    input: "463_zero_point"
+    input: "662_quantized"
+    input: "662_scale"
+    input: "662_zero_point"
+    input: "466_scale"
+    input: "466_zero_point"
+    input: "663_quantized"
+    output: "466_quantized"
+    name: "fused Conv_91_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "466_quantized"
+    input: "466_scale"
+    input: "466_zero_point"
+    input: "665_quantized"
+    input: "665_scale"
+    input: "665_zero_point"
+    input: "664_scale"
+    input: "664_zero_point"
+    input: "666_quantized"
+    output: "664_quantized"
+    name: "Conv_93_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "664_quantized"
+    input: "664_scale"
+    input: "664_zero_point"
+    input: "459_quantized"
+    input: "459_scale"
+    input: "459_zero_point"
+    input: "469_scale"
+    input: "469_zero_point"
+    output: "469_quantized"
+    name: "Add_94_quant"
+    op_type: "QLinearAdd"
+    domain: "com.microsoft"
+  }
+  node {
+    input: "469_quantized"
+    input: "469_scale"
+    input: "469_zero_point"
+    input: "668_quantized"
+    input: "668_scale"
+    input: "668_zero_point"
+    input: "473_scale"
+    input: "473_zero_point"
+    input: "669_quantized"
+    output: "473_quantized"
+    name: "fused Conv_96_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "473_quantized"
+    input: "473_scale"
+    input: "473_zero_point"
+    input: "671_quantized"
+    input: "671_scale"
+    input: "671_zero_point"
+    input: "476_scale"
+    input: "476_zero_point"
+    input: "672_quantized"
+    output: "476_quantized"
+    name: "fused Conv_98_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "476_quantized"
+    input: "476_scale"
+    input: "476_zero_point"
+    input: "674_quantized"
+    input: "674_scale"
+    input: "674_zero_point"
+    input: "673_scale"
+    input: "673_zero_point"
+    input: "675_quantized"
+    output: "673_quantized"
+    name: "Conv_100_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "673_quantized"
+    input: "673_scale"
+    input: "673_zero_point"
+    input: "469_quantized"
+    input: "469_scale"
+    input: "469_zero_point"
+    input: "479_scale"
+    input: "479_zero_point"
+    output: "479_quantized"
+    name: "Add_101_quant"
+    op_type: "QLinearAdd"
+    domain: "com.microsoft"
+  }
+  node {
+    input: "479_quantized"
+    input: "479_scale"
+    input: "479_zero_point"
+    input: "710_quantized"
+    input: "710_scale"
+    input: "710_zero_point"
+    input: "532_scale"
+    input: "532_zero_point"
+    input: "711_quantized"
+    output: "532_quantized"
+    name: "fused Conv_141_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "532_quantized"
+    input: "532_scale"
+    input: "532_zero_point"
+    input: "aux_classifier.4.weight_quantized"
+    input: "aux_classifier.4.weight_scale"
+    input: "aux_classifier.4.weight_zero_point"
+    input: "533_scale"
+    input: "533_zero_point"
+    input: "aux_classifier.4.bias_quantized"
+    output: "533_quantized"
+    name: "Conv_143_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "533_quantized"
+    input: "533_scale"
+    input: "533_zero_point"
+    output: "533"
+    name: "533_DequantizeLinear"
+    op_type: "DequantizeLinear"
+  }
+  node {
+    input: "533"
+    output: "538"
+    name: "Shape_148"
+    op_type: "Shape"
+  }
+  node {
+    input: "538"
+    input: "540"
+    input: "541"
+    input: "539"
+    output: "542"
+    name: "Slice_152"
+    op_type: "Slice"
+  }
+  node {
+    input: "input"
+    output: "338"
+    name: "Shape_3"
+    op_type: "Shape"
+  }
+  node {
+    input: "338"
+    input: "339"
+    output: "340"
+    name: "Gather_5"
+    op_type: "Gather"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "340"
+    output: "535"
+    name: "Unsqueeze_145"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "338"
+    input: "336"
+    output: "337"
+    name: "Gather_2"
+    op_type: "Gather"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "337"
+    output: "534"
+    name: "Unsqueeze_144"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "534"
+    input: "535"
+    output: "536"
+    name: "Concat_146"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "542"
+    input: "536"
+    output: "544"
+    name: "Concat_154"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "533"
+    input: "537"
+    input: "545"
+    input: "544"
+    output: "aux"
+    name: "Resize_156"
+    op_type: "Resize"
+    attribute {
+      name: "extrapolation_value"
+      f: 0.0
+      type: FLOAT
+    }
+    attribute {
+      name: "coordinate_transformation_mode"
+      s: "pytorch_half_pixel"
+      type: STRING
+    }
+    attribute {
+      name: "cubic_coeff_a"
+      f: -0.75
+      type: FLOAT
+    }
+    attribute {
+      name: "mode"
+      s: "linear"
+      type: STRING
+    }
+    attribute {
+      name: "nearest_mode"
+      s: "floor"
+      type: STRING
+    }
+    attribute {
+      name: "exclude_outside"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "479_quantized"
+    input: "479_scale"
+    input: "479_zero_point"
+    input: "686_quantized"
+    input: "686_scale"
+    input: "686_zero_point"
+    input: "685_scale"
+    input: "685_zero_point"
+    input: "687_quantized"
+    output: "685_quantized"
+    name: "Conv_108_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "479_quantized"
+    input: "479_scale"
+    input: "479_zero_point"
+    input: "677_quantized"
+    input: "677_scale"
+    input: "677_zero_point"
+    input: "483_scale"
+    input: "483_zero_point"
+    input: "678_quantized"
+    output: "483_quantized"
+    name: "fused Conv_103_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "483_quantized"
+    input: "483_scale"
+    input: "483_zero_point"
+    input: "680_quantized"
+    input: "680_scale"
+    input: "680_zero_point"
+    input: "486_scale"
+    input: "486_zero_point"
+    input: "681_quantized"
+    output: "486_quantized"
+    name: "fused Conv_105_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "486_quantized"
+    input: "486_scale"
+    input: "486_zero_point"
+    input: "683_quantized"
+    input: "683_scale"
+    input: "683_zero_point"
+    input: "682_scale"
+    input: "682_zero_point"
+    input: "684_quantized"
+    output: "682_quantized"
+    name: "Conv_107_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "682_quantized"
+    input: "682_scale"
+    input: "682_zero_point"
+    input: "685_quantized"
+    input: "685_scale"
+    input: "685_zero_point"
+    input: "491_scale"
+    input: "491_zero_point"
+    output: "491_quantized"
+    name: "Add_109_quant"
+    op_type: "QLinearAdd"
+    domain: "com.microsoft"
+  }
+  node {
+    input: "491_quantized"
+    input: "491_scale"
+    input: "491_zero_point"
+    input: "689_quantized"
+    input: "689_scale"
+    input: "689_zero_point"
+    input: "495_scale"
+    input: "495_zero_point"
+    input: "690_quantized"
+    output: "495_quantized"
+    name: "fused Conv_111_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "495_quantized"
+    input: "495_scale"
+    input: "495_zero_point"
+    input: "692_quantized"
+    input: "692_scale"
+    input: "692_zero_point"
+    input: "498_scale"
+    input: "498_zero_point"
+    input: "693_quantized"
+    output: "498_quantized"
+    name: "fused Conv_113_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 4
+      ints: 4
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 4
+      ints: 4
+      ints: 4
+      ints: 4
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "498_quantized"
+    input: "498_scale"
+    input: "498_zero_point"
+    input: "695_quantized"
+    input: "695_scale"
+    input: "695_zero_point"
+    input: "694_scale"
+    input: "694_zero_point"
+    input: "696_quantized"
+    output: "694_quantized"
+    name: "Conv_115_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "694_quantized"
+    input: "694_scale"
+    input: "694_zero_point"
+    input: "491_quantized"
+    input: "491_scale"
+    input: "491_zero_point"
+    input: "501_scale"
+    input: "501_zero_point"
+    output: "501_quantized"
+    name: "Add_116_quant"
+    op_type: "QLinearAdd"
+    domain: "com.microsoft"
+  }
+  node {
+    input: "501_quantized"
+    input: "501_scale"
+    input: "501_zero_point"
+    input: "698_quantized"
+    input: "698_scale"
+    input: "698_zero_point"
+    input: "505_scale"
+    input: "505_zero_point"
+    input: "699_quantized"
+    output: "505_quantized"
+    name: "fused Conv_118_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "505_quantized"
+    input: "505_scale"
+    input: "505_zero_point"
+    input: "701_quantized"
+    input: "701_scale"
+    input: "701_zero_point"
+    input: "508_scale"
+    input: "508_zero_point"
+    input: "702_quantized"
+    output: "508_quantized"
+    name: "fused Conv_120_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 4
+      ints: 4
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 4
+      ints: 4
+      ints: 4
+      ints: 4
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "508_quantized"
+    input: "508_scale"
+    input: "508_zero_point"
+    input: "704_quantized"
+    input: "704_scale"
+    input: "704_zero_point"
+    input: "703_scale"
+    input: "703_zero_point"
+    input: "705_quantized"
+    output: "703_quantized"
+    name: "Conv_122_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "703_quantized"
+    input: "703_scale"
+    input: "703_zero_point"
+    input: "501_quantized"
+    input: "501_scale"
+    input: "501_zero_point"
+    input: "511_scale"
+    input: "511_zero_point"
+    output: "511_quantized"
+    name: "Add_123_quant"
+    op_type: "QLinearAdd"
+    domain: "com.microsoft"
+  }
+  node {
+    input: "511_quantized"
+    input: "511_scale"
+    input: "511_zero_point"
+    input: "707_quantized"
+    input: "707_scale"
+    input: "707_zero_point"
+    input: "515_scale"
+    input: "515_zero_point"
+    input: "708_quantized"
+    output: "515_quantized"
+    name: "fused Conv_125_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "515_quantized"
+    input: "515_scale"
+    input: "515_zero_point"
+    input: "classifier.4.weight_quantized"
+    input: "classifier.4.weight_scale"
+    input: "classifier.4.weight_zero_point"
+    input: "516_scale"
+    input: "516_zero_point"
+    input: "classifier.4.bias_quantized"
+    output: "516_quantized"
+    name: "Conv_127_quant"
+    op_type: "QLinearConv"
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "516_quantized"
+    input: "516_scale"
+    input: "516_zero_point"
+    output: "516"
+    name: "516_DequantizeLinear"
+    op_type: "DequantizeLinear"
+  }
+  node {
+    input: "516"
+    output: "521"
+    name: "Shape_132"
+    op_type: "Shape"
+  }
+  node {
+    input: "521"
+    input: "523"
+    input: "524"
+    input: "522"
+    output: "525"
+    name: "Slice_136"
+    op_type: "Slice"
+  }
+  node {
+    input: "525"
+    input: "536"
+    output: "527"
+    name: "Concat_138"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "516"
+    input: "520"
+    input: "528"
+    input: "527"
+    output: "out"
+    name: "Resize_140"
+    op_type: "Resize"
+    attribute {
+      name: "extrapolation_value"
+      f: 0.0
+      type: FLOAT
+    }
+    attribute {
+      name: "coordinate_transformation_mode"
+      s: "pytorch_half_pixel"
+      type: STRING
+    }
+    attribute {
+      name: "cubic_coeff_a"
+      f: -0.75
+      type: FLOAT
+    }
+    attribute {
+      name: "mode"
+      s: "linear"
+      type: STRING
+    }
+    attribute {
+      name: "nearest_mode"
+      s: "floor"
+      type: STRING
+    }
+    attribute {
+      name: "exclude_outside"
+      i: 0
+      type: INT
+    }
+  }
+  name: "torch-jit-export"
+  initializer {
+    data_type: 7
+    name: "336"
+    raw_data: "\002\000\000\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "339"
+    raw_data: "\003\000\000\000\000\000\000\000"
+  }
+  initializer {
+    dims: 0
+    data_type: 1
+    name: "520"
+    raw_data: ""
+  }
+  initializer {
+    dims: 1
+    data_type: 7
+    name: "522"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    dims: 1
+    data_type: 7
+    name: "523"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    dims: 1
+    data_type: 7
+    name: "524"
+    raw_data: "\002\000\000\000\000\000\000\000"
+  }
+  initializer {
+    dims: 0
+    data_type: 1
+    name: "528"
+    raw_data: ""
+  }
+  initializer {
+    dims: 0
+    data_type: 1
+    name: "537"
+    raw_data: ""
+  }
+  initializer {
+    dims: 1
+    data_type: 7
+    name: "539"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    dims: 1
+    data_type: 7
+    name: "540"
+    raw_data: "\000\000\000\000\000\000\000\000"
+  }
+  initializer {
+    dims: 1
+    data_type: 7
+    name: "541"
+    raw_data: "\002\000\000\000\000\000\000\000"
+  }
+  initializer {
+    dims: 0
+    data_type: 1
+    name: "545"
+    raw_data: ""
+  }
+  initializer {
+    data_type: 2
+    int32_data: 114
+    name: "input_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.018658448
+    name: "input_scale"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.0004515019
+    float_data: 0.00027931764
+    float_data: 9.088685e-05
+    float_data: 0.00021148867
+    float_data: 0.0009060392
+    float_data: 0.00026124905
+    float_data: 0.0008285893
+    float_data: 0.0007150276
+    float_data: 0.0010679966
+    float_data: 0.00020644962
+    float_data: 0.00063083955
+    float_data: 0.00012641054
+    float_data: 0.00050910504
+    float_data: 1.2526991e-16
+    float_data: 0.0013991316
+    float_data: 0.0009636959
+    float_data: 0.00023401892
+    float_data: 0.0009761785
+    float_data: 0.0016324538
+    float_data: 0.00017977464
+    float_data: 0.001470257
+    float_data: 0.00090049865
+    float_data: 0.0012810713
+    float_data: 0.00026247368
+    float_data: 0.0004790123
+    float_data: 0.00017136204
+    float_data: 0.0007667771
+    float_data: 0.00090605137
+    float_data: 0.00027952262
+    float_data: 0.0001437604
+    float_data: 0.00035997768
+    float_data: 7.164044e-05
+    float_data: 0.00014842986
+    float_data: 0.002644444
+    float_data: 0.00010267385
+    float_data: 0.00017035176
+    float_data: 0.00022909885
+    float_data: 0.00025261208
+    float_data: 0.00062394346
+    float_data: 0.00075329863
+    float_data: 0.0001435822
+    float_data: 0.0006684048
+    float_data: 0.00012202061
+    float_data: 0.0001757754
+    float_data: 9.921805e-05
+    float_data: 0.0005680216
+    float_data: 0.0010055405
+    float_data: 0.0002960621
+    float_data: 0.0002922806
+    float_data: 0.0011525707
+    float_data: 0.00087569904
+    float_data: 0.00041017836
+    float_data: 0.00021218398
+    float_data: 0.00067378435
+    float_data: 0.0007170738
+    float_data: 0.00039306734
+    float_data: 0.00024942076
+    float_data: 8.9166235e-05
+    float_data: 0.00025091344
+    float_data: 0.000116242925
+    float_data: 0.0004313469
+    float_data: 0.00062350434
+    float_data: 0.0001694963
+    float_data: 0.00158163
+    name: "548_scale"
+  }
+  initializer {
+    dims: 64
+    data_type: 3
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    name: "548_zero_point"
+  }
+  initializer {
+    dims: 64
+    data_type: 6
+    name: "549_quantized"
+    raw_data: "&;\000\000\234\021\001\000\377]\377\377Bi\000\000\260\"\000\000ca\000\000\360$\000\0009*\000\000B\037\000\000\n\203\000\000\351\036\000\000\346\016\377\377t+\000\000\000\000\000\200k\033\000\000\023 \000\000m\\\001\000R \000\000\365\024\000\000Q\241\001\000\352\027\000\000\333 \000\000\223\030\000\000\265\026\001\000\340@\000\000b6\002\000\226+\000\000\230%\000\000\023V\000\000\022\025\001\000F;\000\000!\236\000\000\033T\003\000b\r\000\000\312_\001\000\221\317\001\000\210j\000\000\331j\000\000J2\000\000\353+\000\000\230\271\003\000\2003\000\000\374&\376\377\203\340\002\000Y\333\374\377\3114\000\000\335#\000\000X\324\000\000\366W\377\377- \000\000\025%\000\000\3363\000\000\347\367\375\377,)\000\000\026(\000\000\306x\000\000J\000\001\000\200\341\376\377\271\372\376\377_\354\377\377O:\000\000\0175\000\000*\321\002\000O\024\000\000"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "343_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.032541472
+    name: "343_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 142
+    name: "559_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.041336305
+    name: "559_scale"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.0014117745
+    float_data: 0.0013859498
+    float_data: 0.0022971102
+    float_data: 0.0023122614
+    float_data: 0.0015243194
+    float_data: 0.0018725873
+    float_data: 0.002248912
+    float_data: 1.0240787e-15
+    float_data: 0.0026963486
+    float_data: 0.0013743028
+    float_data: 0.0027080323
+    float_data: 0.0005448171
+    float_data: 0.0022015935
+    float_data: 0.0019264723
+    float_data: 0.0018985058
+    float_data: 0.002138439
+    float_data: 0.004777854
+    float_data: 0.00044036194
+    float_data: 0.0022909471
+    float_data: 0.0025918249
+    float_data: 0.002503155
+    float_data: 0.0021587303
+    float_data: 0.0021680666
+    float_data: 3.3971487e-16
+    float_data: 0.00482456
+    float_data: 0.003558322
+    float_data: 0.0021767654
+    float_data: 2.4326236e-16
+    float_data: 0.0009223277
+    float_data: 0.0025518201
+    float_data: 0.0019411377
+    float_data: 0.002131527
+    float_data: 0.0010605234
+    float_data: 0.0020250394
+    float_data: 0.002310301
+    float_data: 0.0021410643
+    float_data: 0.0021041532
+    float_data: 0.0034609474
+    float_data: 0.0014616179
+    float_data: 0.0021401336
+    float_data: 0.0041794335
+    float_data: 0.0011241979
+    float_data: 0.0007686272
+    float_data: 0.0013496475
+    float_data: 0.0027713038
+    float_data: 0.0028810361
+    float_data: 0.0008493452
+    float_data: 0.0013687368
+    float_data: 0.0028661476
+    float_data: 0.002213373
+    float_data: 0.0009259096
+    float_data: 0.0039893044
+    float_data: 0.0012957829
+    float_data: 0.0040356796
+    float_data: 0.0034385363
+    float_data: 0.0017445014
+    float_data: 4.0359836e-16
+    float_data: 0.0029186707
+    float_data: 4.3483617e-16
+    float_data: 0.00086918916
+    float_data: 0.0015393025
+    float_data: 0.0018913691
+    float_data: 0.0022463896
+    float_data: 0.0014604415
+    name: "551_scale"
+  }
+  initializer {
+    dims: 64
+    data_type: 3
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    name: "551_zero_point"
+  }
+  initializer {
+    dims: 64
+    data_type: 6
+    name: "552_quantized"
+    raw_data: "\2708\000\000c\030\000\000\246\352\377\377\027\021\000\000\323\031\000\000]\n\000\000\244\017\000\000\000k\230\267\271\353\377\377?\020\000\000\307\014\000\000D\307\377\377Y\013\000\000\266\022\000\000\252\032\000\000\010\013\000\000p\t\000\000\207\304\377\377(\013\000\000\206\r\000\000\376\006\000\000n\374\377\377A\014\000\000\000\000\000\200\246\010\000\000w\007\000\000\036\014\000\000\000\000\000\200p\024\000\000u\022\000\000y\020\000\000\227\345\377\377\236\372\377\377\354\374\377\377\264\016\000\000\026\r\000\000\214\022\000\000@\004\000\000\220\014\000\000\316\373\377\377\313\007\000\000\017\374\377\377\300)\000\000\311#\000\000\306\n\000\000\362\t\000\000\267*\000\00027\000\000j\000\000\000\204\021\000\000\301\026\000\000\177\007\000\000\333\360\377\377\305\016\000\000\272\371\377\377\374\036\000\000\000\000\000\200/\013\000\000\000\000\000\200@\321\377\377\234\367\377\377\305\367\377\3775\021\000\000\3641\000\000"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "347_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.013464879
+    name: "347_scale"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 1.9525691e-16
+    float_data: 0.0006473763
+    float_data: 0.00051224785
+    float_data: 0.001677189
+    float_data: 0.0011523498
+    float_data: 0.00070492586
+    float_data: 0.0016824297
+    float_data: 0.0019302792
+    float_data: 0.0011224599
+    float_data: 0.0007970407
+    float_data: 0.00025963064
+    float_data: 0.003434834
+    float_data: 0.00136039
+    float_data: 0.0006148328
+    float_data: 0.00049994286
+    float_data: 0.0011406561
+    float_data: 0.0017908572
+    float_data: 0.0012864242
+    float_data: 0.00035319975
+    float_data: 1.1602035e-13
+    float_data: 0.0035896623
+    float_data: 0.0017268762
+    float_data: 0.0011460445
+    float_data: 0.0012654858
+    float_data: 0.00093902444
+    float_data: 0.0021491013
+    float_data: 0.0023315882
+    float_data: 0.0014587456
+    float_data: 0.00079808023
+    float_data: 0.0011406981
+    float_data: 0.0011500339
+    float_data: 0.000731955
+    float_data: 0.00063974364
+    float_data: 0.0018155274
+    float_data: 0.0008101752
+    float_data: 0.0010334811
+    float_data: 0.00051391433
+    float_data: 0.00148544
+    float_data: 0.0017372
+    float_data: 0.0029056293
+    float_data: 0.0010068954
+    float_data: 0.002845997
+    float_data: 0.0018631057
+    float_data: 0.00091389834
+    float_data: 0.0006032586
+    float_data: 0.0018385237
+    float_data: 0.0016648087
+    float_data: 0.002113493
+    float_data: 0.0015027117
+    float_data: 0.00027129808
+    float_data: 0.0005804396
+    float_data: 0.0019971074
+    float_data: 0.0018090621
+    float_data: 0.0020732547
+    float_data: 0.0012936285
+    float_data: 0.0005433633
+    float_data: 0.0014448554
+    float_data: 0.00061784644
+    float_data: 0.0006861921
+    float_data: 1.474618e-06
+    float_data: 0.0004221693
+    float_data: 6.463978e-17
+    float_data: 0.00088967837
+    float_data: 0.0031642471
+    name: "554_scale"
+  }
+  initializer {
+    dims: 64
+    data_type: 3
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    name: "554_zero_point"
+  }
+  initializer {
+    dims: 64
+    data_type: 6
+    name: "555_quantized"
+    raw_data: "\000\000\000\200\232\365\377\377R\210\000\000Z\037\000\000\2429\000\000dl\000\000\221\034\000\000\236\r\000\000\214\323\377\377\250\324\377\377C\025\000\000\236\r\000\000O.\000\000U\332\377\377\332\262\377\377\2641\000\000\3478\000\000[\360\377\377\321\355\000\000\300\241L\352p\365\377\377\330\035\000\000\327\362\377\377}\"\000\000\032\361\377\377$\374\377\377P\306\377\377O\315\377\377C#\000\000\225\324\377\377\217\034\000\000\311<\000\000lf\000\000\025E\000\000\024\035\000\000\t3\000\000\005\211\000\000\362\020\000\000\250\372\377\377 \360\377\377\302K\000\000\202\365\377\377d\367\377\377\365*\000\0005\206\377\3777\335\377\377)\027\000\000\312|\000\000\2702\000\000os\000\000\341~\000\000\024\006\000\000>\332\377\377k\030\000\000\263/\000\000\2112\000\000\313\273\000\000\230\365\377\377\'\317\377\3779\"\376\377\210\014\000\000\000\000\000\200k\215\377\377h\366\377\377"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "350_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.007862096
+    name: "350_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 112
+    name: "556_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.017154427
+    name: "556_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "355_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.018424073
+    name: "355_scale"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.0013083675
+    float_data: 0.0014113039
+    float_data: 0.001275622
+    float_data: 0.0017049324
+    float_data: 0.0010288061
+    float_data: 0.0014482655
+    float_data: 0.0021256905
+    float_data: 0.0010177823
+    float_data: 0.0008980231
+    float_data: 0.001198734
+    float_data: 0.0008516971
+    float_data: 0.0011766749
+    float_data: 0.00052081613
+    float_data: 2.063392e-17
+    float_data: 0.0014066614
+    float_data: 0.0011585472
+    float_data: 0.0011869231
+    float_data: 0.0016038341
+    float_data: 0.0011206971
+    float_data: 0.002235256
+    float_data: 0.0010982811
+    float_data: 0.0012002669
+    float_data: 0.0012163806
+    float_data: 0.0006395783
+    float_data: 0.0008711715
+    float_data: 0.00055163127
+    float_data: 0.0012126842
+    float_data: 0.0013827172
+    float_data: 0.0017977839
+    float_data: 0.0012714033
+    float_data: 0.0015236469
+    float_data: 0.0010138064
+    float_data: 0.001819656
+    float_data: 0.0012255828
+    float_data: 0.0010342312
+    float_data: 0.0008905292
+    float_data: 0.0009874376
+    float_data: 0.0014249713
+    float_data: 0.0013352835
+    float_data: 0.0010757165
+    float_data: 0.001772313
+    float_data: 0.0015678471
+    float_data: 0.0008386203
+    float_data: 0.0016212391
+    float_data: 0.0017235973
+    float_data: 1.1968466e-13
+    float_data: 0.0034843315
+    float_data: 2.7143473e-16
+    float_data: 0.0012927722
+    float_data: 0.0032343764
+    float_data: 0.0014119571
+    float_data: 0.0017925971
+    float_data: 0.002899446
+    float_data: 0.0010657124
+    float_data: 0.0012345833
+    float_data: 0.001424815
+    float_data: 1.1483554e-16
+    float_data: 0.0023504973
+    float_data: 0.0015203833
+    float_data: 0.0016925939
+    float_data: 0.0011527229
+    float_data: 0.0011289407
+    float_data: 0.00412066
+    float_data: 0.0012039857
+    name: "563_scale"
+  }
+  initializer {
+    dims: 64
+    data_type: 3
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    name: "563_zero_point"
+  }
+  initializer {
+    dims: 64
+    data_type: 6
+    name: "564_quantized"
+    raw_data: "\337\002\000\000z\324\377\377 \361\377\377\204\363\377\377\327\276\377\377\361\372\377\377\027\363\377\377U\360\377\377\304#\000\000\334\210\377\377\366?\000\000f\316\377\377\205\354\377\377\000\000\000\200)\017\000\000\354\346\377\377z\376\377\377\214\001\000\000P\344\377\377\002\350\377\3770\010\000\000&\030\000\000\245\013\000\000\302\355\377\377\214\022\000\000\355\347\377\377\232\010\000\000X8\000\000\264\366\377\377[\337\377\377\361\335\377\377\247\370\377\377\274\325\377\377\002\346\377\377\t\374\377\377\320\344\377\377\3219\000\000\032\350\377\377\260\361\377\377\213\010\000\000w\334\377\377\036\367\377\377\025\353\377\377\025\336\377\377\330 \000\000`w\277\347\000\017\000\000\000\000\000\200e\004\000\000h\000\000\000\002\347\377\377X\350\377\377\342\030\000\000>\341\377\377x)\000\000\251\376\377\377\000\000\000\200u\362\377\377K1\000\000Q\376\377\377-\371\377\377v*\000\000\263\364\377\377c\002\000\000"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "359_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.013876351
+    name: "359_scale"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.0033302836
+    float_data: 0.0010970798
+    float_data: 0.0006492044
+    float_data: 0.0008902134
+    float_data: 0.00399842
+    float_data: 0.0018316885
+    float_data: 0.0015137906
+    float_data: 0.0008016622
+    float_data: 0.0018772942
+    float_data: 0.0020212894
+    float_data: 0.0012188535
+    float_data: 0.0018665856
+    float_data: 0.00082280324
+    float_data: 0.0013652395
+    float_data: 0.001930183
+    float_data: 0.001678393
+    float_data: 0.0019387279
+    float_data: 0.0016345842
+    float_data: 0.0012759508
+    float_data: 0.00067273196
+    float_data: 0.0014201769
+    float_data: 0.0010604179
+    float_data: 0.001678741
+    float_data: 0.0019676231
+    float_data: 0.0022690797
+    float_data: 0.0014223708
+    float_data: 0.003002554
+    float_data: 0.0014326824
+    float_data: 0.002284471
+    float_data: 0.0015321273
+    float_data: 0.0028120878
+    float_data: 0.0024581652
+    float_data: 0.001718907
+    float_data: 0.0019476911
+    float_data: 0.0015355902
+    float_data: 0.0013443757
+    float_data: 0.0013075575
+    float_data: 0.0038981182
+    float_data: 0.0010131849
+    float_data: 0.0015307177
+    float_data: 0.0020557232
+    float_data: 0.0009023545
+    float_data: 0.0036972198
+    float_data: 0.0015678755
+    float_data: 0.0009835545
+    float_data: 0.0013438636
+    float_data: 0.0019839099
+    float_data: 0.0010812784
+    float_data: 0.0006859934
+    float_data: 0.0013966704
+    float_data: 0.0017754795
+    float_data: 0.0014157816
+    float_data: 0.0016999142
+    float_data: 0.0030966618
+    float_data: 0.006267679
+    float_data: 0.0019391264
+    float_data: 0.0006972546
+    float_data: 0.0021917056
+    float_data: 0.00090427545
+    float_data: 0.0023215946
+    float_data: 0.0016224846
+    float_data: 0.0011142797
+    float_data: 0.0013260193
+    float_data: 0.0025330402
+    name: "566_scale"
+  }
+  initializer {
+    dims: 64
+    data_type: 3
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    name: "566_zero_point"
+  }
+  initializer {
+    dims: 64
+    data_type: 6
+    name: "567_quantized"
+    raw_data: "\200\033\000\000i\013\000\0005\005\000\000\237-\000\000V\367\377\377\023#\000\000\311\371\377\377=5\000\000\235$\000\000\310\024\000\000Q\032\000\000\330\367\377\377L\326\377\377*\364\377\377[\033\000\000v\376\377\377c\005\000\000\357\345\377\377iL\000\000\345\005\000\000\030\002\000\000\244\017\000\000\326\024\000\000\004\372\377\377\023\025\000\000\276\270\377\377\360\031\000\000\037\336\377\377\300 \000\000\335\032\000\000\375\366\377\377\274\373\377\377%\377\377\377\326\017\000\000\233\005\000\000K\003\000\000\2111\000\000\315\371\377\377\022\023\000\000\021\371\377\377\311\366\377\377(&\000\0005\360\377\377\216;\000\000\254\004\000\000O\007\000\000F\377\377\377e\n\000\000\224\001\000\000\300\375\377\377\310\n\000\000\346\025\000\000(M\000\000\310\365\377\377\267\014\000\000\322\006\000\000\303H\000\000$\016\000\000\004\251\377\377U\016\000\000\275\n\000\000\332\033\000\000\214\377\377\377\267\014\000\000"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "362_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.010758386
+    name: "362_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 116
+    name: "568_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.016487654
+    name: "568_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "365_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.018352091
+    name: "365_scale"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.0013661586
+    float_data: 0.0018046636
+    float_data: 0.00023896073
+    float_data: 0.0010422773
+    float_data: 0.0012924583
+    float_data: 0.000957615
+    float_data: 0.0009272616
+    float_data: 0.00087527686
+    float_data: 0.0010117615
+    float_data: 0.0012538923
+    float_data: 0.0010884565
+    float_data: 0.0021863696
+    float_data: 0.0011227818
+    float_data: 4.471224e-05
+    float_data: 0.0014885683
+    float_data: 0.001209798
+    float_data: 0.002431767
+    float_data: 0.0010283223
+    float_data: 0.0015660088
+    float_data: 0.000979946
+    float_data: 0.0009303829
+    float_data: 0.0010574968
+    float_data: 0.00108172
+    float_data: 0.0013029393
+    float_data: 0.0009466334
+    float_data: 0.00090567843
+    float_data: 0.0013708181
+    float_data: 0.0009491786
+    float_data: 0.0011410366
+    float_data: 0.0010807777
+    float_data: 0.0010293557
+    float_data: 0.0017415519
+    float_data: 0.0010900439
+    float_data: 0.0008198394
+    float_data: 0.0011089544
+    float_data: 0.0014708947
+    float_data: 0.0010753826
+    float_data: 0.0011390445
+    float_data: 0.0013979053
+    float_data: 0.0010322528
+    float_data: 0.00087596226
+    float_data: 0.0010738829
+    float_data: 0.0008638308
+    float_data: 0.0016539543
+    float_data: 0.0010003138
+    float_data: 0.0012158293
+    float_data: 0.0013740549
+    float_data: 0.00095405226
+    float_data: 0.00090382755
+    float_data: 0.0018516014
+    float_data: 0.0010528755
+    float_data: 0.0011587675
+    float_data: 0.0010856902
+    float_data: 0.0010711363
+    float_data: 0.001346901
+    float_data: 0.00092349603
+    float_data: 0.0010858548
+    float_data: 0.0014657477
+    float_data: 0.000924311
+    float_data: 0.0011826701
+    float_data: 0.00076701905
+    float_data: 0.0008130271
+    float_data: 0.0011028933
+    float_data: 0.0007570619
+    name: "572_scale"
+  }
+  initializer {
+    dims: 64
+    data_type: 3
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    name: "572_zero_point"
+  }
+  initializer {
+    dims: 64
+    data_type: 6
+    name: "573_quantized"
+    raw_data: "=\370\377\377\215\003\000\000\260\357\377\377\306\372\377\377\r\332\377\3776\360\377\377\003\372\377\377\206\024\000\000\030$\000\000\037\022\000\0006\350\377\377N\344\377\377\214\021\000\000\354\177\376\377\310\367\377\377\362\372\377\377\027O\000\000\226\014\000\000q\376\377\377\035\352\377\377\271\344\377\377\262\016\000\000a\013\000\000.\375\377\377=\005\000\000/\340\377\377q\006\000\000L\002\000\000\325\003\000\000Z\360\377\377\350\361\377\377\026\362\377\377E\024\000\000H\377\377\377\271\367\377\377\370\363\377\377\355(\000\000-\370\377\377\301\000\000\000\225\331\377\377\227\007\000\000\370\006\000\000\343\031\000\000\232\362\377\377F\003\000\000(\333\377\377\367\005\000\000\367\377\377\377\344G\000\000\362\366\377\377Y\373\377\377\335\016\000\000\305\357\377\377\272\034\000\0003\353\377\377\210\354\377\3771\366\377\377\340\r\000\000k@\000\000\201\356\377\377\360\001\000\000\"\027\000\000M\003\000\000\362\370\377\377"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "369_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.008053569
+    name: "369_scale"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.0015650319
+    float_data: 0.0018180358
+    float_data: 0.0013869714
+    float_data: 0.0021790813
+    float_data: 0.0016797277
+    float_data: 0.0019608382
+    float_data: 0.0011173948
+    float_data: 0.0015678465
+    float_data: 0.0018937135
+    float_data: 0.0016619225
+    float_data: 0.0017587552
+    float_data: 0.006849133
+    float_data: 0.0014113464
+    float_data: 0.001326791
+    float_data: 0.0016888458
+    float_data: 0.0019088973
+    float_data: 0.0015766645
+    float_data: 0.0012288858
+    float_data: 0.0014735295
+    float_data: 0.0019572962
+    float_data: 0.0015654619
+    float_data: 0.0019787734
+    float_data: 0.0021700156
+    float_data: 0.0010352158
+    float_data: 0.0018453095
+    float_data: 0.0014192456
+    float_data: 0.0014915762
+    float_data: 0.0014200167
+    float_data: 0.0015852613
+    float_data: 0.0009851507
+    float_data: 0.0016758457
+    float_data: 0.0015969981
+    float_data: 0.0011951149
+    float_data: 0.002210267
+    float_data: 0.0011558569
+    float_data: 0.0016449742
+    float_data: 0.0020533216
+    float_data: 0.00376266
+    float_data: 0.0013106244
+    float_data: 0.0030121903
+    float_data: 0.0015903829
+    float_data: 0.0013071317
+    float_data: 0.001847706
+    float_data: 0.0020977077
+    float_data: 0.0014109385
+    float_data: 0.0021701367
+    float_data: 0.0019823287
+    float_data: 0.0014842497
+    float_data: 0.0021944777
+    float_data: 0.0021237351
+    float_data: 0.0015268918
+    float_data: 0.0015283189
+    float_data: 0.0012819399
+    float_data: 0.0022011057
+    float_data: 0.0014858912
+    float_data: 0.0015322255
+    float_data: 0.0018837755
+    float_data: 0.0013961034
+    float_data: 0.0017239033
+    float_data: 0.0013439475
+    float_data: 0.002372022
+    float_data: 0.0018033916
+    float_data: 0.0018160986
+    float_data: 0.00196109
+    name: "575_scale"
+  }
+  initializer {
+    dims: 64
+    data_type: 3
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    name: "575_zero_point"
+  }
+  initializer {
+    dims: 64
+    data_type: 6
+    name: "576_quantized"
+    raw_data: "m\007\000\000\330\360\377\377\016\014\000\000\313\361\377\377*\027\000\000\320\377\377\377\351\021\000\000\370*\000\000s\014\000\000\373\342\377\377\021\352\377\377t\007\000\000\345\360\377\377\254\360\377\3777\367\377\377\372\375\377\377L\361\377\377\037\030\000\000_\350\377\377N\352\377\377<\001\000\000*%\000\000;\375\377\377\267\355\377\377\260\025\000\000\240\014\000\000Y\016\000\000%\014\000\000\374\337\377\377\307\013\000\000\356\017\000\000\037\362\377\377\016.\000\000a\352\377\377\343\016\000\000\"\031\000\000\217(\000\000!\t\000\000bE\000\000\320\003\000\000\006\367\377\377\234@\000\000\231\314\377\377\356\004\000\000\352\375\377\377p\364\377\377\263\375\377\377:\003\000\000\370\353\377\3778\024\000\0000\365\377\377s\357\377\377\342\375\377\377{\001\000\000\340\361\377\377\207\351\377\377(\000\000\000\337\307\377\377E\024\000\000\027+\000\000O\235\377\377\345\373\377\377\320\376\377\377\323\013\000\000"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "372_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.0128001245
+    name: "372_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 126
+    name: "577_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.024046632
+    name: "577_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "375_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.017496958
+    name: "375_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 90
+    name: "589_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.028390605
+    name: "589_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "379_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.011611687
+    name: "379_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "382_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.008206127
+    name: "382_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 103
+    name: "586_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.027724281
+    name: "586_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "387_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.018261436
+    name: "387_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "391_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.0050119394
+    name: "391_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "394_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.008941527
+    name: "394_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 145
+    name: "598_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.02191148
+    name: "598_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "397_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.017702412
+    name: "397_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "401_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.0066597736
+    name: "401_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "404_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.0059285406
+    name: "404_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 131
+    name: "607_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.013844544
+    name: "607_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "407_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.016723523
+    name: "407_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "411_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.011052417
+    name: "411_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "414_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.008973477
+    name: "414_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 117
+    name: "616_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.01572614
+    name: "616_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "417_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.016690588
+    name: "417_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 126
+    name: "628_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.015407416
+    name: "628_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "421_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.012036295
+    name: "421_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "424_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.008959032
+    name: "424_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 109
+    name: "625_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.01964209
+    name: "625_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "429_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.013471045
+    name: "429_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "433_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.0106080035
+    name: "433_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "436_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.006316456
+    name: "436_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 134
+    name: "637_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.016297908
+    name: "637_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "439_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.011436164
+    name: "439_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "443_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.008579798
+    name: "443_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "446_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.0070817485
+    name: "446_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 117
+    name: "646_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.011363941
+    name: "646_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "449_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.0111501515
+    name: "449_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "453_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.01071307
+    name: "453_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "456_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.0068873204
+    name: "456_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 124
+    name: "655_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.015566256
+    name: "655_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "459_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.013570118
+    name: "459_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "463_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.011978402
+    name: "463_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "466_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.009440806
+    name: "466_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 120
+    name: "664_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.018298926
+    name: "664_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "469_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.01654193
+    name: "469_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "473_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.01259279
+    name: "473_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "476_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.016624277
+    name: "476_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 143
+    name: "673_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.023499032
+    name: "673_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "479_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.015566497
+    name: "479_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "532_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.019394374
+    name: "532_scale"
+  }
+  initializer {
+    dims: 21
+    data_type: 1
+    float_data: 0.0031244375
+    float_data: 0.002116652
+    float_data: 0.0022530355
+    float_data: 0.0022742755
+    float_data: 0.0021186834
+    float_data: 0.0029317432
+    float_data: 0.0019510108
+    float_data: 0.0019107818
+    float_data: 0.0023310832
+    float_data: 0.0019481938
+    float_data: 0.002064542
+    float_data: 0.002290377
+    float_data: 0.0021258318
+    float_data: 0.0020287868
+    float_data: 0.0019240048
+    float_data: 0.003390738
+    float_data: 0.0022185906
+    float_data: 0.0019532468
+    float_data: 0.0019688488
+    float_data: 0.0019527783
+    float_data: 0.0021153123
+    name: "aux_classifier.4.weight_scale"
+  }
+  initializer {
+    dims: 21
+    data_type: 3
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    name: "aux_classifier.4.weight_zero_point"
+  }
+  initializer {
+    dims: 21
+    data_type: 6
+    name: "aux_classifier.4.bias_quantized"
+    raw_data: "/4\000\000\217\362\377\377\275\363\377\377\324\371\377\377\340\365\377\377)\370\377\377\377\370\377\3773\004\000\000H\372\377\3771\370\377\377\236\367\377\377\227\026\000\000)\003\000\000+\367\377\377\265\374\377\377#\017\000\000\233\373\377\377>\356\377\377;\372\377\377!\376\377\377\032\365\377\377"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 65
+    name: "533_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.16794448
+    name: "533_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 102
+    name: "685_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.024417417
+    name: "685_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "483_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.009768942
+    name: "483_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "486_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.010530594
+    name: "486_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 98
+    name: "682_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.04248502
+    name: "682_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "491_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.023883346
+    name: "491_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "495_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.010747234
+    name: "495_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "498_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.011857996
+    name: "498_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 117
+    name: "694_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.039302535
+    name: "694_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "501_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.044364166
+    name: "501_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "505_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.033913746
+    name: "505_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "508_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.038723826
+    name: "508_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 120
+    name: "703_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.16715354
+    name: "703_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "511_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.088854365
+    name: "511_scale"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 0
+    name: "515_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.01533551
+    name: "515_scale"
+  }
+  initializer {
+    dims: 21
+    data_type: 1
+    float_data: 0.0026622026
+    float_data: 0.0012293715
+    float_data: 0.0013333916
+    float_data: 0.0013268808
+    float_data: 0.0012538614
+    float_data: 0.0014656448
+    float_data: 0.0012142382
+    float_data: 0.0013605837
+    float_data: 0.0014047826
+    float_data: 0.001215827
+    float_data: 0.0014075896
+    float_data: 0.0020232329
+    float_data: 0.0011497568
+    float_data: 0.0013369477
+    float_data: 0.0012272627
+    float_data: 0.002865765
+    float_data: 0.0013715938
+    float_data: 0.0011859633
+    float_data: 0.001495171
+    float_data: 0.0013125514
+    float_data: 0.0012887329
+    name: "classifier.4.weight_scale"
+  }
+  initializer {
+    dims: 21
+    data_type: 3
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    int32_data: 0
+    name: "classifier.4.weight_zero_point"
+  }
+  initializer {
+    dims: 21
+    data_type: 6
+    name: "classifier.4.bias_quantized"
+    raw_data: "\314M\000\000S\352\377\377w\361\377\377\240\357\377\377\013\352\377\377\265\362\377\377\250\357\377\377\017\003\000\000I\370\377\3771\363\377\377G\364\377\377\247\037\000\000\243\374\377\377\016\362\377\377\"\355\377\377\304\010\000\000|\371\377\377\254\350\377\377\256\362\377\377>\364\377\377\217\357\377\377"
+  }
+  initializer {
+    data_type: 2
+    int32_data: 64
+    name: "516_zero_point"
+  }
+  initializer {
+    data_type: 1
+    float_data: 0.10942397
+    name: "516_scale"
+  }
+  input {
+    name: "input"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_param: "batch"
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_param: "height"
+          }
+          dim {
+            dim_param: "width"
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "548_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "560_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "560_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "560_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "561_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "551_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "554_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "557_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "557_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "557_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "558_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "563_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "566_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "569_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "569_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "569_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "570_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "572_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "575_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "578_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "578_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "578_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "579_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "590_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "590_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "590_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "591_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "581_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "581_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "581_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "582_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "584_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "584_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "584_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "585_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "587_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "587_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "587_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "588_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "593_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "593_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "593_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "594_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "596_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "596_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "596_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "597_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "599_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "599_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "599_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "600_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "602_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "602_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "602_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "603_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "605_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "605_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "605_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "606_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "608_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "608_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "608_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "609_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "611_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "611_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "611_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "612_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "614_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "614_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "614_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "615_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "617_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "617_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "617_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "618_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "629_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "629_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "629_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "630_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "620_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "620_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "620_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "621_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "623_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "623_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "623_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "624_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "626_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "626_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "626_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "627_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "632_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "632_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "632_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "633_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "635_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "635_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "635_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "636_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "638_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "638_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "638_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "639_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "641_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "641_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "641_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "642_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "644_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "644_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "644_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "645_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "647_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "647_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "647_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "648_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "650_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "650_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "650_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "651_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "653_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "653_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "653_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "654_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "656_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "656_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "656_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "657_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "659_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "659_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "659_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "660_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "662_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "662_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "662_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "663_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "665_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "665_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "665_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "666_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "668_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "668_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "668_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "669_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "671_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "671_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "671_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "672_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "674_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "674_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "674_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "675_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "710_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "710_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "710_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "711_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "aux_classifier.4.weight_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 21
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "686_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 2048
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "686_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "686_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "687_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "677_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "677_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "677_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "678_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "680_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "680_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "680_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "681_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "683_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 2048
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "683_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "683_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "684_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "689_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 2048
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "689_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "689_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "690_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "692_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "692_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "692_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "693_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "695_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 2048
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "695_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "695_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "696_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "698_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 2048
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "698_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "698_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "699_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "701_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "701_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "701_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "702_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "704_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 2048
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "704_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "704_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "705_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 2048
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "707_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 2048
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "707_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "707_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "708_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "classifier.4.weight_quantized"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 21
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "out"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_param: "batch"
+          }
+          dim {
+            dim_value: 21
+          }
+          dim {
+            dim_param: "height"
+          }
+          dim {
+            dim_param: "width"
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "aux"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_param: "batch"
+          }
+          dim {
+            dim_value: 21
+          }
+          dim {
+            dim_param: "height"
+          }
+          dim {
+            dim_param: "width"
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "336"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "339"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "520"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 0
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "522"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "523"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "524"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "528"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 0
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "537"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 0
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "539"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "540"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "541"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "545"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 0
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "input_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "input_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "548_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "548_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "549_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "343_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "343_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "559_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "559_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "551_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "551_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "552_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "347_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "347_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "554_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "554_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "555_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "350_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "350_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "556_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "556_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "355_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "355_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "563_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "563_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "564_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "359_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "359_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "566_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "566_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "567_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "362_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "362_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "568_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "568_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "365_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "365_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "572_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "572_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "573_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "369_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "369_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "575_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "575_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "576_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "372_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "372_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "577_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "577_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "375_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "375_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "589_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "589_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "379_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "379_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "382_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "382_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "586_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "586_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "387_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "387_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "391_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "391_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "394_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "394_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "598_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "598_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "397_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "397_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "401_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "401_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "404_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "404_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "607_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "607_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "407_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "407_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "411_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "411_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "414_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "414_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "616_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "616_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "417_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "417_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "628_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "628_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "421_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "421_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "424_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "424_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "625_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "625_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "429_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "429_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "433_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "433_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "436_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "436_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "637_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "637_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "439_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "439_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "443_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "443_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "446_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "446_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "646_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "646_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "449_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "449_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "453_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "453_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "456_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "456_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "655_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "655_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "459_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "459_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "463_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "463_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "466_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "466_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "664_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "664_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "469_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "469_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "473_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "473_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "476_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "476_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "673_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "673_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "479_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "479_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "532_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "532_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "aux_classifier.4.weight_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 21
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "aux_classifier.4.weight_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 21
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "aux_classifier.4.bias_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 21
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "533_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "533_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "685_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "685_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "483_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "483_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "486_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "486_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "682_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "682_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "491_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "491_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "495_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "495_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "498_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "498_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "694_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "694_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "501_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "501_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "505_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "505_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "508_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "508_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "703_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "703_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "511_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "511_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "515_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "515_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "classifier.4.weight_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 21
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "classifier.4.weight_zero_point"
+    type {
+      tensor_type {
+        elem_type: 3
+        shape {
+          dim {
+            dim_value: 21
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "classifier.4.bias_quantized"
+    type {
+      tensor_type {
+        elem_type: 6
+        shape {
+          dim {
+            dim_value: 21
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "516_zero_point"
+    type {
+      tensor_type {
+        elem_type: 2
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "516_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+}
+opset_import {
+  domain: ""
+  version: 12
+}
+opset_import {
+  domain: "com.microsoft"
+  version: 1
+}
+opset_import {
+  domain: "com.microsoft.mlfeaturizers"
+  version: 1
+}
+opset_import {
+  domain: "com.microsoft.nchwc"
+  version: 1
+}
+opset_import {
+  domain: "ai.onnx.training"
+  version: 1
+}
+opset_import {
+  domain: "ai.onnx.preview.training"
+  version: 1
+}
+opset_import {
+  domain: "com.microsoft.experimental"
+  version: 1
+}
+opset_import {
+  domain: "ai.onnx.ml"
+  version: 2
+}

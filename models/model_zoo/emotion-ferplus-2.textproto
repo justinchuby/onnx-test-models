@@ -1,0 +1,2586 @@
+ir_version: 3
+producer_name: "CNTK"
+producer_version: "2.5.1"
+domain: "ai.cntk"
+model_version: 1
+graph {
+  node {
+    input: "Parameter1367"
+    input: "Parameter1367_reshape1_shape"
+    output: "Parameter1367_reshape1"
+    name: "Times622_reshape1"
+    op_type: "Reshape"
+  }
+  node {
+    input: "Input3"
+    input: "Constant339"
+    output: "Minus340_Output_0"
+    name: "Minus340"
+    op_type: "Sub"
+  }
+  node {
+    input: "Minus340_Output_0"
+    input: "Constant343"
+    output: "Block352_Output_0"
+    name: "Block352"
+    op_type: "Div"
+  }
+  node {
+    input: "Block352_Output_0"
+    input: "Parameter3"
+    output: "Convolution362_Output_0"
+    name: "Convolution362"
+    op_type: "Conv"
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "Convolution362_Output_0"
+    input: "Parameter4"
+    output: "Plus364_Output_0"
+    name: "Plus364"
+    op_type: "Add"
+  }
+  node {
+    input: "Plus364_Output_0"
+    output: "ReLU366_Output_0"
+    name: "ReLU366"
+    op_type: "Relu"
+  }
+  node {
+    input: "ReLU366_Output_0"
+    input: "Parameter23"
+    output: "Convolution380_Output_0"
+    name: "Convolution380"
+    op_type: "Conv"
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "Convolution380_Output_0"
+    input: "Parameter24"
+    output: "Plus382_Output_0"
+    name: "Plus382"
+    op_type: "Add"
+  }
+  node {
+    input: "Plus382_Output_0"
+    output: "ReLU384_Output_0"
+    name: "ReLU384"
+    op_type: "Relu"
+  }
+  node {
+    input: "ReLU384_Output_0"
+    output: "Pooling398_Output_0"
+    name: "Pooling398"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+  }
+  node {
+    input: "Pooling398_Output_0"
+    output: "Dropout408_Output_0"
+    name: "Dropout408"
+    op_type: "Dropout"
+    attribute {
+      name: "ratio"
+      f: 0.25
+      type: FLOAT
+    }
+  }
+  node {
+    input: "Dropout408_Output_0"
+    input: "Parameter63"
+    output: "Convolution418_Output_0"
+    name: "Convolution418"
+    op_type: "Conv"
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "Convolution418_Output_0"
+    input: "Parameter64"
+    output: "Plus420_Output_0"
+    name: "Plus420"
+    op_type: "Add"
+  }
+  node {
+    input: "Plus420_Output_0"
+    output: "ReLU422_Output_0"
+    name: "ReLU422"
+    op_type: "Relu"
+  }
+  node {
+    input: "ReLU422_Output_0"
+    input: "Parameter83"
+    output: "Convolution436_Output_0"
+    name: "Convolution436"
+    op_type: "Conv"
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "Convolution436_Output_0"
+    input: "Parameter84"
+    output: "Plus438_Output_0"
+    name: "Plus438"
+    op_type: "Add"
+  }
+  node {
+    input: "Plus438_Output_0"
+    output: "ReLU440_Output_0"
+    name: "ReLU440"
+    op_type: "Relu"
+  }
+  node {
+    input: "ReLU440_Output_0"
+    output: "Pooling454_Output_0"
+    name: "Pooling454"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+  }
+  node {
+    input: "Pooling454_Output_0"
+    output: "Dropout464_Output_0"
+    name: "Dropout464"
+    op_type: "Dropout"
+    attribute {
+      name: "ratio"
+      f: 0.25
+      type: FLOAT
+    }
+  }
+  node {
+    input: "Dropout464_Output_0"
+    input: "Parameter575"
+    output: "Convolution474_Output_0"
+    name: "Convolution474"
+    op_type: "Conv"
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "Convolution474_Output_0"
+    input: "Parameter576"
+    output: "Plus476_Output_0"
+    name: "Plus476"
+    op_type: "Add"
+  }
+  node {
+    input: "Plus476_Output_0"
+    output: "ReLU478_Output_0"
+    name: "ReLU478"
+    op_type: "Relu"
+  }
+  node {
+    input: "ReLU478_Output_0"
+    input: "Parameter595"
+    output: "Convolution492_Output_0"
+    name: "Convolution492"
+    op_type: "Conv"
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "Convolution492_Output_0"
+    input: "Parameter596"
+    output: "Plus494_Output_0"
+    name: "Plus494"
+    op_type: "Add"
+  }
+  node {
+    input: "Plus494_Output_0"
+    output: "ReLU496_Output_0"
+    name: "ReLU496"
+    op_type: "Relu"
+  }
+  node {
+    input: "ReLU496_Output_0"
+    input: "Parameter615"
+    output: "Convolution510_Output_0"
+    name: "Convolution510"
+    op_type: "Conv"
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "Convolution510_Output_0"
+    input: "Parameter616"
+    output: "Plus512_Output_0"
+    name: "Plus512"
+    op_type: "Add"
+  }
+  node {
+    input: "Plus512_Output_0"
+    output: "ReLU514_Output_0"
+    name: "ReLU514"
+    op_type: "Relu"
+  }
+  node {
+    input: "ReLU514_Output_0"
+    output: "Pooling528_Output_0"
+    name: "Pooling528"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+  }
+  node {
+    input: "Pooling528_Output_0"
+    output: "Dropout538_Output_0"
+    name: "Dropout538"
+    op_type: "Dropout"
+    attribute {
+      name: "ratio"
+      f: 0.25
+      type: FLOAT
+    }
+  }
+  node {
+    input: "Dropout538_Output_0"
+    input: "Parameter655"
+    output: "Convolution548_Output_0"
+    name: "Convolution548"
+    op_type: "Conv"
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "Convolution548_Output_0"
+    input: "Parameter656"
+    output: "Plus550_Output_0"
+    name: "Plus550"
+    op_type: "Add"
+  }
+  node {
+    input: "Plus550_Output_0"
+    output: "ReLU552_Output_0"
+    name: "ReLU552"
+    op_type: "Relu"
+  }
+  node {
+    input: "ReLU552_Output_0"
+    input: "Parameter675"
+    output: "Convolution566_Output_0"
+    name: "Convolution566"
+    op_type: "Conv"
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "Convolution566_Output_0"
+    input: "Parameter676"
+    output: "Plus568_Output_0"
+    name: "Plus568"
+    op_type: "Add"
+  }
+  node {
+    input: "Plus568_Output_0"
+    output: "ReLU570_Output_0"
+    name: "ReLU570"
+    op_type: "Relu"
+  }
+  node {
+    input: "ReLU570_Output_0"
+    input: "Parameter695"
+    output: "Convolution584_Output_0"
+    name: "Convolution584"
+    op_type: "Conv"
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "Convolution584_Output_0"
+    input: "Parameter696"
+    output: "Plus586_Output_0"
+    name: "Plus586"
+    op_type: "Add"
+  }
+  node {
+    input: "Plus586_Output_0"
+    output: "ReLU588_Output_0"
+    name: "ReLU588"
+    op_type: "Relu"
+  }
+  node {
+    input: "ReLU588_Output_0"
+    output: "Pooling602_Output_0"
+    name: "Pooling602"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "auto_pad"
+      s: "NOTSET"
+      type: STRING
+    }
+  }
+  node {
+    input: "Pooling602_Output_0"
+    output: "Dropout612_Output_0"
+    name: "Dropout612"
+    op_type: "Dropout"
+    attribute {
+      name: "ratio"
+      f: 0.25
+      type: FLOAT
+    }
+  }
+  node {
+    input: "Dropout612_Output_0"
+    input: "Dropout612_Output_0_reshape0_shape"
+    output: "Dropout612_Output_0_reshape0"
+    name: "Times622_reshape0"
+    op_type: "Reshape"
+  }
+  node {
+    input: "Dropout612_Output_0_reshape0"
+    input: "Parameter1367_reshape1"
+    output: "Times622_Output_0"
+    name: "Times622"
+    op_type: "MatMul"
+  }
+  node {
+    input: "Times622_Output_0"
+    input: "Parameter1368"
+    output: "Plus624_Output_0"
+    name: "Plus624"
+    op_type: "Add"
+  }
+  node {
+    input: "Plus624_Output_0"
+    output: "ReLU636_Output_0"
+    name: "ReLU636"
+    op_type: "Relu"
+  }
+  node {
+    input: "ReLU636_Output_0"
+    output: "Dropout646_Output_0"
+    name: "Dropout646"
+    op_type: "Dropout"
+    attribute {
+      name: "ratio"
+      f: 0.5
+      type: FLOAT
+    }
+  }
+  node {
+    input: "Dropout646_Output_0"
+    input: "Parameter1403"
+    output: "Times656_Output_0"
+    name: "Times656"
+    op_type: "MatMul"
+  }
+  node {
+    input: "Times656_Output_0"
+    input: "Parameter1404"
+    output: "Plus658_Output_0"
+    name: "Plus658"
+    op_type: "Add"
+  }
+  node {
+    input: "Plus658_Output_0"
+    output: "ReLU670_Output_0"
+    name: "ReLU670"
+    op_type: "Relu"
+  }
+  node {
+    input: "ReLU670_Output_0"
+    output: "Dropout680_Output_0"
+    name: "Dropout680"
+    op_type: "Dropout"
+    attribute {
+      name: "ratio"
+      f: 0.5
+      type: FLOAT
+    }
+  }
+  node {
+    input: "Dropout680_Output_0"
+    input: "Parameter1693"
+    output: "Times690_Output_0"
+    name: "Times690"
+    op_type: "MatMul"
+  }
+  node {
+    input: "Times690_Output_0"
+    input: "Parameter1694"
+    output: "Plus692_Output_0"
+    name: "Plus692"
+    op_type: "Add"
+  }
+  name: "CNTKGraph"
+  initializer {
+    data_type: 1
+    float_data: 127.5
+    name: "Constant339"
+  }
+  initializer {
+    data_type: 1
+    float_data: 255.0
+    name: "Constant343"
+  }
+  initializer {
+    dims: 64
+    dims: 1
+    dims: 1
+    data_type: 1
+    float_data: 0.04905661
+    float_data: -0.03020055
+    float_data: -0.27926254
+    float_data: 0.13629863
+    float_data: -0.20599534
+    float_data: -0.0754568
+    float_data: -0.091177054
+    float_data: -0.30838093
+    float_data: 0.034981064
+    float_data: 0.13229789
+    float_data: -0.07569431
+    float_data: 0.0657313
+    float_data: 0.033681706
+    float_data: -0.1824343
+    float_data: -0.07749113
+    float_data: 0.06267431
+    float_data: 0.042703006
+    float_data: -0.088828646
+    float_data: 0.08325699
+    float_data: -0.16254112
+    float_data: 0.023728665
+    float_data: 0.10127467
+    float_data: 0.09179826
+    float_data: 0.0772323
+    float_data: 0.077103324
+    float_data: -0.027589977
+    float_data: -0.30501005
+    float_data: 0.12735976
+    float_data: 0.06260514
+    float_data: 0.0674426
+    float_data: 0.069484666
+    float_data: -0.14614494
+    float_data: 0.084549606
+    float_data: 0.019505464
+    float_data: 0.063052185
+    float_data: -0.08339241
+    float_data: -0.30345362
+    float_data: -0.14563584
+    float_data: -0.09824019
+    float_data: -0.073516704
+    float_data: 0.0542791
+    float_data: -0.17232876
+    float_data: -0.08007687
+    float_data: -0.3155117
+    float_data: -0.0898492
+    float_data: 0.04269749
+    float_data: 0.053912304
+    float_data: -0.05869614
+    float_data: -0.4168555
+    float_data: 0.16502431
+    float_data: -0.120338425
+    float_data: 0.00914928
+    float_data: 0.09230273
+    float_data: 0.11747558
+    float_data: -0.120900474
+    float_data: -0.044392772
+    float_data: 0.064361565
+    float_data: 0.050848003
+    float_data: 0.2318715
+    float_data: -0.3741647
+    float_data: 0.09185836
+    float_data: 0.08400665
+    float_data: 0.0832824
+    float_data: 0.065339625
+    name: "Parameter4"
+  }
+  initializer {
+    dims: 64
+    dims: 1
+    dims: 1
+    data_type: 1
+    float_data: -0.047281608
+    float_data: 0.022501891
+    float_data: -0.008964133
+    float_data: -0.25729868
+    float_data: -0.061492983
+    float_data: 0.038845755
+    float_data: -0.038197868
+    float_data: -0.019709257
+    float_data: -0.0015213365
+    float_data: -0.15938531
+    float_data: 0.16778946
+    float_data: -0.02554059
+    float_data: -0.019593615
+    float_data: 0.035105746
+    float_data: -0.061102767
+    float_data: 0.17671663
+    float_data: 0.088096194
+    float_data: -0.031459652
+    float_data: -0.03801265
+    float_data: 0.082170606
+    float_data: 0.03296335
+    float_data: -0.27100074
+    float_data: 0.092108965
+    float_data: 0.11715762
+    float_data: 0.06280068
+    float_data: 0.051624734
+    float_data: -0.067378394
+    float_data: 0.081439406
+    float_data: 0.1102287
+    float_data: 0.02154542
+    float_data: -0.061404273
+    float_data: -0.012855682
+    float_data: -0.059216585
+    float_data: 0.18028669
+    float_data: 0.016962217
+    float_data: -0.020194516
+    float_data: 0.10133359
+    float_data: 0.022641415
+    float_data: -0.09056898
+    float_data: -0.15318148
+    float_data: 0.13034712
+    float_data: -0.1883356
+    float_data: -0.1440289
+    float_data: 0.024335574
+    float_data: -0.06786657
+    float_data: 0.08747602
+    float_data: 0.06112677
+    float_data: 0.05968844
+    float_data: -0.058983285
+    float_data: 0.036529977
+    float_data: -0.00026356368
+    float_data: 0.29716656
+    float_data: 0.13268377
+    float_data: 0.07260341
+    float_data: 0.009569334
+    float_data: 0.03771623
+    float_data: -0.24756838
+    float_data: 0.040711176
+    float_data: 0.16698183
+    float_data: -0.020314144
+    float_data: 0.04861354
+    float_data: -0.10380889
+    float_data: -0.015468276
+    float_data: -0.026420522
+    name: "Parameter24"
+  }
+  initializer {
+    dims: 2
+    data_type: 7
+    int64_data: 1
+    int64_data: 4096
+    name: "Dropout612_Output_0_reshape0_shape"
+  }
+  initializer {
+    dims: 2
+    data_type: 7
+    int64_data: 4096
+    int64_data: 1024
+    name: "Parameter1367_reshape1_shape"
+  }
+  initializer {
+    dims: 8
+    data_type: 1
+    float_data: 0.8548162
+    float_data: 0.29809016
+    float_data: -0.0020929584
+    float_data: 0.124334395
+    float_data: -0.015487592
+    float_data: -0.404468
+    float_data: -0.23631407
+    float_data: -0.61880326
+    name: "Parameter1694"
+  }
+  input {
+    name: "Input3"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Constant339"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "Constant343"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter3"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter4"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter23"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter24"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter63"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter64"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter83"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter84"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter575"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter576"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter595"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter596"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter615"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter616"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter655"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter656"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter675"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter676"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter695"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter696"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Dropout612_Output_0_reshape0_shape"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter1367"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 4
+          }
+          dim {
+            dim_value: 4
+          }
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter1367_reshape1_shape"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter1368"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter1403"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter1404"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter1693"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "Parameter1694"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "Plus692_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Parameter1367_reshape1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 4096
+          }
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Minus340_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Block352_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Convolution362_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Plus364_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "ReLU366_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Convolution380_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Plus382_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "ReLU384_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Pooling398_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Dropout408_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Convolution418_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Plus420_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "ReLU422_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Convolution436_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Plus438_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "ReLU440_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Pooling454_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Dropout464_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Convolution474_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Plus476_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "ReLU478_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Convolution492_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Plus494_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "ReLU496_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Convolution510_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Plus512_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "ReLU514_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Pooling528_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Dropout538_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Convolution548_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Plus550_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "ReLU552_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Convolution566_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Plus568_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "ReLU570_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Convolution584_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Plus586_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "ReLU588_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Pooling602_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 4
+          }
+          dim {
+            dim_value: 4
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Dropout612_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 4
+          }
+          dim {
+            dim_value: 4
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Dropout612_Output_0_reshape0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 4096
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Times622_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Plus624_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "ReLU636_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Dropout646_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Times656_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Plus658_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "ReLU670_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Dropout680_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "Times690_Output_0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+}
+opset_import {
+  domain: ""
+  version: 8
+}

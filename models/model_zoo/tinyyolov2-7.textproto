@@ -1,0 +1,2014 @@
+ir_version: 5
+producer_name: "OnnxMLTools"
+producer_version: "1.5.2"
+domain: "onnxconverter-common"
+doc_string: "The Tiny YOLO network from the paper \'YOLO9000: Better, Faster, Stronger\' (2016), arXiv:1612.08242"
+graph {
+  node {
+    input: "image"
+    input: "scalerPreprocessor_scale"
+    output: "scalerPreprocessor_scaled"
+    name: "Mul"
+    op_type: "Mul"
+  }
+  node {
+    input: "scalerPreprocessor_bias"
+    input: "scalerPreprocessor_scaled"
+    output: "image2"
+    name: "Add"
+    op_type: "Add"
+  }
+  node {
+    input: "image2"
+    input: "convolution_W"
+    output: "convolution2d_1_output"
+    name: "convolution"
+    op_type: "Conv"
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "convolution2d_1_output"
+    input: "BatchNormalization_scale"
+    input: "BatchNormalization_B"
+    input: "BatchNormalization_mean"
+    input: "BatchNormalization_variance"
+    output: "batchnormalization_1_output"
+    name: "batchnorm"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.0
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "batchnormalization_1_output"
+    output: "leakyrelu_1_output"
+    name: "activation"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "leakyrelu_1_output"
+    output: "maxpooling2d_1_output"
+    name: "pooling"
+    op_type: "MaxPool"
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "maxpooling2d_1_output"
+    input: "convolution1_W"
+    output: "convolution2d_2_output"
+    name: "convolution1"
+    op_type: "Conv"
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "convolution2d_2_output"
+    input: "BatchNormalization_scale1"
+    input: "BatchNormalization_B1"
+    input: "BatchNormalization_mean1"
+    input: "BatchNormalization_variance1"
+    output: "batchnormalization_2_output"
+    name: "batchnorm1"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.0
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "batchnormalization_2_output"
+    output: "leakyrelu_2_output"
+    name: "activation1"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "leakyrelu_2_output"
+    output: "maxpooling2d_2_output"
+    name: "pooling1"
+    op_type: "MaxPool"
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "maxpooling2d_2_output"
+    input: "convolution2_W"
+    output: "convolution2d_3_output"
+    name: "convolution2"
+    op_type: "Conv"
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "convolution2d_3_output"
+    input: "BatchNormalization_scale2"
+    input: "BatchNormalization_B2"
+    input: "BatchNormalization_mean2"
+    input: "BatchNormalization_variance2"
+    output: "batchnormalization_3_output"
+    name: "batchnorm2"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.0
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "batchnormalization_3_output"
+    output: "leakyrelu_3_output"
+    name: "activation2"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "leakyrelu_3_output"
+    output: "maxpooling2d_3_output"
+    name: "pooling2"
+    op_type: "MaxPool"
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "maxpooling2d_3_output"
+    input: "convolution3_W"
+    output: "convolution2d_4_output"
+    name: "convolution3"
+    op_type: "Conv"
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "convolution2d_4_output"
+    input: "BatchNormalization_scale3"
+    input: "BatchNormalization_B3"
+    input: "BatchNormalization_mean3"
+    input: "BatchNormalization_variance3"
+    output: "batchnormalization_4_output"
+    name: "batchnorm3"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.0
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "batchnormalization_4_output"
+    output: "leakyrelu_4_output"
+    name: "activation3"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "leakyrelu_4_output"
+    output: "maxpooling2d_4_output"
+    name: "pooling3"
+    op_type: "MaxPool"
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "maxpooling2d_4_output"
+    input: "convolution4_W"
+    output: "convolution2d_5_output"
+    name: "convolution4"
+    op_type: "Conv"
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "convolution2d_5_output"
+    input: "BatchNormalization_scale4"
+    input: "BatchNormalization_B4"
+    input: "BatchNormalization_mean4"
+    input: "BatchNormalization_variance4"
+    output: "batchnormalization_5_output"
+    name: "batchnorm4"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.0
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "batchnormalization_5_output"
+    output: "leakyrelu_5_output"
+    name: "activation4"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "leakyrelu_5_output"
+    output: "maxpooling2d_5_output"
+    name: "pooling4"
+    op_type: "MaxPool"
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "maxpooling2d_5_output"
+    input: "convolution5_W"
+    output: "convolution2d_6_output"
+    name: "convolution5"
+    op_type: "Conv"
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "convolution2d_6_output"
+    input: "BatchNormalization_scale5"
+    input: "BatchNormalization_B5"
+    input: "BatchNormalization_mean5"
+    input: "BatchNormalization_variance5"
+    output: "batchnormalization_6_output"
+    name: "batchnorm5"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.0
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "batchnormalization_6_output"
+    output: "leakyrelu_6_output"
+    name: "activation5"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "leakyrelu_6_output"
+    output: "maxpooling2d_6_output"
+    name: "pooling5"
+    op_type: "MaxPool"
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "maxpooling2d_6_output"
+    input: "convolution6_W"
+    output: "convolution2d_7_output"
+    name: "convolution6"
+    op_type: "Conv"
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "convolution2d_7_output"
+    input: "BatchNormalization_scale6"
+    input: "BatchNormalization_B6"
+    input: "BatchNormalization_mean6"
+    input: "BatchNormalization_variance6"
+    output: "batchnormalization_7_output"
+    name: "batchnorm6"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.0
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "batchnormalization_7_output"
+    output: "leakyrelu_7_output"
+    name: "activation6"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "leakyrelu_7_output"
+    input: "convolution7_W"
+    output: "convolution2d_8_output"
+    name: "convolution7"
+    op_type: "Conv"
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "convolution2d_8_output"
+    input: "BatchNormalization_scale7"
+    input: "BatchNormalization_B7"
+    input: "BatchNormalization_mean7"
+    input: "BatchNormalization_variance7"
+    output: "batchnormalization_8_output"
+    name: "batchnorm7"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.0
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "batchnormalization_8_output"
+    output: "leakyrelu_8_output"
+    name: "activation7"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.1
+      type: FLOAT
+    }
+  }
+  node {
+    input: "leakyrelu_8_output"
+    input: "convolution8_W"
+    input: "convolution8_B"
+    output: "grid"
+    name: "convolution8"
+    op_type: "Conv"
+    attribute {
+      name: "auto_pad"
+      s: "SAME_UPPER"
+      type: STRING
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  name: "Example Model"
+  initializer {
+    dims: 1
+    data_type: 1
+    float_data: 0.003921569
+    name: "scalerPreprocessor_scale"
+  }
+  initializer {
+    dims: 3
+    dims: 1
+    dims: 1
+    data_type: 1
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    name: "scalerPreprocessor_bias"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    float_data: 12.989285
+    float_data: 9.449265
+    float_data: 4.498696
+    float_data: 5.240702
+    float_data: 29.962278
+    float_data: 38.44852
+    float_data: 37.576614
+    float_data: 31.095728
+    float_data: 21.860214
+    float_data: 12.747187
+    float_data: 13.977638
+    float_data: 13.023448
+    float_data: 5.929957
+    float_data: 21.943005
+    float_data: 13.892522
+    float_data: 7.068432
+    name: "BatchNormalization_scale"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    float_data: 2.1081784
+    float_data: -12.222713
+    float_data: 0.6419444
+    float_data: 0.7266371
+    float_data: -4.184252
+    float_data: 3.9237447
+    float_data: -5.2403154
+    float_data: 2.2768602
+    float_data: 2.368181
+    float_data: 1.0096339
+    float_data: 1.1581992
+    float_data: 1.0880015
+    float_data: 0.92539823
+    float_data: -0.08105351
+    float_data: 1.563011
+    float_data: 1.1491219
+    name: "BatchNormalization_B"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    name: "BatchNormalization_mean"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    name: "BatchNormalization_variance"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    float_data: 0.73774886
+    float_data: 0.40856287
+    float_data: 1.1181076
+    float_data: 0.91650367
+    float_data: 1.0909588
+    float_data: 0.46936387
+    float_data: 0.5811468
+    float_data: 0.46398664
+    float_data: 0.82444304
+    float_data: 0.54352796
+    float_data: 0.89536726
+    float_data: 0.38476774
+    float_data: 0.24765198
+    float_data: 1.0017356
+    float_data: 0.7848991
+    float_data: 0.9192627
+    float_data: 1.1164801
+    float_data: 0.63805366
+    float_data: 0.7665756
+    float_data: 0.7073135
+    float_data: 0.52182674
+    float_data: 0.81360066
+    float_data: 0.75018
+    float_data: 0.5913361
+    float_data: 1.0675224
+    float_data: 0.89409053
+    float_data: 0.8722487
+    float_data: 1.0005311
+    float_data: 0.7084467
+    float_data: 0.7024104
+    float_data: 0.8778715
+    float_data: 0.72139525
+    name: "BatchNormalization_scale1"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    float_data: -1.2268516
+    float_data: 2.400932
+    float_data: 0.56534815
+    float_data: 0.45804322
+    float_data: 0.53614986
+    float_data: 0.2244851
+    float_data: 3.9944103
+    float_data: 2.3629146
+    float_data: -0.09039998
+    float_data: 1.5923972
+    float_data: 0.86472845
+    float_data: -0.060297906
+    float_data: -1.929711
+    float_data: 0.8995707
+    float_data: 2.091163
+    float_data: 1.8026193
+    float_data: 0.88283324
+    float_data: 3.009421
+    float_data: 0.5674029
+    float_data: 1.3300855
+    float_data: 0.34876898
+    float_data: 2.1673932
+    float_data: 1.064593
+    float_data: 1.082295
+    float_data: 0.8324976
+    float_data: 1.0595454
+    float_data: 2.3698335
+    float_data: 0.991714
+    float_data: 1.1993198
+    float_data: 1.9311593
+    float_data: -0.49346828
+    float_data: 0.83330274
+    name: "BatchNormalization_B1"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    name: "BatchNormalization_mean1"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    name: "BatchNormalization_variance1"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 1.8815986
+    float_data: 1.3037015
+    float_data: 1.5938569
+    float_data: 1.0094703
+    float_data: 1.2776836
+    float_data: 1.5404972
+    float_data: 1.3975894
+    float_data: 1.3570111
+    float_data: 1.7677314
+    float_data: 1.5187187
+    float_data: 1.4190608
+    float_data: 1.7797617
+    float_data: 3.2752159
+    float_data: 2.7444959
+    float_data: 1.8524914
+    float_data: 1.1251987
+    float_data: 1.5530075
+    float_data: 1.3670316
+    float_data: 1.5557256
+    float_data: 1.6607276
+    float_data: 2.007296
+    float_data: 0.582316
+    float_data: 1.7518415
+    float_data: 1.6727924
+    float_data: 1.4938555
+    float_data: 1.5155363
+    float_data: 1.3410732
+    float_data: 2.3341901
+    float_data: 1.3428177
+    float_data: 1.2807391
+    float_data: 1.3347938
+    float_data: 0.871143
+    float_data: 1.3748765
+    float_data: 1.3098804
+    float_data: 1.5257766
+    float_data: 1.9201554
+    float_data: 1.6472576
+    float_data: 1.3460977
+    float_data: 1.4260232
+    float_data: 1.3649932
+    float_data: 1.5304347
+    float_data: 0.7603304
+    float_data: 2.1398346
+    float_data: 1.410207
+    float_data: 1.595515
+    float_data: 1.6572676
+    float_data: 1.6072543
+    float_data: 1.7714303
+    float_data: 0.91411567
+    float_data: 1.191778
+    float_data: 1.4441462
+    float_data: 1.8389485
+    float_data: 0.8271145
+    float_data: 1.7090092
+    float_data: 2.0352154
+    float_data: 1.3579892
+    float_data: 1.6509695
+    float_data: 2.1497977
+    float_data: 1.5460919
+    float_data: 1.7043856
+    float_data: 1.2626376
+    float_data: 1.7305185
+    float_data: 1.4727311
+    float_data: 0.8801322
+    name: "BatchNormalization_scale2"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.7261795
+    float_data: 0.33623838
+    float_data: 0.68025005
+    float_data: 6.8062363
+    float_data: 1.6024754
+    float_data: -0.19794148
+    float_data: 0.34263754
+    float_data: 2.592075
+    float_data: 1.8247162
+    float_data: 5.756702
+    float_data: 0.9482409
+    float_data: 1.996395
+    float_data: 6.7031612
+    float_data: 1.0511324
+    float_data: 0.5368827
+    float_data: 1.4242477
+    float_data: -0.5045838
+    float_data: 3.7927856
+    float_data: 0.4488895
+    float_data: 0.8621
+    float_data: 1.057112
+    float_data: -1.0730066
+    float_data: -0.1810584
+    float_data: 1.6426674
+    float_data: 0.3330285
+    float_data: 2.5868
+    float_data: 1.4692663
+    float_data: 3.6013577
+    float_data: 2.2579408
+    float_data: 6.8100443
+    float_data: 1.5619315
+    float_data: 0.90197545
+    float_data: -0.96887875
+    float_data: 2.3251832
+    float_data: 0.19444728
+    float_data: -9.720449
+    float_data: 0.78399575
+    float_data: 2.6244097
+    float_data: 2.7937994
+    float_data: -0.36526024
+    float_data: 0.4560325
+    float_data: 1.1997851
+    float_data: 2.9445515
+    float_data: 2.8586793
+    float_data: -0.02363789
+    float_data: 1.6154189
+    float_data: 1.9059954
+    float_data: 0.58814025
+    float_data: 4.6578913
+    float_data: 0.4234402
+    float_data: -0.04959804
+    float_data: 0.1407057
+    float_data: 4.3089805
+    float_data: -0.9389508
+    float_data: 0.5795003
+    float_data: -1.0546813
+    float_data: 0.35625628
+    float_data: 4.312197
+    float_data: 0.39492774
+    float_data: 2.1783159
+    float_data: -1.4336486
+    float_data: -4.3834534
+    float_data: 1.4424292
+    float_data: -0.26460165
+    name: "BatchNormalization_B2"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    name: "BatchNormalization_mean2"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    float_data: 0.99999
+    name: "BatchNormalization_variance2"
+  }
+  input {
+    name: "image"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_param: "None"
+            denotation: "DATA_BATCH"
+          }
+          dim {
+            dim_value: 3
+            denotation: "DATA_CHANNEL"
+          }
+          dim {
+            dim_value: 416
+            denotation: "DATA_FEATURE"
+          }
+          dim {
+            dim_value: 416
+            denotation: "DATA_FEATURE"
+          }
+        }
+      }
+      denotation: "IMAGE"
+    }
+    doc_string: "Input image. Image(s) in RGB format. It is a [N, C, H, W]-tensor. The 1st/2nd/3rd slices along the C-axis are red, green, and blue channels, respectively."
+  }
+  input {
+    name: "scalerPreprocessor_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "scalerPreprocessor_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "convolution_W"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_B"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_variance"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "convolution1_W"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_scale1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_B1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_mean1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_variance1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "convolution2_W"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_scale2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_B2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_mean2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_variance2"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "convolution3_W"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_scale3"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_B3"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_mean3"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_variance3"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "convolution4_W"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_scale4"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_B4"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_mean4"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_variance4"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "convolution5_W"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_scale5"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_B5"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_mean5"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_variance5"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "convolution6_W"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_scale6"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_B6"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_mean6"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_variance6"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "convolution7_W"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_scale7"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_B7"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_mean7"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "BatchNormalization_variance7"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1024
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "convolution8_W"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 125
+          }
+          dim {
+            dim_value: 1024
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "convolution8_B"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 125
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "grid"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_param: "None"
+          }
+          dim {
+            dim_value: 125
+          }
+          dim {
+            dim_value: 13
+          }
+          dim {
+            dim_value: 13
+          }
+        }
+      }
+    }
+    doc_string: "The 13x13 grid with the bounding box data"
+  }
+}
+opset_import {
+  domain: ""
+  version: 8
+}
+metadata_props {
+  key: "Image.BitmapPixelFormat"
+  value: "Rgb8"
+}
+metadata_props {
+  key: "author"
+  value: "Original paper: Joseph Redmon, Ali Farhadi"
+}
+metadata_props {
+  key: "license"
+  value: "Public Domain"
+}

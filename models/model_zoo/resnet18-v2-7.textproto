@@ -1,0 +1,4677 @@
+ir_version: 3
+graph {
+  node {
+    input: "data"
+    input: "resnetv22_batchnorm0_gamma"
+    input: "resnetv22_batchnorm0_beta"
+    input: "resnetv22_batchnorm0_running_mean"
+    input: "resnetv22_batchnorm0_running_var"
+    output: "resnetv22_batchnorm0_fwd"
+    name: "resnetv22_batchnorm0_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "resnetv22_batchnorm0_fwd"
+    input: "resnetv22_conv0_weight"
+    output: "resnetv22_conv0_fwd"
+    name: "resnetv22_conv0_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 7
+      ints: 7
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 3
+      ints: 3
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "resnetv22_conv0_fwd"
+    input: "resnetv22_batchnorm1_gamma"
+    input: "resnetv22_batchnorm1_beta"
+    input: "resnetv22_batchnorm1_running_mean"
+    input: "resnetv22_batchnorm1_running_var"
+    output: "resnetv22_batchnorm1_fwd"
+    name: "resnetv22_batchnorm1_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "resnetv22_batchnorm1_fwd"
+    output: "resnetv22_relu0_fwd"
+    name: "resnetv22_relu0_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "resnetv22_relu0_fwd"
+    output: "resnetv22_pool0_fwd"
+    name: "resnetv22_pool0_fwd"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "resnetv22_pool0_fwd"
+    input: "resnetv22_stage1_batchnorm0_gamma"
+    input: "resnetv22_stage1_batchnorm0_beta"
+    input: "resnetv22_stage1_batchnorm0_running_mean"
+    input: "resnetv22_stage1_batchnorm0_running_var"
+    output: "resnetv22_stage1_batchnorm0_fwd"
+    name: "resnetv22_stage1_batchnorm0_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "resnetv22_stage1_batchnorm0_fwd"
+    output: "resnetv22_stage1_activation0"
+    name: "resnetv22_stage1_activation0"
+    op_type: "Relu"
+  }
+  node {
+    input: "resnetv22_stage1_activation0"
+    input: "resnetv22_stage1_conv0_weight"
+    output: "resnetv22_stage1_conv0_fwd"
+    name: "resnetv22_stage1_conv0_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "resnetv22_stage1_conv0_fwd"
+    input: "resnetv22_stage1_batchnorm1_gamma"
+    input: "resnetv22_stage1_batchnorm1_beta"
+    input: "resnetv22_stage1_batchnorm1_running_mean"
+    input: "resnetv22_stage1_batchnorm1_running_var"
+    output: "resnetv22_stage1_batchnorm1_fwd"
+    name: "resnetv22_stage1_batchnorm1_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "resnetv22_stage1_batchnorm1_fwd"
+    output: "resnetv22_stage1_activation1"
+    name: "resnetv22_stage1_activation1"
+    op_type: "Relu"
+  }
+  node {
+    input: "resnetv22_stage1_activation1"
+    input: "resnetv22_stage1_conv1_weight"
+    output: "resnetv22_stage1_conv1_fwd"
+    name: "resnetv22_stage1_conv1_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "resnetv22_stage1_conv1_fwd"
+    input: "resnetv22_pool0_fwd"
+    output: "resnetv22_stage1__plus0"
+    name: "resnetv22_stage1__plus0"
+    op_type: "Add"
+  }
+  node {
+    input: "resnetv22_stage1__plus0"
+    input: "resnetv22_stage1_batchnorm2_gamma"
+    input: "resnetv22_stage1_batchnorm2_beta"
+    input: "resnetv22_stage1_batchnorm2_running_mean"
+    input: "resnetv22_stage1_batchnorm2_running_var"
+    output: "resnetv22_stage1_batchnorm2_fwd"
+    name: "resnetv22_stage1_batchnorm2_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "resnetv22_stage1_batchnorm2_fwd"
+    output: "resnetv22_stage1_activation2"
+    name: "resnetv22_stage1_activation2"
+    op_type: "Relu"
+  }
+  node {
+    input: "resnetv22_stage1_activation2"
+    input: "resnetv22_stage1_conv2_weight"
+    output: "resnetv22_stage1_conv2_fwd"
+    name: "resnetv22_stage1_conv2_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "resnetv22_stage1_conv2_fwd"
+    input: "resnetv22_stage1_batchnorm3_gamma"
+    input: "resnetv22_stage1_batchnorm3_beta"
+    input: "resnetv22_stage1_batchnorm3_running_mean"
+    input: "resnetv22_stage1_batchnorm3_running_var"
+    output: "resnetv22_stage1_batchnorm3_fwd"
+    name: "resnetv22_stage1_batchnorm3_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "resnetv22_stage1_batchnorm3_fwd"
+    output: "resnetv22_stage1_activation3"
+    name: "resnetv22_stage1_activation3"
+    op_type: "Relu"
+  }
+  node {
+    input: "resnetv22_stage1_activation3"
+    input: "resnetv22_stage1_conv3_weight"
+    output: "resnetv22_stage1_conv3_fwd"
+    name: "resnetv22_stage1_conv3_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "resnetv22_stage1_conv3_fwd"
+    input: "resnetv22_stage1__plus0"
+    output: "resnetv22_stage1__plus1"
+    name: "resnetv22_stage1__plus1"
+    op_type: "Add"
+  }
+  node {
+    input: "resnetv22_stage1__plus1"
+    input: "resnetv22_stage2_batchnorm0_gamma"
+    input: "resnetv22_stage2_batchnorm0_beta"
+    input: "resnetv22_stage2_batchnorm0_running_mean"
+    input: "resnetv22_stage2_batchnorm0_running_var"
+    output: "resnetv22_stage2_batchnorm0_fwd"
+    name: "resnetv22_stage2_batchnorm0_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "resnetv22_stage2_batchnorm0_fwd"
+    output: "resnetv22_stage2_activation0"
+    name: "resnetv22_stage2_activation0"
+    op_type: "Relu"
+  }
+  node {
+    input: "resnetv22_stage2_activation0"
+    input: "resnetv22_stage2_conv0_weight"
+    output: "resnetv22_stage2_conv0_fwd"
+    name: "resnetv22_stage2_conv0_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "resnetv22_stage2_conv0_fwd"
+    input: "resnetv22_stage2_batchnorm1_gamma"
+    input: "resnetv22_stage2_batchnorm1_beta"
+    input: "resnetv22_stage2_batchnorm1_running_mean"
+    input: "resnetv22_stage2_batchnorm1_running_var"
+    output: "resnetv22_stage2_batchnorm1_fwd"
+    name: "resnetv22_stage2_batchnorm1_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "resnetv22_stage2_batchnorm1_fwd"
+    output: "resnetv22_stage2_activation1"
+    name: "resnetv22_stage2_activation1"
+    op_type: "Relu"
+  }
+  node {
+    input: "resnetv22_stage2_activation1"
+    input: "resnetv22_stage2_conv1_weight"
+    output: "resnetv22_stage2_conv1_fwd"
+    name: "resnetv22_stage2_conv1_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "resnetv22_stage2_activation0"
+    input: "resnetv22_stage2_conv2_weight"
+    output: "resnetv22_stage2_conv2_fwd"
+    name: "resnetv22_stage2_conv2_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "resnetv22_stage2_conv1_fwd"
+    input: "resnetv22_stage2_conv2_fwd"
+    output: "resnetv22_stage2__plus0"
+    name: "resnetv22_stage2__plus0"
+    op_type: "Add"
+  }
+  node {
+    input: "resnetv22_stage2__plus0"
+    input: "resnetv22_stage2_batchnorm2_gamma"
+    input: "resnetv22_stage2_batchnorm2_beta"
+    input: "resnetv22_stage2_batchnorm2_running_mean"
+    input: "resnetv22_stage2_batchnorm2_running_var"
+    output: "resnetv22_stage2_batchnorm2_fwd"
+    name: "resnetv22_stage2_batchnorm2_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "resnetv22_stage2_batchnorm2_fwd"
+    output: "resnetv22_stage2_activation2"
+    name: "resnetv22_stage2_activation2"
+    op_type: "Relu"
+  }
+  node {
+    input: "resnetv22_stage2_activation2"
+    input: "resnetv22_stage2_conv3_weight"
+    output: "resnetv22_stage2_conv3_fwd"
+    name: "resnetv22_stage2_conv3_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "resnetv22_stage2_conv3_fwd"
+    input: "resnetv22_stage2_batchnorm3_gamma"
+    input: "resnetv22_stage2_batchnorm3_beta"
+    input: "resnetv22_stage2_batchnorm3_running_mean"
+    input: "resnetv22_stage2_batchnorm3_running_var"
+    output: "resnetv22_stage2_batchnorm3_fwd"
+    name: "resnetv22_stage2_batchnorm3_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "resnetv22_stage2_batchnorm3_fwd"
+    output: "resnetv22_stage2_activation3"
+    name: "resnetv22_stage2_activation3"
+    op_type: "Relu"
+  }
+  node {
+    input: "resnetv22_stage2_activation3"
+    input: "resnetv22_stage2_conv4_weight"
+    output: "resnetv22_stage2_conv4_fwd"
+    name: "resnetv22_stage2_conv4_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "resnetv22_stage2_conv4_fwd"
+    input: "resnetv22_stage2__plus0"
+    output: "resnetv22_stage2__plus1"
+    name: "resnetv22_stage2__plus1"
+    op_type: "Add"
+  }
+  node {
+    input: "resnetv22_stage2__plus1"
+    input: "resnetv22_stage3_batchnorm0_gamma"
+    input: "resnetv22_stage3_batchnorm0_beta"
+    input: "resnetv22_stage3_batchnorm0_running_mean"
+    input: "resnetv22_stage3_batchnorm0_running_var"
+    output: "resnetv22_stage3_batchnorm0_fwd"
+    name: "resnetv22_stage3_batchnorm0_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "resnetv22_stage3_batchnorm0_fwd"
+    output: "resnetv22_stage3_activation0"
+    name: "resnetv22_stage3_activation0"
+    op_type: "Relu"
+  }
+  node {
+    input: "resnetv22_stage3_activation0"
+    input: "resnetv22_stage3_conv0_weight"
+    output: "resnetv22_stage3_conv0_fwd"
+    name: "resnetv22_stage3_conv0_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "resnetv22_stage3_conv0_fwd"
+    input: "resnetv22_stage3_batchnorm1_gamma"
+    input: "resnetv22_stage3_batchnorm1_beta"
+    input: "resnetv22_stage3_batchnorm1_running_mean"
+    input: "resnetv22_stage3_batchnorm1_running_var"
+    output: "resnetv22_stage3_batchnorm1_fwd"
+    name: "resnetv22_stage3_batchnorm1_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "resnetv22_stage3_batchnorm1_fwd"
+    output: "resnetv22_stage3_activation1"
+    name: "resnetv22_stage3_activation1"
+    op_type: "Relu"
+  }
+  node {
+    input: "resnetv22_stage3_activation1"
+    input: "resnetv22_stage3_conv1_weight"
+    output: "resnetv22_stage3_conv1_fwd"
+    name: "resnetv22_stage3_conv1_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "resnetv22_stage3_activation0"
+    input: "resnetv22_stage3_conv2_weight"
+    output: "resnetv22_stage3_conv2_fwd"
+    name: "resnetv22_stage3_conv2_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "resnetv22_stage3_conv1_fwd"
+    input: "resnetv22_stage3_conv2_fwd"
+    output: "resnetv22_stage3__plus0"
+    name: "resnetv22_stage3__plus0"
+    op_type: "Add"
+  }
+  node {
+    input: "resnetv22_stage3__plus0"
+    input: "resnetv22_stage3_batchnorm2_gamma"
+    input: "resnetv22_stage3_batchnorm2_beta"
+    input: "resnetv22_stage3_batchnorm2_running_mean"
+    input: "resnetv22_stage3_batchnorm2_running_var"
+    output: "resnetv22_stage3_batchnorm2_fwd"
+    name: "resnetv22_stage3_batchnorm2_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "resnetv22_stage3_batchnorm2_fwd"
+    output: "resnetv22_stage3_activation2"
+    name: "resnetv22_stage3_activation2"
+    op_type: "Relu"
+  }
+  node {
+    input: "resnetv22_stage3_activation2"
+    input: "resnetv22_stage3_conv3_weight"
+    output: "resnetv22_stage3_conv3_fwd"
+    name: "resnetv22_stage3_conv3_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "resnetv22_stage3_conv3_fwd"
+    input: "resnetv22_stage3_batchnorm3_gamma"
+    input: "resnetv22_stage3_batchnorm3_beta"
+    input: "resnetv22_stage3_batchnorm3_running_mean"
+    input: "resnetv22_stage3_batchnorm3_running_var"
+    output: "resnetv22_stage3_batchnorm3_fwd"
+    name: "resnetv22_stage3_batchnorm3_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "resnetv22_stage3_batchnorm3_fwd"
+    output: "resnetv22_stage3_activation3"
+    name: "resnetv22_stage3_activation3"
+    op_type: "Relu"
+  }
+  node {
+    input: "resnetv22_stage3_activation3"
+    input: "resnetv22_stage3_conv4_weight"
+    output: "resnetv22_stage3_conv4_fwd"
+    name: "resnetv22_stage3_conv4_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "resnetv22_stage3_conv4_fwd"
+    input: "resnetv22_stage3__plus0"
+    output: "resnetv22_stage3__plus1"
+    name: "resnetv22_stage3__plus1"
+    op_type: "Add"
+  }
+  node {
+    input: "resnetv22_stage3__plus1"
+    input: "resnetv22_stage4_batchnorm0_gamma"
+    input: "resnetv22_stage4_batchnorm0_beta"
+    input: "resnetv22_stage4_batchnorm0_running_mean"
+    input: "resnetv22_stage4_batchnorm0_running_var"
+    output: "resnetv22_stage4_batchnorm0_fwd"
+    name: "resnetv22_stage4_batchnorm0_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "resnetv22_stage4_batchnorm0_fwd"
+    output: "resnetv22_stage4_activation0"
+    name: "resnetv22_stage4_activation0"
+    op_type: "Relu"
+  }
+  node {
+    input: "resnetv22_stage4_activation0"
+    input: "resnetv22_stage4_conv0_weight"
+    output: "resnetv22_stage4_conv0_fwd"
+    name: "resnetv22_stage4_conv0_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "resnetv22_stage4_conv0_fwd"
+    input: "resnetv22_stage4_batchnorm1_gamma"
+    input: "resnetv22_stage4_batchnorm1_beta"
+    input: "resnetv22_stage4_batchnorm1_running_mean"
+    input: "resnetv22_stage4_batchnorm1_running_var"
+    output: "resnetv22_stage4_batchnorm1_fwd"
+    name: "resnetv22_stage4_batchnorm1_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "resnetv22_stage4_batchnorm1_fwd"
+    output: "resnetv22_stage4_activation1"
+    name: "resnetv22_stage4_activation1"
+    op_type: "Relu"
+  }
+  node {
+    input: "resnetv22_stage4_activation1"
+    input: "resnetv22_stage4_conv1_weight"
+    output: "resnetv22_stage4_conv1_fwd"
+    name: "resnetv22_stage4_conv1_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "resnetv22_stage4_activation0"
+    input: "resnetv22_stage4_conv2_weight"
+    output: "resnetv22_stage4_conv2_fwd"
+    name: "resnetv22_stage4_conv2_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "resnetv22_stage4_conv1_fwd"
+    input: "resnetv22_stage4_conv2_fwd"
+    output: "resnetv22_stage4__plus0"
+    name: "resnetv22_stage4__plus0"
+    op_type: "Add"
+  }
+  node {
+    input: "resnetv22_stage4__plus0"
+    input: "resnetv22_stage4_batchnorm2_gamma"
+    input: "resnetv22_stage4_batchnorm2_beta"
+    input: "resnetv22_stage4_batchnorm2_running_mean"
+    input: "resnetv22_stage4_batchnorm2_running_var"
+    output: "resnetv22_stage4_batchnorm2_fwd"
+    name: "resnetv22_stage4_batchnorm2_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "resnetv22_stage4_batchnorm2_fwd"
+    output: "resnetv22_stage4_activation2"
+    name: "resnetv22_stage4_activation2"
+    op_type: "Relu"
+  }
+  node {
+    input: "resnetv22_stage4_activation2"
+    input: "resnetv22_stage4_conv3_weight"
+    output: "resnetv22_stage4_conv3_fwd"
+    name: "resnetv22_stage4_conv3_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "resnetv22_stage4_conv3_fwd"
+    input: "resnetv22_stage4_batchnorm3_gamma"
+    input: "resnetv22_stage4_batchnorm3_beta"
+    input: "resnetv22_stage4_batchnorm3_running_mean"
+    input: "resnetv22_stage4_batchnorm3_running_var"
+    output: "resnetv22_stage4_batchnorm3_fwd"
+    name: "resnetv22_stage4_batchnorm3_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "resnetv22_stage4_batchnorm3_fwd"
+    output: "resnetv22_stage4_activation3"
+    name: "resnetv22_stage4_activation3"
+    op_type: "Relu"
+  }
+  node {
+    input: "resnetv22_stage4_activation3"
+    input: "resnetv22_stage4_conv4_weight"
+    output: "resnetv22_stage4_conv4_fwd"
+    name: "resnetv22_stage4_conv4_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "resnetv22_stage4_conv4_fwd"
+    input: "resnetv22_stage4__plus0"
+    output: "resnetv22_stage4__plus1"
+    name: "resnetv22_stage4__plus1"
+    op_type: "Add"
+  }
+  node {
+    input: "resnetv22_stage4__plus1"
+    input: "resnetv22_batchnorm2_gamma"
+    input: "resnetv22_batchnorm2_beta"
+    input: "resnetv22_batchnorm2_running_mean"
+    input: "resnetv22_batchnorm2_running_var"
+    output: "resnetv22_batchnorm2_fwd"
+    name: "resnetv22_batchnorm2_fwd"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+    attribute {
+      name: "spatial"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "resnetv22_batchnorm2_fwd"
+    output: "resnetv22_relu1_fwd"
+    name: "resnetv22_relu1_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "resnetv22_relu1_fwd"
+    output: "resnetv22_pool1_fwd"
+    name: "resnetv22_pool1_fwd"
+    op_type: "GlobalAveragePool"
+  }
+  node {
+    input: "resnetv22_pool1_fwd"
+    input: "reshape_attr_tensor164"
+    output: "resnetv22_flatten0_reshape0"
+    name: "resnetv22_flatten0_reshape0"
+    op_type: "Reshape"
+  }
+  node {
+    input: "resnetv22_flatten0_reshape0"
+    input: "resnetv22_dense0_weight"
+    input: "resnetv22_dense0_bias"
+    output: "resnetv22_dense0_fwd"
+    name: "resnetv22_dense0_fwd"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "beta"
+      f: 1.0
+      type: FLOAT
+    }
+    attribute {
+      name: "transA"
+      i: 0
+      type: INT
+    }
+    attribute {
+      name: "transB"
+      i: 1
+      type: INT
+    }
+  }
+  name: "main"
+  initializer {
+    dims: 3
+    data_type: 1
+    float_data: 1.0
+    float_data: 1.0
+    float_data: 1.0
+    name: "resnetv22_batchnorm0_gamma"
+  }
+  initializer {
+    dims: 3
+    data_type: 1
+    float_data: 0.0
+    float_data: 0.0
+    float_data: 0.0
+    name: "resnetv22_batchnorm0_beta"
+  }
+  initializer {
+    dims: 3
+    data_type: 1
+    float_data: -0.15607303
+    float_data: -0.14837337
+    float_data: -0.13648863
+    name: "resnetv22_batchnorm0_running_mean"
+  }
+  initializer {
+    dims: 3
+    data_type: 1
+    float_data: 1.542072
+    float_data: 1.5358735
+    float_data: 1.5593406
+    name: "resnetv22_batchnorm0_running_var"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.12161005
+    float_data: 0.12927283
+    float_data: 0.20862499
+    float_data: 0.11842525
+    float_data: 0.13096176
+    float_data: 0.0043981317
+    float_data: 0.19710897
+    float_data: 0.041798476
+    float_data: -1.29086475e-05
+    float_data: 0.16887198
+    float_data: 0.23483136
+    float_data: 0.09894617
+    float_data: 0.08647751
+    float_data: 0.24984063
+    float_data: 0.042403266
+    float_data: 0.10663927
+    float_data: -1.24452545e-05
+    float_data: 0.017024426
+    float_data: 0.15558867
+    float_data: 0.12863575
+    float_data: 0.10968388
+    float_data: 0.11439305
+    float_data: 0.24418685
+    float_data: 7.621539e-05
+    float_data: -9.474011e-05
+    float_data: 0.12936755
+    float_data: 6.853701e-05
+    float_data: 0.15962927
+    float_data: 0.09082301
+    float_data: 0.09029888
+    float_data: 2.8499695e-05
+    float_data: 0.111756034
+    float_data: 0.20058367
+    float_data: 0.07739682
+    float_data: 0.19265947
+    float_data: 0.037598725
+    float_data: 0.22257553
+    float_data: 0.05116605
+    float_data: 0.054625604
+    float_data: 0.10840834
+    float_data: 0.10124791
+    float_data: 0.16901468
+    float_data: 0.019388037
+    float_data: 0.04179808
+    float_data: 0.0003561412
+    float_data: 0.16736387
+    float_data: 0.0024520115
+    float_data: 0.032614496
+    float_data: 0.11623694
+    float_data: 0.11406563
+    float_data: 0.019909285
+    float_data: 0.081340134
+    float_data: 0.16150682
+    float_data: 0.34485596
+    float_data: 0.036543336
+    float_data: 0.21219705
+    float_data: 0.392473
+    float_data: 0.0015696621
+    float_data: -0.0008414757
+    float_data: 0.091491014
+    float_data: 0.07348608
+    float_data: 0.16115175
+    float_data: 0.31519413
+    float_data: 0.3204001
+    name: "resnetv22_batchnorm1_gamma"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.294332
+    float_data: -9.739225e-06
+    float_data: 0.27838597
+    float_data: 0.14882427
+    float_data: 0.20015445
+    float_data: -0.047153063
+    float_data: 0.193828
+    float_data: 0.07577479
+    float_data: -0.00013134429
+    float_data: 0.4097783
+    float_data: 0.31113803
+    float_data: 0.11740739
+    float_data: 0.1463023
+    float_data: 0.047646675
+    float_data: 0.22848472
+    float_data: 0.09151693
+    float_data: -0.00017243918
+    float_data: 0.092098005
+    float_data: 0.2948133
+    float_data: 0.07148153
+    float_data: 0.17230487
+    float_data: 0.1343211
+    float_data: 0.31800961
+    float_data: -0.00023117548
+    float_data: -0.000434902
+    float_data: -0.016593678
+    float_data: -0.00031200366
+    float_data: 0.2048659
+    float_data: 0.08543699
+    float_data: 0.11610014
+    float_data: -0.00043649523
+    float_data: 0.11981441
+    float_data: 0.18011513
+    float_data: 0.08953567
+    float_data: 0.047971793
+    float_data: 0.017523466
+    float_data: 0.35007167
+    float_data: 0.058166146
+    float_data: 0.12201352
+    float_data: 0.095909655
+    float_data: 0.04684238
+    float_data: 0.019170715
+    float_data: 0.09845991
+    float_data: 0.0050576176
+    float_data: -0.013857594
+    float_data: 0.15905716
+    float_data: -0.010892606
+    float_data: 0.0666737
+    float_data: 0.1028658
+    float_data: 0.0011555027
+    float_data: 0.14394964
+    float_data: 0.14667273
+    float_data: 0.10849338
+    float_data: 0.57856673
+    float_data: -0.16614176
+    float_data: 0.18185097
+    float_data: 0.51542073
+    float_data: -0.016452221
+    float_data: -0.0027337982
+    float_data: 0.075834446
+    float_data: 0.12424922
+    float_data: 0.2509394
+    float_data: 0.3994427
+    float_data: -0.14831208
+    name: "resnetv22_batchnorm1_beta"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: -0.0018844559
+    float_data: -0.00035202148
+    float_data: -0.0005478894
+    float_data: -0.0010989081
+    float_data: -0.0005624747
+    float_data: 0.00019260723
+    float_data: 0.00067040516
+    float_data: 0.000119813594
+    float_data: 1.5569091e-07
+    float_data: -0.00031861197
+    float_data: -0.0020876776
+    float_data: 0.00091018097
+    float_data: 0.0004924238
+    float_data: -7.035274e-05
+    float_data: 9.729684e-06
+    float_data: 2.1002586e-05
+    float_data: -3.4231144e-07
+    float_data: -0.00018191659
+    float_data: -0.0003531709
+    float_data: -0.0005663748
+    float_data: -0.00023632635
+    float_data: 0.00024385133
+    float_data: 0.00045767063
+    float_data: 8.790237e-07
+    float_data: -1.2298083e-06
+    float_data: 0.000196646
+    float_data: 4.788514e-07
+    float_data: -0.0003061318
+    float_data: 0.0013785289
+    float_data: 0.00032772135
+    float_data: 3.1039872e-07
+    float_data: -0.000833637
+    float_data: -0.00044982572
+    float_data: 0.00044592482
+    float_data: 0.0063213604
+    float_data: 0.0007521441
+    float_data: -0.0004387193
+    float_data: 9.192983e-06
+    float_data: -0.00030966947
+    float_data: -2.8056425e-05
+    float_data: 0.0005026055
+    float_data: -0.0025973995
+    float_data: -0.000508418
+    float_data: 2.7893086e-05
+    float_data: -4.1252613e-05
+    float_data: 0.0012228469
+    float_data: -2.0399107e-06
+    float_data: 0.00067375554
+    float_data: 0.0004957314
+    float_data: 0.00045143257
+    float_data: 0.0042609777
+    float_data: -0.0021763316
+    float_data: -0.0013837887
+    float_data: -4.254316e-05
+    float_data: 0.00047273072
+    float_data: 0.00066328107
+    float_data: -8.454274e-05
+    float_data: 7.904868e-05
+    float_data: 9.9691515e-06
+    float_data: -0.007301094
+    float_data: 0.0011141538
+    float_data: 0.003666379
+    float_data: -0.0006989434
+    float_data: 0.00021315845
+    name: "resnetv22_batchnorm1_running_mean"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 4.7981367
+    float_data: 0.9287654
+    float_data: 0.41275683
+    float_data: 0.54747546
+    float_data: 1.2456841
+    float_data: 0.10442987
+    float_data: 0.5991041
+    float_data: 2.4517498
+    float_data: 6.6101285e-07
+    float_data: 1.9908191
+    float_data: 2.0564823
+    float_data: 0.775415
+    float_data: 0.26075628
+    float_data: 0.50035775
+    float_data: 1.4916855
+    float_data: 1.2720472
+    float_data: 1.8669026e-06
+    float_data: 1.0605881
+    float_data: 1.3140156
+    float_data: 3.2454224
+    float_data: 1.2619226
+    float_data: 0.74364835
+    float_data: 4.759158
+    float_data: 2.2745257e-06
+    float_data: 8.458777e-06
+    float_data: 4.147508
+    float_data: 2.330763e-06
+    float_data: 1.3447542
+    float_data: 1.485026
+    float_data: 0.96746737
+    float_data: 5.0486206e-06
+    float_data: 0.23167947
+    float_data: 0.5783889
+    float_data: 1.2880268
+    float_data: 7.9163184
+    float_data: 2.835536
+    float_data: 1.1105043
+    float_data: 1.0263788
+    float_data: 0.21038897
+    float_data: 1.0360286
+    float_data: 1.6027751
+    float_data: 2.52261
+    float_data: 1.4118798
+    float_data: 1.7561995
+    float_data: 0.0076235905
+    float_data: 0.51009977
+    float_data: 0.007385129
+    float_data: 1.1784055
+    float_data: 2.3560915
+    float_data: 0.89034337
+    float_data: 7.084718
+    float_data: 1.8836119
+    float_data: 9.1452
+    float_data: 1.76346
+    float_data: 1.5605417
+    float_data: 0.48610643
+    float_data: 3.5110962
+    float_data: 0.015073132
+    float_data: 0.00058210624
+    float_data: 10.146055
+    float_data: 4.2148547
+    float_data: 5.1796436
+    float_data: 2.652533
+    float_data: 5.6663456
+    name: "resnetv22_batchnorm1_running_var"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.2681153
+    float_data: 0.30625376
+    float_data: 0.25815752
+    float_data: 0.2644607
+    float_data: 0.34530684
+    float_data: 0.033385504
+    float_data: 0.20744076
+    float_data: 0.28963855
+    float_data: 0.0001334423
+    float_data: 0.30146992
+    float_data: 0.30310008
+    float_data: 0.2897263
+    float_data: 0.20728622
+    float_data: 0.24254492
+    float_data: 0.30057618
+    float_data: 0.26316467
+    float_data: 0.00013488567
+    float_data: 0.28401184
+    float_data: 0.21806046
+    float_data: 0.23055717
+    float_data: 0.27539852
+    float_data: 0.27485096
+    float_data: 0.33592933
+    float_data: 0.00017214635
+    float_data: 0.0002389536
+    float_data: 0.39162982
+    float_data: 0.0001699673
+    float_data: 0.2904807
+    float_data: 0.31596544
+    float_data: 0.28128532
+    float_data: 0.00029228034
+    float_data: 0.23276712
+    float_data: 0.27290848
+    float_data: 0.26366165
+    float_data: 0.26085445
+    float_data: 0.31896576
+    float_data: 0.2446209
+    float_data: 0.32974425
+    float_data: 0.25033224
+    float_data: 0.2887324
+    float_data: 0.27484503
+    float_data: 0.28234434
+    float_data: 0.2842954
+    float_data: 0.21264127
+    float_data: 0.009914787
+    float_data: 0.25072908
+    float_data: 0.010129235
+    float_data: 0.32469213
+    float_data: 0.29982588
+    float_data: 0.29599607
+    float_data: 0.28644595
+    float_data: 0.29402566
+    float_data: 0.30053642
+    float_data: 0.22935307
+    float_data: 0.19914365
+    float_data: 0.30318165
+    float_data: 0.28887522
+    float_data: 0.010454316
+    float_data: 0.0030210135
+    float_data: 0.32149717
+    float_data: 0.28762093
+    float_data: 0.29473403
+    float_data: 0.3164856
+    float_data: 0.4059842
+    name: "resnetv22_stage1_batchnorm0_gamma"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.54934424
+    float_data: 0.2205831
+    float_data: -0.17592968
+    float_data: 0.34602207
+    float_data: -0.43609092
+    float_data: -0.050334867
+    float_data: -0.066265434
+    float_data: 0.38106826
+    float_data: -0.00020132735
+    float_data: 0.46218845
+    float_data: -0.26104346
+    float_data: 0.3213592
+    float_data: 0.2825882
+    float_data: 0.20017742
+    float_data: 0.019801706
+    float_data: 0.26909348
+    float_data: -0.00021469823
+    float_data: 0.41602203
+    float_data: 0.28940508
+    float_data: 0.0945111
+    float_data: 0.45253608
+    float_data: 0.3401945
+    float_data: 0.43313506
+    float_data: -0.00025714925
+    float_data: -0.00049940456
+    float_data: -0.41543916
+    float_data: -0.00027025377
+    float_data: 0.4326983
+    float_data: 0.3193463
+    float_data: 0.28638104
+    float_data: -0.00045375244
+    float_data: 0.26547214
+    float_data: 0.27407694
+    float_data: 0.37672237
+    float_data: 0.2564113
+    float_data: -0.13559295
+    float_data: 0.50779694
+    float_data: -0.062213384
+    float_data: 0.25709116
+    float_data: 0.25629178
+    float_data: 0.2484927
+    float_data: 0.2478337
+    float_data: 0.48339486
+    float_data: -0.016179092
+    float_data: -0.015116393
+    float_data: 0.22698748
+    float_data: -0.015478862
+    float_data: 0.30974972
+    float_data: 0.35543853
+    float_data: 0.2015898
+    float_data: 0.6553285
+    float_data: 0.44564632
+    float_data: 0.21859482
+    float_data: -0.12511887
+    float_data: -0.27517724
+    float_data: -0.111447036
+    float_data: 0.43337676
+    float_data: -0.011581669
+    float_data: 0.641602
+    float_data: 0.27332017
+    float_data: 0.25621018
+    float_data: 0.5080257
+    float_data: -0.2867789
+    float_data: -0.5707682
+    name: "resnetv22_stage1_batchnorm0_beta"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.36340556
+    float_data: 0.096042864
+    float_data: 0.39753914
+    float_data: 0.24891141
+    float_data: 0.24277903
+    float_data: 5.60519e-45
+    float_data: 0.30972257
+    float_data: 0.105648264
+    float_data: 5.60519e-45
+    float_data: 0.44868684
+    float_data: 0.44213
+    float_data: 0.20996484
+    float_data: 0.2067622
+    float_data: 0.2605471
+    float_data: 0.2388911
+    float_data: 0.1746355
+    float_data: 5.60519e-45
+    float_data: 0.1060575
+    float_data: 0.3764261
+    float_data: 0.11166145
+    float_data: 0.26630276
+    float_data: 0.23666136
+    float_data: 0.37020656
+    float_data: 5.60519e-45
+    float_data: 5.60519e-45
+    float_data: 0.06002083
+    float_data: 5.60519e-45
+    float_data: 0.33991253
+    float_data: 0.15463182
+    float_data: 0.20216408
+    float_data: 5.60519e-45
+    float_data: 0.20924579
+    float_data: 0.3647264
+    float_data: 0.15378565
+    float_data: 0.1780826
+    float_data: 0.03267851
+    float_data: 0.42039317
+    float_data: 0.079602316
+    float_data: 0.16145945
+    float_data: 0.19542672
+    float_data: 0.12524004
+    float_data: 0.14246309
+    float_data: 0.112889215
+    float_data: 0.023282398
+    float_data: 5.60519e-45
+    float_data: 0.29242954
+    float_data: 5.60519e-45
+    float_data: 0.09334012
+    float_data: 0.19296685
+    float_data: 0.08459624
+    float_data: 0.1529338
+    float_data: 0.20535636
+    float_data: 0.20900384
+    float_data: 0.6684127
+    float_data: 5.60519e-45
+    float_data: 0.3713263
+    float_data: 0.6056326
+    float_data: 5.60519e-45
+    float_data: 5.60519e-45
+    float_data: 0.13344514
+    float_data: 0.1729857
+    float_data: 0.33945483
+    float_data: 0.5737418
+    float_data: 0.09021831
+    name: "resnetv22_stage1_batchnorm0_running_mean"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.015324698
+    float_data: 0.026885033
+    float_data: 0.049223013
+    float_data: 0.023730038
+    float_data: 0.018297726
+    float_data: 5.60519e-45
+    float_data: 0.04741644
+    float_data: 0.0023220063
+    float_data: 5.60519e-45
+    float_data: 0.025399672
+    float_data: 0.06028025
+    float_data: 0.016802272
+    float_data: 0.008919716
+    float_data: 0.119077094
+    float_data: 0.0017227576
+    float_data: 0.015987156
+    float_data: 5.60519e-45
+    float_data: 0.00043399763
+    float_data: 0.02486796
+    float_data: 0.008025536
+    float_data: 0.018469116
+    float_data: 0.023279622
+    float_data: 0.058810413
+    float_data: 5.60519e-45
+    float_data: 5.60519e-45
+    float_data: 0.0045044404
+    float_data: 5.60519e-45
+    float_data: 0.03770325
+    float_data: 0.01198712
+    float_data: 0.014414589
+    float_data: 5.60519e-45
+    float_data: 0.019147426
+    float_data: 0.07691373
+    float_data: 0.008699001
+    float_data: 0.037828136
+    float_data: 0.0006762144
+    float_data: 0.03513927
+    float_data: 0.0020801625
+    float_data: 0.004789731
+    float_data: 0.020764524
+    float_data: 0.014889872
+    float_data: 0.03315746
+    float_data: 0.00047611017
+    float_data: 0.00056842365
+    float_data: 5.60519e-45
+    float_data: 0.051360674
+    float_data: 5.60519e-45
+    float_data: 0.0017058994
+    float_data: 0.017272761
+    float_data: 0.020875905
+    float_data: 0.00039024
+    float_data: 0.008665621
+    float_data: 0.028478423
+    float_data: 0.08814791
+    float_data: 5.60519e-45
+    float_data: 0.07465827
+    float_data: 0.16512358
+    float_data: 5.60519e-45
+    float_data: 5.60519e-45
+    float_data: 0.009728373
+    float_data: 0.0066789687
+    float_data: 0.029406805
+    float_data: 0.11056151
+    float_data: 0.01455902
+    name: "resnetv22_stage1_batchnorm0_running_var"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.41045403
+    float_data: 0.16740547
+    float_data: 0.25203744
+    float_data: 0.1897123
+    float_data: 0.25899982
+    float_data: 0.26822552
+    float_data: 0.15577298
+    float_data: 0.32271767
+    float_data: 0.2038263
+    float_data: 0.6037469
+    float_data: 0.4561227
+    float_data: 0.17013977
+    float_data: 0.21707903
+    float_data: 0.30942872
+    float_data: 0.20230053
+    float_data: 0.18489231
+    float_data: 0.19185556
+    float_data: 0.23523296
+    float_data: 0.26200977
+    float_data: 0.33345172
+    float_data: 0.2058364
+    float_data: 0.5802986
+    float_data: 0.24184932
+    float_data: 0.16454296
+    float_data: 0.19440077
+    float_data: 0.1912981
+    float_data: 0.34658572
+    float_data: 0.21988133
+    float_data: 0.2854574
+    float_data: 0.2305255
+    float_data: 0.49291846
+    float_data: 0.6597844
+    float_data: 0.18812296
+    float_data: 0.1644031
+    float_data: 0.3391732
+    float_data: 0.71437734
+    float_data: 0.16607547
+    float_data: 0.4310305
+    float_data: 0.642772
+    float_data: 0.28257677
+    float_data: 0.37949657
+    float_data: 0.55512327
+    float_data: 0.27574858
+    float_data: 0.16882533
+    float_data: 0.40108374
+    float_data: 0.6207052
+    float_data: 0.25572062
+    float_data: 0.4784581
+    float_data: 0.31510922
+    float_data: 0.30696642
+    float_data: 0.21775511
+    float_data: 0.29820922
+    float_data: 0.18237875
+    float_data: 0.6968477
+    float_data: 0.21141163
+    float_data: 0.19152178
+    float_data: 0.37705344
+    float_data: 0.22963789
+    float_data: 0.44738194
+    float_data: 0.48466158
+    float_data: 0.16600762
+    float_data: 0.21071003
+    float_data: 0.47880363
+    float_data: 0.2744827
+    name: "resnetv22_stage1_batchnorm1_gamma"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: -0.11121362
+    float_data: 0.15874392
+    float_data: -0.5545786
+    float_data: 0.14173521
+    float_data: -0.11209409
+    float_data: 0.14156187
+    float_data: -0.03669704
+    float_data: -0.0025513656
+    float_data: 0.09848415
+    float_data: -0.30895364
+    float_data: -0.21395971
+    float_data: -0.00017527353
+    float_data: 0.061794315
+    float_data: -0.017122105
+    float_data: 0.17293312
+    float_data: 0.13482608
+    float_data: 0.018721594
+    float_data: 0.058665328
+    float_data: 0.09050023
+    float_data: 0.048786454
+    float_data: -0.024783982
+    float_data: -0.173913
+    float_data: 0.0859147
+    float_data: 0.07067571
+    float_data: 0.071634896
+    float_data: 0.07578155
+    float_data: -0.009426963
+    float_data: 0.043508198
+    float_data: 0.024971383
+    float_data: 0.12145554
+    float_data: -0.13232027
+    float_data: -0.57284266
+    float_data: 0.14428894
+    float_data: 0.07117519
+    float_data: -0.27743158
+    float_data: -0.37652522
+    float_data: 0.28887984
+    float_data: -0.10848809
+    float_data: -0.3200591
+    float_data: 0.14232922
+    float_data: -0.4703157
+    float_data: -0.17499125
+    float_data: 0.0036006405
+    float_data: 0.11695994
+    float_data: -0.05453778
+    float_data: -0.28226373
+    float_data: -0.020607235
+    float_data: -0.21066402
+    float_data: -0.010367834
+    float_data: 0.17950392
+    float_data: 0.23333965
+    float_data: -0.07106159
+    float_data: 0.086488195
+    float_data: -0.3678536
+    float_data: -0.029551687
+    float_data: 0.061535887
+    float_data: -0.5337381
+    float_data: 0.1500724
+    float_data: -0.1683477
+    float_data: -0.07451131
+    float_data: 0.2039124
+    float_data: 0.04810255
+    float_data: -0.15412395
+    float_data: 0.10272159
+    name: "resnetv22_stage1_batchnorm1_beta"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: -0.5606821
+    float_data: 0.4248972
+    float_data: -0.118797585
+    float_data: 0.43669647
+    float_data: 0.38233683
+    float_data: -0.5055919
+    float_data: 0.096897155
+    float_data: -1.2097785
+    float_data: 0.7219329
+    float_data: -1.3041848
+    float_data: -0.7428618
+    float_data: 0.47253448
+    float_data: -0.3368746
+    float_data: -1.0020676
+    float_data: -0.78981256
+    float_data: -0.8536587
+    float_data: -0.3268559
+    float_data: 0.38512933
+    float_data: -0.56927806
+    float_data: -0.5838566
+    float_data: 0.089956544
+    float_data: -0.7584485
+    float_data: -0.28020197
+    float_data: 0.87319505
+    float_data: -0.60212815
+    float_data: -0.04629028
+    float_data: -0.6280818
+    float_data: -0.25364482
+    float_data: -0.45771867
+    float_data: -0.55958414
+    float_data: -1.4162604
+    float_data: -0.6480253
+    float_data: 0.39686018
+    float_data: 0.22919816
+    float_data: -0.15861763
+    float_data: -1.2049826
+    float_data: 0.033839464
+    float_data: -0.6792952
+    float_data: -1.6466801
+    float_data: -0.4464509
+    float_data: -0.29879916
+    float_data: -1.1079677
+    float_data: -0.43827122
+    float_data: 0.0070889094
+    float_data: -1.1273508
+    float_data: -0.984992
+    float_data: -0.77571666
+    float_data: -0.8107784
+    float_data: -0.6843625
+    float_data: -0.9321378
+    float_data: -0.15090555
+    float_data: -0.99603814
+    float_data: 0.042675436
+    float_data: -1.257034
+    float_data: 0.29136702
+    float_data: -0.4692989
+    float_data: -0.1856756
+    float_data: 0.17491864
+    float_data: -0.71532035
+    float_data: -0.6203372
+    float_data: 0.19426957
+    float_data: -0.7315775
+    float_data: -1.3275958
+    float_data: -0.6878485
+    name: "resnetv22_stage1_batchnorm1_running_mean"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.29103562
+    float_data: 0.112644665
+    float_data: 0.045612488
+    float_data: 0.24599437
+    float_data: 0.05194
+    float_data: 0.29582134
+    float_data: 0.09338926
+    float_data: 0.5132673
+    float_data: 0.6446082
+    float_data: 0.5811287
+    float_data: 0.64507043
+    float_data: 0.12818013
+    float_data: 0.1591207
+    float_data: 0.43209058
+    float_data: 0.14491856
+    float_data: 0.26155144
+    float_data: 0.21645026
+    float_data: 0.35476443
+    float_data: 0.16119313
+    float_data: 0.46044707
+    float_data: 0.27614462
+    float_data: 0.72675884
+    float_data: 0.17796956
+    float_data: 0.37520257
+    float_data: 0.10667906
+    float_data: 0.0755563
+    float_data: 0.8659518
+    float_data: 0.5724534
+    float_data: 0.4815581
+    float_data: 0.2426809
+    float_data: 0.48900938
+    float_data: 0.24903205
+    float_data: 0.06968899
+    float_data: 0.3076674
+    float_data: 0.1969787
+    float_data: 1.0677547
+    float_data: 0.06979944
+    float_data: 0.59110135
+    float_data: 0.99373686
+    float_data: 0.24769604
+    float_data: 0.22076607
+    float_data: 0.81281716
+    float_data: 0.13505527
+    float_data: 0.10649794
+    float_data: 0.43645737
+    float_data: 0.88245374
+    float_data: 0.2944265
+    float_data: 0.2781195
+    float_data: 0.5318253
+    float_data: 0.40755072
+    float_data: 0.17021763
+    float_data: 0.21328117
+    float_data: 0.14870377
+    float_data: 1.0508927
+    float_data: 0.114624925
+    float_data: 0.10680491
+    float_data: 0.11417101
+    float_data: 0.13751048
+    float_data: 0.6145416
+    float_data: 0.5048273
+    float_data: 0.20210548
+    float_data: 0.28123757
+    float_data: 0.8494464
+    float_data: 0.22399446
+    name: "resnetv22_stage1_batchnorm1_running_var"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.294049
+    float_data: 0.1772357
+    float_data: 0.20181489
+    float_data: 0.19847475
+    float_data: 0.45047235
+    float_data: 0.3169243
+    float_data: 0.21024546
+    float_data: 0.32551005
+    float_data: 0.30753565
+    float_data: 0.30803093
+    float_data: 0.24744126
+    float_data: 0.19212979
+    float_data: 0.24607907
+    float_data: 0.14564604
+    float_data: 0.33525884
+    float_data: 0.1930229
+    float_data: 0.6567144
+    float_data: 0.3629975
+    float_data: 0.28106475
+    float_data: 0.24971901
+    float_data: 0.21589863
+    float_data: 0.21572414
+    float_data: 0.19690253
+    float_data: 0.27676633
+    float_data: 0.25056303
+    float_data: 0.20291854
+    float_data: 0.27967617
+    float_data: 0.20655438
+    float_data: 0.25449535
+    float_data: 0.2062001
+    float_data: 0.41499397
+    float_data: 0.20195588
+    float_data: 0.17562996
+    float_data: 0.19582902
+    float_data: 0.25602123
+    float_data: 0.1957278
+    float_data: 0.22802673
+    float_data: 0.284197
+    float_data: 0.2346085
+    float_data: 0.21259609
+    float_data: 0.22901882
+    float_data: 0.2112075
+    float_data: 0.41844776
+    float_data: 0.29287007
+    float_data: 0.4370697
+    float_data: 0.15318228
+    float_data: 0.49627832
+    float_data: 0.23319806
+    float_data: 0.23487808
+    float_data: 0.17277226
+    float_data: 0.44158605
+    float_data: 0.2818201
+    float_data: 0.15787302
+    float_data: 0.21606149
+    float_data: 0.38474613
+    float_data: 0.24954055
+    float_data: 0.24551274
+    float_data: 0.3794329
+    float_data: 0.4812207
+    float_data: 0.37759256
+    float_data: 0.34331012
+    float_data: 0.2914619
+    float_data: 0.20320655
+    float_data: 0.25971594
+    name: "resnetv22_stage1_batchnorm2_gamma"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.07801259
+    float_data: 0.24324097
+    float_data: 0.17813124
+    float_data: 0.28214046
+    float_data: -0.3705258
+    float_data: 0.1431935
+    float_data: 0.14190881
+    float_data: -0.062434442
+    float_data: -0.032513652
+    float_data: -0.02913617
+    float_data: 0.09735781
+    float_data: 0.09145837
+    float_data: -0.051086105
+    float_data: 0.26085004
+    float_data: -0.17014839
+    float_data: 0.34466717
+    float_data: -0.72942644
+    float_data: -0.14426573
+    float_data: 0.18808256
+    float_data: -0.041485056
+    float_data: 0.25828338
+    float_data: 0.16077377
+    float_data: 0.09870711
+    float_data: 0.0073982915
+    float_data: -0.013749408
+    float_data: -0.0013911062
+    float_data: -0.017709749
+    float_data: 0.13739286
+    float_data: 0.059150454
+    float_data: 0.2473978
+    float_data: -0.17762707
+    float_data: 0.106706195
+    float_data: 0.23839167
+    float_data: 0.22461843
+    float_data: 0.067214884
+    float_data: 0.0463793
+    float_data: 0.14436789
+    float_data: 0.027478112
+    float_data: 0.09593992
+    float_data: 0.2699004
+    float_data: 0.12835316
+    float_data: 0.086820126
+    float_data: -0.13878465
+    float_data: -0.17923236
+    float_data: -0.09065564
+    float_data: 0.17820106
+    float_data: -0.34791416
+    float_data: 0.17799915
+    float_data: 0.22573474
+    float_data: 0.34001476
+    float_data: -0.12155138
+    float_data: -0.03790688
+    float_data: 0.08039412
+    float_data: 0.29615864
+    float_data: -0.23671378
+    float_data: 0.24415018
+    float_data: 0.22237648
+    float_data: -0.020943861
+    float_data: -0.22881804
+    float_data: 0.008591094
+    float_data: 0.048865415
+    float_data: 0.039676923
+    float_data: 0.21102498
+    float_data: -0.102556415
+    name: "resnetv22_stage1_batchnorm2_beta"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.1353848
+    float_data: 0.1086777
+    float_data: 0.2795479
+    float_data: 0.15568626
+    float_data: -0.043657232
+    float_data: -0.30501878
+    float_data: 0.08599895
+    float_data: -0.27275407
+    float_data: 0.0691533
+    float_data: 0.009529354
+    float_data: 0.41261795
+    float_data: -0.20077789
+    float_data: 0.048094913
+    float_data: 0.09606043
+    float_data: 0.26357898
+    float_data: 0.34575763
+    float_data: -0.00029036935
+    float_data: 0.33376944
+    float_data: 0.50395656
+    float_data: 0.24222209
+    float_data: 0.12578943
+    float_data: -0.030871324
+    float_data: 0.12078338
+    float_data: 0.036487706
+    float_data: 0.03389123
+    float_data: -0.4582289
+    float_data: 0.062387362
+    float_data: 0.17879666
+    float_data: -0.1675294
+    float_data: 0.034862764
+    float_data: 0.045240402
+    float_data: 0.008401323
+    float_data: 0.47224474
+    float_data: 0.12011603
+    float_data: -0.08772746
+    float_data: -0.42743972
+    float_data: -0.026076319
+    float_data: -0.18976976
+    float_data: -0.03721648
+    float_data: 0.037121054
+    float_data: -0.15572742
+    float_data: -0.14145973
+    float_data: 0.07500676
+    float_data: 0.39991736
+    float_data: -0.20144147
+    float_data: 0.09943253
+    float_data: 0.086267576
+    float_data: 0.0704468
+    float_data: 0.14302586
+    float_data: -0.28907868
+    float_data: 0.13852403
+    float_data: -0.00781969
+    float_data: -0.051800597
+    float_data: 0.41568628
+    float_data: 0.20406844
+    float_data: 0.05504533
+    float_data: 0.2645474
+    float_data: -0.17999615
+    float_data: 0.22430053
+    float_data: -0.05882298
+    float_data: 0.077796265
+    float_data: 0.30477735
+    float_data: 0.6138199
+    float_data: -0.08491141
+    name: "resnetv22_stage1_batchnorm2_running_mean"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.1263459
+    float_data: 0.046733536
+    float_data: 0.04281126
+    float_data: 0.035049114
+    float_data: 0.07109287
+    float_data: 0.07172462
+    float_data: 0.053668875
+    float_data: 0.050050016
+    float_data: 0.078529075
+    float_data: 0.12774311
+    float_data: 0.21111904
+    float_data: 0.17974745
+    float_data: 0.024407033
+    float_data: 0.08664164
+    float_data: 0.07687884
+    float_data: 0.02723532
+    float_data: 0.051934555
+    float_data: 0.039960664
+    float_data: 0.05466326
+    float_data: 0.05628216
+    float_data: 0.03244792
+    float_data: 0.16881232
+    float_data: 0.16019002
+    float_data: 0.10345457
+    float_data: 0.08230927
+    float_data: 0.045908432
+    float_data: 0.082291216
+    float_data: 0.056226138
+    float_data: 0.07698202
+    float_data: 0.026607988
+    float_data: 0.04729955
+    float_data: 0.042769443
+    float_data: 0.12791087
+    float_data: 0.033593886
+    float_data: 0.12977864
+    float_data: 0.06187043
+    float_data: 0.08181883
+    float_data: 0.045325
+    float_data: 0.06974862
+    float_data: 0.03611154
+    float_data: 0.0483764
+    float_data: 0.070518315
+    float_data: 0.13715187
+    float_data: 0.078448445
+    float_data: 0.15143721
+    float_data: 0.059306238
+    float_data: 0.06501365
+    float_data: 0.023734247
+    float_data: 0.023476463
+    float_data: 0.07776788
+    float_data: 0.072899364
+    float_data: 0.0611392
+    float_data: 0.110619485
+    float_data: 0.0900296
+    float_data: 0.08437102
+    float_data: 0.09371841
+    float_data: 0.26598692
+    float_data: 0.055863876
+    float_data: 0.13474101
+    float_data: 0.036920585
+    float_data: 0.056752108
+    float_data: 0.17412359
+    float_data: 0.14128652
+    float_data: 0.056772936
+    name: "resnetv22_stage1_batchnorm2_running_var"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.51354986
+    float_data: 0.45219475
+    float_data: 0.46970242
+    float_data: 0.39901417
+    float_data: 0.37770793
+    float_data: 0.550839
+    float_data: 0.39360836
+    float_data: 0.41428044
+    float_data: 0.31570724
+    float_data: 0.51991683
+    float_data: 0.4755843
+    float_data: 0.4465571
+    float_data: 0.39372543
+    float_data: 0.48593742
+    float_data: 0.41265625
+    float_data: 0.42633742
+    float_data: 0.4087562
+    float_data: 0.4266946
+    float_data: 0.54603916
+    float_data: 0.4905689
+    float_data: 0.48272562
+    float_data: 0.48089725
+    float_data: 0.42988226
+    float_data: 0.22047094
+    float_data: 0.43860006
+    float_data: 0.35656735
+    float_data: 0.45663428
+    float_data: 0.5344015
+    float_data: 0.44192675
+    float_data: 0.47842354
+    float_data: 0.46207935
+    float_data: 0.48378608
+    float_data: 0.24258484
+    float_data: 0.376333
+    float_data: 0.26722094
+    float_data: 0.45946833
+    float_data: 0.51352286
+    float_data: 0.3250428
+    float_data: 0.37859157
+    float_data: 0.5096231
+    float_data: 0.54218537
+    float_data: 0.47702172
+    float_data: 0.41977382
+    float_data: 0.6113587
+    float_data: 0.48072818
+    float_data: 0.40809634
+    float_data: 0.50003105
+    float_data: 0.31614593
+    float_data: 0.52254224
+    float_data: 0.36409062
+    float_data: 0.38471156
+    float_data: 0.21997799
+    float_data: 0.41756538
+    float_data: 0.3970628
+    float_data: 0.5172736
+    float_data: 0.5744702
+    float_data: 0.3349338
+    float_data: 0.25820875
+    float_data: 0.3833046
+    float_data: 0.40522406
+    float_data: 0.4669514
+    float_data: 0.62357515
+    float_data: 0.50311714
+    float_data: 0.37322068
+    name: "resnetv22_stage1_batchnorm3_gamma"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: -0.46441466
+    float_data: 0.025429444
+    float_data: 0.068006545
+    float_data: 0.0077016274
+    float_data: 0.09985446
+    float_data: -0.048831888
+    float_data: 0.09814722
+    float_data: 0.101638384
+    float_data: 0.5126973
+    float_data: -0.061579708
+    float_data: -0.1252336
+    float_data: 0.14809759
+    float_data: -0.20996669
+    float_data: -0.020750673
+    float_data: 0.13060169
+    float_data: 0.0062304866
+    float_data: -0.07022825
+    float_data: -0.46400377
+    float_data: -0.027013347
+    float_data: -0.09037705
+    float_data: -0.41348246
+    float_data: -0.089923196
+    float_data: 0.053916607
+    float_data: 0.14318459
+    float_data: 0.00442031
+    float_data: -0.2496312
+    float_data: -0.27071145
+    float_data: 0.013498003
+    float_data: -0.056904163
+    float_data: 0.020503411
+    float_data: -0.43076283
+    float_data: 0.090330966
+    float_data: -0.09006651
+    float_data: -0.26030752
+    float_data: -0.038697407
+    float_data: -0.047278557
+    float_data: 0.10289554
+    float_data: -0.21287382
+    float_data: 0.11442332
+    float_data: 0.12643309
+    float_data: -0.15453194
+    float_data: 0.050550286
+    float_data: -0.02812862
+    float_data: -0.48949602
+    float_data: -0.3330964
+    float_data: 0.01891776
+    float_data: -0.040685166
+    float_data: 0.32207096
+    float_data: 0.0378627
+    float_data: 0.18185079
+    float_data: 0.1782888
+    float_data: -0.0033506674
+    float_data: 0.018428773
+    float_data: -0.31368116
+    float_data: -0.29738483
+    float_data: -0.039509904
+    float_data: 0.30398414
+    float_data: 0.390244
+    float_data: -0.23607574
+    float_data: 0.120031066
+    float_data: -0.292762
+    float_data: -0.7415113
+    float_data: 0.0017864815
+    float_data: 0.28233972
+    name: "resnetv22_stage1_batchnorm3_beta"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.17773029
+    float_data: -0.35437936
+    float_data: -0.41539094
+    float_data: -0.05670557
+    float_data: -0.18932945
+    float_data: -0.33364493
+    float_data: -0.28975356
+    float_data: -0.11369339
+    float_data: -0.13570333
+    float_data: -0.4921367
+    float_data: -0.29610336
+    float_data: -0.40914223
+    float_data: -0.5580167
+    float_data: -0.24743496
+    float_data: -0.1013309
+    float_data: -0.3299266
+    float_data: -0.11139625
+    float_data: -0.33534646
+    float_data: -0.43748504
+    float_data: -0.5737281
+    float_data: 0.052406687
+    float_data: -0.5489232
+    float_data: -0.11707377
+    float_data: 0.4653061
+    float_data: -0.2865205
+    float_data: 0.4432152
+    float_data: 0.016079202
+    float_data: -0.4577513
+    float_data: -0.1988543
+    float_data: -0.35292226
+    float_data: 0.0320474
+    float_data: -0.13915533
+    float_data: -0.27413186
+    float_data: -0.7171289
+    float_data: -0.1044244
+    float_data: -0.5981164
+    float_data: -0.17720515
+    float_data: -0.32563332
+    float_data: -0.2787054
+    float_data: -0.28382337
+    float_data: -0.48440158
+    float_data: -0.320072
+    float_data: -0.3444446
+    float_data: -0.5106334
+    float_data: -0.3656157
+    float_data: -0.17274642
+    float_data: -0.20503004
+    float_data: -0.07963218
+    float_data: -0.30440897
+    float_data: -0.12555441
+    float_data: 0.07021637
+    float_data: 0.4205212
+    float_data: -0.13918094
+    float_data: 0.34805954
+    float_data: -0.57090384
+    float_data: -0.45302194
+    float_data: -0.3578716
+    float_data: -0.20655505
+    float_data: -0.15166236
+    float_data: -0.27557364
+    float_data: -0.63489884
+    float_data: -0.39402357
+    float_data: -0.27864224
+    float_data: -0.39609152
+    name: "resnetv22_stage1_batchnorm3_running_mean"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.09076866
+    float_data: 0.0942805
+    float_data: 0.09269439
+    float_data: 0.09927441
+    float_data: 0.09256726
+    float_data: 0.11119514
+    float_data: 0.06165242
+    float_data: 0.10822353
+    float_data: 0.04523063
+    float_data: 0.17085943
+    float_data: 0.10935801
+    float_data: 0.107147284
+    float_data: 0.05427766
+    float_data: 0.10045202
+    float_data: 0.11230775
+    float_data: 0.12009984
+    float_data: 0.07473402
+    float_data: 0.02784377
+    float_data: 0.13450989
+    float_data: 0.12679228
+    float_data: 0.078081936
+    float_data: 0.13787545
+    float_data: 0.12861942
+    float_data: 0.07117107
+    float_data: 0.103775516
+    float_data: 0.055091053
+    float_data: 0.045250095
+    float_data: 0.1218849
+    float_data: 0.09719291
+    float_data: 0.11159257
+    float_data: 0.07188598
+    float_data: 0.13158718
+    float_data: 0.043594893
+    float_data: 0.06303224
+    float_data: 0.047651228
+    float_data: 0.09589831
+    float_data: 0.12296078
+    float_data: 0.04399197
+    float_data: 0.04704785
+    float_data: 0.09955984
+    float_data: 0.11996558
+    float_data: 0.11618794
+    float_data: 0.09356735
+    float_data: 0.08173726
+    float_data: 0.08415672
+    float_data: 0.08459874
+    float_data: 0.08876186
+    float_data: 0.06107227
+    float_data: 0.10812255
+    float_data: 0.07138436
+    float_data: 0.13754591
+    float_data: 0.052695
+    float_data: 0.09345403
+    float_data: 0.047109827
+    float_data: 0.08034282
+    float_data: 0.18135595
+    float_data: 0.056743093
+    float_data: 0.04835449
+    float_data: 0.0349675
+    float_data: 0.09629829
+    float_data: 0.059291832
+    float_data: 0.026264481
+    float_data: 0.11125792
+    float_data: 0.071635574
+    name: "resnetv22_stage1_batchnorm3_running_var"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.42125314
+    float_data: 0.3098061
+    float_data: 0.32164803
+    float_data: 0.39192155
+    float_data: 0.3096814
+    float_data: 0.34438467
+    float_data: 0.2961218
+    float_data: 0.38435435
+    float_data: 0.3059316
+    float_data: 0.45103332
+    float_data: 0.31175283
+    float_data: 0.25050232
+    float_data: 0.37015435
+    float_data: 0.23357296
+    float_data: 0.2244511
+    float_data: 0.39185068
+    float_data: 0.38291866
+    float_data: 0.47000986
+    float_data: 0.30805585
+    float_data: 0.23721077
+    float_data: 0.43182307
+    float_data: 0.35599324
+    float_data: 0.25838235
+    float_data: 0.31142613
+    float_data: 0.2904375
+    float_data: 0.2313669
+    float_data: 0.32672504
+    float_data: 0.33778167
+    float_data: 0.332224
+    float_data: 0.3466666
+    float_data: 0.48608515
+    float_data: 0.37880108
+    float_data: 0.24811372
+    float_data: 0.26051715
+    float_data: 0.35554314
+    float_data: 0.25326228
+    float_data: 0.4834073
+    float_data: 0.41044945
+    float_data: 0.37020457
+    float_data: 0.4338403
+    float_data: 0.3612107
+    float_data: 0.38244125
+    float_data: 0.46961287
+    float_data: 0.24260066
+    float_data: 0.4131164
+    float_data: 0.2746654
+    float_data: 0.39536974
+    float_data: 0.5165207
+    float_data: 0.35556313
+    float_data: 0.34301993
+    float_data: 0.4790735
+    float_data: 0.35103565
+    float_data: 0.23059747
+    float_data: 0.38579828
+    float_data: 0.26914844
+    float_data: 0.34037158
+    float_data: 0.20107315
+    float_data: 0.41826895
+    float_data: 0.2801328
+    float_data: 0.4782627
+    float_data: 0.48323703
+    float_data: 0.36793536
+    float_data: 0.21653154
+    float_data: 0.25426495
+    name: "resnetv22_stage2_batchnorm0_gamma"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: -0.051020317
+    float_data: 0.072847605
+    float_data: 0.05545646
+    float_data: -0.08728235
+    float_data: 0.1337952
+    float_data: 0.20119943
+    float_data: 0.043012694
+    float_data: -0.050793357
+    float_data: 0.09934903
+    float_data: -0.10200786
+    float_data: 0.20869339
+    float_data: 0.117894106
+    float_data: -0.07370252
+    float_data: 0.06404943
+    float_data: 0.11275572
+    float_data: -0.10733461
+    float_data: 0.1077454
+    float_data: -0.23312937
+    float_data: 0.10497619
+    float_data: 0.076922886
+    float_data: -0.09355385
+    float_data: 0.10475152
+    float_data: 0.08337956
+    float_data: 0.36032656
+    float_data: 0.20918348
+    float_data: 0.19803768
+    float_data: 0.17973697
+    float_data: -0.008767257
+    float_data: 0.026795413
+    float_data: 0.01830138
+    float_data: -0.20451213
+    float_data: -0.042254485
+    float_data: 0.16101874
+    float_data: 0.24399544
+    float_data: 0.060621206
+    float_data: 0.19982435
+    float_data: -0.20016932
+    float_data: -0.05154809
+    float_data: -0.020801157
+    float_data: -0.08577882
+    float_data: -0.056278553
+    float_data: -0.011282153
+    float_data: -0.120039925
+    float_data: 0.32231987
+    float_data: 0.14845516
+    float_data: 0.072523355
+    float_data: 0.103502765
+    float_data: -0.24552044
+    float_data: -0.05250549
+    float_data: -0.067284055
+    float_data: -0.07824522
+    float_data: 0.0028449951
+    float_data: 0.21497644
+    float_data: -0.17918026
+    float_data: 0.07051987
+    float_data: 0.0070723146
+    float_data: 0.12285311
+    float_data: 0.002061494
+    float_data: 0.27096665
+    float_data: -0.19028345
+    float_data: -0.23742965
+    float_data: 0.17254259
+    float_data: 0.37319756
+    float_data: 0.13611473
+    name: "resnetv22_stage2_batchnorm0_beta"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.06851176
+    float_data: 0.16399565
+    float_data: 0.1891998
+    float_data: -0.08052966
+    float_data: -0.08357738
+    float_data: -0.44157216
+    float_data: -0.18737622
+    float_data: -0.5356726
+    float_data: 0.14625853
+    float_data: -0.28734282
+    float_data: 0.28735676
+    float_data: -0.42996666
+    float_data: -0.04353801
+    float_data: 0.058422167
+    float_data: 0.31351164
+    float_data: 0.35899475
+    float_data: -0.21514285
+    float_data: 0.52840734
+    float_data: 1.2767899
+    float_data: -0.011287108
+    float_data: -0.0119118765
+    float_data: -0.14964293
+    float_data: -0.132089
+    float_data: -0.15451315
+    float_data: 0.19246987
+    float_data: -0.8312314
+    float_data: -0.01953815
+    float_data: 0.022552546
+    float_data: -0.32094488
+    float_data: -0.2734838
+    float_data: -0.11743896
+    float_data: -0.095910355
+    float_data: 0.17975135
+    float_data: 0.20877932
+    float_data: -0.43833315
+    float_data: -0.6191501
+    float_data: -0.15810414
+    float_data: -0.5141349
+    float_data: -0.36108562
+    float_data: -0.2706404
+    float_data: -0.31794822
+    float_data: -0.26927066
+    float_data: 0.12574728
+    float_data: 0.47231188
+    float_data: -0.8503172
+    float_data: 0.0895661
+    float_data: -0.16078752
+    float_data: -0.06644348
+    float_data: 0.055152513
+    float_data: -0.30065894
+    float_data: -0.18841565
+    float_data: -0.28558555
+    float_data: 0.11710214
+    float_data: -0.10375457
+    float_data: 0.2683928
+    float_data: -0.28843203
+    float_data: -0.015646111
+    float_data: -0.4182153
+    float_data: 0.43876854
+    float_data: -0.110060886
+    float_data: -0.31509748
+    float_data: -0.1401185
+    float_data: 0.55547833
+    float_data: -0.781541
+    name: "resnetv22_stage2_batchnorm0_running_mean"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.45740786
+    float_data: 0.2782976
+    float_data: 0.29059774
+    float_data: 0.25985932
+    float_data: 0.25852445
+    float_data: 0.26327884
+    float_data: 0.23959096
+    float_data: 0.28274402
+    float_data: 0.21045662
+    float_data: 0.3753944
+    float_data: 0.35964194
+    float_data: 0.2814716
+    float_data: 0.18697707
+    float_data: 0.19013166
+    float_data: 0.27582335
+    float_data: 0.2160722
+    float_data: 0.26271036
+    float_data: 0.19704105
+    float_data: 0.29093012
+    float_data: 0.188031
+    float_data: 0.31771
+    float_data: 0.5239927
+    float_data: 0.38462457
+    float_data: 0.36044416
+    float_data: 0.21394338
+    float_data: 0.19319376
+    float_data: 0.20944288
+    float_data: 0.24757132
+    float_data: 0.29314414
+    float_data: 0.17564717
+    float_data: 0.25503817
+    float_data: 0.22463478
+    float_data: 0.34199175
+    float_data: 0.11849599
+    float_data: 0.44956222
+    float_data: 0.1730373
+    float_data: 0.28638667
+    float_data: 0.19726577
+    float_data: 0.30276573
+    float_data: 0.2725864
+    float_data: 0.2202977
+    float_data: 0.27028885
+    float_data: 0.4565239
+    float_data: 0.20860136
+    float_data: 0.5059123
+    float_data: 0.23106903
+    float_data: 0.33858666
+    float_data: 0.29002246
+    float_data: 0.23266192
+    float_data: 0.24030197
+    float_data: 0.41947195
+    float_data: 0.2231482
+    float_data: 0.20967057
+    float_data: 0.26656574
+    float_data: 0.27128187
+    float_data: 0.22487143
+    float_data: 0.53275496
+    float_data: 0.28029695
+    float_data: 0.44159418
+    float_data: 0.26889
+    float_data: 0.2378322
+    float_data: 0.37899727
+    float_data: 0.1977785
+    float_data: 0.15713824
+    name: "resnetv22_stage2_batchnorm0_running_var"
+  }
+  initializer {
+    dims: 2
+    data_type: 7
+    int64_data: 0
+    int64_data: -1
+    name: "reshape_attr_tensor164"
+  }
+  input {
+    name: "data"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_param: "N"
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 224
+          }
+          dim {
+            dim_value: 224
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_batchnorm0_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_batchnorm0_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_batchnorm0_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_batchnorm0_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_conv0_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 7
+          }
+          dim {
+            dim_value: 7
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_batchnorm1_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_batchnorm1_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_batchnorm1_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_batchnorm1_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage1_batchnorm0_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage1_batchnorm0_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage1_batchnorm0_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage1_batchnorm0_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage1_conv0_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage1_batchnorm1_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage1_batchnorm1_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage1_batchnorm1_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage1_batchnorm1_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage1_conv1_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage1_batchnorm2_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage1_batchnorm2_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage1_batchnorm2_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage1_batchnorm2_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage1_conv2_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage1_batchnorm3_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage1_batchnorm3_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage1_batchnorm3_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage1_batchnorm3_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage1_conv3_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage2_batchnorm0_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage2_batchnorm0_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage2_batchnorm0_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage2_batchnorm0_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage2_conv0_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage2_batchnorm1_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage2_batchnorm1_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage2_batchnorm1_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage2_batchnorm1_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage2_conv1_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage2_conv2_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage2_batchnorm2_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage2_batchnorm2_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage2_batchnorm2_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage2_batchnorm2_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage2_conv3_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage2_batchnorm3_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage2_batchnorm3_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage2_batchnorm3_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage2_batchnorm3_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage2_conv4_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage3_batchnorm0_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage3_batchnorm0_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage3_batchnorm0_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage3_batchnorm0_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage3_conv0_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage3_batchnorm1_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage3_batchnorm1_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage3_batchnorm1_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage3_batchnorm1_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage3_conv1_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage3_conv2_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage3_batchnorm2_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage3_batchnorm2_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage3_batchnorm2_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage3_batchnorm2_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage3_conv3_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage3_batchnorm3_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage3_batchnorm3_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage3_batchnorm3_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage3_batchnorm3_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage3_conv4_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage4_batchnorm0_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage4_batchnorm0_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage4_batchnorm0_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage4_batchnorm0_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage4_conv0_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage4_batchnorm1_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage4_batchnorm1_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage4_batchnorm1_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage4_batchnorm1_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage4_conv1_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage4_conv2_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage4_batchnorm2_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage4_batchnorm2_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage4_batchnorm2_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage4_batchnorm2_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage4_conv3_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage4_batchnorm3_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage4_batchnorm3_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage4_batchnorm3_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage4_batchnorm3_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_stage4_conv4_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_batchnorm2_gamma"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_batchnorm2_beta"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_batchnorm2_running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_batchnorm2_running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "reshape_attr_tensor164"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_dense0_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1000
+          }
+          dim {
+            dim_value: 512
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "resnetv22_dense0_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "resnetv22_dense0_fwd"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_param: "N"
+          }
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+}
+opset_import {
+  domain: ""
+  version: 7
+}

@@ -1,0 +1,8531 @@
+ir_version: 4
+producer_name: "pytorch"
+producer_version: "1.3"
+graph {
+  node {
+    input: "input"
+    input: "base_net.0.0.weight"
+    output: "245"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "245"
+    input: "base_net.0.1.weight"
+    input: "base_net.0.1.bias"
+    input: "base_net.0.1.running_mean"
+    input: "base_net.0.1.running_var"
+    output: "246"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "246"
+    output: "247"
+    op_type: "Relu"
+  }
+  node {
+    input: "247"
+    input: "base_net.1.0.weight"
+    output: "248"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 16
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "248"
+    input: "base_net.1.1.weight"
+    input: "base_net.1.1.bias"
+    input: "base_net.1.1.running_mean"
+    input: "base_net.1.1.running_var"
+    output: "249"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "249"
+    output: "250"
+    op_type: "Relu"
+  }
+  node {
+    input: "250"
+    input: "base_net.1.3.weight"
+    output: "251"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "251"
+    input: "base_net.1.4.weight"
+    input: "base_net.1.4.bias"
+    input: "base_net.1.4.running_mean"
+    input: "base_net.1.4.running_var"
+    output: "252"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "252"
+    output: "253"
+    op_type: "Relu"
+  }
+  node {
+    input: "253"
+    input: "base_net.2.0.weight"
+    output: "254"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 32
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "254"
+    input: "base_net.2.1.weight"
+    input: "base_net.2.1.bias"
+    input: "base_net.2.1.running_mean"
+    input: "base_net.2.1.running_var"
+    output: "255"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "255"
+    output: "256"
+    op_type: "Relu"
+  }
+  node {
+    input: "256"
+    input: "base_net.2.3.weight"
+    output: "257"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "257"
+    input: "base_net.2.4.weight"
+    input: "base_net.2.4.bias"
+    input: "base_net.2.4.running_mean"
+    input: "base_net.2.4.running_var"
+    output: "258"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "258"
+    output: "259"
+    op_type: "Relu"
+  }
+  node {
+    input: "259"
+    input: "base_net.3.0.weight"
+    output: "260"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 32
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "260"
+    input: "base_net.3.1.weight"
+    input: "base_net.3.1.bias"
+    input: "base_net.3.1.running_mean"
+    input: "base_net.3.1.running_var"
+    output: "261"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "261"
+    output: "262"
+    op_type: "Relu"
+  }
+  node {
+    input: "262"
+    input: "base_net.3.3.weight"
+    output: "263"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "263"
+    input: "base_net.3.4.weight"
+    input: "base_net.3.4.bias"
+    input: "base_net.3.4.running_mean"
+    input: "base_net.3.4.running_var"
+    output: "264"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "264"
+    output: "265"
+    op_type: "Relu"
+  }
+  node {
+    input: "265"
+    input: "base_net.4.0.weight"
+    output: "266"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 32
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "266"
+    input: "base_net.4.1.weight"
+    input: "base_net.4.1.bias"
+    input: "base_net.4.1.running_mean"
+    input: "base_net.4.1.running_var"
+    output: "267"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "267"
+    output: "268"
+    op_type: "Relu"
+  }
+  node {
+    input: "268"
+    input: "base_net.4.3.weight"
+    output: "269"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "269"
+    input: "base_net.4.4.weight"
+    input: "base_net.4.4.bias"
+    input: "base_net.4.4.running_mean"
+    input: "base_net.4.4.running_var"
+    output: "270"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "270"
+    output: "271"
+    op_type: "Relu"
+  }
+  node {
+    input: "271"
+    input: "base_net.5.0.weight"
+    output: "272"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 64
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "272"
+    input: "base_net.5.1.weight"
+    input: "base_net.5.1.bias"
+    input: "base_net.5.1.running_mean"
+    input: "base_net.5.1.running_var"
+    output: "273"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "273"
+    output: "274"
+    op_type: "Relu"
+  }
+  node {
+    input: "274"
+    input: "base_net.5.3.weight"
+    output: "275"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "275"
+    input: "base_net.5.4.weight"
+    input: "base_net.5.4.bias"
+    input: "base_net.5.4.running_mean"
+    input: "base_net.5.4.running_var"
+    output: "276"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "276"
+    output: "277"
+    op_type: "Relu"
+  }
+  node {
+    input: "277"
+    input: "base_net.6.0.weight"
+    output: "278"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 64
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "278"
+    input: "base_net.6.1.weight"
+    input: "base_net.6.1.bias"
+    input: "base_net.6.1.running_mean"
+    input: "base_net.6.1.running_var"
+    output: "279"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "279"
+    output: "280"
+    op_type: "Relu"
+  }
+  node {
+    input: "280"
+    input: "base_net.6.3.weight"
+    output: "281"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "281"
+    input: "base_net.6.4.weight"
+    input: "base_net.6.4.bias"
+    input: "base_net.6.4.running_mean"
+    input: "base_net.6.4.running_var"
+    output: "282"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "282"
+    output: "283"
+    op_type: "Relu"
+  }
+  node {
+    input: "283"
+    input: "base_net.7.branch0.0.conv.weight"
+    output: "284"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "284"
+    input: "base_net.7.branch0.0.bn.weight"
+    input: "base_net.7.branch0.0.bn.bias"
+    input: "base_net.7.branch0.0.bn.running_mean"
+    input: "base_net.7.branch0.0.bn.running_var"
+    output: "285"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.99
+      type: FLOAT
+    }
+  }
+  node {
+    input: "285"
+    input: "base_net.7.branch0.1.conv.weight"
+    output: "286"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "286"
+    input: "base_net.7.branch0.1.bn.weight"
+    input: "base_net.7.branch0.1.bn.bias"
+    input: "base_net.7.branch0.1.bn.running_mean"
+    input: "base_net.7.branch0.1.bn.running_var"
+    output: "287"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.99
+      type: FLOAT
+    }
+  }
+  node {
+    input: "287"
+    output: "288"
+    op_type: "Relu"
+  }
+  node {
+    input: "288"
+    input: "base_net.7.branch0.2.conv.weight"
+    output: "289"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 2
+      ints: 2
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "289"
+    input: "base_net.7.branch0.2.bn.weight"
+    input: "base_net.7.branch0.2.bn.bias"
+    input: "base_net.7.branch0.2.bn.running_mean"
+    input: "base_net.7.branch0.2.bn.running_var"
+    output: "290"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.99
+      type: FLOAT
+    }
+  }
+  node {
+    input: "283"
+    input: "base_net.7.branch1.0.conv.weight"
+    output: "291"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "291"
+    input: "base_net.7.branch1.0.bn.weight"
+    input: "base_net.7.branch1.0.bn.bias"
+    input: "base_net.7.branch1.0.bn.running_mean"
+    input: "base_net.7.branch1.0.bn.running_var"
+    output: "292"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.99
+      type: FLOAT
+    }
+  }
+  node {
+    input: "292"
+    input: "base_net.7.branch1.1.conv.weight"
+    output: "293"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "293"
+    input: "base_net.7.branch1.1.bn.weight"
+    input: "base_net.7.branch1.1.bn.bias"
+    input: "base_net.7.branch1.1.bn.running_mean"
+    input: "base_net.7.branch1.1.bn.running_var"
+    output: "294"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.99
+      type: FLOAT
+    }
+  }
+  node {
+    input: "294"
+    output: "295"
+    op_type: "Relu"
+  }
+  node {
+    input: "295"
+    input: "base_net.7.branch1.2.conv.weight"
+    output: "296"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 3
+      ints: 3
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "296"
+    input: "base_net.7.branch1.2.bn.weight"
+    input: "base_net.7.branch1.2.bn.bias"
+    input: "base_net.7.branch1.2.bn.running_mean"
+    input: "base_net.7.branch1.2.bn.running_var"
+    output: "297"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.99
+      type: FLOAT
+    }
+  }
+  node {
+    input: "283"
+    input: "base_net.7.branch2.0.conv.weight"
+    output: "298"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "298"
+    input: "base_net.7.branch2.0.bn.weight"
+    input: "base_net.7.branch2.0.bn.bias"
+    input: "base_net.7.branch2.0.bn.running_mean"
+    input: "base_net.7.branch2.0.bn.running_var"
+    output: "299"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.99
+      type: FLOAT
+    }
+  }
+  node {
+    input: "299"
+    input: "base_net.7.branch2.1.conv.weight"
+    output: "300"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "300"
+    input: "base_net.7.branch2.1.bn.weight"
+    input: "base_net.7.branch2.1.bn.bias"
+    input: "base_net.7.branch2.1.bn.running_mean"
+    input: "base_net.7.branch2.1.bn.running_var"
+    output: "301"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.99
+      type: FLOAT
+    }
+  }
+  node {
+    input: "301"
+    output: "302"
+    op_type: "Relu"
+  }
+  node {
+    input: "302"
+    input: "base_net.7.branch2.2.conv.weight"
+    output: "303"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "303"
+    input: "base_net.7.branch2.2.bn.weight"
+    input: "base_net.7.branch2.2.bn.bias"
+    input: "base_net.7.branch2.2.bn.running_mean"
+    input: "base_net.7.branch2.2.bn.running_var"
+    output: "304"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.99
+      type: FLOAT
+    }
+  }
+  node {
+    input: "304"
+    output: "305"
+    op_type: "Relu"
+  }
+  node {
+    input: "305"
+    input: "base_net.7.branch2.3.conv.weight"
+    output: "306"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 5
+      ints: 5
+      ints: 5
+      ints: 5
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "306"
+    input: "base_net.7.branch2.3.bn.weight"
+    input: "base_net.7.branch2.3.bn.bias"
+    input: "base_net.7.branch2.3.bn.running_mean"
+    input: "base_net.7.branch2.3.bn.running_var"
+    output: "307"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.99
+      type: FLOAT
+    }
+  }
+  node {
+    input: "290"
+    input: "297"
+    input: "307"
+    output: "308"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "308"
+    input: "base_net.7.ConvLinear.conv.weight"
+    output: "309"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "309"
+    input: "base_net.7.ConvLinear.bn.weight"
+    input: "base_net.7.ConvLinear.bn.bias"
+    input: "base_net.7.ConvLinear.bn.running_mean"
+    input: "base_net.7.ConvLinear.bn.running_var"
+    output: "310"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.99
+      type: FLOAT
+    }
+  }
+  node {
+    input: "283"
+    input: "base_net.7.shortcut.conv.weight"
+    output: "311"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "311"
+    input: "base_net.7.shortcut.bn.weight"
+    input: "base_net.7.shortcut.bn.bias"
+    input: "base_net.7.shortcut.bn.running_mean"
+    input: "base_net.7.shortcut.bn.running_var"
+    output: "312"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.99
+      type: FLOAT
+    }
+  }
+  node {
+    input: "310"
+    input: "312"
+    output: "313"
+    op_type: "Add"
+  }
+  node {
+    input: "313"
+    output: "314"
+    op_type: "Relu"
+  }
+  node {
+    input: "314"
+    input: "classification_headers.0.0.weight"
+    input: "classification_headers.0.0.bias"
+    output: "315"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 64
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "315"
+    output: "316"
+    op_type: "Relu"
+  }
+  node {
+    input: "316"
+    input: "classification_headers.0.2.weight"
+    input: "classification_headers.0.2.bias"
+    output: "317"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "317"
+    output: "318"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 0
+      ints: 2
+      ints: 3
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "318"
+    output: "319"
+    op_type: "Shape"
+  }
+  node {
+    output: "320"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\000\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "319"
+    input: "320"
+    output: "321"
+    op_type: "Gather"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    output: "322"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\377\377\377\377\377\377\377\377"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "323"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\002\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "321"
+    output: "324"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "322"
+    output: "325"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "323"
+    output: "326"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "324"
+    input: "325"
+    input: "326"
+    output: "327"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "318"
+    input: "327"
+    output: "328"
+    op_type: "Reshape"
+  }
+  node {
+    input: "314"
+    input: "regression_headers.0.0.weight"
+    input: "regression_headers.0.0.bias"
+    output: "329"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 64
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "329"
+    output: "330"
+    op_type: "Relu"
+  }
+  node {
+    input: "330"
+    input: "regression_headers.0.2.weight"
+    input: "regression_headers.0.2.bias"
+    output: "331"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "331"
+    output: "332"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 0
+      ints: 2
+      ints: 3
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "332"
+    output: "333"
+    op_type: "Shape"
+  }
+  node {
+    output: "334"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\000\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "333"
+    input: "334"
+    output: "335"
+    op_type: "Gather"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    output: "336"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\377\377\377\377\377\377\377\377"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "337"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\004\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "335"
+    output: "338"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "336"
+    output: "339"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "337"
+    output: "340"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "338"
+    input: "339"
+    input: "340"
+    output: "341"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "332"
+    input: "341"
+    output: "342"
+    op_type: "Reshape"
+  }
+  node {
+    input: "314"
+    input: "base_net.8.0.weight"
+    output: "343"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 64
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "343"
+    input: "base_net.8.1.weight"
+    input: "base_net.8.1.bias"
+    input: "base_net.8.1.running_mean"
+    input: "base_net.8.1.running_var"
+    output: "344"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "344"
+    output: "345"
+    op_type: "Relu"
+  }
+  node {
+    input: "345"
+    input: "base_net.8.3.weight"
+    output: "346"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "346"
+    input: "base_net.8.4.weight"
+    input: "base_net.8.4.bias"
+    input: "base_net.8.4.running_mean"
+    input: "base_net.8.4.running_var"
+    output: "347"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "347"
+    output: "348"
+    op_type: "Relu"
+  }
+  node {
+    input: "348"
+    input: "base_net.9.0.weight"
+    output: "349"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 128
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "349"
+    input: "base_net.9.1.weight"
+    input: "base_net.9.1.bias"
+    input: "base_net.9.1.running_mean"
+    input: "base_net.9.1.running_var"
+    output: "350"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "350"
+    output: "351"
+    op_type: "Relu"
+  }
+  node {
+    input: "351"
+    input: "base_net.9.3.weight"
+    output: "352"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "352"
+    input: "base_net.9.4.weight"
+    input: "base_net.9.4.bias"
+    input: "base_net.9.4.running_mean"
+    input: "base_net.9.4.running_var"
+    output: "353"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "353"
+    output: "354"
+    op_type: "Relu"
+  }
+  node {
+    input: "354"
+    input: "base_net.10.0.weight"
+    output: "355"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 128
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "355"
+    input: "base_net.10.1.weight"
+    input: "base_net.10.1.bias"
+    input: "base_net.10.1.running_mean"
+    input: "base_net.10.1.running_var"
+    output: "356"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "356"
+    output: "357"
+    op_type: "Relu"
+  }
+  node {
+    input: "357"
+    input: "base_net.10.3.weight"
+    output: "358"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "358"
+    input: "base_net.10.4.weight"
+    input: "base_net.10.4.bias"
+    input: "base_net.10.4.running_mean"
+    input: "base_net.10.4.running_var"
+    output: "359"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "359"
+    output: "360"
+    op_type: "Relu"
+  }
+  node {
+    input: "360"
+    input: "classification_headers.1.0.weight"
+    input: "classification_headers.1.0.bias"
+    output: "361"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 128
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "361"
+    output: "362"
+    op_type: "Relu"
+  }
+  node {
+    input: "362"
+    input: "classification_headers.1.2.weight"
+    input: "classification_headers.1.2.bias"
+    output: "363"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "363"
+    output: "364"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 0
+      ints: 2
+      ints: 3
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "364"
+    output: "365"
+    op_type: "Shape"
+  }
+  node {
+    output: "366"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\000\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "365"
+    input: "366"
+    output: "367"
+    op_type: "Gather"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    output: "368"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\377\377\377\377\377\377\377\377"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "369"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\002\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "367"
+    output: "370"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "368"
+    output: "371"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "369"
+    output: "372"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "370"
+    input: "371"
+    input: "372"
+    output: "373"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "364"
+    input: "373"
+    output: "374"
+    op_type: "Reshape"
+  }
+  node {
+    input: "360"
+    input: "regression_headers.1.0.weight"
+    input: "regression_headers.1.0.bias"
+    output: "375"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 128
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "375"
+    output: "376"
+    op_type: "Relu"
+  }
+  node {
+    input: "376"
+    input: "regression_headers.1.2.weight"
+    input: "regression_headers.1.2.bias"
+    output: "377"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "377"
+    output: "378"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 0
+      ints: 2
+      ints: 3
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "378"
+    output: "379"
+    op_type: "Shape"
+  }
+  node {
+    output: "380"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\000\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "379"
+    input: "380"
+    output: "381"
+    op_type: "Gather"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    output: "382"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\377\377\377\377\377\377\377\377"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "383"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\004\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "381"
+    output: "384"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "382"
+    output: "385"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "383"
+    output: "386"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "384"
+    input: "385"
+    input: "386"
+    output: "387"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "378"
+    input: "387"
+    output: "388"
+    op_type: "Reshape"
+  }
+  node {
+    input: "360"
+    input: "base_net.11.0.weight"
+    output: "389"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 128
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "389"
+    input: "base_net.11.1.weight"
+    input: "base_net.11.1.bias"
+    input: "base_net.11.1.running_mean"
+    input: "base_net.11.1.running_var"
+    output: "390"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "390"
+    output: "391"
+    op_type: "Relu"
+  }
+  node {
+    input: "391"
+    input: "base_net.11.3.weight"
+    output: "392"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "392"
+    input: "base_net.11.4.weight"
+    input: "base_net.11.4.bias"
+    input: "base_net.11.4.running_mean"
+    input: "base_net.11.4.running_var"
+    output: "393"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "393"
+    output: "394"
+    op_type: "Relu"
+  }
+  node {
+    input: "394"
+    input: "base_net.12.0.weight"
+    output: "395"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 256
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "395"
+    input: "base_net.12.1.weight"
+    input: "base_net.12.1.bias"
+    input: "base_net.12.1.running_mean"
+    input: "base_net.12.1.running_var"
+    output: "396"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "396"
+    output: "397"
+    op_type: "Relu"
+  }
+  node {
+    input: "397"
+    input: "base_net.12.3.weight"
+    output: "398"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "398"
+    input: "base_net.12.4.weight"
+    input: "base_net.12.4.bias"
+    input: "base_net.12.4.running_mean"
+    input: "base_net.12.4.running_var"
+    output: "399"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "epsilon"
+      f: 1e-05
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.9
+      type: FLOAT
+    }
+  }
+  node {
+    input: "399"
+    output: "400"
+    op_type: "Relu"
+  }
+  node {
+    input: "400"
+    input: "classification_headers.2.0.weight"
+    input: "classification_headers.2.0.bias"
+    output: "401"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 256
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "401"
+    output: "402"
+    op_type: "Relu"
+  }
+  node {
+    input: "402"
+    input: "classification_headers.2.2.weight"
+    input: "classification_headers.2.2.bias"
+    output: "403"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "403"
+    output: "404"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 0
+      ints: 2
+      ints: 3
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "404"
+    output: "405"
+    op_type: "Shape"
+  }
+  node {
+    output: "406"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\000\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "405"
+    input: "406"
+    output: "407"
+    op_type: "Gather"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    output: "408"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\377\377\377\377\377\377\377\377"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "409"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\002\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "407"
+    output: "410"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "408"
+    output: "411"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "409"
+    output: "412"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "410"
+    input: "411"
+    input: "412"
+    output: "413"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "404"
+    input: "413"
+    output: "414"
+    op_type: "Reshape"
+  }
+  node {
+    input: "400"
+    input: "regression_headers.2.0.weight"
+    input: "regression_headers.2.0.bias"
+    output: "415"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 256
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "415"
+    output: "416"
+    op_type: "Relu"
+  }
+  node {
+    input: "416"
+    input: "regression_headers.2.2.weight"
+    input: "regression_headers.2.2.bias"
+    output: "417"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "417"
+    output: "418"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 0
+      ints: 2
+      ints: 3
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "418"
+    output: "419"
+    op_type: "Shape"
+  }
+  node {
+    output: "420"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\000\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "419"
+    input: "420"
+    output: "421"
+    op_type: "Gather"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    output: "422"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\377\377\377\377\377\377\377\377"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "423"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\004\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "421"
+    output: "424"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "422"
+    output: "425"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "423"
+    output: "426"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "424"
+    input: "425"
+    input: "426"
+    output: "427"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "418"
+    input: "427"
+    output: "428"
+    op_type: "Reshape"
+  }
+  node {
+    input: "400"
+    input: "extras.0.0.weight"
+    input: "extras.0.0.bias"
+    output: "429"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "429"
+    output: "430"
+    op_type: "Relu"
+  }
+  node {
+    input: "430"
+    input: "extras.0.2.0.weight"
+    input: "extras.0.2.0.bias"
+    output: "431"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 64
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "431"
+    output: "432"
+    op_type: "Relu"
+  }
+  node {
+    input: "432"
+    input: "extras.0.2.2.weight"
+    input: "extras.0.2.2.bias"
+    output: "433"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "433"
+    output: "434"
+    op_type: "Relu"
+  }
+  node {
+    input: "434"
+    input: "classification_headers.3.weight"
+    input: "classification_headers.3.bias"
+    output: "435"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "435"
+    output: "436"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 0
+      ints: 2
+      ints: 3
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "436"
+    output: "437"
+    op_type: "Shape"
+  }
+  node {
+    output: "438"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\000\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "437"
+    input: "438"
+    output: "439"
+    op_type: "Gather"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    output: "440"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\377\377\377\377\377\377\377\377"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "441"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\002\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "439"
+    output: "442"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "440"
+    output: "443"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "441"
+    output: "444"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "442"
+    input: "443"
+    input: "444"
+    output: "445"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "436"
+    input: "445"
+    output: "446"
+    op_type: "Reshape"
+  }
+  node {
+    input: "434"
+    input: "regression_headers.3.weight"
+    input: "regression_headers.3.bias"
+    output: "447"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "447"
+    output: "448"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 0
+      ints: 2
+      ints: 3
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "448"
+    output: "449"
+    op_type: "Shape"
+  }
+  node {
+    output: "450"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\000\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "449"
+    input: "450"
+    output: "451"
+    op_type: "Gather"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    output: "452"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\377\377\377\377\377\377\377\377"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    output: "453"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 7
+        raw_data: "\004\000\000\000\000\000\000\000"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "451"
+    output: "454"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "452"
+    output: "455"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "453"
+    output: "456"
+    op_type: "Unsqueeze"
+    attribute {
+      name: "axes"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "454"
+    input: "455"
+    input: "456"
+    output: "457"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 0
+      type: INT
+    }
+  }
+  node {
+    input: "448"
+    input: "457"
+    output: "458"
+    op_type: "Reshape"
+  }
+  node {
+    input: "328"
+    input: "374"
+    input: "414"
+    input: "446"
+    output: "459"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "342"
+    input: "388"
+    input: "428"
+    input: "458"
+    output: "460"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "459"
+    output: "scores"
+    op_type: "Softmax"
+    attribute {
+      name: "axis"
+      i: 2
+      type: INT
+    }
+  }
+  node {
+    input: "460"
+    output: "462"
+    op_type: "Slice"
+    attribute {
+      name: "axes"
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "ends"
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "starts"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    output: "463"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+        raw_data: "\315\314\314="
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "462"
+    input: "463"
+    output: "464"
+    op_type: "Mul"
+  }
+  node {
+    input: "464"
+    input: "465"
+    output: "466"
+    op_type: "Mul"
+  }
+  node {
+    input: "466"
+    input: "467"
+    output: "468"
+    op_type: "Add"
+  }
+  node {
+    input: "460"
+    output: "469"
+    op_type: "Slice"
+    attribute {
+      name: "axes"
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "ends"
+      ints: 9223372036854775807
+      type: INTS
+    }
+    attribute {
+      name: "starts"
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    output: "470"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+        raw_data: "\315\314L>"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "469"
+    input: "470"
+    output: "471"
+    op_type: "Mul"
+  }
+  node {
+    input: "471"
+    output: "472"
+    op_type: "Exp"
+  }
+  node {
+    input: "472"
+    input: "473"
+    output: "474"
+    op_type: "Mul"
+  }
+  node {
+    input: "468"
+    input: "474"
+    output: "475"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 2
+      type: INT
+    }
+  }
+  node {
+    input: "475"
+    output: "476"
+    op_type: "Slice"
+    attribute {
+      name: "axes"
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "ends"
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "starts"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "475"
+    output: "477"
+    op_type: "Slice"
+    attribute {
+      name: "axes"
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "ends"
+      ints: 9223372036854775807
+      type: INTS
+    }
+    attribute {
+      name: "starts"
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    output: "478"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+        raw_data: "\000\000\000@"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "477"
+    input: "478"
+    output: "479"
+    op_type: "Div"
+  }
+  node {
+    input: "476"
+    input: "479"
+    output: "480"
+    op_type: "Sub"
+  }
+  node {
+    input: "475"
+    output: "481"
+    op_type: "Slice"
+    attribute {
+      name: "axes"
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "ends"
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "starts"
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "475"
+    output: "482"
+    op_type: "Slice"
+    attribute {
+      name: "axes"
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "ends"
+      ints: 9223372036854775807
+      type: INTS
+    }
+    attribute {
+      name: "starts"
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    output: "483"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        data_type: 1
+        raw_data: "\000\000\000@"
+      }
+      type: TENSOR
+    }
+  }
+  node {
+    input: "482"
+    input: "483"
+    output: "484"
+    op_type: "Div"
+  }
+  node {
+    input: "481"
+    input: "484"
+    output: "485"
+    op_type: "Add"
+  }
+  node {
+    input: "480"
+    input: "485"
+    output: "boxes"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 2
+      type: INT
+    }
+  }
+  name: "torch-jit-export"
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.0.1.bias"
+    raw_data: "\262F\336>\016\332\230>R:\236\275J \t\275\225\270z\276s\331\271>\337\331\365>\351\336\303>\204x\204>m\\\263>B\271\273>t+\344>\242\334f>\221x\225>\301\210K>z\016?>"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.0.1.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.0.1.running_mean"
+    raw_data: "d\374^>\032\210-\274\250\3411>B\304\001>\212CT\276$\375z\276\024W\034\273\235\261\236\274\224\020#>.\344I\276\005\234\022\276fg\203=\256\226\256\275\347\023E\274\265\2551>\345\034\253\275"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.0.1.running_var"
+    raw_data: "\275\370\021?\234\233\272=r\212\273>\003\3709>\337S>?\303\032??\311\376\225=b\026&=YZt?;E\345>>\342H?\271\006\343=y\356\224=\327>\365=\264\032\005?I\334\257="
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.0.1.weight"
+    raw_data: "\204Z\021>\003l\243>4\343\312>\243\260\272>f\002\021?A9\'>\257\203u>\025\2010>Nv\013?\257\027\375=\223g\366>\210\377\022>\372\251\374=\2248@>\230+\334>NJZ="
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.1.1.bias"
+    raw_data: "\037\010\342=\235\024Y= t\032<)M\200\275C\214\263>\336\355#>\360\273(?A_S<\265\354\371>\313\035\260>\032rH> \344@?\371vU=C\234\276>^4\002\276\3736\261="
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.1.1.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.1.1.running_mean"
+    raw_data: "h\007\206<\276X\216<:z\032=S\337\323<\372\273l\274\017I\017\274\331|\202\274\201c\306<}\362\353\275\333O{<\342\272,\276^\371\232\274\306\245\245\273\323\'\312=\330u\203\275\323\034\001="
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.1.1.running_var"
+    raw_data: "\247\237/<\270z\247=\266\005\253;\321Tl;\016\245K;c\247\267<\363\252J=\0255\304<\323\352\020=\245y\033<\243\014\304<0\363\337;\343\036\035;\370Zj<\273d\352;\360\260_9"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.1.1.weight"
+    raw_data: "\276\237\010?\372\240\000?u\245\205>v\276\236>\301\031h>\214\\\034?\271[\023?\233\263\007?\025.\222>\375\341\363>\ra\307>\320a\336>dx\265>\301\343\304>\270O\'?\221\211\215>"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.1.4.bias"
+    raw_data: "\036E\013>O\361?>\0244M<\022`T>t\206\203>\330\243\257>\234\236Q<\246\026\\>\027\200\250>\325\365\025\275\207\271N<{\260\216=l\262(> >.>\030\031a>`W\202>\034W\217>\237\030c=J\030E\275+\266M>\211n\242\274\206B\340=\372}\221>4VN>\2336\205>\327\225\215>\005\371\220>\317\014p>XX\001\276\2411 \275`\220\266\275\020\022B>"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.1.4.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.1.4.running_mean"
+    raw_data: "e@\247>\202\271\372\275PpL\276\034j\227>\304\313\036\276~\033\311\276\013\t\005\277\357\037\331\276\211\002C\276n\310\230>\017\002\333\276Z\255\353>O\354\334\276x1x>\270\241\211\276G\222[>wk1\276f\r\236=\230\315\206\275\341\371\201\276\235i\371>\336\231\330=\302\346\263=\260\224x\276\272+^\276\002\031]\276o\215\242\276H\273\016?\3031[\277x\"\002\276\314A\007\277&.\272="
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.1.4.running_var"
+    raw_data: "\336\346\303=\331u\331<\37586>\340R\206=\220\037\244=\003+\226=\317\255\330=\376\2102=\236\372$=\306C\260=\\\245\202=1\345\266=h\334>=\221{\314<\374?H=\00032=\236\276\026=\002=\301=\030\t\216=,\260\264<d\224\326=\260\202\311=k=\244<\023~N=5\320>=U\3607<\2468.=\263\003==\350\355v>f`\232=%\215.>\027l\232="
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.1.4.weight"
+    raw_data: "^\205\246>$\324\025>\031\373\322>\001$\374=P\r\206>\310}\221>\373\222\224>\361\003k>\332\254\317=\276.\327>\253\346\256>\022\366\333>\325\263w>\312\227\227>\305\337=>\314{N=\321qM>\246\037\342>\267\211\276>\246\206\030>>\321\342>\316\251\276>\247\005\024>\320x6>*\304c>J\307\315=8\245\277=\310\211\273>b\270%?\222\253\250>\206*\367>\007rw>"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.10.1.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.10.4.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.11.1.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.11.4.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.12.1.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.12.4.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.2.1.bias"
+    raw_data: "\305\301\254>[7\331;\027\254\315>{\312V\274\025d\357>\275\321\271=~\000n=S\231\365\273\031\357\254<\273\007\234>\334\274\224>0-\177<v~\255\273P\272-?\334\346A\274\215\201U\274`?,=>\356\324>\307\361w>\013\032\350>0K\255>\221\345(>\263-\272<@TP<\274\226V<\031r\000;\262Y.\275(\376\306=\277\234\274>\001\357->\210\216\221>5L(>"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.2.1.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.2.1.running_mean"
+    raw_data: "\364\350n>Mq-\274\010\234\022>N\347\322\275\273\216\214\276a\004\276\276\005\354}=\232\336\t\2753\203\311<\367_\033>sT\017>RN7\276\370,<\275\322:;\276\371\204e<\223\212\361\274\373\334\271\273\247\274A\276\212\013\305=\036Rc>\310;=>\022\022C\2763\226\022=z;\361<\016\347\307\274tp\236;X\266\014\273\031\334\220\276\233_0>\211L\274=\377\016\335=\317%M\276"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.2.1.running_var"
+    raw_data: "\204:\236=A\350q;N0\r<\\f8;\216h\023<\357r\221<\250D\035;\354\272\200<]\364\033;\275\231R=+\272\356<=^f=\303\276\213<\234\001\326<\201\351r;B5q:knt<\023\004\261=j\220\266<.\324}<\320\266u=\256\275\004=\211\330\265;,\320\320;\301Wd<\243H\375:d\023\254:\031p\"=\3631\002=\210\341\362;||\203<\252\024\035="
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.2.1.weight"
+    raw_data: "\315\037\307>\026\203\257>\242\263\211>1\363\320>\352\216\233>e\366\271>\361[\240>\003\326\314>\2178\272>\2614\270>N\353\230>\224>/?\300`\323>\367\336\202>\270$\300>\373]\322>\253c\264>7\315\375>\250\250\226>\177\321\233>q`\277>\372\261\364>\023\303\256>\334\255\317>\205\322\333>;\016\205>G6\230>v\256\303>\340.\242>\216\333c>1B\246>6\225\016?"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.2.4.bias"
+    raw_data: "\267\nS>\337fO>\261\324F>F\"2>7\350\247>\'\024B>\2105O>\326\202\211>m\244 >BV\315<\374\231\271>\216Q\362>\005G\267=@\017\222>\241jH>]\030p>\'\202\237>\263\255\210>\317\307\275>>\221P=x\376T>\010\360\267>\261\217\201>\222\335^>b\234\274>\320\274\242\275\024\010\227>\224zH>\233\341\206=cW\026>\031\301\372=\276Hp>"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.2.4.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.2.4.running_mean"
+    raw_data: "\035<\316>9\325I\275$S+\276t\267 >/-\320>\177\234\022\276\235\257B>\031\236\261\271\007\255x>\325\216\260=\020)\200=/\324\253\275\310\225\211\275w\241\001\276V\270\023>\301\207f\276O}\243\275\302\230\263<A;\325\276~\223)>\373E\205>\304N\264\276\033h3>\0253*>T\316\242\276Q\240\255>g\257\206\276\206!7\275\232\341\246\276\225-n>v?x\275\254\032\212\275"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.2.4.running_var"
+    raw_data: "9\261l=\370n\224=n8\304=\2504\214=r2l=\"}\271=F\333b=O\331\335=\237ib=\306\207m=\211B\241=\t\221\016>\235\243C=8\334\241=V\025\037>\351\301!>\263\r\255=\363\\\317=x\200\205=4I==\006\204B>I\021}=\324\3418=,\235\250={\323\331=\024\350\252<~>\275=\275\274\226=J\313\221=\273\300\234=\226\215\307<\035}\201="
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.2.4.weight"
+    raw_data: "\351\177E>\323\372e>b\331\333=\277YN>\346a\203=\246?n>\301\206\223=,\340\307=uC\">Q\215\253>\270\320\356=T\033r>$\t\\>X\323\353= \345\006>hR%>\305\210\256=\323-\020>G\023*=\224\031e>H\306(>\307\277\360=\021\325\342=\260\224k>l\250\351=\351\366X>\314y\342=\315\365k>v\027v>\341\371\323=\350#:>\235\327F>"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.3.1.bias"
+    raw_data: "d\334\210=\314ly>\300\371\236>c\333\326>\000\022\270\274N\204\350=eHm>\2139\237>\213\275t=\2412@>\270\244\'=\005zF?\234\220\313;\261\321!=\224:\246>r\203\213>\213\273\316<\267\335a>\347o\304<h\355\334\273d\022\020?\027>\005\275\235\314\371\274\035\214x>\025\335\231>$,R=\374\312\271\274i\262o>(\3651>\250\250\'>\026\255\365;\357\377P>"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.3.1.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.3.1.running_mean"
+    raw_data: "k\211-=\364\025T<\350\324\027>k\006\014>\310\203\315\274\371\321{=!\372\205\275\003\007s\274\354.\345=|b\344\275a\262\004>\255\034W\275\350\367\223<\272\256b\273y1\240=z|\027>\341L <T\005[\276\235(\217\276=\237\251<\376nz=K\331g\276\354fE=*b\324\275M\353\'\274\027\177\273\273\210\242\030=7\216+=%\310\254=\371\254\351\274\223\222\331\273\263Z\234="
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.3.1.running_var"
+    raw_data: "\355\351\023<z\320\345;\262\361\343;\207\215\301;\214\207\371:\n#\332;\212X\366:\027S\213;\366\341\275;@y\221<\375f\276;\242\027\200<Fg\354;\242\220\217;\362r#<^M\004<\362\0054;4\2235<\\@N:\032\334\361;\032>J<\304^\214;\232\356\211;\252\007^<h\247\367;r\025\370:\234\347+;\225N\024<^7K<x\034!;L\232\225;\370BN<"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.3.1.weight"
+    raw_data: "|\035\257>\353\256\247>=,\300>\253>v>\270}\304>QM\312>\337=\263>\353p\301>m\213\240>j\034\273>U\322\357>\220\037\177>i\351\265>\255i\277>\217`\330>\323\224\323>\210X\274>\373\003\344>\251K\274>\t\241\250>\211R\267>\230\266\262>[\233\264>\270\350\303>\0144\302>s\330\200>\213\354\316>\302n\220>U\002\234>nU\252>2\307\237>K\327\262>"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.3.4.bias"
+    raw_data: "\365\277e>\274\023\020\276\3419\272=\372\237H\275\"\346P>\230\345\303=\315\253\021=\217\324N>\"x\r\276\035\353!= @H=\224h\005\276F/C>\204)\033>\377\256\230=\333\326\270<%\026\036>v/\020\276\304\003\023\275\241J1>\237\266\223\276\243\313}\275\263\242\207>;\221\034\275.i\004>\342\307\242\272Av\275\275\350\324\305;]\363b=O\212P\276\035FZ=,\212\215="
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.3.4.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.3.4.running_mean"
+    raw_data: "\000\257\227=\247\r\273\275\224h\023>6{d\276EK\301>\314\034k\276\355\327\220\276g\336\336\275\254\242\312>\223\234\032\276\273\305.?\025\324\275\276\352LY\276\333!g>\032~~=\323\265+\277eHD=\3354v\276\307\330\010\276-\273=\276\273\340#\277\312y\347\276\221w\r\277^7\025\276~l5\276\336\321\214\276\332o\010\277\220}i\276\303&\323=\253\257#\277~R\006\276I\013\005\275"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.3.4.running_var"
+    raw_data: "\204fE=XV\211=\253\273\'=\262\001\351=\204\340L=j\274\217=\234\251\214=\221\262q=dP~=\222\322\030>\367D\261=\3652\305=\2614\257=\313V\250=\206E\220=\345\350\245=;\374@=\236c\225=h|\313=B\005\365<\242\337_=\207\247\021=\034*\021=x\232t=\217\247R=6,\336<\221\007F==1x=`\233_=\226\363\254=\224kX=.\271d="
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.3.4.weight"
+    raw_data: ".\024\333=HL\223>\340[+>\270\361\260>\222\2347>\025_\204>\237F\233>\217~\206=\375\203\254>\222\312\265>\033\354\260>op\243>8ol>Q\252`>\020\225\201>y\223\220>A\265\r>*\036\241>H\005\230>\033!\342=\215H\245>X\207y>\320\230\257=\352\245\216>\274|A>\001>I>\307\366\240>\026\000\207>U:\256>\236k\333>4Y]>\254te>"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.4.1.bias"
+    raw_data: "\374-\342>VYC>7\351T>q\270\222>\205\330\r?{\332\261>\216\344\230>\201\261\027?\257.C>\007s\356>\335]\346>V~N>\006\323\346>x\232\273>|\374\247>\266\016t>\352}\262>jZ0>c\213|>8nX>\356\267\373=\272mG>\342A!>~X\213>\211\304\236>\255\0307>\263\2502>\020Gv>\322\313\231>\301\313\200>{b\032?\206\374\305>"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.4.1.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.4.1.running_mean"
+    raw_data: "r\177^\276\334\255X=I\307\353=\215W\361=\307\216r\276p\001>>t\232\026>*\016$>P\200\223=\036\2479>\001\036\'\276^\rF=\005\240j\276t<4>\374\241\t>\364u\022>^\340\257=I\002\213=\365`\300=J\010/=\344p\371<o\212\244;\262g\216\276\233\277\256=Zk%>\337\353y=\206\216[=2\237\344=xB\031\276\374\370\214= S6<\032\302\374="
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.4.1.running_var"
+    raw_data: "{+\226;r\201\274;\227O\030<\027n\216<=\027\224<\336\355\203<\350\306\311<\2064\013;\355\034,<\262\033\206<\261\033I=o\261\242;\373F4<\232\301\373<\025P\236<\217\240\211<r\326\301;f\335\021<0\205N<o\245l;G\316h;\363\373\341:M\272k;}\000f<\261\367k<L\275\324;:\236\266;\266A)<3$\030=\261\326\236;xQ\237;\305X\t<"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    name: "base_net.4.1.weight"
+    raw_data: "\221N\245>m}\202>\n@\220>\343\\\247>\305n\262>\010l\223>9^\241>X~\227>8(\207>M\323\246>t\206\343>\327c\231>Gb\223>\233\222\256>e\361\256>\033]\254>\007\022\220>\246\020\\>\214\204\265> X\223>\245\324U>\022RX>\272\031\310>\357j\220>\250M\213>P1a>\016\231h>g\370\240>\200\211\013?&\263u>\335\313O>\243E\215>"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.4.4.bias"
+    raw_data: "\340\323X>`\375K>\341\246\357=\227\271j>\203w\025>\337\314\024>fF\202>\362\026\363=p\020\323=\275\255\325= aZ>\027\357F>RQ&>\034\225\030>Ihm>2\250\203>eP|>\t\244\346=\"lu>I\002(>\2131C>d\331\322>\211\031!=R=\023>E[\223=\251).>N\007=>n\237Y>\320Ro>\230\013s>\016h5>\222+N>s\350\034>\270\260\017>\313\030e<\377$\206>l\215\'>\227\312N>\223\304\255;\225\324\206>\'\230\244\275\324\230l>?+k<\212\357F=\251\256\217>\237\344\316=L\035V>\314WD> F\031>\340\247G>\253o\224=\225G\207>\336\273#>a\332\207>F_O>J\372T>}\327\232=_\300\345=\014\254\">ms\254=\241\221\327;\315\226\014>\212J\333\274\275\272\243="
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.4.4.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.4.4.running_mean"
+    raw_data: "G\257\226\275au\016=\202\235\234>)\003\266\275(\246\014=-\240[>\023\337\236>=\264\335<\341\017x>\233\353 \274]ha\276\370\330t\276-\216\204\276X&\332<\033\'\210<\021s \276\003\272\210\275\005$\017?\336\220\246\276\334\367\273\276\367\274\370\275\302I\230\276BR\021=Y\006\251\276\347*\314\276\332F\226>p\216^>~^\315\275\273\346\341\275\034\223\265\276u\233\205>\352\235/\276z\363~\276\237\311\004\276w\272\216\274\317\372\247>\207\251\207\276<o\330\275\032\237\330\276\246\004>=\000\201:\276\024\034\300\275\200\271\010\277U\256\206\274\021\024m\276DBr\276\362\341\333>\313>\225\276\027\241\324\275\263}\360\275\230+\322\275\335\253\330\2757u\014>\261>\301>t:\273\275\274\002\331\275\354\327%>\001\252S>v\244\031?\211H\023\277\203\211\007?\031\354\033\276\010\256)\276b\235X="
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.4.4.running_var"
+    raw_data: "\310\365\200=\205\030\004=\313\375g=\354\025\212=\337\351C=>k\350<\242uA=\334\217\026=\342.\t=_k\014=\335\304\341<F\000 =\255\323+=#\300\236=\273\211\032=\215\215Q=\310k\031=\002=\006=\270\\x=\337\344\350<\357\034f=\326\rS=R\223 =\361_\261<\234)E=\001}\265=y\021\031=\221\313\037=vb>=_-\t=1&\333<\237\206.=:1B=V\207\032=\240a\037=\223\316\206=\324\244Z=qN\336<\252r\356<\024*\037=\241{*=fT\200=\240)%=<\373\n=\014z\376<\007L\374<\351\3078=u\333$=w\344\373<D.\361<\231\262\307<\253@D=\366\233w=\235\203:=b\210m=\332|\005=P\023\013=\257\235E=v\234\"=\2118\306<8\206\222=\005\330\350<dvv<\373\225<="
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.4.4.weight"
+    raw_data: "\240V\034>\211\362]=\354\253G>\226\243\'>\n\3777>\200\n\026>;\216\023>\347Yn>ax\036>|%\">\330\321m=]\302\246=\331\334\030>\357KL>\r\222\375=}\014\232=\331\265\350=\331a\003>82\252=\361\264\331=\366\036->\276\034\274=\320\200)>\265\260\376=\3148F>\353c\023>)\257a=\206\003\320=\212\372\363=o\030\352=\372\233\357=I\324\261=\370\320\002>\2136\'>\240\267E>\260|\014>\316N\003>\275\365\213=\306\252;>\002\257\353=P\276d>\331\310\330=B\310^>\245\274K>M\032t=95!>\221\360\034>/\213\256=^\032\232=\367\207\351=\273\316,>\336\221%>S\0039>3\260\000>t\275%>Ah\352=T\263\035>\3015\032>\355~*>\350i >4\343U>\021\353\304=\037;7>\323\2204>"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.5.1.bias"
+    raw_data: "/J\270>\205\023`=1\366\014>\0367Y>`&\205>\201\317\276>\340\373\177>\323\022\201=\027\021\016?\262\377=>w\351r>|\'\235>\363\253i>\251\322\332>\351\":=\321\251\353<\337h\362=\376\252\350;\255\0338\274\200\352\200>\177\3447>\3327\300=\261\'\264=\034]\311\275}F\364\2758\304O>A\227S=\033\232\270>[\202\234>\224\355\036>\033\'\270>\301\007\255<\232\274\267>\321Uu>-\274M>\243\372\211\275\032\316\232>\254\245l>]o\237>b\253\277>\301\201\331=!\004\017>\224\213N>2-\330=\310:(=:\304\204>\003B\016?\327\205\240>\351\363\030;a\200\236:\324\177\006>\361.h\274\371\030\303=\0029\275=\026\\\373>\255Q:>H\032\242=Z\024`\275\332U\023>\333\2601=\262n\010>\360\314y=\273d-\275\032\266\026="
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.5.1.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.5.1.running_mean"
+    raw_data: "B&\264\275o6\357=\240C\370<\225\177?=N\300%\273&@\323\275\'*/\275FL\204\274\007\326\006\275\3526\241=\243@\314=E>S\275op\327\275\364\036\206\275\212\002}<\242\037\266=\366\022\267;[pN=\316\212:\2768\233\213=V\342\300=\240\366\205=x\316\340<\314R\330<;O\010=E\224v=@\330\003>F\225\267\275\001\223\003\276h-\221\275\364\210\360\274\315\336\307\274\363\240\005\275\312\323\227\275X\362 =D\236)\276\342\377\343\275\013\346\016\276\\\034\'=\356;\244\275\202\210\344<\252\325R\273U\266\216<\203\326?=\276}\221<w\200E=\2249\201\274U\277;=m\265L=#$\332;\201\220\321\274\372\240\361<\2772>\272\344\372\314<\3426\204\274O\356\232=\206\342N=,2\020=\313-\223<m?\331<\365\323\005=\216%\361=\321\223\230\273n]^<"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.5.1.running_var"
+    raw_data: ";\235\242;\177\2114:\025\010\252;\302\245\274;\3701b;\303\236;;\030\252T;H$\353;\250\356\200;[\373];\\>c:`\014\372:\363\260];\321\240\363;{\266\346:\315B\232:\335\010P;`\343O;#\275\030;+==;~\223\327;\252\023q;\261\033\305:\264\032S;\363\r\347:U\376\305;p\212s:\362\275$;\016J};\246F\177;\'\260\014;\305_\034;\333`\235;$\364w;ntP;\2575\221;5\236\347;q\200\206:`\204K;\002-z;\021A\336:\267^+;3\205\005;\212(\215;s\370::x\216/;d\270\234;Ii\033;*}\225:\354\026\036;\221d\225;\374\237\262;H\234\343;\237\244H;\376c\307;\313w\035;\237\212\221;\262tQ;\240\026h;\322\244\017;\230\230F;\277\320:;\212\207\307:DKZ;"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.5.1.weight"
+    raw_data: "l\350o>\030\225\241>\0336w>\3120\177>\026\250Q>\210\207->j\367f>\261\304\177>q\t(>7k^>&\243{>C\252\200>\367\262z>\311\nx>v\253\212>@{\220>e-y>\013<\204>~(\304>L\262G>t7\211>\3166\273>i\371u>J\253\245>S\354\224>\n\021|>\3361\270>\221uf>\371\374o>\246\034\210>\236\235N>)X\245>?\334\207>\213\323o>}\2449>C)\300>r\030\234>p\225S>\265\006*>\352\326d>-\304P>\001\360\233>\212\304E>\23289>\2527\227>\010\313T>J\217E>\"\240\217>\033\027\241>]}\234>\203\022\211>\027N\252>\336[\207>\366\r\217>\027\344Y>\031aF>\306\372j>7\221\212>\303Lg>\2622[>\311F\200>\017\207C>Sa^>,\337\215>"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.5.4.bias"
+    raw_data: " \022\214;\365\027\330\274~\253\037\275\3056\007\275\276\336\014=\236\2002>\032l\023>\363\314F>\224\227\017>\3668\235=\262\335\264\274g\246\032\276Mm\213=\222\237\224\274E*<\276)\362\231<\007\341\036>M\3160=\245<\250\275\206\021\321=W;@=\227\302\244\275\r>E>\337\341\021>\272\264\013>\206\322\227;u\225\260\275\257\253\366\275i\357\326=\237K\275\274\2610%>\003\214\201=W\340\314\274\000 \261=+/\222=\035{\033<\366\376*>\024\343\272\274\013))\275sb\255\275\233H\317=\3742\023>8\227\227\274\362Wa=\237/^>\372\254\334\275\301\304\232;\220\203\325=\247\276\314=\2115n\274C\0307=\205\353l\275\245\263\215<\346\207\207>#\235\326=yK\373=k\356\017>\3712\017\276\221\342\005=I\337\350=\230\244\007=\372\020\016\276\203z\320\274\206-2>"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.5.4.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.5.4.running_mean"
+    raw_data: "\276\264\263\276\325\251\322\275\303\300\017\276|ZP>jr\024>\300\010\340=\372\321\215>\233\177i\275\234;\000?\314\036\237>q\336\261\276\016\267\302\275\233\241y>M\3635\276\000\317\270\275\226\022\025\276\r&\327\274\242\306x>N6\264\276\202\207U>\332|\266\275\242\271w>]=8>V\233S>\303\220\263\276%\216\"=\no\332=\033,\004\276\312\311<>\211\001\340=\277\005\214\276g\222p>\243A\227\275)\2217\276\245!K\274,\002f>\033\013\351\274\023\227/\272\300\3325\275\330[\020>\214\361\033<h3F>\260E\215\271\037i\267=\014j \276\337Q\251\276\237\177|\276b\t\204\275A)\007>\3422$>|\350\245\275\235\224f>\3008*>\213r\016>\332\342\246>v*\342\275M7\212>\265\223\t\277\332&\263=u\253\226\276\036\232s\276\002\355-\276\357\270\311\275~\352>>"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.5.4.running_var"
+    raw_data: "h>\026=\232\200\030=\005\307\271<\234>\311<r\243\227<\352\327\036=#v\233<>\022\211<s\246\323<\364\272\330<<O\350<\2712\014=\017\000\020=\223\311\324<#\253*=\037N\226<j\252\224<\365\203\370<\205\024\036=\233\276\345<\n\206\264<M@\351<\305}\356<jh\256<\214Z\002=\200M\210<\032\037\275<\232\231\022=D\326\322<+\273\362<5\025\331<\340\312\004=\250\267\362<\251\311\243<\207\364\212<\301\247\327<\300\236\235<\027\336+=KO\025=\021\246\214<\200\327\033=\330\276\245<\037\372\002=;\2126=`\374\223<:\235\305<\026\r\004=O\2531=\266\212\000=\222\264\226<\034\357y=\036`D=\357~\002=;_\201<\246n\227<\304\204\344<(\266\034=\230\353\000=\272\032\221<]\354 =g\257\313<\376\035\213<\311j\264<\270 \273<"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.5.4.weight"
+    raw_data: "\307\307n>\374Li>\322hP>\305\266K>\264\035+>>;a>\246\352\020>\261\355\201=G\005\">sp$>\030\021s>\003\371i>\273\371J>\026\316j>a\354\202>\345\3177>\363\241\335=\313NK>QAj>\033RN>\r\203K>]i`>)\201\"> \'\003>\r\2358>}\332#>-r:>\003\327w>\027\265,>&\220[>\326\323\013>\266\241W>\327S^>\237\'\032>\313\025\006>\326&K>d\376\260=\336\222Q>[\324`>\222Z0>\233\310\037>\226\024\341=E\220v>0GU>~\243\252=\006\374n>\2662\202>(\3663>1\207@>\304E8>.gb>\242DZ>\310ML>\227\307\252=\275\255\370=B\325*>\250\032C>eyq>\\\315\030>ERD>\222\005H>\267 R>\230\272<>$f\211="
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.6.1.bias"
+    raw_data: "\031Y\305>y\205\336;NS\267>`\230\227=\264\304)>\036\034M>\326<\224>0\t\214>\245\235\310>\234O\375=\271\261\374=\023Li=\271\000\224>\247\310\t=)\"\361=*u]\275+i\320>d\031\253<\327\215\002\2758\236f>p\247\232\275\340\224\261>\242\r^>\215\027\216>Qr^>\377\341\023>HD\306<\371>\n>\346\0036>\014\353\306=)\340v>2\"J>\261\274j>t\345\210>\366\010\226>\357\rW>0\375X>K\212\006>\236!\302>v\310y>G\227!>K\334\365=\"\351\270=\326f\216\275\342\036\357=l\227\325\275\235\342\217>\004\001\305>7t\177>H\332\226>%\003$>\024\233b;p~4>x\324\201>\221~\3108&\262\220>;)*?,]\212=\376c\343\274\353\034\237>I5\274=\361\205b=j\000[>#\372\234="
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.6.1.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.6.1.running_mean"
+    raw_data: "s\352\261\275\275f.=\323\317\r\274\037C\016=\030\325\207<\312=\'\276&P\312<\254\207\301\275\347\250f\275\356\247a=\277\244(=\234\355\304<\312u\251=\274\210\031=\253\270\242<\314}\201<\241\340#<<r\241=\346\253\n=\035\351\305\275\215o\215=1#1\275Y\300D\275\230\314\273\275c\2516\275L\314\266\273[\333\237<\2605\233<\220\255\323=B5M=\301\214\232=\302\341\342=\304*\364<DF\244\274<\350B\274\332\225}=\346rk=\007\244\375<$\242/\275\335e\226<\327w\255=\261\314\033;\233\202H;\201\035h=V\301\255;zt\323<m\305\233\275\240\221L=\364>\311\275\017\026\257<\tg\211=mx\027=\236\214\304<\300\024\263\275\312;E=cQ\210\275\345}\327\275\317cl<\303\342\036=x\326\203\275\272_\232=qkB<\t$\032=\224H\227<"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.6.1.running_var"
+    raw_data: "\274\\\213;\370\\+;\030D\237:s\257\312:\374\312\373:\334\000Y<8\270G;\324\264\020:?\333s;.T;;YCf;3\200\342:<\377\347;Z\'&;\025~\255:\235~\323:#\001\004;b\377p;\300\3322;\312\243\270;\216\014x;\307\306?;\2605\301;\207\250+;65\313;\'\002\357: :\364:\026E\216:\246@\216;k\351\226;\002\260a;\256\243\016<\257\330\r;\231}\002;\214\014\323:\rXs;\036\360\276:5^\';E\214\003;B+z:$P\210;\272\221\254:7\223\216;\366\rU;A\261\334:\200\224\t;\226r\016<\316\301\026;\'\212`;8e\254:++\225;\2661\245;sf.;\007:\007;\311q\336:\303\017Y;x\335\352;^i\032;t\017\022;\254+\304;y{i;y\016&:Yr\360:$\347\210:"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.6.1.weight"
+    raw_data: "\213`i>5,}>\276\305?>\000\201k>\307\036\213>\261h\260>\357{l>\013\334\213>\241\233_>\013\242\227>8m]>\260\3071>\345?\205>\213s\205>\246\252k>\225\022\210>\211!l>\367\373\255>P\277t>\337\367\236>I@\212>\315L\225>G\225\216>v\350z>->\226>g\004w>\332\314\221>O,@>\n\205h>\306\353y>\244\321\232>\007\225\200>\010*E>U\351{>\232\334m>xX\203>\225\007\206>\300Wf>\022\321t>\356\035C>\036\326\215>\276\370\217>\263\232\222>\245\336\232>\241\305\227>-\353x>\364\224\247>\331/w>\036*\227>7\303J>+\034\207>iz\204>\277\014w>\352\221\221>\261\327\250>\305\261\203>\333>y>\373\344q>\320[\236>\201\321\222>\265\374\221>\006\217\'>,x^>y\005\240>"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.6.4.bias"
+    raw_data: "_5\220\276(-\022=\201\313\225\275N\033C\276\227\240\314\275\203\000\243\275{\326l\276\354\261\211\276}f\261=\333\337\030>U\366:>\342s\030\275\271\221\034\275\347\301\370\276\277\220\271=\310d\363<2\004\225>\210 d\276A\212\357\276\365<7\276\272\305#\276\360\345\227\275y\204T\274\201\033z\275\214\314\237\276\247\031\214\276\226o\022\275T\255\220\275N\3438=\371\3063\276\327e\246\276\032_\202\276ClU\276\031\310\237\276\237w\216\276\200\314\322\275\327\370\200\276\027\370\204\275,\367\367\275\314\376\232\276\366\263\364\276\201\372\347\275\360}\311=m\3335>el\003\275\037\334K>\220j\002>}\212\316\274\335\363\005\276\365F\026\276\365\275w>\340\034[>\224\305\312=W\300{\276+[)\276W\252]\276\247F\n\276\363\211\231>\324\216>>;a\274\276(\030\262\276\325Bx\275\003c\216=\334\331\244\275"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.6.4.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.6.4.running_mean"
+    raw_data: "4\'\375\274lF\223>\362\251\307\276\003L0\2753\227\266\276;@\270\276#\360\030>\244~D=\3575\256\276A\006b\274\242\035&\276\2705\276\274\245\t\274>\014\304\204\275\017I!>\345\332L\276\215\232\n\277\247N,<\327h\r\275\210\253\274=\365\376\'\277V\217\013\276\355:\205\276\226\352\332=\032\272\030> \346E\276\214I\235\276\006\315y>*\364\271=\226\354\255=\337\304-=H\305?<\003\013\032<T\336*\2779\303x\276\260\276!\276\241\337\206=\271g\310\275\306G\370\275\373\367\317\272\235\252\315\275\245\027\025\276\030!\010\277C\t\213=rQ\303\275\"\370\017>\3473P\276 \313\227<!\302\027\276&\'\002?\354[\220\276\314\361\274=\260Lj\276\343`\236=\304be\276\260\306\241\2754K\270\275\260\317\344\276\005?\240\276\227\022\257\274\256\206\246=\035\242\276\275\365\337\325\275\203\002\027\276"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.6.4.running_var"
+    raw_data: "\t\000\017=f\215\331<h\353\024==R9=vsM=_\306\244<\274\331\361<(0\366<J\266\027=\260\256\005=\0062\263<\341\345\316<~%\325<\231\313\335<\360\340\364<\223\n\010=\000M#=\277\232\335<\t\304\016=k\220\360<\037\242\325<\245\233\006=\025\033\361<?E\007=\025\352\320<I\3325=\242\312Q=\025\347R=\272\246\n=pJ\014=\221\017\345<\303\275\276<H\013\004=A\365A=@\0029=\273\347\276<3\007\340<\225\231\234<a?\367<\327\362\r=\304L\324<\267\251\271<0A\232< `\001=-\034\344<\324\362\362<\274\371\240<\266G\354<um\r=p{M=2\324\327<\223c\201<\277\301\336<w\372\246<\\k\361<c\2170=\317T(=:X\003=@\361\270<<\n\376<O=\347<\017\242\372<\t\177\374<\005\335\024="
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.6.4.weight"
+    raw_data: "fS\276>-\302w>5\370\237>~G\246>\356\273\254>\0275\231>\326\206\242>\345\257\253>\225\001\206>\343\342\265>~\335b>\212W\213>d\376w>\n\314\212>7\355\203>\366P\217>^q\200>p\303\211>~\370\273>U)\244>n5\316>A\353\265>\201z\236>}}\245>X\341\245>\0055\254>R\264\273>\222\376\215>\271\344\216>&\357\302>o\373\260> +\276>C\261\261>\217u\243>\211\035\314>\337\360\235>FM\236>\347`\226>\230\327\262>\373\322\235>\337\270\314>\331\310\233>\242\355p>\265\263H>s\200\222>gRs>\t\260Z>\251\263h>{\026\233>\206\266\216>\371\253<>\'r4>\333\207l>\223\257\234>\373o\221>2\"\230>Z\025\251>\374\020G>4(Q>\005T\254>\005\275\316>$\234\243>W/p>\320\\\246>"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.7.ConvLinear.bn.bias"
+    raw_data: ",\264\220=\215\315\306=\265\231\r>M\242\031>[!\235<\230\277K>Il \272\216D\367=\025\337<=I\025\356\276\033>\251=\027\360\256>\315e\336\275\274a\243\275$\r\202>,\323?>?\0031>&\362\216>6\241p>/_\313>l\230\213=q\335t=\366\270i<\006\342\375\276<_\220=\025,7>\234\033\262\276\001\255\336=\234\260\023=\030/\333\274\345\226\216=\351\261\242\275\005\036O>\225/\r>\004\215\004>\027k\222>\230R\036>\2727\232>\321G\014>>\026\361\276SI)=\271\031?\275\320s\220=l$D\274\216\346o=s\257\342\274V\006\024=\271[l\275\261\3022>)\310\272<`\023\033=\210}n>\316y\327\275\3242\267<\246\212V>\335\332\251=\221\233\345\276\200\024*\277\362*\017>\270I\030>X\320\255>\245\375\206>\263\305\371\276\351jF>"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.7.ConvLinear.bn.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.7.ConvLinear.bn.running_mean"
+    raw_data: "PD\0023\232\335\364\262Vq\0003b\253\2101k\246\2072\217\347\3500\326Qp3\230\267\243\262\001\334\203\262\277\213P3\333\371\0353\316\225^1\321$\2742\211$\3232\311\201\2003\322\017R3\177\265O3#\376\0223;\333\2622\245\310\355\261\025\237\3562\037x\2232?\260\2512\330\316\2203\334\311B\262,H\227\262\376\373\3773\227\275\0043\347\361\2131}\010C2\364\020\2123\321\262S3\262T\2652\276e\23529\tE\262q\267s\262\202\022\017\261_o\276\262\323\305;\263\347\203:4\3766A\263\021~d1\250\003\3732}S\3622\234)/2 ;\0343~1\2112\337\273\237\261\026\335%2\035\01302\240\272\3470p!j3\333z\3322\237\377,\261D3\3532\275\340C\262\323Z\3742\030#\0374f\271\2371\';\0302\224\026r\2614 \2032\261\342(4\177y\1772"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.7.ConvLinear.bn.running_var"
+    raw_data: "\370\337\244<I\023\005=\252\005\252<\343k\345<\345h\215<\230\006\243<G\214\261<H\231\214<\265\267\232<?7\021=T-\334<>[|;\307\031\r=\200\264]<i\306\335<\371\310\236<\265\036`<<\231/=\316\355\207<\033?!<\312\363\236<m\336\035<\'\366\016=\004\327\200=\375\266\203<\000\n0=@\354z=\232\223\000=\325\362\343<\352*\360<.8\240<\347\304\307<=\225F<\261\326\375;\332\"\002=\204/\207<\317\356\272<\004\034S<nc\261<\362t\375=\305\322\236<\341\010\245<\353`\273<\202=\021<\005\303\336<\317\244L<\344\257\246<h9c<:\232h<6\353\224<\016\003\251<L\317\314<\214\211D<;\337H<\322\372\340<\"\273\034<!v\212<\212\331\320=\020_\233<\257{\344<\371E\\<\341!8<<+>>\361*\035<"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.7.ConvLinear.bn.weight"
+    raw_data: "}:2>\255*\027?\260\336\240>\360J\036?\243\237\222>\263P\354>>\274l>\005\\#>n\334\216>\267\341\355>\010V\344>\307\2736>\337\367n>\251 \034>U\307\355>\025\331\235>\201\241\333>\037\265\002?\311\177\243>\3160\304>O\274\250>b\365\332=\333R\323>t>\026?\036\232\013>\352\023\367>\341\336(?B\201\232>C\310\362>\252:\367>w\033\330>\231\322T>\001\352\241>\267\250]>\255T\000?\016\223\333>t\243\322>*\366\310>\310>)?\253t8?j\202\253>\363E8>\361\003\314>t~\t>f\364\302>\217\256 >\030<7>\257K%>t\275y>\331\303\320>\177@+>\275\302\321>r\351\342=\344w\207>t\327 ?\213\242\005>\361\n\273>\325*$?K\254\226>\016\233\"?l\240\354>&\214\274>\304)B?]T\243>"
+  }
+  initializer {
+    dims: 8
+    data_type: 1
+    name: "base_net.7.branch0.0.bn.bias"
+    raw_data: "\351y\'>\315do\275\274\222\233=\235I\257\275\335\025\226=\2419\177=\254\373\275\275f\013%="
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.7.branch0.0.bn.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 8
+    data_type: 1
+    name: "base_net.7.branch0.0.bn.running_mean"
+    raw_data: "5\234\240\275\314\037\216\275\177\2521>\202\320\210\274\341>\256\274\354\375\235>\364$+=\017\266\\>"
+  }
+  initializer {
+    dims: 8
+    data_type: 1
+    name: "base_net.7.branch0.0.bn.running_var"
+    raw_data: "\204s\211<\324Tt<v9\210<2\205U<j\035\206<\331\233s<Nzc<\343\'N<"
+  }
+  initializer {
+    dims: 8
+    data_type: 1
+    name: "base_net.7.branch0.0.bn.weight"
+    raw_data: "o8\242>\373W\216>\324\264\234>8\354\226>\262\024\237>\351\035\247>\352\021\230>\223\353\206>"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch0.1.bn.bias"
+    raw_data: "\257\371\206=P\231\217\273&\367s\276\330\260\030>DS-\276\263\035\n\2769\360\201>\321c\366\275\252F\255\276\032\005\207\275lI\240\276/\2745\275\224A\010\277\254<\305\276N\005\223\276%\271\316\276"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.7.branch0.1.bn.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch0.1.bn.running_mean"
+    raw_data: "\332\246\345\274\273\013\264=\234\202\370\274|\320!\273/r\002<^]\224\273}\022F\274\0328\235\275\303-\265\275p\377\271=\351\312\330\274\3039\030\275\224xZ\274T\263&\276i\330\300<5\336\026="
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch0.1.bn.running_var"
+    raw_data: "va =@\3531=vp$=w\375#=\221\357\\=(\001\275=\352\227\207=\353\370\030=\312\275$=\256\313\216=\320\350\206=K\261\016=\302.~=\352\301\231=\005\0035=\375\375V="
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch0.1.bn.weight"
+    raw_data: "\267\234P>\266\260N>mL\210>h\0375>+\237\233>\305\217\203>\377\3601>\377\322_>\026 \262>\"\314c>\2122\226>\254\271j>p)\265>\2032\256>E\201\244>\3357\226>"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch0.2.bn.bias"
+    raw_data: "\006|\353\262#\323\271\261S\347\0303\330/\342\261(\251\2373\014\216\r\261\305\316Q\263\035 \014\263\302\262s\263\276C\025\262\305\303\3463%W\'2\346a\001\2620`,\262#\273]0\236g\2632"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.7.branch0.2.bn.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch0.2.bn.running_mean"
+    raw_data: "\004\\\013>\2105\227\2757\3776\275\246\031\315=\350\034\227=N\272\214=,\3557\275\356\325\027\275\030\020\014>\242A\310=L4\310<\021\030\025\274\270\230r=\023H\326=\312V\022\2755\224X\276"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch0.2.bn.running_var"
+    raw_data: "d\3439<OH\005<\252\322!<\240\212m<i\014\007<\r\331\366;\034D\261;^n\257;B\321\323;\253#\335;\365R\017<\327\225?<\250\250W<w\245\361;\021#\016<{R\002<"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch0.2.bn.weight"
+    raw_data: "fL\206>\351\352\213>\370\305y>\376T\221>9\254\177>\301~l>\236\035`> \211h>\344L{>\254Cu>u\007\205>\026\340\212>\200\325\207>\224\204y>\310\247~>\336\311\202>"
+  }
+  initializer {
+    dims: 8
+    data_type: 1
+    name: "base_net.7.branch1.0.bn.bias"
+    raw_data: "$\254&>\361Yv=\232\034\346=r\301\t\276\024\325\341\274\277\261\351\275\3378G<\212\322\327\275"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.7.branch1.0.bn.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 8
+    data_type: 1
+    name: "base_net.7.branch1.0.bn.running_mean"
+    raw_data: "\275\224x><\324\222=\347\220?>@\345\202\275\231\375L\275\027\230\202\274\347[\010\276<\313\254="
+  }
+  initializer {
+    dims: 8
+    data_type: 1
+    name: "base_net.7.branch1.0.bn.running_var"
+    raw_data: "\3008D<|\026=<\262\\\'<\204\027\037<v\025p<\204\236Q<\231\013\035<u\247@<"
+  }
+  initializer {
+    dims: 8
+    data_type: 1
+    name: "base_net.7.branch1.0.bn.weight"
+    raw_data: "\340b\207>@\272\213>\253\377w>\217O|>y\307\214>v\266\202>D\215\202>\376a|>"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch1.1.bn.bias"
+    raw_data: "Q\200\007\276\020\031}\276+\203\220\275\320\000\220\276\217^9\275\241\007\245=\017\362 \276NE\327=\220\350\225\276\357\370\t<\227@\324<\353\374\023\273\316h\230=\240\376\346\274\226; \276\351\001\247>"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.7.branch1.1.bn.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch1.1.bn.running_mean"
+    raw_data: "9\024-\275\030\221W=\233\350\225\275\262\036Y=\320\001\356\272\032U\035\275`\340u\275@\324\r\2762~\027\276`\032\022>\340\240k=K\266\236=n\2129\275\017\260\315\275\200\360Z\275j\247&\276"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch1.1.bn.running_var"
+    raw_data: "\335\343\037=u\017\346<uJ@=*\253\020=R\223\017=\r\341\013=\013\322\324<\363\250==>\026\024=\320\013\n=2\214\262<\364\347\360<Dt\366<IW\001=\261\350-=DjM="
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch1.1.bn.weight"
+    raw_data: "\004o\227>\r\217\213>0_\220>Z\027\241>\323z\220>\340\345h>\010M\230>\212\205R>$\032\230>o\321\200>\207\260\177>l\347\200>*CF>ih[>\265\236\244>\007o7>"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch1.2.bn.bias"
+    raw_data: "\211\225\01734a}3\r5\2622W\343S\263\375B\3662.\322\3032\303\2779\262\303\373\0012\3553\233\263\213\016_\262\250R|\262\352%\3133\376\204\223\262\251 \316\262\204T\3352()\231\263"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.7.branch1.2.bn.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch1.2.bn.running_mean"
+    raw_data: "\"F\314=O\262\222\276!\223\331\274\255\342G\275Z\342\305\273\344\363H<;+\366=%w\345\274\264e\264>)\024\n\276n\337\257\275-JO\276,f<=)\2032>u\323\321\275/\324\300\275"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch1.2.bn.running_var"
+    raw_data: "\342\300\335;\376\022s<r\224&<\346\251\013<\240\323L<\306\343\t<\352\270)<\221\3714<k$\200<\373,\021<V6\006<m-1<\'\333\377;\367\214\032<Hw\t<\007[\007<"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch1.2.bn.weight"
+    raw_data: "}&[>R-\223>\214\314R>AVv>\207xe>\230\037p>\236\036|>\002\021o>@\273\220>\030\'h>7\027a>+\334~>G\215^>Zbo>\206\027r>,\361m>"
+  }
+  initializer {
+    dims: 8
+    data_type: 1
+    name: "base_net.7.branch2.0.bn.bias"
+    raw_data: "\361\274Y\275;\006\254\275l\r~=\312\017\022\276<M(\275\345}r>\014\345\302=\264\252w\275"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.7.branch2.0.bn.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 8
+    data_type: 1
+    name: "base_net.7.branch2.0.bn.running_mean"
+    raw_data: "\364\242\361\274\207`Y<\356\365\301\275\264D==\327\2771>\206\305*>\033\213\006=\213\177\222\274"
+  }
+  initializer {
+    dims: 8
+    data_type: 1
+    name: "base_net.7.branch2.0.bn.running_var"
+    raw_data: "B+o<\266\2356<\303\234l<\331\013\254<\344\356I<\204\206\251<)\244u<5$/<"
+  }
+  initializer {
+    dims: 8
+    data_type: 1
+    name: "base_net.7.branch2.0.bn.weight"
+    raw_data: "]\317\217>\347\321\241>\372\374\214>AA\237>Jx\220>U\300\236>*\006\217>^\"\231>"
+  }
+  initializer {
+    dims: 12
+    data_type: 1
+    name: "base_net.7.branch2.1.bn.bias"
+    raw_data: "\026%\306>\366\240\250\276\340}\372<\230\353\270\275m\311\200\276##5>O\310h\275\254:{>\274\t:=s\350\354=\333\213G\275\351R\301\275"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.7.branch2.1.bn.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 12
+    data_type: 1
+    name: "base_net.7.branch2.1.bn.running_mean"
+    raw_data: "\230{1>\252\352\010>\360\276\212\275\303gJ=l\215>>Q\365N=\370\271\024\276\354\232$\274PVb>\006\2613\276[q*\276\367\354\337\275"
+  }
+  initializer {
+    dims: 12
+    data_type: 1
+    name: "base_net.7.branch2.1.bn.running_var"
+    raw_data: "\033\021\303=y\211\344=z\341\213=\373V\211=\256\260\303=\365\367\230=\262\326Q=s#\244=\003Dv=T\032\266=&ii=as5="
+  }
+  initializer {
+    dims: 12
+    data_type: 1
+    name: "base_net.7.branch2.1.bn.weight"
+    raw_data: "\337F\203>\305\n\357>hh\224>a%\272>\247f\337>\372i\224>{\266\231>\n(\201>d\275\250>\263\025?>JB\224>\201K\244>"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch2.2.bn.bias"
+    raw_data: "\365\312\202>d\027\323=\346iP\276jQ\013>\037\022\204>C\350\232\27555S>oE\302\275#\251\214>\206^J<|pK=\377\026\212>\022I\304=\2268&\275\323\371\365\2759\2718>"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.7.branch2.2.bn.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch2.2.bn.running_mean"
+    raw_data: "-\205\361=\004{\212\276p\366\213\274\201\221\035\277;f\372\276\244#\200\276>\210\242=a\t\263\276\327#\025=\0369\366\276\0216\014?\276\353\'\2766<\300<\037d\274\276a\023#\276D+\353\276"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch2.2.bn.running_var"
+    raw_data: "$+\315<\241\355\022=~\032\267<N\231\204=\'\365I=\031\177\002=\333#\032=d\3365=\253.\334<\004\202F=\036\035Y=\034\363\003=oa\326<\307\256\246<l\267,=\322\224\034="
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch2.2.bn.weight"
+    raw_data: "@\3669>\344\357\203>\355\364\256>\215%\214>\"\260\221>\316\315\261>>[\177>\332\306\304>V\215/>\275\033\314>\324\304q>\365\260p>\371\013\246>\245e\230>Ff\277>\203%\234>"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch2.3.bn.bias"
+    raw_data: "\312y\215\263n\245\3423kk\275\262B\r\224\263\270\005\204\263m\231\2572\332\"\354\263\276\007C1\013+k3\t\274\017\263\224\214|\262\224\024\027\261P\024}3\316P=2\266I\227\261\302b^3"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.7.branch2.3.bn.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch2.3.bn.running_mean"
+    raw_data: "\031\345\317>\362\243\367\274\232\222\000>\217i\022=\223\234\032>(\016O\275\372A\312\273uR\331>\3341\222=\257p\204\276-\257\233\275\237\245\311>>\333\245\276\276\270x>60=\276\276\206O\276"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch2.3.bn.running_var"
+    raw_data: "\334\355F=\350\367\252<\003\\\207<\337\007\260<1\236\235<c\341\277<\226a\350<\370\334\000=\332%\327<?,\215<\265\223\231<N\023\272<\353V\244<f\016\220<\006\340e<\3066\271<"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    name: "base_net.7.branch2.3.bn.weight"
+    raw_data: "\263\236\236>+\222\211>\372cf>\352\313\211>\220\031\203>H6w>\363z\207>k\025\223>\n\206l>\303b{>\230\341s>.J\204>\312\026\200>^\234e>\010\257Q>\251\026\200>"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.7.shortcut.bn.bias"
+    raw_data: ",\264\220=\215\315\306=\265\231\r>M\242\031>[!\235<\230\277K>Il \272\216D\367=\025\337<=I\025\356\276\033>\251=\027\360\256>\315e\336\275\274a\243\275$\r\202>,\323?>?\0031>&\362\216>6\241p>/_\313>l\230\213=q\335t=\366\270i<\006\342\375\276<_\220=\025,7>\234\033\262\276\001\255\336=\234\260\023=\030/\333\274\345\226\216=\351\261\242\275\005\036O>\225/\r>\004\215\004>\027k\222>\230R\036>\2727\232>\321G\014>>\026\361\276SI)=\271\031?\275\320s\220=l$D\274\216\346o=s\257\342\274V\006\024=\271[l\275\261\3022>)\310\272<`\023\033=\210}n>\316y\327\275\3242\267<\246\212V>\335\332\251=\221\233\345\276\200\024*\277\362*\017>\270I\030>X\320\255>\245\375\206>\263\305\371\276\351jF>"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.7.shortcut.bn.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.7.shortcut.bn.running_mean"
+    raw_data: ")n\223=)\230\350<-\005<\276\311\336\244\275\317u\370;\350a9\276\002Oe\275\2020\251\272q\'\242\274w9r=o{\357\275\262\344&\276\310\353\312\275\266\025)\275\221\014\217\275Q;~\275\222\347G\276\005v\372<\307\336\036\276x\'\264\275\243\374\325<\355\2008\275\373\315d\276\337\004\211\275v\252\370\274\240\266\036\276\200\316\033\276\262Q\373\274\377\326\307=\314\026\377\274\021\256\340\275,!\230<0\031y\276\016\316\301\275\257b\036\276\275\242\022=6N\367\275\r+\342\275\251\220\256\275&\200M\276\\\241\201\273\256\247\225\275\320\206\\\275L\211\210\274\341\274\020\276n\344\022\275\275\236\363\272\322\217\243\275\1776*\275\216}G\276\016\304\333\273U1\254\275[\016v;\322\232=\275\026l\212\275\261\344&\273~C\260=\367x7>\221\236\266\275\016U\313\275e\276\320\274\204\251\215:u\002d\276K \374\275"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.7.shortcut.bn.running_var"
+    raw_data: "\274&\235;@\013\230<a(\022<\204\321\244;\371\016\014<\301\361\251;>l\231;n\354\324;\265\203\337;\204ff;\214@R<\030\310C<x\314\373;\267\014\035<\332:\261;\022\331\326;\274O\247<p\010!<^\324\241;9G\371;\'\301\313;%U\261;\237u}<\255`\352;\037\354\206;\342\336{<S\343\331<;\233\206;\372\331h<\204b\322;\334\357\371;\276s\226;\240\364\307<\272he;7\"\303;Ey\313;\001\256\263;\234\017\323;\226G`;\362\200%=\223\264p;Zi\235;*\377\221;\265\311;;\230\316\336;[\007\221;\003\261\312;\246\207\254;\274\266\257;^\256\246;\354\325\005<\350\221w;d\314\352;%\365\222;\350\303\032;\rj\261;XQ\274;\002\0335<m\325e<\003G\235;\271y0;(\037\277;\356\346\353<\222\261P<"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.7.shortcut.bn.weight"
+    raw_data: "I-,>Z\376\016?\241\347\270>\255\024\225>Y9\263>\010x\232>-\265,>\273\177v>)h\213>4\357_>P\002\345>H\227\034?\327\272`>\000\364\225>\177\330\227>\202\202\224>B\255)?mc\230>\220\201\230>\224\375\377>\234kz>\333F0>2\233\317>\234\200\225>\360\033\">\177J\270>\177q\023?q\377&>\325G\007?^\321\245>\267\303\272>\371;\013>H\2640?\321\333\230>\255^\212>\336s\274>\252\354\241>\334\n\301>\314>\246>\2310\t?\360\347~>\035\323\016>\357\201i>\202S\020>\254v\224>\300\275>>\377o1>\224\274T>\217\375\225>N\226\256>e\260]>\352`_>\347vo>\222+\217>\017\350c>?\202->a\001\203>\034\242\204>\002R\274>\207z\255>\274\331\202>9\320\301>K\251\330>\262\330\030?"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.8.1.bias"
+    raw_data: "0\327\217>\356\250\312=\2256\261\273\277\006]>\037\303\002>\233\237\031>\\\272\001\276\265\317\314=^\347.>+\250_<\254e\335=\010\003\227=P\035\257=yd\325</\270\002>q\246o>\316\377\240=\232\305\366=*\334\256>ApX=t\261r\274D\234U>\251Y\024>\362\007\210>\232\241`>\252\274\324=\201\3154=\026\222\323=\033\373\331=K\264\345=\237\314\202=\347\225\205=O\352\236=\235\377\230>\0272<=\321\317g=@\342\206=\375!\036>e\374\n>\261!\005>N,7\276\nH\257\272<\305\026\273\307j\360=;{\000<\302\200S=S\270d=9\025\327<\266\212\250>\304-e=c\231\305=k6]>\235\272\223<\"\026\302=Mr\016>8\214L>s\021\341<\274X#<\332V\200=\346\007/>\302x\'>M\201#>Q\255[>_<\355="
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.8.1.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.8.1.running_mean"
+    raw_data: "\253\351\301\275\250\234\n>}3q>2.\"\276\350\371\034>J\006/\276\304\032\261=\216\337;>\'\037\357=\264 \325:\363\024O>I\215C\276V\3019=hk>=\033\007b\275$\032Q\276\004\262?>\177k\266=\242\330\213\276Z\213t=\355U\000>9\204\254\275\262DZ>7L:\273\255)\321\275S,s>+\235\351;2\336,>\343\231\320=\265v\036>\030\203\036>\247\226\n=a!<\276\332G\204\275\r\243\020\276h\276\313\275\371\235\n\276=\313\207\276\016M\242\275`\226\344:\341u2>\257kF=`\014.>\337r\276<\202cz>\202S\013=\360t\234=.\262\035=\216\004X\276q\305\340=~\226\265==\3652>T\013\207<#\350\237=\036\":\276EF\345\275\332\343\213;F\374X;\377\304\013>=h \276\tr\204\276|\340^\276?\036\306\273\252w\350="
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.8.1.running_var"
+    raw_data: "\252%\241;\242\326\306<K\335\266<\331\367\206<\255\236$=\245\346)<F\230\314;\327\354O<\243\207\031<\032\271\0029\310,\n=\034\363-<\300\032\356;q\304\233;\223r\217<%\0236<y\274r<\205O\370;(P\223<\000\242!<\253\375\n=\010+R;\277|~=\236\310\027:|\001\200;rj(=\235~\001:/\017\202<\272S\251<\327\243\001=H\n\250<\231n\231;\313\005g<|\021><\023\361b<\304\003\304<\230\246\023<\220\022Q<\035n\203<\\\363\3459\003x\237<_\'\260;\234\t\215<\344\255s:\"9b=\225\014\002;2\253\254;\234\033g;\n\214o<\351<\253<\313G\262;\205\332\016<\336\250p:\007\024\313;\'\333e<\270\215\274;\303\244\3669w\376k9\232\252\001=\246\354\201<\317>\235<A\241\234<{\360\274:\367-o<"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "base_net.8.1.weight"
+    raw_data: "\350\2258>=R\032>\3108(>E@\024>\003\0276>\317\206\026>\323\374U>b\304U>\251\313:>\333h\316=\0058,>\036\324)>\330\\:>p\372\027>\020\217\">\005u\036>\361\3617>\335u\037>\331u >\367\016)>D\264b>\024\223M>\213\0333> \251\265=\232\3206>\267\030\024>\271\374\n>\363\2559>\322\235=>\274\364#>\033\355F>2\255I>\237S4>(F\026>\306x\203>\020\303!>@\220^>\314B\014>0w,>YQ\252=\334\226k>!\3602>\257\300.>\"\003g>\206\366D>\362\366\'>\014P\202>e\035%>Y\305%>\277\256\007>\335v\201>e6\370=\324\3069>\372A\024>w\010&>l\234S>BI\257=d6\002>\344\351Q>\262\354!>{**>\006\372)>s\353\001>aX\">"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.8.4.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.9.1.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    data_type: 7
+    name: "base_net.9.4.num_batches_tracked"
+    raw_data: "\300\242\001\000\000\000\000\000"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "classification_headers.0.0.bias"
+    raw_data: "\nsW\274s5N\271\202\215b;\020a\342\274gD\233\275\377\367\001<\241\"k\273\331Y\370\273\261\217K\274?\r4>%6\007<D\n\341\272l\366\203\273Y\213&<a^\204\275\251\363c\275=\351\311\274\375\314\210;\227\225\242\273\0257b\274{\377\354;+\370^\273\007G<\274\322D\306\276z\347;\273R%q\2730\322\215\277p\237/\274\225E$\274H\333\233\276\313\327\034<^G\001\273\005j\357<J\177N\275\312\177\223\273\230\302L<-\360\243\276\177\360h\273\223T{\273d\301\211\277\255\233\243\272\240&\354;\r\217\026\276\230\310\223=_7d\275Q\317h\272\236\201=\274\315\nw\274\t\3655\274\276\273\031<d\037@\274\265\002\346;\342\323N\272\301\225\275\273\270+\013<[f3<\225=\301>6\266.?\027\262\1779jI0\274cc\274\274\354\222\203\275\031\340`\277#\326\235\272"
+  }
+  initializer {
+    dims: 6
+    data_type: 1
+    name: "classification_headers.0.2.bias"
+    raw_data: "V\307F?\352{G\277\331\\%?HM#\277oV\032?\200\006\030\277"
+  }
+  initializer {
+    dims: 4
+    data_type: 1
+    name: "classification_headers.1.2.bias"
+    raw_data: "\263).?5E,\277\351{\014?\365\364\t\277"
+  }
+  initializer {
+    dims: 4
+    data_type: 1
+    name: "classification_headers.2.2.bias"
+    raw_data: "A\370\350>\204\261\352\276\355z\267>\013\362\265\276"
+  }
+  initializer {
+    dims: 6
+    data_type: 1
+    name: "classification_headers.3.bias"
+    raw_data: "\310\347\224>I\246\225\276\234\216X>1\254V\276\313\026\217>\252\306\216\276"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "extras.0.0.bias"
+    raw_data: "?\000=;\020\302\256\275\027n\214\273\273\rx;/\264l\271\240\312\265\271\221=\037= \350\236<\314]\340:\206g\033;\013o`\273B\020\374\272\234X.<<\246\351\272\2569\201\273(\261\t\273\3461\267:\360\005\305=\337{\004;\275F\n>Ozh\273\377\350x\271$\274]:\262\342\'=7cr<&V0\273+\3534;\302v\2339+q\202\273*k\023\273&\353\020<\361\256\014\273X\257\341=\rF\375;\316\033\253\272\000P\374=\030\r\200\273\220QL;.gX:g.\261:_24;,\345\331;\336b\236<\302\207\2409-\025\235=)\232\257<\2526\006=\351\307\221:\266\206m:\256\317\220\272\220\251\214\273b\203\247=\024\336#\273\r_\226>\245\274\026:G\327\305\275+\tr\275j~D;\024\377\332:\255\016Q;\375&\216;U\367+\273\357\325<\276\004R\272\272"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "extras.0.2.0.bias"
+    raw_data: "\347\000O\273\311\244v\276zP\010;\227$c\274\262\332\256=\325\210C\274\302\236\234=\311q\001\275\267:P=\036v\375\273\275Q\244\274k\262\256\274\200\244\217=\341ie=lC\214=?\344\231;QR&=\224n\272\275N8,\274q\333h<\247\264\033\2741t8\274\227c\252\274\2422\213\275\305\3759=\004\032\242\274\014\253\250\274\244\360?\274\262\341g\274\027\022\203\274\260\'0;%X}=%\014 =^\255Y\275\345k\n\274\244\247\230;(\013&;p\367\265\274D\\\246\274\353\267\212=\006\267\250=Z\311\201=+R\r=>\2020=\3332s\274v\377%=MPF\275\243\314\244=\263&\203\274U\362\034\274BQ\214=\034\375+>\"_\007\2748\335K>\224\307\303<\324\262k\276\010\267\376\275\241-N\271\303[\325<+m\241\273\004\322%=\310\203y\273;~\202\276\252e\260<"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    name: "regression_headers.0.0.bias"
+    raw_data: "\341\232\244\274P\370\205\276\376\027\002?>}g\272\232\363\370>\275\311\246\275\2126\010\274q\021\317\2738\3134<4Gc\274R\375$\275\'\207Z>~\370\n\274\347e\334<Nr\216?\305\327?>\322v\007>\312\324\342\274\346I\005\275\201Q\217=\242\253\230=v\237\206\274\362m\323\270\320\230\277>7x\223;\244\274\252\275&\326n<Vez\275\275\224C=\251vg?\037\270\003\274\021\2660\274\201m>=\027Lw=\240\366\214\275\216AT?\213y\254\274\256\300(\275%\022,\267\"J\230>(\3366\276{\253\241\274\013\355\245\275\325\200\225<\325\266\272<\271\247H\273\323\374[\273\333\250\252\2732F\205\274\216\202\343>\247Eg\274M\344\345\274\020^L\274)w\245:?\203\346\275\343i\230\274\326\374\210\265_\021G>\303$\312\273\303Q\375\275u\317\026?\026\202=?\313\346\216\274\024\367\013>"
+  }
+  initializer {
+    dims: 12
+    data_type: 1
+    name: "regression_headers.0.2.bias"
+    raw_data: "\3079\013>\215\352\005=\0246\233\275\020\306\242>Dz\013>\270\230\207<\002\252\233\276\244\372\267>M\035\320<\245\007=\276\243>\000\277\323\303\231>"
+  }
+  initializer {
+    dims: 8
+    data_type: 1
+    name: "regression_headers.1.2.bias"
+    raw_data: "0\320%\275\275f\225\274\225r\001\276\003\366%>C\373\326\274#\264\267\274\200\255\204\276\363DQ\274"
+  }
+  initializer {
+    dims: 8
+    data_type: 1
+    name: "regression_headers.2.2.bias"
+    raw_data: "\361sN<`\234\3739j\271\334\275\337*\263<4\370\020\273\014\'\261<@\202\032\276\214\326B\275"
+  }
+  initializer {
+    dims: 12
+    data_type: 1
+    name: "regression_headers.3.bias"
+    raw_data: "T-\"<\0178\231<y\331\357\274\260>\327:\263\322\3749X\331\265<\311#\017\275\336h\345\274\312\n,\274\003\261\315<\217\210\200\275\213\357\245\275"
+  }
+  input {
+    name: "input"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 480
+          }
+          dim {
+            dim_value: 640
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.0.0.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.0.1.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.0.1.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.0.1.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.0.1.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.0.1.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.1.0.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.1.1.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.1.1.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.1.1.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.1.1.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.1.1.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.1.3.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.1.4.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.1.4.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.1.4.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.1.4.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.1.4.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.2.0.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.2.1.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.2.1.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.2.1.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.2.1.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.2.1.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.2.3.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.2.4.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.2.4.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.2.4.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.2.4.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.2.4.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.3.0.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.3.1.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.3.1.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.3.1.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.3.1.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.3.1.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.3.3.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.3.4.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.3.4.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.3.4.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.3.4.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.3.4.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.4.0.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.4.1.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.4.1.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.4.1.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.4.1.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.4.1.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.4.3.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.4.4.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.4.4.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.4.4.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.4.4.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.4.4.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.5.0.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.5.1.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.5.1.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.5.1.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.5.1.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.5.1.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.5.3.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.5.4.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.5.4.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.5.4.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.5.4.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.5.4.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.6.0.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.6.1.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.6.1.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.6.1.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.6.1.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.6.1.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.6.3.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.6.4.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.6.4.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.6.4.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.6.4.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.6.4.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch0.0.conv.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch0.0.bn.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch0.0.bn.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch0.0.bn.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch0.0.bn.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch0.0.bn.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch0.1.conv.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch0.1.bn.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch0.1.bn.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch0.1.bn.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch0.1.bn.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch0.1.bn.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch0.2.conv.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch0.2.bn.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch0.2.bn.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch0.2.bn.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch0.2.bn.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch0.2.bn.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch1.0.conv.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch1.0.bn.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch1.0.bn.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch1.0.bn.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch1.0.bn.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch1.0.bn.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch1.1.conv.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch1.1.bn.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch1.1.bn.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch1.1.bn.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch1.1.bn.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch1.1.bn.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch1.2.conv.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch1.2.bn.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch1.2.bn.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch1.2.bn.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch1.2.bn.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch1.2.bn.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.0.conv.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.0.bn.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.0.bn.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.0.bn.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.0.bn.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.0.bn.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.1.conv.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 12
+          }
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.1.bn.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 12
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.1.bn.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 12
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.1.bn.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 12
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.1.bn.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 12
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.1.bn.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.2.conv.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 12
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.2.bn.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.2.bn.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.2.bn.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.2.bn.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.2.bn.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.3.conv.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.3.bn.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.3.bn.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.3.bn.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.3.bn.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.branch2.3.bn.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.ConvLinear.conv.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 48
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.ConvLinear.bn.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.ConvLinear.bn.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.ConvLinear.bn.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.ConvLinear.bn.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.ConvLinear.bn.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.shortcut.conv.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.shortcut.bn.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.shortcut.bn.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.shortcut.bn.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.shortcut.bn.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.7.shortcut.bn.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.8.0.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.8.1.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.8.1.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.8.1.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.8.1.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.8.1.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.8.3.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.8.4.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.8.4.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.8.4.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.8.4.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.8.4.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.9.0.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.9.1.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.9.1.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.9.1.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.9.1.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.9.1.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.9.3.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.9.4.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.9.4.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.9.4.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.9.4.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.9.4.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.10.0.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.10.1.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.10.1.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.10.1.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.10.1.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.10.1.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.10.3.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.10.4.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.10.4.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.10.4.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.10.4.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.10.4.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.11.0.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.11.1.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.11.1.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.11.1.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.11.1.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.11.1.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.11.3.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.11.4.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.11.4.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.11.4.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.11.4.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.11.4.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.12.0.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.12.1.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.12.1.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.12.1.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.12.1.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.12.1.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.12.3.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.12.4.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.12.4.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.12.4.running_mean"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.12.4.running_var"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "base_net.12.4.num_batches_tracked"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+        }
+      }
+    }
+  }
+  input {
+    name: "extras.0.0.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "extras.0.0.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "extras.0.2.0.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "extras.0.2.0.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "extras.0.2.2.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "extras.0.2.2.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "classification_headers.0.0.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "classification_headers.0.0.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "classification_headers.0.2.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 6
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "classification_headers.0.2.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 6
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "classification_headers.1.0.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "classification_headers.1.0.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "classification_headers.1.2.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 4
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "classification_headers.1.2.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 4
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "classification_headers.2.0.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "classification_headers.2.0.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "classification_headers.2.2.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 4
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "classification_headers.2.2.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 4
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "classification_headers.3.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 6
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "classification_headers.3.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 6
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "regression_headers.0.0.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "regression_headers.0.0.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "regression_headers.0.2.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 12
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "regression_headers.0.2.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 12
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "regression_headers.1.0.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "regression_headers.1.0.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "regression_headers.1.2.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "regression_headers.1.2.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "regression_headers.2.0.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "regression_headers.2.0.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "regression_headers.2.2.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 8
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "regression_headers.2.2.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 8
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "regression_headers.3.weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 12
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "regression_headers.3.bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 12
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "465"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 17640
+          }
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "467"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 17640
+          }
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "473"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 17640
+          }
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "scores"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 17640
+          }
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "boxes"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 17640
+          }
+          dim {
+            dim_value: 4
+          }
+        }
+      }
+    }
+  }
+}
+opset_import {
+  domain: ""
+  version: 9
+}

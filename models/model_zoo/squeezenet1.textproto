@@ -1,0 +1,3069 @@
+ir_version: 3
+graph {
+  node {
+    input: "data"
+    input: "squeezenet0_conv0_weight"
+    input: "squeezenet0_conv0_bias"
+    output: "squeezenet0_conv0_fwd"
+    name: "squeezenet0_conv0_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv0_fwd"
+    output: "squeezenet0_relu0_fwd"
+    name: "squeezenet0_relu0_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu0_fwd"
+    output: "squeezenet0_pool0_fwd"
+    name: "squeezenet0_pool0_fwd"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_pool0_fwd"
+    input: "squeezenet0_conv1_weight"
+    input: "squeezenet0_conv1_bias"
+    output: "squeezenet0_conv1_fwd"
+    name: "squeezenet0_conv1_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv1_fwd"
+    output: "squeezenet0_relu1_fwd"
+    name: "squeezenet0_relu1_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu1_fwd"
+    input: "squeezenet0_conv2_weight"
+    input: "squeezenet0_conv2_bias"
+    output: "squeezenet0_conv2_fwd"
+    name: "squeezenet0_conv2_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv2_fwd"
+    output: "squeezenet0_relu2_fwd"
+    name: "squeezenet0_relu2_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu1_fwd"
+    input: "squeezenet0_conv3_weight"
+    input: "squeezenet0_conv3_bias"
+    output: "squeezenet0_conv3_fwd"
+    name: "squeezenet0_conv3_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv3_fwd"
+    output: "squeezenet0_relu3_fwd"
+    name: "squeezenet0_relu3_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu2_fwd"
+    input: "squeezenet0_relu3_fwd"
+    output: "squeezenet0_concat0"
+    name: "squeezenet0_concat0"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "squeezenet0_concat0"
+    input: "squeezenet0_conv4_weight"
+    input: "squeezenet0_conv4_bias"
+    output: "squeezenet0_conv4_fwd"
+    name: "squeezenet0_conv4_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv4_fwd"
+    output: "squeezenet0_relu4_fwd"
+    name: "squeezenet0_relu4_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu4_fwd"
+    input: "squeezenet0_conv5_weight"
+    input: "squeezenet0_conv5_bias"
+    output: "squeezenet0_conv5_fwd"
+    name: "squeezenet0_conv5_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv5_fwd"
+    output: "squeezenet0_relu5_fwd"
+    name: "squeezenet0_relu5_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu4_fwd"
+    input: "squeezenet0_conv6_weight"
+    input: "squeezenet0_conv6_bias"
+    output: "squeezenet0_conv6_fwd"
+    name: "squeezenet0_conv6_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv6_fwd"
+    output: "squeezenet0_relu6_fwd"
+    name: "squeezenet0_relu6_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu5_fwd"
+    input: "squeezenet0_relu6_fwd"
+    output: "squeezenet0_concat1"
+    name: "squeezenet0_concat1"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "squeezenet0_concat1"
+    output: "squeezenet0_pool1_fwd"
+    name: "squeezenet0_pool1_fwd"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_pool1_fwd"
+    input: "squeezenet0_conv7_weight"
+    input: "squeezenet0_conv7_bias"
+    output: "squeezenet0_conv7_fwd"
+    name: "squeezenet0_conv7_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv7_fwd"
+    output: "squeezenet0_relu7_fwd"
+    name: "squeezenet0_relu7_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu7_fwd"
+    input: "squeezenet0_conv8_weight"
+    input: "squeezenet0_conv8_bias"
+    output: "squeezenet0_conv8_fwd"
+    name: "squeezenet0_conv8_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv8_fwd"
+    output: "squeezenet0_relu8_fwd"
+    name: "squeezenet0_relu8_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu7_fwd"
+    input: "squeezenet0_conv9_weight"
+    input: "squeezenet0_conv9_bias"
+    output: "squeezenet0_conv9_fwd"
+    name: "squeezenet0_conv9_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv9_fwd"
+    output: "squeezenet0_relu9_fwd"
+    name: "squeezenet0_relu9_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu8_fwd"
+    input: "squeezenet0_relu9_fwd"
+    output: "squeezenet0_concat2"
+    name: "squeezenet0_concat2"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "squeezenet0_concat2"
+    input: "squeezenet0_conv10_weight"
+    input: "squeezenet0_conv10_bias"
+    output: "squeezenet0_conv10_fwd"
+    name: "squeezenet0_conv10_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv10_fwd"
+    output: "squeezenet0_relu10_fwd"
+    name: "squeezenet0_relu10_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu10_fwd"
+    input: "squeezenet0_conv11_weight"
+    input: "squeezenet0_conv11_bias"
+    output: "squeezenet0_conv11_fwd"
+    name: "squeezenet0_conv11_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv11_fwd"
+    output: "squeezenet0_relu11_fwd"
+    name: "squeezenet0_relu11_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu10_fwd"
+    input: "squeezenet0_conv12_weight"
+    input: "squeezenet0_conv12_bias"
+    output: "squeezenet0_conv12_fwd"
+    name: "squeezenet0_conv12_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv12_fwd"
+    output: "squeezenet0_relu12_fwd"
+    name: "squeezenet0_relu12_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu11_fwd"
+    input: "squeezenet0_relu12_fwd"
+    output: "squeezenet0_concat3"
+    name: "squeezenet0_concat3"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "squeezenet0_concat3"
+    output: "squeezenet0_pool2_fwd"
+    name: "squeezenet0_pool2_fwd"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_pool2_fwd"
+    input: "squeezenet0_conv13_weight"
+    input: "squeezenet0_conv13_bias"
+    output: "squeezenet0_conv13_fwd"
+    name: "squeezenet0_conv13_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv13_fwd"
+    output: "squeezenet0_relu13_fwd"
+    name: "squeezenet0_relu13_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu13_fwd"
+    input: "squeezenet0_conv14_weight"
+    input: "squeezenet0_conv14_bias"
+    output: "squeezenet0_conv14_fwd"
+    name: "squeezenet0_conv14_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv14_fwd"
+    output: "squeezenet0_relu14_fwd"
+    name: "squeezenet0_relu14_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu13_fwd"
+    input: "squeezenet0_conv15_weight"
+    input: "squeezenet0_conv15_bias"
+    output: "squeezenet0_conv15_fwd"
+    name: "squeezenet0_conv15_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv15_fwd"
+    output: "squeezenet0_relu15_fwd"
+    name: "squeezenet0_relu15_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu14_fwd"
+    input: "squeezenet0_relu15_fwd"
+    output: "squeezenet0_concat4"
+    name: "squeezenet0_concat4"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "squeezenet0_concat4"
+    input: "squeezenet0_conv16_weight"
+    input: "squeezenet0_conv16_bias"
+    output: "squeezenet0_conv16_fwd"
+    name: "squeezenet0_conv16_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv16_fwd"
+    output: "squeezenet0_relu16_fwd"
+    name: "squeezenet0_relu16_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu16_fwd"
+    input: "squeezenet0_conv17_weight"
+    input: "squeezenet0_conv17_bias"
+    output: "squeezenet0_conv17_fwd"
+    name: "squeezenet0_conv17_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv17_fwd"
+    output: "squeezenet0_relu17_fwd"
+    name: "squeezenet0_relu17_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu16_fwd"
+    input: "squeezenet0_conv18_weight"
+    input: "squeezenet0_conv18_bias"
+    output: "squeezenet0_conv18_fwd"
+    name: "squeezenet0_conv18_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv18_fwd"
+    output: "squeezenet0_relu18_fwd"
+    name: "squeezenet0_relu18_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu17_fwd"
+    input: "squeezenet0_relu18_fwd"
+    output: "squeezenet0_concat5"
+    name: "squeezenet0_concat5"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "squeezenet0_concat5"
+    input: "squeezenet0_conv19_weight"
+    input: "squeezenet0_conv19_bias"
+    output: "squeezenet0_conv19_fwd"
+    name: "squeezenet0_conv19_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv19_fwd"
+    output: "squeezenet0_relu19_fwd"
+    name: "squeezenet0_relu19_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu19_fwd"
+    input: "squeezenet0_conv20_weight"
+    input: "squeezenet0_conv20_bias"
+    output: "squeezenet0_conv20_fwd"
+    name: "squeezenet0_conv20_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv20_fwd"
+    output: "squeezenet0_relu20_fwd"
+    name: "squeezenet0_relu20_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu19_fwd"
+    input: "squeezenet0_conv21_weight"
+    input: "squeezenet0_conv21_bias"
+    output: "squeezenet0_conv21_fwd"
+    name: "squeezenet0_conv21_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv21_fwd"
+    output: "squeezenet0_relu21_fwd"
+    name: "squeezenet0_relu21_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu20_fwd"
+    input: "squeezenet0_relu21_fwd"
+    output: "squeezenet0_concat6"
+    name: "squeezenet0_concat6"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "squeezenet0_concat6"
+    input: "squeezenet0_conv22_weight"
+    input: "squeezenet0_conv22_bias"
+    output: "squeezenet0_conv22_fwd"
+    name: "squeezenet0_conv22_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv22_fwd"
+    output: "squeezenet0_relu22_fwd"
+    name: "squeezenet0_relu22_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu22_fwd"
+    input: "squeezenet0_conv23_weight"
+    input: "squeezenet0_conv23_bias"
+    output: "squeezenet0_conv23_fwd"
+    name: "squeezenet0_conv23_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv23_fwd"
+    output: "squeezenet0_relu23_fwd"
+    name: "squeezenet0_relu23_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu22_fwd"
+    input: "squeezenet0_conv24_weight"
+    input: "squeezenet0_conv24_bias"
+    output: "squeezenet0_conv24_fwd"
+    name: "squeezenet0_conv24_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv24_fwd"
+    output: "squeezenet0_relu24_fwd"
+    name: "squeezenet0_relu24_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu23_fwd"
+    input: "squeezenet0_relu24_fwd"
+    output: "squeezenet0_concat7"
+    name: "squeezenet0_concat7"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "squeezenet0_concat7"
+    output: "squeezenet0_dropout0_fwd"
+    name: "squeezenet0_dropout0_fwd"
+    op_type: "Dropout"
+    attribute {
+      name: "ratio"
+      f: 0.5
+      type: FLOAT
+    }
+  }
+  node {
+    input: "squeezenet0_dropout0_fwd"
+    input: "squeezenet0_conv25_weight"
+    input: "squeezenet0_conv25_bias"
+    output: "squeezenet0_conv25_fwd"
+    name: "squeezenet0_conv25_fwd"
+    op_type: "Conv"
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "kernel_shape"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_conv25_fwd"
+    output: "squeezenet0_relu25_fwd"
+    name: "squeezenet0_relu25_fwd"
+    op_type: "Relu"
+  }
+  node {
+    input: "squeezenet0_relu25_fwd"
+    output: "squeezenet0_pool3_fwd"
+    name: "squeezenet0_pool3_fwd"
+    op_type: "AveragePool"
+    attribute {
+      name: "kernel_shape"
+      ints: 13
+      ints: 13
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 13
+      ints: 13
+      type: INTS
+    }
+  }
+  node {
+    input: "squeezenet0_pool3_fwd"
+    input: "reshape_attr_tensor118"
+    output: "squeezenet0_flatten0_reshape0"
+    name: "squeezenet0_flatten0_reshape0"
+    op_type: "Reshape"
+  }
+  name: "main"
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.7355256
+    float_data: 0.07547976
+    float_data: -0.15053397
+    float_data: 0.43023482
+    float_data: 0.49559817
+    float_data: 0.41791034
+    float_data: 0.2053056
+    float_data: 0.3363579
+    float_data: 0.6953093
+    float_data: 0.08068519
+    float_data: -0.94232047
+    float_data: 0.05581451
+    float_data: 0.0006606627
+    float_data: 0.028061643
+    float_data: 0.07763498
+    float_data: -0.46509862
+    float_data: -0.47383952
+    float_data: -0.1705111
+    float_data: -0.45617384
+    float_data: 0.08874601
+    float_data: 0.8019316
+    float_data: 0.17238227
+    float_data: 0.11680167
+    float_data: 0.3161133
+    float_data: 0.19121303
+    float_data: -0.016596774
+    float_data: 0.07010099
+    float_data: 0.06888353
+    float_data: 0.4432543
+    float_data: -0.15378337
+    float_data: 1.4497072
+    float_data: 1.1649578
+    float_data: 0.60711634
+    float_data: -1.6891487
+    float_data: 0.13748392
+    float_data: -0.26694402
+    float_data: 0.2209589
+    float_data: 0.18716466
+    float_data: -0.29441944
+    float_data: -0.6236698
+    float_data: 0.08452794
+    float_data: 0.090276636
+    float_data: 0.11696563
+    float_data: 0.055115793
+    float_data: 0.09445083
+    float_data: -0.57139933
+    float_data: -0.004172802
+    float_data: -0.029745368
+    float_data: 0.33175966
+    float_data: 0.08308027
+    float_data: -0.03456852
+    float_data: -0.48770514
+    float_data: 0.50928175
+    float_data: 0.62076616
+    float_data: 0.07096062
+    float_data: 0.6413494
+    float_data: 0.115265615
+    float_data: 0.52945274
+    float_data: -0.6410419
+    float_data: 0.06230233
+    float_data: 0.021643914
+    float_data: 0.1041082
+    float_data: 0.15475361
+    float_data: -0.07143138
+    name: "squeezenet0_conv0_bias"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    float_data: 0.519971
+    float_data: 0.2506205
+    float_data: -0.59179544
+    float_data: 0.6274095
+    float_data: 0.63523054
+    float_data: -0.362712
+    float_data: 0.16818428
+    float_data: 0.34690475
+    float_data: -0.23824784
+    float_data: -0.52181566
+    float_data: 0.14257832
+    float_data: -0.72509253
+    float_data: 0.4289285
+    float_data: 0.19858369
+    float_data: 0.25893793
+    float_data: 0.51322687
+    name: "squeezenet0_conv1_bias"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.11010511
+    float_data: 0.41708767
+    float_data: 0.131529
+    float_data: 0.44920906
+    float_data: 0.09697431
+    float_data: -0.24055256
+    float_data: -0.17951398
+    float_data: -0.08579175
+    float_data: 0.21781078
+    float_data: 0.16910632
+    float_data: 0.34887198
+    float_data: -0.29563996
+    float_data: 0.0847871
+    float_data: -0.00048182177
+    float_data: -0.08615115
+    float_data: -0.08480182
+    float_data: 0.002444594
+    float_data: 0.0038908008
+    float_data: -0.24408443
+    float_data: 0.09453785
+    float_data: 0.06887607
+    float_data: 0.14849907
+    float_data: 0.7273124
+    float_data: -0.062382363
+    float_data: 0.0700109
+    float_data: -0.018582044
+    float_data: -0.044073746
+    float_data: -1.3969
+    float_data: 0.13855715
+    float_data: -0.018935237
+    float_data: -0.15211004
+    float_data: -0.54465735
+    float_data: -0.072757445
+    float_data: -0.14538008
+    float_data: 0.6173917
+    float_data: 0.25560188
+    float_data: 0.64970046
+    float_data: 0.06383535
+    float_data: 0.1779108
+    float_data: 0.006443613
+    float_data: -0.037624024
+    float_data: 0.046572622
+    float_data: 0.0042483257
+    float_data: 0.0015688192
+    float_data: -0.10928885
+    float_data: 0.0070731775
+    float_data: 0.07479162
+    float_data: 0.2524434
+    float_data: -0.15448944
+    float_data: 0.09638792
+    float_data: 0.07128637
+    float_data: 0.18078682
+    float_data: -0.026490035
+    float_data: 0.10079084
+    float_data: 0.022615053
+    float_data: 0.64384466
+    float_data: -0.014593864
+    float_data: 0.53394717
+    float_data: 0.038501874
+    float_data: 0.25228626
+    float_data: 0.09824134
+    float_data: 0.022465087
+    float_data: 0.060883418
+    float_data: 0.67955947
+    name: "squeezenet0_conv2_bias"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: -0.0794822
+    float_data: 0.012667426
+    float_data: 0.18962167
+    float_data: 0.036408745
+    float_data: 0.02617014
+    float_data: 0.40276986
+    float_data: 0.0018497495
+    float_data: 0.011012793
+    float_data: 0.13640657
+    float_data: 0.059140205
+    float_data: 0.08330514
+    float_data: 0.08514343
+    float_data: -0.038649593
+    float_data: 0.034901995
+    float_data: 0.1766216
+    float_data: 0.033958513
+    float_data: 0.07173723
+    float_data: -0.023151685
+    float_data: -0.06775453
+    float_data: 0.07654903
+    float_data: 0.03035847
+    float_data: 0.13720387
+    float_data: 0.00022050006
+    float_data: 0.14882378
+    float_data: 0.040126782
+    float_data: 0.07453354
+    float_data: 0.10620423
+    float_data: 0.038874608
+    float_data: -0.00599888
+    float_data: 0.096661314
+    float_data: 0.11647507
+    float_data: 0.10096425
+    float_data: 0.1423807
+    float_data: -0.11789929
+    float_data: 0.09315339
+    float_data: 0.12552904
+    float_data: 0.010750447
+    float_data: 0.04904352
+    float_data: 0.045567736
+    float_data: 0.18393002
+    float_data: 0.07597165
+    float_data: -0.043822806
+    float_data: -0.01746105
+    float_data: 0.013076237
+    float_data: -0.013785579
+    float_data: 0.055867646
+    float_data: 0.16246796
+    float_data: -0.030479215
+    float_data: 0.11108379
+    float_data: 0.027078873
+    float_data: 0.07225672
+    float_data: 0.20664392
+    float_data: 0.0935386
+    float_data: 0.06482187
+    float_data: 0.19003235
+    float_data: 0.100697495
+    float_data: 0.0980714
+    float_data: -0.062947534
+    float_data: 0.031968817
+    float_data: -0.087078825
+    float_data: -0.04997313
+    float_data: 0.08929874
+    float_data: 0.06797457
+    float_data: -0.07342441
+    name: "squeezenet0_conv3_bias"
+  }
+  initializer {
+    dims: 16
+    data_type: 1
+    float_data: 0.17092423
+    float_data: 0.79783803
+    float_data: 0.08725604
+    float_data: 0.19740258
+    float_data: 0.0132737225
+    float_data: 0.39042792
+    float_data: 0.16029371
+    float_data: 0.10641152
+    float_data: 0.5180945
+    float_data: 0.48751158
+    float_data: -0.12850405
+    float_data: 0.5590271
+    float_data: 0.26915458
+    float_data: 0.5232234
+    float_data: 0.38500988
+    float_data: -1.5481306
+    name: "squeezenet0_conv4_bias"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: 0.0590926
+    float_data: 0.10112034
+    float_data: 0.19548503
+    float_data: 0.3768743
+    float_data: -0.56300014
+    float_data: -0.15063268
+    float_data: -0.030131789
+    float_data: 0.32301354
+    float_data: -0.029600963
+    float_data: 0.2911834
+    float_data: 0.13016568
+    float_data: -0.05681264
+    float_data: 0.7258497
+    float_data: -0.19036415
+    float_data: -0.13279784
+    float_data: 0.04630298
+    float_data: 0.05451854
+    float_data: -0.03864826
+    float_data: -0.21049641
+    float_data: 0.11788205
+    float_data: 0.070736416
+    float_data: -0.17246816
+    float_data: -0.39628747
+    float_data: 0.0027423091
+    float_data: 0.101023115
+    float_data: -0.10331594
+    float_data: -0.18030973
+    float_data: -0.14402618
+    float_data: 0.3019191
+    float_data: -0.10307504
+    float_data: -0.19944617
+    float_data: -0.007356553
+    float_data: -0.1068362
+    float_data: -0.0956138
+    float_data: -0.17808595
+    float_data: -0.057102382
+    float_data: -0.21865846
+    float_data: 0.5165603
+    float_data: -0.06842921
+    float_data: 0.033855792
+    float_data: 0.11152971
+    float_data: -0.03870763
+    float_data: -0.50788784
+    float_data: -0.14553443
+    float_data: -0.16890253
+    float_data: 0.15156068
+    float_data: 0.3584683
+    float_data: -0.023242058
+    float_data: 0.29170522
+    float_data: 0.004005509
+    float_data: -0.051418796
+    float_data: 0.11174103
+    float_data: -0.18636116
+    float_data: 0.040780418
+    float_data: -0.221638
+    float_data: -0.36239693
+    float_data: 1.4739819
+    float_data: 0.18120533
+    float_data: 0.023545183
+    float_data: 0.34068695
+    float_data: -0.14436594
+    float_data: 0.034767266
+    float_data: 0.0065770214
+    float_data: 0.057361018
+    name: "squeezenet0_conv5_bias"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: -0.022825187
+    float_data: -0.036159135
+    float_data: 0.046808954
+    float_data: 0.0034516086
+    float_data: 0.002405028
+    float_data: -0.061763544
+    float_data: 0.024179539
+    float_data: 0.027614573
+    float_data: -0.00012067797
+    float_data: -0.017126372
+    float_data: -0.036322087
+    float_data: 0.034524277
+    float_data: -0.002933112
+    float_data: 0.019759582
+    float_data: -0.005102445
+    float_data: 0.13286169
+    float_data: 0.0012807664
+    float_data: 0.0044170395
+    float_data: 0.18297222
+    float_data: -0.022059677
+    float_data: 0.02897882
+    float_data: -0.080059156
+    float_data: -0.07727026
+    float_data: -0.10597933
+    float_data: -0.05630028
+    float_data: -0.0030079244
+    float_data: -0.05152463
+    float_data: 0.04376172
+    float_data: -0.06269905
+    float_data: -0.010478139
+    float_data: 0.047220092
+    float_data: -0.07985566
+    float_data: 0.031081084
+    float_data: -0.038890585
+    float_data: 0.014643412
+    float_data: 0.018037224
+    float_data: -0.009104516
+    float_data: 0.014177917
+    float_data: 0.07990335
+    float_data: -0.057203494
+    float_data: 0.011422649
+    float_data: -0.052494183
+    float_data: 0.04870672
+    float_data: -0.09891548
+    float_data: -0.119736016
+    float_data: -0.1035825
+    float_data: 0.020416982
+    float_data: 0.043998253
+    float_data: -0.05944291
+    float_data: -0.05701367
+    float_data: -0.028970765
+    float_data: -0.0048616226
+    float_data: -0.047992494
+    float_data: 0.032759774
+    float_data: -0.07975814
+    float_data: 0.06169465
+    float_data: -0.0022769275
+    float_data: 0.028107494
+    float_data: 0.0015467098
+    float_data: 0.01610438
+    float_data: -0.008512358
+    float_data: 0.058772344
+    float_data: -0.056563515
+    float_data: -0.09592877
+    name: "squeezenet0_conv6_bias"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    float_data: 0.051897198
+    float_data: 0.10030951
+    float_data: -0.17892475
+    float_data: -0.14808938
+    float_data: 0.14988232
+    float_data: 0.067897245
+    float_data: 0.08649335
+    float_data: 0.25400248
+    float_data: -0.38483423
+    float_data: -0.13275951
+    float_data: -0.073384486
+    float_data: 0.23698848
+    float_data: 0.31733304
+    float_data: 0.20083816
+    float_data: -0.11383786
+    float_data: 0.08555135
+    float_data: 0.2871124
+    float_data: 0.0698926
+    float_data: 0.34297943
+    float_data: -0.6181272
+    float_data: 0.32242185
+    float_data: 0.29555923
+    float_data: 0.3593713
+    float_data: 0.057403024
+    float_data: 0.07175969
+    float_data: 0.04356622
+    float_data: -0.2758485
+    float_data: 0.30612665
+    float_data: 0.15562688
+    float_data: 0.08349834
+    float_data: 0.18101126
+    float_data: -0.13854249
+    name: "squeezenet0_conv7_bias"
+  }
+  initializer {
+    dims: 32
+    data_type: 1
+    float_data: 0.24098359
+    float_data: -0.037438575
+    float_data: -0.11869873
+    float_data: 0.061213627
+    float_data: 0.13010493
+    float_data: -0.17889082
+    float_data: -0.04307268
+    float_data: 0.0738133
+    float_data: -0.040765267
+    float_data: -0.2137905
+    float_data: 0.034477144
+    float_data: 0.16332567
+    float_data: 0.20875739
+    float_data: 0.036364812
+    float_data: 0.15845226
+    float_data: -0.07143522
+    float_data: -0.0640568
+    float_data: 0.0860317
+    float_data: 0.12525533
+    float_data: 0.313182
+    float_data: 0.05252645
+    float_data: 0.17876713
+    float_data: 0.06442306
+    float_data: -0.033747975
+    float_data: 0.05562058
+    float_data: 0.14978914
+    float_data: -0.16058372
+    float_data: 0.0037745298
+    float_data: 0.109011486
+    float_data: 0.084612995
+    float_data: 0.10309214
+    float_data: -0.028788613
+    name: "squeezenet0_conv10_bias"
+  }
+  initializer {
+    dims: 48
+    data_type: 1
+    float_data: 0.012025688
+    float_data: 0.08743446
+    float_data: -0.06757488
+    float_data: 0.010275603
+    float_data: 0.07388613
+    float_data: 0.08609974
+    float_data: 0.0059401426
+    float_data: 0.00038079495
+    float_data: -0.017520713
+    float_data: -0.015506435
+    float_data: -0.016158916
+    float_data: -0.0015260883
+    float_data: 0.06968805
+    float_data: 0.03675019
+    float_data: 0.026834683
+    float_data: -0.01622117
+    float_data: 0.03951498
+    float_data: 0.01331399
+    float_data: 0.04546453
+    float_data: 0.024741491
+    float_data: 0.034095943
+    float_data: 0.018912723
+    float_data: -0.048351392
+    float_data: 0.090631835
+    float_data: 0.050467584
+    float_data: -0.072561055
+    float_data: -0.043337934
+    float_data: -0.024740158
+    float_data: 0.10107317
+    float_data: 0.105924346
+    float_data: -0.004582823
+    float_data: 0.0848737
+    float_data: 0.039737385
+    float_data: 0.022381086
+    float_data: -0.048160363
+    float_data: -0.023564318
+    float_data: 0.039520893
+    float_data: -0.025740057
+    float_data: -0.051192828
+    float_data: 0.011097931
+    float_data: -0.03585073
+    float_data: 0.08509199
+    float_data: 0.0005783107
+    float_data: -0.016104314
+    float_data: -0.05614798
+    float_data: 0.03324772
+    float_data: -0.009577494
+    float_data: 0.079782315
+    name: "squeezenet0_conv13_bias"
+  }
+  initializer {
+    dims: 48
+    data_type: 1
+    float_data: 0.012633459
+    float_data: 0.10153462
+    float_data: 0.0038913777
+    float_data: 0.042158626
+    float_data: 0.041742854
+    float_data: -0.06560825
+    float_data: -0.021329114
+    float_data: -0.01780952
+    float_data: 0.048260983
+    float_data: -0.042422827
+    float_data: 0.056404658
+    float_data: 0.0008956809
+    float_data: -0.018227713
+    float_data: 0.055365335
+    float_data: 0.015043118
+    float_data: 0.032982968
+    float_data: 0.04870351
+    float_data: 0.06916918
+    float_data: -0.057935696
+    float_data: 0.03602153
+    float_data: 0.068863824
+    float_data: 0.064585306
+    float_data: -0.017967204
+    float_data: 0.009131195
+    float_data: 0.02474442
+    float_data: 0.11220892
+    float_data: 0.06291065
+    float_data: -0.01802
+    float_data: -0.010594011
+    float_data: 0.0009475739
+    float_data: 0.031113572
+    float_data: -0.05314062
+    float_data: -0.0027145706
+    float_data: -0.0038867276
+    float_data: 0.0073276884
+    float_data: 0.0807142
+    float_data: -0.04284967
+    float_data: -0.03719239
+    float_data: -0.06995635
+    float_data: 0.0378831
+    float_data: 0.008900817
+    float_data: 0.044292178
+    float_data: -0.071477845
+    float_data: 0.06568332
+    float_data: 0.12490414
+    float_data: 0.038259298
+    float_data: 0.012420128
+    float_data: 0.031242419
+    name: "squeezenet0_conv16_bias"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: -0.010515561
+    float_data: -0.04063143
+    float_data: 0.0075068697
+    float_data: -0.028541824
+    float_data: 0.02798756
+    float_data: -0.037873037
+    float_data: 0.008039825
+    float_data: 0.020002503
+    float_data: 0.03182968
+    float_data: 0.039826464
+    float_data: 0.017611459
+    float_data: 0.045083944
+    float_data: 0.026343668
+    float_data: 0.03937613
+    float_data: -0.0008229263
+    float_data: -0.0017706316
+    float_data: 0.057039965
+    float_data: 0.03161623
+    float_data: 0.05828741
+    float_data: -0.026228668
+    float_data: 0.05836019
+    float_data: -0.034384813
+    float_data: 0.057221476
+    float_data: 0.02214795
+    float_data: -0.033807386
+    float_data: -0.011354282
+    float_data: -0.042188317
+    float_data: -0.10710191
+    float_data: 0.03491346
+    float_data: 0.023799548
+    float_data: 0.037557777
+    float_data: 0.017641718
+    float_data: 0.001533017
+    float_data: 0.04386491
+    float_data: -0.0052753
+    float_data: 0.0696079
+    float_data: 0.015165197
+    float_data: 0.07165858
+    float_data: 0.010047965
+    float_data: 0.050764065
+    float_data: 0.037960794
+    float_data: -0.04388844
+    float_data: -0.01010914
+    float_data: 0.011609122
+    float_data: 0.05875821
+    float_data: 0.051857118
+    float_data: -0.02674046
+    float_data: 0.049509816
+    float_data: 0.08176653
+    float_data: 0.0015759359
+    float_data: 0.11662973
+    float_data: 0.035573542
+    float_data: -0.022238418
+    float_data: 0.0171908
+    float_data: -0.019761065
+    float_data: 0.01936408
+    float_data: -0.047941737
+    float_data: -0.041744847
+    float_data: -0.022563888
+    float_data: 0.010507185
+    float_data: 0.017952742
+    float_data: 0.025391094
+    float_data: 0.020309446
+    float_data: 0.0037835499
+    name: "squeezenet0_conv19_bias"
+  }
+  initializer {
+    dims: 64
+    data_type: 1
+    float_data: -0.018100591
+    float_data: 0.05683292
+    float_data: 0.02686502
+    float_data: -0.034280587
+    float_data: -0.04661559
+    float_data: -0.004245515
+    float_data: -0.027895913
+    float_data: -0.02785037
+    float_data: 0.10455325
+    float_data: 0.049428638
+    float_data: -0.14332272
+    float_data: 0.0013264159
+    float_data: 0.059554193
+    float_data: -0.017962372
+    float_data: -0.028274141
+    float_data: 0.010081074
+    float_data: -0.15114272
+    float_data: -0.18687998
+    float_data: 0.019615036
+    float_data: -0.003373071
+    float_data: -0.051115464
+    float_data: 0.020436456
+    float_data: -0.14963168
+    float_data: -0.069227375
+    float_data: -0.0071413014
+    float_data: 0.040519062
+    float_data: 0.002939679
+    float_data: 0.0115740225
+    float_data: 0.08292671
+    float_data: 0.0072687543
+    float_data: 0.008317512
+    float_data: -0.031234775
+    float_data: 0.04784721
+    float_data: 0.011712273
+    float_data: -0.10556457
+    float_data: 0.10524586
+    float_data: 0.10318441
+    float_data: -0.022692882
+    float_data: -0.034214757
+    float_data: -0.014238879
+    float_data: 0.024506928
+    float_data: 0.045628294
+    float_data: -0.04317991
+    float_data: -0.01116329
+    float_data: 0.012628006
+    float_data: 0.06587892
+    float_data: -0.1755115
+    float_data: 0.009168202
+    float_data: -0.05369046
+    float_data: -0.015001882
+    float_data: -0.2371985
+    float_data: -0.0073131886
+    float_data: -0.05538974
+    float_data: 0.0617249
+    float_data: -0.020299213
+    float_data: -0.024354354
+    float_data: -0.039319653
+    float_data: 0.064593315
+    float_data: 0.050659932
+    float_data: -0.02439369
+    float_data: 0.02181986
+    float_data: 0.01128689
+    float_data: -0.017124869
+    float_data: 0.026568621
+    name: "squeezenet0_conv22_bias"
+  }
+  initializer {
+    dims: 2
+    data_type: 7
+    int64_data: 0
+    int64_data: -1
+    name: "reshape_attr_tensor118"
+  }
+  input {
+    name: "data"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 224
+          }
+          dim {
+            dim_value: 224
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv0_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv0_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv1_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv1_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv2_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv2_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv3_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv3_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv4_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv4_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 16
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv5_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv5_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv6_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 16
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv6_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv7_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv7_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv8_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv8_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv9_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv9_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv10_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv10_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 32
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv11_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv11_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv12_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 32
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv12_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 128
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv13_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 48
+          }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv13_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 48
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv14_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 48
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv14_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv15_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 48
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv15_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv16_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 48
+          }
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv16_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 48
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv17_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 48
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv17_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv18_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+          dim {
+            dim_value: 48
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv18_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 192
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv19_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 384
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv19_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv20_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv20_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv21_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv21_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv22_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv22_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 64
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv23_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv23_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv24_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv24_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 256
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv25_weight"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1000
+          }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "squeezenet0_conv25_bias"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "reshape_attr_tensor118"
+    type {
+      tensor_type {
+        elem_type: 7
+        shape {
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "squeezenet0_flatten0_reshape0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 1
+          }
+          dim {
+            dim_value: 1000
+          }
+        }
+      }
+    }
+  }
+}
+opset_import {
+  domain: ""
+  version: 7
+}
