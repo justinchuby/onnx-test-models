@@ -30,7 +30,7 @@ def create_one_model(model_info: hub.ModelInfo):
         model_proto = hub.load(model_name)
         assert model_proto is not None
     print(f"\n----Creating from: {model_name} @ {model_path}----")
-    out_path = pathlib.Path(__file__).parent / "models" / "model_zoo" / f"{model_name}.textproto"
+    out_path = pathlib.Path(__file__).parent.parent / "models" / "model_zoo" / f"{model_name}.textproto"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     create_model.create_model(ir.from_proto(model_proto), os.fspath(out_path))
 
