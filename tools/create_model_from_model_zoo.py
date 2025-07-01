@@ -30,8 +30,18 @@ def create_one_model(model_info: hub.ModelInfo):
         model_proto = hub.load(model_name)
         assert model_proto is not None
     print(f"\n----Creating from: {model_name} @ {model_path}----")
-    out_path = pathlib.Path(__file__).parent.parent / "models" / "model_zoo" / f"{model_name}.textproto"
-    create_model.create_model(ir.from_proto(model_proto), os.fspath(out_path))
+    out_path = (
+        pathlib.Path(__file__).parent.parent
+        / "models"
+        / "model_zoo"
+        / f"{model_name}.textproto"
+    )
+
+    try:
+        create_model.create_model(ir.from_proto(model_proto), os.fspath(out_path))
+    except Exception as e:
+        print(f"Failed to create model {model_name}: {e}")
+        return
 
 
 def main():
