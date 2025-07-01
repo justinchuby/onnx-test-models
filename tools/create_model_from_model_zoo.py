@@ -29,12 +29,13 @@ def create_one_model(model_info: hub.ModelInfo):
         hub.set_dir(temp_dir)
         model_proto = hub.load(model_name)
         assert model_proto is not None
-    print(f"\n----Creating from: {model_name} @ {model_path}----")
+    print(f"\n----Creating from: {model_name} ----")
+    model_file_name = model_path.split("/")[-1].split(".")[0]
     out_path = (
         pathlib.Path(__file__).parent.parent
         / "models"
         / "model_zoo"
-        / f"{model_name}.textproto"
+        / f"{model_file_name}.textproto"
     )
 
     try:
