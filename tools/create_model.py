@@ -33,9 +33,17 @@ class InitializerToInputPass(ir.passes.InPlacePass):
         return ir.passes.PassResult(model, modified)
 
 
-def process_model(model: ir.Model, target_version: int) -> ir.Model:
+def process_model(model: ir.Model, target_version: int | None) -> ir.Model:
     passes = ir.passes.Sequential(
-        onnxscript.version_converter.ConvertVersionPass(target_version, fallback=True),
+        *(
+            [
+                onnxscript.version_converter.ConvertVersionPass(
+                    target_version, fallback=True
+                ),
+            ]
+            if target_version is not None
+            else []
+        ),
         common_passes.LiftConstantsToInitializersPass(),
         common_passes.LiftSubgraphInitializersToMainGraphPass(),
         InitializerToInputPass(),
@@ -45,16 +53,17 @@ def process_model(model: ir.Model, target_version: int) -> ir.Model:
     return model
 
 
-def create_model(in_path: str, out_path: str) -> None:
+def create_model(
+    model: ir.Model, out_path: str, target_version: int | None = None
+) -> None:
     """
     Create a processed ONNX model from the input path and save it to the output path.
 
     Args:
-        in_path (str): Path to the input ONNX model.
-        out_path (str): Path to save the processed ONNX model.
+        in_path: Path to the input ONNX model.
+        out_path: Path to save the processed ONNX model.
     """
-    model = ir.load(in_path)
-    model = process_model(model)
+    model = process_model(model, target_version)
     ir.save(model, out_path)
     print(f"Processed model saved to {out_path}")
 
@@ -75,7 +84,7 @@ def main():
     )
     parsed_args = parser.parse_args()
 
-    create_model(parsed_args.in_path, parsed_args.out_path)
+    create_model(ir.load(parsed_args.in_path), parsed_args.out_path)
 
 
 if __name__ == "__main__":
