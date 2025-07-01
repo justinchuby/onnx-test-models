@@ -46,7 +46,6 @@ def process_model(model: ir.Model, target_version: int | None) -> ir.Model:
             else []
         ),
         common_passes.LiftConstantsToInitializersPass(),
-        common_passes.LiftSubgraphInitializersToMainGraphPass(),
         InitializerToInputPass(),
     )
     model = passes(model).model
